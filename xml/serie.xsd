@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- schema serieTV, modello bambole russe-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://allStreaming.altervista.org" targetNamespace="http://allStreaming.altervista.org" elementFormDefault="qualified">
+	<xsd:element name="collectionSeries">
+		<xsd:element name="serie" minOccurs="0" maxOccurs="unbounded">
+			<xsd:sequence>
+				<xsd:element name="title" type="xsd:string" />
+				<xsd:element name="photo" type="xsd:string" />
+				<xsd:element name="description" type="xsd:string" />
+				<xsd:sequence minOccurs="1" maxOccurs="unbounded">
+					<xsd:element name="season">
+						<xsd:element name="number"  type="xsd:integer"/>
+						<xsd:sequence minOccurs="1" maxOccurs="unbounded">
+							<xsd:element name="link" type="xsd:string" />
+						</xsd:sequence>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:sequence>
+		</xsd:element>
+	</xsd:element>
+</xsd:schema>
