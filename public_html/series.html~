@@ -3,8 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>AllStreaming</title>
-        <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon" />
-        <link rel="icon" href="img/logo.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="imgages/logo.ico" type="image/x-icon" />
+        <link rel="icon" href="imgages/logo.ico" type="image/x-icon" />
         <link rel="stylesheet" href="styles/style.css" type="text/css" />
     </head> 
        
@@ -25,10 +25,10 @@
 		<div id="left_side">
 			<div class="menu">Main Menu</div>
 				<div class="content">
-					<img src="img/home.png"/><a href="index.html">Home</a><hr>
-					<img src="img/series.png"/><a href="series.html">Serie Tv</a><hr>
-					<img src="img/film.png"/><a href="#"><b>Film</b></a><hr>
-					<img src="img/comment.png"/><a href="#">Commenti</a><hr>
+					<img src="imgages/home.png"/><a href="index.html">Home</a><hr>
+					<img src="imgages/series.png"/><a href="#"><b>Serie Tv</b></a><hr>
+					<img src="imgages/film.png"/><a href="films.html">Film</a><hr>
+					<img src="imgages/comment.png"/><a href="#">Commenti</a><hr>
 					</br>
 				</div>
 		</div>	
@@ -55,33 +55,17 @@
 		</div>
 		
 		<div id="center_side">
-			<h1>Film disponibili</h1>
-			<div id="year">
-				<h2>Anno d'uscita</h2></br>
-				<a href="film.html">2012</a></br>
-				<a href="#">2011</a></br>
-				<a href="#">2010</a></br>
-				<a href="#">2009</a></br>
-				<a href="#">2008</a></br>
-				<a href="#">2007</a></br>
-				<a href="#">2006</a></br>
-				<a href="#">2005</a></br>
-				<a href="#">2004</a></br>
-				<a href="#">2003</a></br>
-				<a href="#">2002</a></br>
-				<a href="#">2001</a></br>
-				<a href="#">2000</a></br>
-				<a href="#">pre-2000</br>
-			</div>
-			<div id="genre">
-				<h2>Genere</h2></br>
-				<a href="film.html">Action</a><hr>
-				<a href="#">Thriller</a><hr>
-				<a href="#">Horror</a><hr>
-				<a href="#">Comics</a><hr>
-				<a href="#">Cartoon</a><hr>
-				<a href="#">Altro</a><hr>
-			</div>
+			<h1>Serie Tv disponibili</h1>
+				<a href="serie.html">Prima serie</a> <hr>
+				<a href="serie.html">Seconda serie</a> <hr>
+				<a href="serie.html">Terza serie</a> <hr>
+				<a href="serie.html">Quarta serie</a> <hr>
+				<a href="serie.html">Quinta serie</a> <hr>
+				<a href="serie.html">Sesta serie</a> <hr>
+				<a href="serie.html">Settima serie</a> <hr>
+				<a href="serie.html">Ottava serie</a> <hr>
+				<a href="serie.html">Nona serie</a> <hr>
+				<a href="serie.html">Decima serie</a> <hr>
 		</div>
 
 		<div class="pushfooter"></div>

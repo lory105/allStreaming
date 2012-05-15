@@ -3,8 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>AllStreaming</title>
-        <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon" />
-        <link rel="icon" href="img/logo.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="imgages/logo.ico" type="image/x-icon" />
+        <link rel="icon" href="imgages/logo.ico" type="image/x-icon" />
         <link rel="stylesheet" href="styles/style.css" type="text/css" />
     </head> 
        
@@ -25,10 +25,10 @@
 		<div id="left_side">
 			<div class="menu">Main Menu</div>
 				<div class="content">
-					<img src="img/home.png"/><a href="index.html">Home</a><hr>
-					<img src="img/series.png"/><a href="series.html">Serie Tv</a><hr>
-					<img src="img/film.png"/><a href="films.html"><b>Film</b></a><hr>
-					<img src="img/comment.png"/><a href="#">Commenti</a><hr>
+					<img src="imgages/home.png"/><a href="index.html">Home</a><hr>
+					<img src="imgages/series.png"/><a href="series.html">Serie Tv</a><hr>
+					<img src="imgages/film.png"/><a href="#"><b>Film</b></a><hr>
+					<img src="imgages/comment.png"/><a href="#">Commenti</a><hr>
 					</br>
 				</div>
 		</div>	
@@ -55,14 +55,32 @@
 		</div>
 		
 		<div id="center_side">
-			<div id="random_film">
-				<h1>Transformers</h1>
-				<img src="img/transformers.jpg" class="preview"/>	
-				<p>La lotta tra il bene (gli Autobots) e il male (i Decepticons), dal pianeta Cybertron si spostata sulla Terra dove milioni di anni fa caduto il Cubo di Energon, il potere supremo capace di infondere la vita ai Transformers. Sam Witwicky - nipote dell'esploratore che per primo, durante una missione nel Circolo Polare Artico sul finire del 1800, ebbe a che fare con Megatron, il capo dei Decepticons - l'unico che pu aiutare Optimus Prime e i suoi Autobots a ritrovare il cubo e distruggerlo prima che finisca nelle mani dei nemici.</p>
-				</br>
-				<b>Link:</b></br>
-				<a href="#">NowVideo</a> <br>
-		
+			<h1>Film disponibili</h1>
+			<div id="year">
+				<h2>Anno d'uscita</h2></br>
+				<a href="film.html">2012</a></br>
+				<a href="#">2011</a></br>
+				<a href="#">2010</a></br>
+				<a href="#">2009</a></br>
+				<a href="#">2008</a></br>
+				<a href="#">2007</a></br>
+				<a href="#">2006</a></br>
+				<a href="#">2005</a></br>
+				<a href="#">2004</a></br>
+				<a href="#">2003</a></br>
+				<a href="#">2002</a></br>
+				<a href="#">2001</a></br>
+				<a href="#">2000</a></br>
+				<a href="#">pre-2000</br>
+			</div>
+			<div id="genre">
+				<h2>Genere</h2></br>
+				<a href="film.html">Action</a><hr>
+				<a href="#">Thriller</a><hr>
+				<a href="#">Horror</a><hr>
+				<a href="#">Comics</a><hr>
+				<a href="#">Cartoon</a><hr>
+				<a href="#">Altro</a><hr>
 			</div>
 		</div>
 

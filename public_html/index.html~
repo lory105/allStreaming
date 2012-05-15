@@ -3,8 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>AllStreaming</title>
-        <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon" />
-        <link rel="icon" href="img/logo.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon" />
+        <link rel="icon" href="images/logo.ico" type="image/x-icon" />
         <link rel="stylesheet" href="styles/style.css" type="text/css" />
     </head> 
        
@@ -25,10 +25,10 @@
 		<div id="left_side">
 			<div class="menu">Main Menu</div>
 				<div class="content">
-					<img src="img/home.png"/><a href="index.html">Home</a><hr>
-					<img src="img/series.png"/><a href="#"><b>Serie Tv</b></a><hr>
-					<img src="img/film.png"/><a href="films.html">Film</a><hr>
-					<img src="img/comment.png"/><a href="#">Commenti</a><hr>
+					<img src="images/home.png"/><a href="#"><b>Home</b></a><hr>
+					<img src="images/series.png"/><a href="series.html">Serie Tv</a><hr>
+					<img src="images/film.png"/><a href="films.html">Film</a><hr>
+					<img src="images/comment.png"/><a href="#">Commenti</a><hr>
 					</br>
 				</div>
 		</div>	
@@ -55,23 +55,30 @@
 		</div>
 		
 		<div id="center_side">
-			<div id="random_film">
-				<h1>The Mentalist</h1>
-				<img src="img/mentalist.jpg" class="preview"/>	
-				<p>Patrick Jane "consulente" al California Bureau of Investigation, dove aiuta la squadra investigativa coordinata da Teresa Lisbon e formata da Kimball Cho, Wayne Rigsby e Grace Van Pelt usando il suo particolare talento di Mentalist. La sua dote gli permette di notare ogni piccolo dettaglio, ogni sfuggevole particolare all?apparenza inutile, che per Patrick diventa un prezioso tassello del puzzle che lo porter a risolvere caso dopo caso...</p>
-				</br>
-				<b>Prima serie:</b></br>
-				<a href="#">Prima puntata</a> <br>
-				<a href="#">Seconda puntata</a> <br>
-				<a href="#">Terza puntata</a> <br>
-				<a href="#">Quarta puntata</a> <br>
-				<a href="#">Quinta puntata</a> <br>
-				<a href="#">Sesta puntata</a> <br>
-				<a href="#">Settima puntata</a> <br>
-				<a href="#">Ottava puntata</a> <br>
-				<a href="#">Nona puntata</a> <br>
-				<a href="#">Decima puntata</a> <br>
-			</div>
+			<h1>Film Consigliati</h1>
+				<div id="random_film">
+						<div class="film">
+							<img src="images/sin-city.jpg" class="locandina" />
+							</br>
+							<a href="film.html">Film:Sin City</a>
+						</div>
+						<div class="film">
+							<img src="images/shining.jpg" class="locandina" />
+							</br>
+							<a href="film.html">Film:Shining</a>
+						</div>
+
+						<div class="film">
+							<img src="images/harry.jpg" class="locandina" />
+							</br>
+							<a href="film.html">Film:Harry Potter</a>
+						</div>
+						<div class="film">
+							<img src="images/want.jpg" class="locandina" />
+							</br>
+							<a href="film.html">Film:I want you</a>
+						</div>
+				</div>
 		</div>
 
 		<div class="pushfooter"></div>
