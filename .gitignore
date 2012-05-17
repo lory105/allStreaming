@@ -1,0 +1,16 @@
+*.*~
+*.orig
+
+# estensioni generali latex
+*.aux
+*.out
+*.log
+*.toc
+*.synctex.gz
+*.synctext.gz
+*.dvi
+*.lot
+*.lof
+# ------------------------------
+
+
