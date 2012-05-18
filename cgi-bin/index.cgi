@@ -3,7 +3,7 @@ use CGI;
 use strict;
 use warnings;
 
-use function;
+
 
 my $query= new CGI;
 print $query->header;
