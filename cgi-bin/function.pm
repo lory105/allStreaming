@@ -17,7 +17,6 @@ my $header =
         <link rel="shortcut icon" href="images/logo.ico" type="image"/"x-icon" />
         <link rel="icon" href="images"/"logo.ico" type="image"/"x-icon" />
         <link rel="stylesheet" href="../public_html/styles"/"style.css" type="text"/"css" />
-        <meta http-equiv="refresh" content= "0; url= cgi-bin"/"index.cgi" />
     </head>
     <body></body>
 </html>"

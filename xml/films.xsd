@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- film schema, model "bambole russe" -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://allStreaming.altervista.org"
+targetNamespace="http://allStreaming.altervista.org" elementFormDefault="qualified">
+	<xsd:element name="collection">
+		<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="film" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:attribute name="id" type="xsd:string"/>
+					<xsd:sequence>
+						<xsd:element name="title" type="xsd:string" />
+						<xsd:element name="photo" type="xsd:string" />
+						<xsd:element name="description" type="xsd:string" />
+						<xsd:element name="date" type="xsd:date" />
+						<xsd:sequence minOccurs="1" maxOccurs="unbounded">
+							<xsd:element name="link" type="xsd:string" />
+						</xsd:sequence>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

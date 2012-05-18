@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="serie.xsl"?>
-<collectionSeries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://allStreaming.altervista.org" xsi:schemaLocation="http://allStreaming.altervista.org serie.xsd">
+<?xml-stylesheet type="text/xsl" href="series.xsl"?>
+<collectionSeries xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org series.xsd">
+
 	<serie>
 		<title>The Mentalist</title>
 		<photo>img/locandineSeries/the_mentalist.jpg</photo>

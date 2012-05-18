@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- schema serieTV, modello bambole russe-->
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://allStreaming.altervista.org" targetNamespace="http://allStreaming.altervista.org" elementFormDefault="qualified">
-	<xsd:element name="collectionSeries">
+<!-- serieTV schema, model "bambole russe" -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://allStreaming.altervista.org"
+targetNamespace="http://allStreaming.altervista.org" elementFormDefault="qualified">
+
+	<xsd:element name="collection">  <!-- modificato da collectionSerie-->
 		<xsd:element name="serie" minOccurs="0" maxOccurs="unbounded">
 			<xsd:sequence>
 				<xsd:element name="title" type="xsd:string" />

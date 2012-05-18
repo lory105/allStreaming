@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="films.xsl"?>
+<collectionFilm xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org films.xsd">
+
+	<film>
+		<title>Transformers</title>
+		<photo>img/locandineFilm/transformers.jpg</photo>
+		<description>Megan Fox</description>
+		<link>NowVideo</link>
+	</film>
+</collectionFilm>
