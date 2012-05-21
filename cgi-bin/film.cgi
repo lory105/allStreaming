@@ -7,55 +7,11 @@ use function;
 
 
 function->header();
+function->left("film");
+function->right();
 
 
 print<<BODY;    
-    <body>
-	<div id="wrapper">
-		<div id="header">
-			<div id="login">
-				<form method="post" action="">
-					<input type="text" name="user" value="User" size="12"/>
-					<input type="text" name="psw" value="Password" size="12"/>
-					<button type="submit" id="sending">Login</button>
-				</form>
-			</div>
-		</div>	
-		
-		<div id="navigation">Ti trovi in : Home</div>
-		
-		<div id="left_side">
-			<div class="menu">Menu Principale</div>
-				<div class="content">
-					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
-					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
-					<img src="../images/film.png"/><a href="#"><b>Film</b></a><hr>
-					<img src="../images/comment.png"/><a href="#">Commenti</a><hr>
-					</br>
-				</div>
-		</div>
-		
-		<div id="right_side">
-			<div class="view">I pi&ugrave; visti</div>
-				<div class="content_max_view">
-					Primo</br>
-					Secondo</br>
-					Terzo</br>
-					Quarto</br>
-					Quinto</br>
-				</div>
-			<div class="news">Novit&agrave;</div>
-				<div class="content_max_view">
-					Primo</br>
-					Secondo</br>
-					Terzo</br>
-					Quarto</br>
-					Quinto</br> 
-				</div>		
-			<div class="news">User Online</div>
-				<div class="content_max_view">100 visitatori online </div>
-		</div>
-		
 		<div id="center_side">
 			<div id="random_film">
 				<h1>Transformers</h1>
