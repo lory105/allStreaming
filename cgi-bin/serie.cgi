@@ -1,13 +1,14 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>AllStreaming</title>
-        <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon" />
-        <link rel="icon" href="images/logo.ico" type="image/x-icon" />
-        <link rel="stylesheet" href="styles/style.css" type="text/css" />
-    </head> 
+#!/usr/bin/perl
+
+use CGI;
+use strict;
+use warnings;
+use function;
+
+
+function->header();
        
+print<<BODY;
     <body>
 	<div id="wrapper">
 		<div id="header">
@@ -25,10 +26,10 @@
 		<div id="left_side">
 			<div class="menu">Main Menu</div>
 				<div class="content">
-					<img src="images/home.png"/><a href="index.html">Home</a><hr>
-					<img src="images/series.png"/><a href="#"><b>Serie Tv</b></a><hr>
-					<img src="images/film.png"/><a href="films.html">Film</a><hr>
-					<img src="images/comment.png"/><a href="#">Commenti</a><hr>
+					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
+					<img src="../images/series.png"/><a href="#"><b>Serie Tv</b></a><hr>
+					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
+					<img src="../images/comment.png"/><a href="#">Commenti</a><hr>
 					</br>
 				</div>
 		</div>	
@@ -57,7 +58,7 @@
 		<div id="center_side">
 			<div id="random_film">
 				<h1>The Mentalist</h1>
-				<img src="images/mentalist.jpg" class="preview"/>	
+				<img src="../images/mentalist.jpg" class="preview"/>	
 				<p>Patrick Jane "consulente" al California Bureau of Investigation, dove aiuta la squadra investigativa coordinata da Teresa Lisbon e formata da Kimball Cho, Wayne Rigsby e Grace Van Pelt usando il suo particolare talento di Mentalist. La sua dote gli permette di notare ogni piccolo dettaglio, ogni sfuggevole particolare all?apparenza inutile, che per Patrick diventa un prezioso tassello del puzzle che lo porter a risolvere caso dopo caso...</p>
 				</br>
 				<b>Prima serie:</b></br>
@@ -73,13 +74,6 @@
 				<a href="#">Decima puntata</a> <br>
 			</div>
 		</div>
+BODY
 
-		<div class="pushfooter"></div>
-	</div>
-		<div id="footer">
-			<a href="#">allStreaming.com </a>-
-			<a href="#">About Us </a>-
-			<a href="#"> Contact Us</a>
-		</div>
-    </body>
-</html>
+function->footer();

@@ -5,4 +5,4 @@ use warnings;
 
 my $query= new CGI;
 print $query->header;
-print "hello people in my head\n";
+print "menu\n";
