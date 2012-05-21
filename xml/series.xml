@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="series.xsl"?>
-<collectionSeries xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org series.xsd">
-
+<!-- ?xml-stylesheet type="text/xsl" href="series.xsl"? -->
+<collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org series.xsd">
 	<serie>
 		<title>The Mentalist</title>
-		<photo>img/locandineSeries/the_mentalist.jpg</photo>
+		<images>img/locandineSeries/the_mentalist.jpg</images>
 		<description>detective serie</description>
 		<season>
 			<numero>1</numero>
@@ -15,4 +14,4 @@
 			<link>Nowvideo</link>
 		</season>
 	</serie>
-</collectionSeries>
+</collection>

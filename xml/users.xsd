@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- comments schema, model "bambole russe" -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://allStreaming.altervista.org"
+targetNamespace="http://allStreaming.altervista.org" elementFormDefault="qualified">
+	<xsd:element name="collection">
+		<xsd:complexType>
+		<xsd:sequence  minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="user">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="name" type="xsd:string" />
+						<xsd:element name="surname" type="xsd:string" />
+						<xsd:element name="useraname" type="xsd:string" />
+						<xsd:element name="password">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:pattern value="[a-zA-Z0-9]"/>
+									<xsd:minLength value="6" />
+									<xsd:maxLength value="20" />
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element> 
+						<xsd:element name="email">
+							<xsd:simpleType> 
+    							<xsd:restriction base="xsd:string"> 
+      								<xsd:pattern value="[^@]+@[^\.]+\..+"/> 
+    							</xsd:restriction> 
+  							</xsd:simpleType>
+  						</xsd:element>
+  						<xsd:element name="avatar" type="xsd:string" />
+						<xsd:element name="dateRegistration" type="xsd:dateTime" />
+  						<xsd:element name="admin" type="xsd:boolean" />
+					</xsd:sequence>
+					<xsd:attribute name="id" type="xsd:ID"/>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
+
+<!-- password: sequenza di lettere e num, lunghezza minima 6, lunghezza max 20  -->

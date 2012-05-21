@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- comments schema, model "bambole russe" -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://allStreaming.altervista.org"
+targetNamespace="http://allStreaming.altervista.org" elementFormDefault="qualified">
+	<xsd:element name="collection">
+		<xsd:complexType>
+		<xsd:sequence  minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="comment">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="idUser" type="xsd:ID" />
+						<xsd:element name="idVideo" type="xsd:string" />
+						<xsd:element name="date" type="xsd:dateTime" />
+						<xsd:element name="content" type="xsd:string" />
+					</xsd:sequence>
+					<xsd:attribute name="id" type="xsd:ID"/>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
