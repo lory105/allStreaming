@@ -5,7 +5,7 @@ package function;
 use CGI;
 use strict;
 use warnings;
-
+use Digest::MD5 qw(md5 md5_hex md5_base64);
 
 
 
@@ -91,9 +91,9 @@ print <<LEFT;
 	<div id="wrapper">
 		<div id="header">
 			<div id="login">
-				<form method="post" action="">
-					<input type="text" name="user" value="User" size="12"/>
-					<input type="password" name="psw" value="Password" size="12"/>
+				<form method="post" action="check_login.cgi">
+					<input type="text" name="username" value="username" size="12"/>
+					<input type="password" name="password" value="password" size="12"/>
 					<button type="submit" id="sending">Login</button>
 				</form>
 			</div>
@@ -146,6 +146,59 @@ print <<FOOTER;
 
 FOOTER
 	
+}
+
+
+
+
+
+
+
+
+
+
+
+# legge i valori di una qualsiasi form e li salva nella hash %input che ritorna
+sub take_form_values {
+my %input; my $buffer; my @pairs; my $pair; my $name; my $value;
+
+read(STDIN, $buffer, $ENV{'CONTENT_LENGTH'});
+@pairs = split(/&/, $buffer);					# divido ogni coppia di valore (key=value) ricevuta dalla form
+foreach $pair (@pairs) {
+( $name, $value) = split(/=/, $pair);
+#$value =~ tr/+/ /;
+#$value =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack("C", hex($1))/g;
+#$name =~ tr/+/ /;
+#$name =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack("C",hex($1))/g;
+
+$input{$name} = $value;
+
+}
+
+return %input;
+}
+
+
+# riceve in input lo username dell'utente che sta facendo il login, controlla nel db la presenza di tale username
+# restituendone la password corrispondente che è criptata
+sub get_password() {
+
+# $_[0] contiene lo username
+
+my $crypted_password;
+
+return $crypted_password;
+
+}
+
+
+# fa la redirect in un'altra URL passata come parametro
+sub redirect_to {
+
+my $query=new CGI;
+print $query->redirect( "index.cgi" );    # da sostituire con la riga sotto k xo non va!!!!!!
+
+# print $query->redirect( "$_[0]" );  # questa non va, non capisco xk!!!!!!!!!!!!!!!!!!!!
 }
 
 
