@@ -92,7 +92,7 @@ MENU
 sub left {
 
 	my $session = CGI::Session->load();
-	my $user = $session->param('user');
+	my $user = $session->param('username');
   if($session->is_expired)
   {
 	  print <<LEFT;
@@ -102,8 +102,8 @@ sub left {
 			<div id="login">
 				<p>Your has session expired. Please login again.</p>
 				<form method="post" action="login.cgi">
-					<input type="text" name="user" value="User" size="12"/>
-					<input type="password" name="psw" value="Password" size="12"/>
+					<input type="text" name="username" value="User" size="12"/>
+					<input type="password" name="password" value="Password" size="12"/>
 					<button type="submit" id="sending">Login</button>
 				</form>
 			</div>
@@ -118,8 +118,8 @@ LEFT
 		<div id="header">
 			<div id="login">
 				<form method="post" action="login.cgi">
-					<input type="text" name="user" value="User" size="12"/>
-					<input type="password" name="psw" value="Password" size="12"/>
+					<input type="text" name="username" value="User" size="12"/>
+					<input type="password" name="password" value="Password" size="12"/>
 					<button type="submit" id="sending">Login</button>
 				</form>
 			</div>
@@ -136,6 +136,7 @@ LEFT
 LEFT
 				
 				print "Benvenuto $user!";
+				print "<br><a href=\"logout.cgi\">Logout</a>";
 		print <<LEFT;			
 			</div>
 		</div>	
@@ -208,6 +209,28 @@ sub checkSession {
 	
 }
 
+sub redirectTo {
+	print $_[1]->header(-location=>"$_[2]");
+}
 
+sub loadComments {
+	my $session = CGI::Session->load();
+	  if($session->is_expired || $session->is_empty){
+			
+		}
+	  else{
+		  print <<COMMENTS;
+		  <h2>Commenti</h2>
+		  <div id="commenti">
+			<div class="commento">
+				<p>Utente:<b>Lory</b></p>
+				<p>Proprio un bel film</p>
+				</hr>
+			</div>
+			
+		  </div>
+COMMENTS
+	  }
+}
 
 1;

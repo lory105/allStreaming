@@ -4,18 +4,20 @@
   use CGI::Carp qw/fatalsToBrowser warningsToBrowser/;
   use CGI::Session ( '-ip_match' );
   use CGI::Session;
-  
+  use function;
+
   $q = new CGI;
-  $user = $q->param('user');
-  $psw = $q->param('psw');
+  $user = $q->param('username');
+  $psw = $q->param('password');
   
 
   # process the form
-  if($user eq "demo" and $psw eq "demo")
+  if($user eq "d" and $psw eq "d")
   {
       $session = new CGI::Session();
-      $session->param("user", $user);
+      $session->param("username", $user);
       print $session->header(-location=>'index.cgi');
+	  #function->redirectTo($session,"films.cgi");
   }
   else
   {

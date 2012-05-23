@@ -107,13 +107,27 @@ border: 1px dotted #999933;
 #random_film{
 	width:95%;
 	height:100%;
-	min-height:600px;
+	
 	margin:0 auto;
 	margin-top:30px;
 	background-color:white;	
 	text-align:center;
 	border:1px solid grey;
 }
+
+#commenti{
+	width:95%;
+	height:100%;
+	margin:0 auto;
+	border:1px solid grey;
+	background-color:white;
+}
+
+#commento{
+
+	background-color:#efefef;
+}
+
 
 a{
 	background-color: transparent;
@@ -204,6 +218,8 @@ a:hover{
 	background-color:white;
 	border:1px solid grey;
 }
+
+
 
 legend{
 	align:center;
