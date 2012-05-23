@@ -29,6 +29,7 @@ HEADER
 sub menu {
 if($_[0] eq "home"){
 print<<MENU
+			<div id="navigation">Ti trovi in : Home</div>
 			<div id="left_side">
 			<div class="menu">Menu Principale</div>
 				<div class="content">
@@ -43,6 +44,7 @@ MENU
 }
 if($_[0] eq "serie"){
 print<<MENU
+			<div id="navigation">Ti trovi in : Serie TV</div>
 			<div id="left_side">
 			<div class="menu">Menu Principale</div>
 				<div class="content">
@@ -57,6 +59,7 @@ MENU
 	}
 if($_[0] eq "film"){
 print<<MENU
+			<div id="navigation">Ti trovi in : Film</div>
 			<div id="left_side">
 			<div class="menu">Menu Principale</div>
 				<div class="content">
@@ -71,6 +74,7 @@ MENU
 	}
 if($_[0] eq "commenti"){
 print<<MENU
+			<div id="navigation">Ti trovi in : Commenti</div>
 			<div id="left_side">
 			<div class="menu">Menu Principale</div>
 				<div class="content">
@@ -86,21 +90,56 @@ MENU
 }
 
 sub left {
-print <<LEFT;
+	my $session = CGI::Session->load();
+	my $user = $session->param('user');
+  if($session->is_expired)
+  {
+	  print <<LEFT;
     <body>
 	<div id="wrapper">
 		<div id="header">
 			<div id="login">
-				<form method="post" action="check_login.cgi">
-					<input type="text" name="username" value="username" size="12"/>
-					<input type="password" name="password" value="password" size="12"/>
+				<p>Your has session expired. Please login again.</p>
+				<form method="post" action="login.pl">
+					<input type="text" name="user" value="User" size="12"/>
+					<input type="password" name="psw" value="Password" size="12"/>
 					<button type="submit" id="sending">Login</button>
 				</form>
 			</div>
 		</div>	
-		
-		<div id="navigation">Ti trovi in : Home</div>
 LEFT
+  }
+  elsif($session->is_empty)
+  {
+    print <<LEFT;
+    <body>
+	<div id="wrapper">
+		<div id="header">
+			<div id="login">
+				<form method="post" action="login.pl">
+					<input type="text" name="user" value="User" size="12"/>
+					<input type="password" name="psw" value="Password" size="12"/>
+					<button type="submit" id="sending">Login</button>
+				</form>
+			</div>
+		</div>	
+LEFT
+  }
+  else
+  {
+	print <<LEFT;
+    <body>
+	<div id="wrapper">
+		<div id="header">
+			<div id="login">
+LEFT
+				
+				print "Benvenuto $user!";
+		print <<LEFT;			
+			</div>
+		</div>	
+LEFT
+  }
 menu($_[1]);
 }
 
@@ -123,10 +162,10 @@ print <<RIGHT;
 					Terzo</br>
 					Quarto</br>
 					Quinto</br> 
-				</div>		
+				</div>
 			<div class="news">User Online</div>
-				<div class="content_max_view">100 visitatori online </div>
-		</div>
+			<div class="content_max_view">100 visitatori online </div>
+		</div>		
 RIGHT
 }
 
@@ -148,57 +187,24 @@ FOOTER
 	
 }
 
+sub checkSession {
+	
+	my $session = CGI::Session->load();
 
-
-
-
-
-
-
-
-
-
-# legge i valori di una qualsiasi form e li salva nella hash %input che ritorna
-sub take_form_values {
-my %input; my $buffer; my @pairs; my $pair; my $name; my $value;
-
-read(STDIN, $buffer, $ENV{'CONTENT_LENGTH'});
-@pairs = split(/&/, $buffer);					# divido ogni coppia di valore (key=value) ricevuta dalla form
-foreach $pair (@pairs) {
-( $name, $value) = split(/=/, $pair);
-#$value =~ tr/+/ /;
-#$value =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack("C", hex($1))/g;
-#$name =~ tr/+/ /;
-#$name =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack("C",hex($1))/g;
-
-$input{$name} = $value;
-
-}
-
-return %input;
-}
-
-
-# riceve in input lo username dell'utente che sta facendo il login, controlla nel db la presenza di tale username
-# restituendone la password corrispondente che è criptata
-sub get_password() {
-
-# $_[0] contiene lo username
-
-my $crypted_password;
-
-return $crypted_password;
-
-}
-
-
-# fa la redirect in un'altra URL passata come parametro
-sub redirect_to {
-
-my $query=new CGI;
-print $query->redirect( "index.cgi" );    # da sostituire con la riga sotto k xo non va!!!!!!
-
-# print $query->redirect( "$_[0]" );  # questa non va, non capisco xk!!!!!!!!!!!!!!!!!!!!
+  if($session->is_expired)
+  {
+      print "Your has session expired. Please login again.";
+	  print "<br/><a href='login.pl>Login</a>";
+  }
+  elsif($session->is_empty)
+  {
+      print "You have not logged in";
+  }
+  else
+  {
+      print "<h2>Welcome</h2>";
+  }
+	
 }
 
 
