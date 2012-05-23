@@ -3,6 +3,7 @@
   use CGI;
   use CGI::Carp qw/fatalsToBrowser warningsToBrowser/;
   use CGI::Session ( '-ip_match' );
+  use CGI::Session;
   
   $q = new CGI;
   $user = $q->param('user');
@@ -13,6 +14,7 @@
   if($user eq "demo" and $psw eq "demo")
   {
       $session = new CGI::Session();
+      $session->param("user", $user);
       print $session->header(-location=>'index.cgi');
   }
   else
@@ -20,5 +22,5 @@
       print $q->header(-type=>"text/html",-location=>"index.cgi");
   }
   
-1;
+
 

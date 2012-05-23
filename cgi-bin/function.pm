@@ -90,6 +90,7 @@ MENU
 }
 
 sub left {
+
 	my $session = CGI::Session->load();
 	my $user = $session->param('user');
   if($session->is_expired)
@@ -100,7 +101,7 @@ sub left {
 		<div id="header">
 			<div id="login">
 				<p>Your has session expired. Please login again.</p>
-				<form method="post" action="login.pl">
+				<form method="post" action="login.cgi">
 					<input type="text" name="user" value="User" size="12"/>
 					<input type="password" name="psw" value="Password" size="12"/>
 					<button type="submit" id="sending">Login</button>
@@ -116,7 +117,7 @@ LEFT
 	<div id="wrapper">
 		<div id="header">
 			<div id="login">
-				<form method="post" action="login.pl">
+				<form method="post" action="login.cgi">
 					<input type="text" name="user" value="User" size="12"/>
 					<input type="password" name="psw" value="Password" size="12"/>
 					<button type="submit" id="sending">Login</button>
@@ -189,7 +190,7 @@ FOOTER
 
 sub checkSession {
 	
-	my $session = CGI::Session->load();
+  my $session = CGI::Session->load();
 
   if($session->is_expired)
   {
