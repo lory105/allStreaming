@@ -7,8 +7,6 @@ use strict;
 use warnings;
 
 
-
-
 sub header {
 print "Content-type: text/html\n\n";
 print <<HEADER;
@@ -29,6 +27,7 @@ HEADER
 sub menu {
 if($_[0] eq "home"){
 print<<MENU
+			<div id="navigation">Ti trovi in : Home</div>
 			<div id="left_side">
 			<div class="menu">Menu Principale</div>
 				<div class="content">
@@ -43,6 +42,7 @@ MENU
 }
 if($_[0] eq "serie"){
 print<<MENU
+			<div id="navigation">Ti trovi in : Serie TV</div>
 			<div id="left_side">
 			<div class="menu">Menu Principale</div>
 				<div class="content">
@@ -57,6 +57,7 @@ MENU
 	}
 if($_[0] eq "film"){
 print<<MENU
+			<div id="navigation">Ti trovi in : Film</div>
 			<div id="left_side">
 			<div class="menu">Menu Principale</div>
 				<div class="content">
@@ -71,6 +72,7 @@ MENU
 	}
 if($_[0] eq "commenti"){
 print<<MENU
+			<div id="navigation">Ti trovi in : Commenti</div>
 			<div id="left_side">
 			<div class="menu">Menu Principale</div>
 				<div class="content">
@@ -86,21 +88,56 @@ MENU
 }
 
 sub left {
-print <<LEFT;
+	my $session = CGI::Session->load();
+	my $user = $session->param('user');
+  if($session->is_expired)
+  {
+	  print <<LEFT;
     <body>
 	<div id="wrapper">
 		<div id="header">
 			<div id="login">
-				<form method="post" action="">
+				<p>Your has session expired. Please login again.</p>
+				<form method="post" action="login.pl">
 					<input type="text" name="user" value="User" size="12"/>
 					<input type="password" name="psw" value="Password" size="12"/>
 					<button type="submit" id="sending">Login</button>
 				</form>
 			</div>
 		</div>	
-		
-		<div id="navigation">Ti trovi in : Home</div>
 LEFT
+  }
+  elsif($session->is_empty)
+  {
+    print <<LEFT;
+    <body>
+	<div id="wrapper">
+		<div id="header">
+			<div id="login">
+				<form method="post" action="login.pl">
+					<input type="text" name="user" value="User" size="12"/>
+					<input type="password" name="psw" value="Password" size="12"/>
+					<button type="submit" id="sending">Login</button>
+				</form>
+			</div>
+		</div>	
+LEFT
+  }
+  else
+  {
+	print <<LEFT;
+    <body>
+	<div id="wrapper">
+		<div id="header">
+			<div id="login">
+LEFT
+				
+				print "Benvenuto $user!";
+		print <<LEFT;			
+			</div>
+		</div>	
+LEFT
+  }
 menu($_[1]);
 }
 
@@ -123,10 +160,10 @@ print <<RIGHT;
 					Terzo</br>
 					Quarto</br>
 					Quinto</br> 
-				</div>		
+				</div>
 			<div class="news">User Online</div>
-				<div class="content_max_view">100 visitatori online </div>
-		</div>
+			<div class="content_max_view">100 visitatori online </div>
+		</div>		
 RIGHT
 }
 
@@ -145,6 +182,26 @@ print <<FOOTER;
 </html>
 
 FOOTER
+	
+}
+
+sub checkSession {
+	
+	my $session = CGI::Session->load();
+
+  if($session->is_expired)
+  {
+      print "Your has session expired. Please login again.";
+	  print "<br/><a href='login.pl>Login</a>";
+  }
+  elsif($session->is_empty)
+  {
+      print "You have not logged in";
+  }
+  else
+  {
+      print "<h2>Welcome</h2>";
+  }
 	
 }
 
