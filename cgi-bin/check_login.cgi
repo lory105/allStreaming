@@ -5,6 +5,12 @@ use strict;
 use warnings;
 use function;
 
+
+#use XML::XPath;
+#use XML::XPath::XMLParser;
+#use XML::LibXML;
+
+
 use Digest::MD5 qw(md5 md5_hex md5_base64);
 
 
@@ -38,6 +44,7 @@ function->right();
 
 print <<CENTER;
 		<div id="center_side">
+			<p>Benvenuto $input{username}</p>
 			<h1>Film Consigliati</h1>
 				<div id="random_film">
 						<div class="film">
