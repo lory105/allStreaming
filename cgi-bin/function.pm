@@ -5,6 +5,8 @@ package function;
 use CGI;
 use strict;
 use warnings;
+use Digest::MD5 qw(md5 md5_hex md5_base64);
+
 
 
 sub header {
