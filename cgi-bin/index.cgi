@@ -19,8 +19,8 @@ function->right();
 
 print <<CENTER;
 		<div id="center_side">
-			
-				<div id="random_film"><h1>Film Consigliati</h1>
+				<h1>Film Consigliati</h1>
+				<div id="random_film">
 						<div class="film">
 							<img src="../images/sin-city.jpg" class="locandina" />
 							</br>

@@ -145,11 +145,12 @@ LEFT
 	<div id="wrapper">
 		<div id="header">
 			<div id="login">
+				<div class="userLogged">
 LEFT
-				
-				print "Benvenuto $user!";
-				print "<br><a href=\"logout.cgi\">Logout</a>";
+				print "<div class=\"avatar\"> <img src=\"../images/avatars/1.jpg\" class=\"grav\"/> </div>";
+				print "<div class=\"name\"> $user <br><a href=\"logout.cgi\">Logout</a></div>";
 		print <<LEFT;			
+				</div>
 			</div>
 		</div>	
 LEFT
@@ -241,28 +242,6 @@ return $crypted_password;
 
 }
 
-
-# scrivi cosa fa ......!!
-sub checkSession {
-	
-  my $session = CGI::Session->load();
-
-  if($session->is_expired)
-  {
-      print "Your has session expired. Please login again.";
-	  print "<br/><a href='login.pl>Login</a>";
-  }
-  elsif($session->is_empty)
-  {
-      print "You have not logged in";
-  }
-  else
-  {
-      print "<h2>Welcome</h2>";
-  }
-	
-}
-
 sub redirectTo {
 	print $_[1]->header(-location=>"$_[2]");
 }
@@ -277,12 +256,17 @@ sub loadComments {
 		  <h2>Commenti</h2>
 		  <div id="commenti">
 			<div class="commento">
-				<p>Utente:<b>Lory</b></p>
-				<p>Proprio un bel film</p>
-				</hr>
+				<div class="userComment">
+					<div class="pict"> 
+						<img src="../images/avatars/1.jpg" class="grav"/> 
+						<p>Lory</p>
+					</div>
+				</div>
+				<div class="userText">Proprio un bel film</div>
 			</div>
-			
 		  </div>
+			
+	
 COMMENTS
 	  }
 }
