@@ -4,14 +4,22 @@ use CGI;
 use strict;
 use warnings;
 use function;
-
-
-#use XML::XPath;
-#use XML::XPath::XMLParser;
-#use XML::LibXML;
-
-
 use Digest::MD5 qw(md5 md5_hex md5_base64);
+
+
+
+ 
+# use XML::XPath::XMLParser;
+
+$file="data.xml"; 
+my $xp = XML::XPath->new(filename => $file);
+
+
+
+
+
+my $xp = XML::XPath->new(filename => 'test.xml');
+
 
 
 # controlla se lo username e la password inseriti sono corretti

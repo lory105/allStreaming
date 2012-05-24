@@ -10,9 +10,6 @@ function->header();
 function->left("home");
 function->right();
 
-#function->head_not_logged();
-# function->navigation();
-#function->menu();
 
 
 print <<CENTER;

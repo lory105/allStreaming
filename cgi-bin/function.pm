@@ -3,9 +3,21 @@
 package function;
 
 use CGI;
+use CGI::Carp qw(fatalsToBrowser warningsToBrowser);
+#use CGI qw(:standard);
 use strict;
 use warnings;
+#use XML::XPath;
+#use XML::XPath::XMLParser;
+#use XML::LibXML;
 use Digest::MD5 qw(md5 md5_hex md5_base64);
+
+
+# path db films
+my $filmsXml = "../xml/films.xml";
+
+
+
 
 
 
@@ -187,6 +199,48 @@ FOOTER
 	
 }
 
+
+# funzione di ricerca film: se non riceve parametri (!$_[1]) ricerca tutti i film,
+# altrimenti esegue la query ricevuta in $_[1]  
+sub findFilm {
+
+# creo un oggetto XPath e gli associo il file xml dove cercare
+my $xp = XML::XPath->new(filename => $filmsXml);
+
+my $query;
+
+# se ricevo la query
+if( $_[1]){
+$query = $_[1];
+}
+# altrimenti cerco tutti i fiml
+else{
+$query = "//collection/film";
+}
+
+print "$query" . "\n";
+
+#$xp->find()->get_nodelist;
+#return $xp->find( $query )->get_nodelist;
+return $xp->findnodes( $query );
+
+}
+
+
+# riceve in input lo username dell'utente che sta facendo il login, controlla nel db la presenza di tale username
+# restituendone la password corrispondente che è criptata
+sub get_password() {
+
+# $_[0] contiene lo username
+
+my $crypted_password;
+
+return $crypted_password;
+
+}
+
+
+# scrivi cosa fa ......!!
 sub checkSession {
 	
 	my $session = CGI::Session->load();
