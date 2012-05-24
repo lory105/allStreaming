@@ -4,7 +4,8 @@ use CGI;
 use strict;
 use warnings;
 use function;
-
+use CGI::Carp qw/fatalsToBrowser warningsToBrowser/;
+use CGI::Session ( '-ip_match' );
 
 function->header();
 function->left("film");
@@ -22,6 +23,9 @@ print<<BODY;
 				<a href="#">NowVideo</a> <br>
 		
 			</div>
+BODY
+function->loadComments();
+print <<BODY;
 		</div>
 BODY
 

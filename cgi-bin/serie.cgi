@@ -4,6 +4,8 @@ use CGI;
 use strict;
 use warnings;
 use function;
+use CGI::Carp qw/fatalsToBrowser warningsToBrowser/;
+use CGI::Session ( '-ip_match' );
 
 
 function->header();
@@ -29,6 +31,9 @@ print<<BODY;
 				<a href="#">Nona puntata</a> <br>
 				<a href="#">Decima puntata</a> <br>
 			</div>
+BODY
+function->loadComments();
+print <<BODY;
 		</div>
 BODY
 

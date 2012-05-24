@@ -12,14 +12,15 @@ use XML::LibXML;
 
 
 
+
 function->header(); 
 function->left("home");
 function->right();
 
 print <<CENTER;
 		<div id="center_side">
-			<h1>Film Consigliati</h1>
-				<div id="random_film">
+			
+				<div id="random_film"><h1>Film Consigliati</h1>
 						<div class="film">
 							<img src="../images/sin-city.jpg" class="locandina" />
 							</br>
