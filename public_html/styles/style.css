@@ -113,12 +113,12 @@ hr {
 #random_film{
 	width:95%;
 	height:100%;
-	
 	margin:0 auto;
 	margin-top:30px;
 	background-color:white;	
 	text-align:center;
 	border:1px solid grey;
+	min-height:700px;
 }
 
 a{

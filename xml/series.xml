@@ -14,4 +14,30 @@
 			<link>Nowvideo</link>
 		</season>
 	</serie>
+		<serie>
+		<title>The Tudors</title>
+		<images>img/locandineSeries/the_mentalist.jpg</images>
+		<description>detective serie</description>
+		<season>
+			<numero>1</numero>
+			<link>Nowvideo</link>
+		</season>
+		<season>
+			<numero>2</numero>
+			<link>Nowvideo</link>
+		</season>
+	</serie>
+		<serie>
+		<title>The Shield</title>
+		<images>img/locandineSeries/the_mentalist.jpg</images>
+		<description>detective serie</description>
+		<season>
+			<numero>1</numero>
+			<link>Nowvideo</link>
+		</season>
+		<season>
+			<numero>2</numero>
+			<link>Nowvideo</link>
+		</season>
+	</serie>
 </collection>

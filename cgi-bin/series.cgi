@@ -15,18 +15,16 @@ function->right();
 print <<BODY;
 		<div id="center_side">
 			<h1>Serie Tv disponibili</h1>
-				<a href="serie.cgi">Prima serie</a> <hr>
-				<a href="serie.cgi">Seconda serie</a> <hr>
-				<a href="serie.cgi">Terza serie</a> <hr>
-				<a href="serie.cgi">Quarta serie</a> <hr>
-				<a href="serie.cgi">Quinta serie</a> <hr>
-				<a href="serie.cgi">Sesta serie</a> <hr>
-				<a href="serie.cgi">Settima serie</a> <hr>
-				<a href="serie.cgi">Ottava serie</a> <hr>
-				<a href="serie.cgi">Nona serie</a> <hr>
-				<a href="serie.cgi">Decima serie</a> <hr>
-		</div>
+BODY
 
+my $nodeset=function->findSerie();
+foreach my $node ($nodeset->get_nodelist) {
+	my $serie=$node->find('title')->string_value;
+	print "<a href=\"serie.cgi?\$serie\">$serie</a> <hr></hr>";
+
+}
+print <<BODY;
+		</div>
 BODY
 
 function->footer();

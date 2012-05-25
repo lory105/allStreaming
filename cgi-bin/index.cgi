@@ -31,7 +31,6 @@ print <<CENTER;
 							</br>
 							<a href="../film.html">Film:Shining</a>
 						</div>
-
 						<div class="film">
 							<img src="../images/harry.jpg" class="locandina" />
 							</br>
@@ -42,6 +41,7 @@ print <<CENTER;
 							</br>
 							<a href="../film.html">Film:I want you</a>
 						</div>
+	
 				</div>
 		</div>
 
