@@ -227,7 +227,7 @@ if( $_[1]){ $query = $_[1]; }
 else{ $query = "//collection/film"; }
 
 # debug da togliere!!!
-print "$query" . "\n";
+# print "$query" . "\n";
 
 #$xp->find()->get_nodelist;
 #return $xp->find( $query )->get_nodelist;
@@ -256,7 +256,7 @@ if( $_[1]){ $query = $_[1]; }
 else{ $query = "//collection/serie"; }
 
 # debug da togliere!!!
-print "$query" . "\n";
+#print "$query" . "\n";
 
 return $xp->findnodes( $query );
 

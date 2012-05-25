@@ -10,33 +10,48 @@ use XML::XPath;
 use function;
 
 
+###### prove finzione getPassword per login ############################
+
 function->getPassword("jack");
 
 my $user = function->getUser( "//collection/user[name/text()=\"Giacomo\"]/surname/text()" );
 print $user ."\n";
 
-#########################################################################
 
-#my $file="../xml/films.xml";
-#my $xp = XML::XPath->new(filename => $file);
+########################################################################
+########################################################################
 
+
+
+# X LUCA
+###### prove funzione per recuperare film ############################ 
+
+# cerco un film a partire da un id
 my $id = "2";
+
+# se voglio un film specifico secondo la query indicata:
 my $nodeset = function->findFilm( "//collection/film[\@id=\"$id\"]");
+
+# se voglio tutti i film
 #my $nodeset = function->findFilm();
 
 
-
+# come recuperare i valpori del film cercato nel db  [ x LUCA: qui recuperi i vari valori]
 foreach my $node ($nodeset->get_nodelist) {
 	print $node->find('title')->string_value."\n";
-	
-
+	print $node->find('photo')->string_value."\n";
 }
 
+
+########################################################################
+########################################################################
 	
+
+
 
 	
 ########################################################################
-# per ricordare:
+# da ricordare:
 	
 #foreach my $book ($xp->find( '//collection/film[@id=1]' )->get_nodelist){ 
 #foreach my $book ($xp->find( $query )->get_nodelist){
