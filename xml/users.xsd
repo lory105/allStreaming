@@ -10,12 +10,12 @@ targetNamespace="http://allStreaming.altervista.org" elementFormDefault="qualifi
 					<xsd:sequence>
 						<xsd:element name="name" type="xsd:string" />
 						<xsd:element name="surname" type="xsd:string" />
-						<xsd:element name="useraname" type="xsd:string" />
+						<xsd:element name="username" type="xsd:string" />
 						<xsd:element name="password">
 							<xsd:simpleType>
 								<xsd:restriction base="xsd:string">
-									<xsd:pattern value="[a-zA-Z0-9]"/>
-									<xsd:minLength value="6" />
+									<!-- xsd:pattern value="[a-zA-Z0-9]"/   da sistemare se voglio mettere dei controlli -->
+								    <xsd:minLength value="6" />
 									<xsd:maxLength value="20" />
 								</xsd:restriction>
 							</xsd:simpleType>
@@ -31,7 +31,7 @@ targetNamespace="http://allStreaming.altervista.org" elementFormDefault="qualifi
 						<xsd:element name="dateRegistration" type="xsd:dateTime" />
   						<xsd:element name="admin" type="xsd:boolean" />
 					</xsd:sequence>
-					<xsd:attribute name="id" type="xsd:ID"/>
+					<xsd:attribute name="id" type="xsd:string" /> <!-- use="required" -->
 				</xsd:complexType>
 			</xsd:element>
 		</xsd:sequence>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="users.xsl"?>
+<collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org users.xsd">
+
+	<user id="user-1">
+		<name>Giacomo</name>
+		<surname>Zanon</surname>
+		<username>jack</username>
+		<password>giacomo</password>
+		<email>giacomoz@gmail.com</email>
+		<avatar>../avatar/jack.png</avatar>
+		<dateRegistration>2007-10-26T21:32:52</dateRegistration>
+		<admin>false</admin>
+	</user>
+	<user id="user-2">
+		<name>Luca</name>
+		<surname>Scassa</surname>
+		<username>luck</username>
+		<password>lucascassa</password>
+		<email>lucas@gmail.com</email>
+		<avatar>../avatar/luck.png</avatar>
+		<dateRegistration>2008-11-26T21:32:52</dateRegistration>
+		<admin>false</admin>
+	</user>
+		<user id="user-3">
+		<name>Samuele</name>
+		<surname>Zamba</surname>
+		<username>d</username>
+		<password>guerra</password>
+		<email>d@gmail.com</email>
+		<avatar>../avatar/d.png</avatar>
+		<dateRegistration>2009-10-26T21:32:52</dateRegistration>
+		<admin>false</admin>
+	</user>
+</collection>

@@ -7,7 +7,7 @@ use CGI::Carp qw(fatalsToBrowser warningsToBrowser);
 #use CGI qw(:standard);
 use strict;
 use warnings;
-#use XML::XPath;
+use XML::XPath;
 #use XML::XPath::XMLParser;
 #use XML::LibXML;
 use Digest::MD5 qw(md5 md5_hex md5_base64);
@@ -15,6 +15,12 @@ use Digest::MD5 qw(md5 md5_hex md5_base64);
 
 # path db films
 my $filmsXml = "../xml/films.xml";
+# path db serie tv
+my $seriesXml = "../xml/series.xml";
+# path db utenti
+my $usersXml = "../xml/users.xml";
+# path db commenti
+my $commentsXml = "../xml/comments.xml";
 
 
 
@@ -203,7 +209,9 @@ FOOTER
 
 
 # funzione di ricerca film: se non riceve parametri (!$_[1]) ricerca tutti i film,
-# altrimenti esegue la query ricevuta in $_[1]  
+# altrimenti esegue la query ricevuta in $_[1]
+# come invocare la funzione (attenzione sintassi query!!) : 
+# function->findFilm( "//collection/film[\@id=\"$id\"]");
 sub findFilm {
 
 # creo un oggetto XPath e gli associo il file xml dove cercare
@@ -212,18 +220,43 @@ my $xp = XML::XPath->new(filename => $filmsXml);
 my $query;
 
 # se ricevo la query
-if( $_[1]){
-$query = $_[1];
-}
-# altrimenti cerco tutti i fiml
-else{
-$query = "//collection/film";
-}
+if( $_[1]){ $query = $_[1]; }
 
+# altrimenti cerco tutti i fiml
+else{ $query = "//collection/film"; }
+
+# debug da togliere!!!
 print "$query" . "\n";
 
 #$xp->find()->get_nodelist;
 #return $xp->find( $query )->get_nodelist;
+#my $io = $xp->findnodes( $query );
+#print $io;
+return $xp->findnodes( $query );
+
+}
+
+
+# funzione di ricerca serie tv: se non riceve parametri (!$_[1]) ricerca tutte le serie,
+# altrimenti esegue la query ricevuta in $_[1]
+# come invocare la funzione (attenzione sintassi query!!) : 
+# function->findSerie( "//collection/serie[\@id=\"$id\"]");
+sub findSerie {
+
+# creo un oggetto XPath e gli associo il file xml dove cercare
+my $xp = XML::XPath->new(filename => $seriesXml);
+
+my $query;
+
+# se ricevo la query
+if( $_[1]){ $query = $_[1]; }
+
+# altrimenti cerco tutti i fiml
+else{ $query = "//collection/serie"; }
+
+# debug da togliere!!!
+print "$query" . "\n";
+
 return $xp->findnodes( $query );
 
 }
@@ -231,15 +264,45 @@ return $xp->findnodes( $query );
 
 # riceve in input lo username dell'utente che sta facendo il login, controlla nel db la presenza di tale username
 # restituendone la password corrispondente che è criptata
-sub get_password() {
+sub getPassword() {
 
-# $_[0] contiene lo username
+# $_[1] contiene lo username
 
-my $crypted_password;
+# creo un oggetto XPath e gli associo il file xml dove cercare
+my $xp = XML::XPath->new(filename => $usersXml);
+
+my $username = $_[1];
+my $query= "//collection/user[username/text()=\"$username\"]/password/text()";
+
+my $crypted_password = $xp->find( $query );
 
 return $crypted_password;
-
 }
+
+
+# funzione di ricerca user: se non riceve parametri (!$_[1]) ricerca tutti gli user,
+# altrimenti esegue la query ricevuta in $_[1] 
+sub getUser {
+
+# creo un oggetto XPath e gli associo il file xml dove cercare
+my $xp = XML::XPath->new(filename => $usersXml);
+
+####### okkk da ricordare !!!
+#my $id = "user-1";
+#my $query= "//collection/user[\@id=\"$id\"]"; ## attenzione sintassi!!
+#my $io = $xp->findnodes( $query );
+#print $io;
+#################
+
+
+my $query;
+if( $_[1] ){ $query= $_[1]; }
+else{ $query= "//collection/user"; }
+
+return $xp->findnodes( $query );
+}
+
+
 
 
 # scrivi cosa fa ......!!
