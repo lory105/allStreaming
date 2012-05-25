@@ -117,15 +117,16 @@ border: 1px dotted #999933;
 
 #commenti{
 	width:95%;
-	height:100%;
+	height:auto;
 	margin:0 auto;
-	border:1px solid grey;
 	background-color:white;
+	border:1px solid grey;
 }
 
-#commento{
-
+.commento{
 	background-color:#efefef;
+	height:auto;
+	min-height:120px;
 }
 
 
@@ -166,7 +167,8 @@ a:hover{
 
 #login{
 	float:right;
-	padding:10px;
+	height:100%;
+	margin-right:10px;
 }
 
 #logout{
@@ -219,9 +221,47 @@ a:hover{
 	border:1px solid grey;
 }
 
+.userLogged{
+	border:1px solid grey;
+	width:auto;
+	background-color:white;
+	height:80px;
+	margin-top:5px;
+	margin-bottom:5px;
+}
 
+.userComment{
+	width:200px;
+	height:auto;
+	float:left;
+}
 
 legend{
 	align:center;
 	/** nol va !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! **/
+}
+
+.avatar{
+	float:left;
+}
+
+.name{
+	float:left;
+	color:orange;
+}
+
+#grav{
+	width:80px;
+	height:80px;
+}
+
+.pict{
+	width:80px;
+	height:auto;
+	color:orange;
+}
+
+.userText{
+	height:auto;
+	text-align:center;
 }
