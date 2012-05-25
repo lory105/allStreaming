@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- ?xml-stylesheet type="text/xsl" href="series.xsl"? -->
 <collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org series.xsd">
-	<serie>
+	<serie id="1">
 		<title>The Mentalist</title>
 		<images>img/locandineSeries/the_mentalist.jpg</images>
 		<description>detective serie</description>
@@ -14,7 +14,7 @@
 			<link>Nowvideo</link>
 		</season>
 	</serie>
-		<serie>
+		<serie id="2">
 		<title>The Tudors</title>
 		<images>img/locandineSeries/the_mentalist.jpg</images>
 		<description>detective serie</description>
@@ -27,7 +27,7 @@
 			<link>Nowvideo</link>
 		</season>
 	</serie>
-		<serie>
+		<serie id="3">
 		<title>The Shield</title>
 		<images>img/locandineSeries/the_mentalist.jpg</images>
 		<description>detective serie</description>

@@ -303,30 +303,6 @@ else{ $query= "//collection/user"; }
 return $xp->findnodes( $query );
 }
 
-
-
-
-# scrivi cosa fa ......!!
-sub checkSession {
-	
-  my $session = CGI::Session->load();
-
-  if($session->is_expired)
-  {
-      print "Your has session expired. Please login again.";
-	  print "<br/><a href='login.pl>Login</a>";
-  }
-  elsif($session->is_empty)
-  {
-      print "You have not logged in";
-  }
-  else
-  {
-      print "<h2>Welcome</h2>";
-  }
-	
-}
-
 sub redirectTo {
 	print $_[1]->header(-location=>"$_[2]");
 }

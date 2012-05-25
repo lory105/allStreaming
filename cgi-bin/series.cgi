@@ -20,8 +20,9 @@ BODY
 my $nodeset=function->findSerie();
 foreach my $node ($nodeset->get_nodelist) {
 	my $serie=$node->find('title')->string_value;
-	print "<a href=\"serie.cgi?\$serie\">$serie</a> <hr></hr>";
-
+	my $id=$node->getAttribute('id');
+	my $dynamic = "<a href=\"serie.cgi?id=$id\">$serie</a> <hr></hr>";
+	print $dynamic;
 }
 print <<BODY;
 		</div>
