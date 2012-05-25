@@ -99,9 +99,15 @@ html,body {
 		border:1px solid grey;
 }
 
-
+/*
 hr {
 border: 1px dotted #999933;
+}
+*/
+
+hr {
+ height:1px;
+ color:white; 
 }
 
 #random_film{
@@ -114,21 +120,6 @@ border: 1px dotted #999933;
 	text-align:center;
 	border:1px solid grey;
 }
-
-#commenti{
-	width:95%;
-	height:auto;
-	margin:0 auto;
-	background-color:white;
-	border:1px solid grey;
-}
-
-.commento{
-	background-color:#efefef;
-	height:auto;
-	min-height:120px;
-}
-
 
 a{
 	background-color: transparent;
@@ -167,8 +158,9 @@ a:hover{
 
 #login{
 	float:right;
-	height:100%;
-	margin-right:10px;
+	height:98%;
+	/*border:1px solid grey;
+	/*margin-right:10px;*/
 }
 
 #logout{
@@ -222,18 +214,10 @@ a:hover{
 }
 
 .userLogged{
-	border:1px solid grey;
 	width:auto;
-	background-color:white;
-	height:80px;
-	margin-top:5px;
-	margin-bottom:5px;
-}
-
-.userComment{
-	width:200px;
-	height:auto;
-	float:left;
+	height:100%;
+	/*margin-top:5px;*/
+	/*margin-bottom:5px;*/
 }
 
 legend{
@@ -247,7 +231,6 @@ legend{
 
 .name{
 	float:left;
-	color:orange;
 }
 
 #grav{
@@ -261,7 +244,34 @@ legend{
 	color:orange;
 }
 
-.userText{
+#commenti{
+	width:95%;
 	height:auto;
+	margin:0 auto;
+	background-color:white;
+	border:1px solid grey;
+}
+
+.commento{
+	width:100%;
+	/*background-color:#efefef;*/
+	height:100%;
+	min-height:125px;
 	text-align:center;
+}
+
+.userComment{
+	width:20%;
+	height:100%;
+	float:left;
+	color:orange;
+	border-right:1px solid grey;
+	background-color:LightGrey;
+}
+
+.userText{
+	width:79%;
+	height:100%;
+	text-align:center;
+	float:right;
 }

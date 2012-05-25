@@ -154,7 +154,7 @@ LEFT
 				<div class="userLogged">
 LEFT
 				print "<div class=\"avatar\"> <img src=\"../images/avatars/1.jpg\" class=\"grav\"/> </div>";
-				print "<div class=\"name\"> $user <br><a href=\"logout.cgi\">Logout</a></div>";
+				print "<div class=\"name\">Benvenuto, <B>$user</B> <br><a href=\"logout.cgi\">Logout</a></div>";
 		print <<LEFT;			
 				</div>
 			</div>
@@ -342,16 +342,21 @@ sub loadComments {
 		  <div id="commenti">
 			<div class="commento">
 				<div class="userComment">
-					<div class="pict"> 
 						<img src="../images/avatars/1.jpg" class="grav"/> 
-						<p>Lory</p>
-					</div>
+						<p><b>Lory</b></p>
 				</div>
 				<div class="userText">Proprio un bel film</div>
 			</div>
+			<hr/>
+			<div class="commento">
+				<div class="userComment">
+						<img src="../images/avatars/1.jpg" class="grav"/> 
+						<p><b>Lory</b></p>
+				</div>
+				<div class="userText">Proprio un bel film</div>
+			</div></br>
 		  </div>
-			
-	
+		  
 COMMENTS
 	  }
 }
