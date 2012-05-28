@@ -12,11 +12,12 @@ targetNamespace="http://allStreaming.altervista.org" elementFormDefault="qualifi
 						<xsd:element name="image" type="xsd:string" />
 						<xsd:element name="description" type="xsd:string" />
 						<xsd:sequence minOccurs="1" maxOccurs="unbounded">
-							<xsd:element name="numberSeason" type="xsd:integer"/>
+							<xsd:element name="season" type="xsd:integer"/>
 							<xsd:sequence minOccurs="1" maxOccurs="unbounded">
-								<xsd:element name="numberEpisode" type="xsd:integer" />
-								<xsd:element name="title" type="xsd:string" />
-								<xsd:element name="link" type="xsd:string" />
+								<xsd:element name="number" type="xsd:string"/>
+								<xsd:sequence minOccurs="1" maxOccurs="unbounded">
+									<xsd:element name="link" type="xsd:string" />
+								</xsd:element>
 							</xsd:sequence>
 						</xsd:sequence>
 					</xsd:sequence>

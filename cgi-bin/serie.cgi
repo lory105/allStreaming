@@ -24,6 +24,16 @@ foreach my $node ($nodeset->get_nodelist) {
 	print "<img src=\"../$img\" class=\"preview\"/>";
 	my $description = $node->find('description')->string_value;
 	print "<p>$description</p></br>";
+	my $seasons=$node->find('season');
+	foreach my $try ($seasons->get_nodelist) {
+	  my $numb=$try->find('number')->string_value;
+	  print "<p><b>Stagione $numb</b></p>";
+	  my $episodes=$numb->find('link');
+	  foreach my $episode ($episodes->get_nodelist) {
+		  my $single=$episode->find('link')->string_value;
+		  print "<p>$single</p>";
+	  }
+	}
 	print "</div>";
 }    
 function->loadComments();
