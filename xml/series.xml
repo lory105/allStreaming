@@ -5,12 +5,10 @@
 		<title>The Mentalist</title>
 		<images>images/series/1.jpg</images>
 		<description>Patrick Jane "consulente" al California Bureau of Investigation, dove aiuta la squadra investigativa coordinata da Teresa Lisbon e formata da Kimball Cho, Wayne Rigsby e Grace Van Pelt usando il suo particolare talento di Mentalist. La sua dote gli permette di notare ogni piccolo dettaglio, ogni sfuggevole particolare all?apparenza inutile, che per Patrick diventa un prezioso tassello del puzzle che lo porter a risolvere caso dopo caso...</description>
-		<season>
-			<number>1</number>
+		<season number="1">
 			<link>Nowvideo</link>
 		</season>
-		<season>
-			<number>2</number>
+		<season number="2">
 			<link>Nowvideo</link>
 		</season>
 	</serie>
@@ -18,14 +16,11 @@
 		<title>The Tudors</title>
 		<images>images/series/2.jpg</images>
 		<description>La serie segue le vicende della famiglia Tudors (dinastia composta dai cinque sovrani che regnarono tra il 1485 e il 1603 in Inghilterra). In particolare, rilancia la figura di uno dei personaggi pi noti e controversi della storia inglese, Enrico VIII, re re d?Inghilterra e di Irlanda fino al 1547.</description>
-		<season>
-			<number>1</number>
+		<season number="1">
+			<link>Nowvideo</link>
 			<link>Nowvideo</link>
 		</season>
-			<number>2</number>
-			<link>Nowvideo</link>
-		<season>
-			<number>3</number>
+		<season number="2">
 			<link>Nowvideo</link>
 		</season>
 	</serie>
@@ -33,18 +28,15 @@
 		<title>The Shield</title>
 		<images>images/series/3.jpg</images>
 		<description>Un poliziesco crudo e realistico come nessun altro fino ad ora. Il detective Vic mackey è a capo di un'unita scelta chiamata Squadra d'Assalto, composta da poliziotti specializzati nella lotta al crimine e disposti ad agire secondo le regole di Vic. Ma queste regole spesso oltrepassano il labile confine tra legalità e illegalità. Il nuovo capitano del distretto non condivide questi metodi e vorrebbe sbarazzarsi di Vic...salvo ricorrere al suo aiuto ogni volta che la situazione si fa critica...</description>
-		<season>
-			<number>1</number>
+		<season number="1">
 			<link>Nowvideo</link>
 			<link>Nowvideo</link>
 			<link>Nowvideo</link>
 		</season>
-		<season>
-			<number>2</number>
+		<season number="2">
 			<link>Nowvideo</link>
 		</season>
-		<season>
-			<number>3</number>
+		<season number="3">
 			<link>Nowvideo</link>
 		</season>
 	</serie>

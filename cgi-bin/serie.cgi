@@ -26,9 +26,9 @@ foreach my $node ($nodeset->get_nodelist) {
 	print "<p>$description</p></br>";
 	my $seasons=$node->find('season');
 	foreach my $try ($seasons->get_nodelist) {
-	  my $numb=$try->find('number')->string_value;
+	  my $numb=$try->getAttribute('number');
 	  print "<p><b>Stagione $numb</b></p>";
-	  my $episodes=$numb->find('link');
+	  my $episodes=$try->find('link');
 	  foreach my $episode ($episodes->get_nodelist) {
 		  my $single=$episode->find('link')->string_value;
 		  print "<p>$single</p>";
