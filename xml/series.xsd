@@ -7,19 +7,21 @@ targetNamespace="http://allStreaming.altervista.org" elementFormDefault="qualifi
 		<xsd:sequence  minOccurs="0" maxOccurs="unbounded">
 			<xsd:element name="serie">
 				<xsd:complexType>
+					<xsd:sequence>
 						<xsd:element name="title" type="xsd:string" />
 						<xsd:element name="image" type="xsd:string" />
 						<xsd:element name="description" type="xsd:string" />
 						<xsd:sequence minOccurs="1" maxOccurs="unbounded">
 							<xsd:element name="season">
 								<xsd:complexType>
-										<xsd:sequence minOccurs="1" maxOccurs="unbounded">
-											<xsd:element name="link" type="xsd:string" />
-										</xsd:sequence>
+								<xsd:sequence minOccurs="1" maxOccurs="unbounded">
+									<xsd:element name="link" type="xsd:string" />
+								</xsd:sequence>
+								<xsd:attribute name="number" type="xsd:string"/>
 								</xsd:complexType>
-								<xsd:attribute name="number" type="xsd:integer"/>
 							</xsd:element>
 						</xsd:sequence>
+					</xsd:sequence>
 					<xsd:attribute name="id" type="xsd:string"/>
 				</xsd:complexType>
 			</xsd:element>
