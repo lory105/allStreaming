@@ -4,23 +4,59 @@
 xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org films.xsd">
 
 	<film id="1">
-		<title>Transformers</title>
+		<title>Harry Potter</title>
 		<image>images/films/1.jpg</image>
-		<description>E' bello il film</description>
-		<date>2002-09-24</date>
-		<linkName>MegaUp</linkName>
-		<link>www.megaup.com/Trasformers</link>
+		<description>Ultimo capitolo della saga del mago pi famoso del mondo. Ricordiamo che in ballo c' una profezia, che, per chi ha letto il libro, gi ne sono noti gli esiti, per tutti gli altri non resta che pazientare ancora un po' per sapere chi tra Harry Potter e Voldemort, riuscir a spuntarla...</description>
+		<date>2011-09-24</date>
+		<family>Action</family>
+		<linkName>Megavideo</linkName>
+		<link>www.megaup.com</link>
 		<linkName>PutLocker</linkName>
-		<link>www.putlocker.com/Trasformers</link>
+		<link>www.putlocker.com</link>
 	</film>
 	<film id="2">
-		<title>Trasformer2</title>
+		<title>The Shining</title>
 		<image>images/films/2.jpg</image>
-		<description>Il lifm è molto bello</description>
-		<date>2007-09-24</date>
-		<linkName>MegaUp</linkName>
-		<link>www.megaup.com/Trasformers2</link>
+		<description>Jack Torrance - ex istitutore e scrittore in crisi con tendenza all'alcoolismo - nella speranza di ritrovare se stesso e l'ispirazione accetta di fungere da custode per la stagione invernale dell'immenso e deserto Hotel Overlook, sulle Montagne Rocciose. Dieci anni prima, in analoghe circostanze, un uomo, prima di suicidarsi, ha fatto a pezzi le due figliolette e la moglie...</description>
+		<date>1980-09-24</date>
+		<family>Thriller</family>
+		<linkName>MegaVideo</linkName>
+		<link>www.megaup.com</link>
 		<linkName>PutLocker</linkName>
-		<link>www.putlocker.com/Trasformers2</link>
+		<link>www.putlocker.com</link>
 	</film>
+	<film id="3">
+		<title>Sin City</title>
+		<image>images/films/3.jpg</image>
+		<description>Il film comincia con una scena ambientata in una notte di pioggia, su una balconata di un grattacielo della violenta e corrotta Sin City, una ragazza (Marley Shelton) impegnata ad ammirare il panorama notturno della citt viene avvicinata e successivamente sedotta da un affascinante ragazzo (Josh Hartnett)...</description>
+		<date>2006-09-24</date>
+		<family>Action</family>
+		<linkName>MegaVideo</linkName>
+		<link>www.megaup.com</link>
+		<linkName>PutLocker</linkName>
+		<link>www.putlocker.com</link>
+	</film>
+	<film id="4">
+		<title>Transformers</title>
+		<image>images/films/4.jpg</image>
+		<description>La lotta tra il bene (gli Autobots) e il male (i Decepticons), dal pianeta Cybertron si spostata sulla Terra dove milioni di anni fa caduto il Cubo di Energon, il potere supremo capace di infondere la vita ai Transformers. Sam Witwicky - nipote dell'esploratore che per primo, durante una missione nel Circolo Polare Artico sul finire del 1800, ebbe a che fare con Megatron, il capo dei Decepticons - l'unico che pu aiutare Optimus Prime e i suoi Autobots a ritrovare il cubo e distruggerlo prima che finisca nelle mani dei nemici.</description>
+		<date>2009-09-24</date>
+		<family>Action</family>
+		<linkName>MegaVideo</linkName>
+		<link>www.megaup.com</link>
+		<linkName>PutLocker</linkName>
+		<link>www.putlocker.com</link>
+	</film>
+	<film id="5">
+		<title>The Avengers</title>
+		<image>images/films/5.jpg</image>
+		<description>Quando la comparsa di un nemico inatteso minaccia la tranquillit e la sicurezza del mondo, Nick Fury, direttore dell'agenzia internazionale per il mantenimento della pace conosciuta come S.H.I.E.L.D., si trova ad aver bisogno di una squadra che salvi il pianeta dall'orlo del disastro...</description>
+		<date>2012-09-24</date>
+		<family>Comics</family>
+		<linkName>MegaVideo</linkName>
+		<link>www.megaup.com</link>
+		<linkName>PutLocker</linkName>
+		<link>www.putlocker.com</link>
+	</film>
+	
 </collection>

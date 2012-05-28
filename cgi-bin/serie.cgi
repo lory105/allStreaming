@@ -27,11 +27,12 @@ foreach my $node ($nodeset->get_nodelist) {
 	my $seasons=$node->find('season');
 	foreach my $try ($seasons->get_nodelist) {
 	  my $numb=$try->getAttribute('number');
-	  print "<p><b>Stagione $numb</b></p>";
-	  my $episodes=$try->find('link');
+	  print "<p><h3>Stagione $numb</h3></p>";
+	  my $episodes=$try->find('episode');
 	  foreach my $episode ($episodes->get_nodelist) {
-		  my $single=$episode->string_value;
-		  print "<p><a href=\"$single\">$single</a></p>";
+		  my $singleTitle=$episode->find('title')->string_value;
+		  my $singleLink=$episode->find('link')->string_value;
+		  print "<p><a href=\"$singleLink\"><emph>$singleTitle</emph></a></p>";
 	  }
 	}
 	print "</div>";
