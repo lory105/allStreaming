@@ -9,7 +9,7 @@ targetNamespace="http://allStreaming.altervista.org" elementFormDefault="qualifi
 				<xsd:complexType>
 					<xsd:sequence>
 						<xsd:element name="title" type="xsd:string" />
-						<xsd:element name="photo" type="xsd:string" />
+						<xsd:element name="image" type="xsd:string" />
 						<xsd:element name="description" type="xsd:string" />
 						<xsd:element name="date" type="xsd:date" />
 						<xsd:sequence minOccurs="1" maxOccurs="unbounded">

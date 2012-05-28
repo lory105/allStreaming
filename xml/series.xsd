@@ -15,6 +15,7 @@ targetNamespace="http://allStreaming.altervista.org" elementFormDefault="qualifi
 							<xsd:element name="season">
 								<xsd:complexType>
 								<xsd:sequence minOccurs="1" maxOccurs="unbounded">
+									<xsd:element name="title" type="xsd:string" />
 									<xsd:element name="link" type="xsd:string" />
 								</xsd:sequence>
 								<xsd:attribute name="number" type="xsd:string"/>

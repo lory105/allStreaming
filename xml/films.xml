@@ -5,7 +5,7 @@ xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreamin
 
 	<film id="1">
 		<title>Transformers</title>
-		<photo>img/locandineFilm/transformers.jpg</photo>
+		<image>images/films/1.jpg</image>
 		<description>E' bello il film</description>
 		<date>2002-09-24</date>
 		<linkName>MegaUp</linkName>
@@ -15,7 +15,7 @@ xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreamin
 	</film>
 	<film id="2">
 		<title>Trasformer2</title>
-		<photo>img/locandineFilm/transformers.jpg</photo>
+		<image>images/films/2.jpg</image>
 		<description>Il lifm è molto bello</description>
 		<date>2007-09-24</date>
 		<linkName>MegaUp</linkName>
