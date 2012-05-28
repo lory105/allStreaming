@@ -11,6 +11,7 @@ use XML::XPath;
 #use XML::XPath::XMLParser;
 #use XML::LibXML;
 use Digest::MD5 qw(md5 md5_hex md5_base64);
+use XML::XSLT;
 
 
 # path db films
@@ -164,8 +165,46 @@ LEFT
 menu($_[1]);
 }
 
+
 sub right {
-	
+#my $id = 2;
+#my $film = findFilm("//collection/film[\@id=\"$id\"]");
+#print $film->size();
+
+#foreach my $node ($film->get_nodelist) {
+	#print $node->find('title')->string_value;
+#}
+
+
+my $id = "2";
+my $nodeset = function->findFilm("//collection/film[\@id=\"$id\"]");
+
+foreach my $node ($nodeset->get_nodelist) {
+	print $node->find('title')->string_value."\n";
+}
+
+#####################
+
+# define local variables
+my $xslfile = "../xml/films.xsl";
+my $xmlfile = "../xml/films.xml";
+
+# create an instance of XSL::XSLT processor
+my $xslt = XML::XSLT->new ($xslfile);
+
+# transform XML file and print output
+print $xslt->serve($xmlfile);
+
+# free up some memory
+$xslt->dispose();
+
+
+##################
+
+
+# year-from-dateTime(datetime)
+
+
 print <<RIGHT;
 			<div id="right_side">
 			<div class="view">I pi&ugrave; visti</div>
