@@ -20,7 +20,7 @@ foreach my $node ($nodeset->get_nodelist) {
 	print "<div id=\"random_film\">"."\n";
 	my $title=$node->find('title')->string_value;
 	print "<h1>$title</h1>"."\n";
-	my $img=$node->find('images')->string_value;
+	my $img=$node->find('image')->string_value;
 	print "<img src=\"../$img\" class=\"preview\"/>";
 	my $description = $node->find('description')->string_value;
 	print "<p>$description</p></br>";
@@ -30,8 +30,8 @@ foreach my $node ($nodeset->get_nodelist) {
 	  print "<p><b>Stagione $numb</b></p>";
 	  my $episodes=$try->find('link');
 	  foreach my $episode ($episodes->get_nodelist) {
-		  my $single=$episode->find('link')->string_value;
-		  print "<p>$single</p>";
+		  my $single=$episode->string_value;
+		  print "<p><a href=\"$single\">$single</a></p>";
 	  }
 	}
 	print "</div>";
