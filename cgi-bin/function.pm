@@ -13,6 +13,12 @@ use XML::XPath;
 use Digest::MD5 qw(md5 md5_hex md5_base64);
 use XML::XSLT;
 
+# x Lory
+use DateTime;  # --> http://stackoverflow.com/questions/2203678/how-can-i-print-a-datetime-in-the-xsdatetime-format-in-perl
+use Date::Format;
+
+
+
 
 # path db films
 my $filmsXml = "../xml/films.xml";
@@ -167,39 +173,9 @@ menu($_[1]);
 
 
 sub right {
-#my $id = 2;
-#my $film = findFilm("//collection/film[\@id=\"$id\"]");
-#print $film->size();
 
-#foreach my $node ($film->get_nodelist) {
-	#print $node->find('title')->string_value;
-#}
+my @sortId = function->sortIdFilmByDate();
 
-
-my $id = "2";
-my $nodeset = function->findFilm("//collection/film[\@id=\"$id\"]");
-
-foreach my $node ($nodeset->get_nodelist) {
-	print $node->find('title')->string_value."\n";
-}
-
-#####################
-
-# define local variables
-my $xslfile = "../xml/films.xsl";
-my $xmlfile = "../xml/films.xml";
-
-# create an instance of XSL::XSLT processor
-my $xslt = XML::XSLT->new ($xslfile);
-
-# transform XML file and print output
-print $xslt->serve($xmlfile);
-
-# free up some memory
-$xslt->dispose();
-
-
-##################
 
 
 # year-from-dateTime(datetime)
@@ -213,21 +189,29 @@ print <<RIGHT;
 					Secondo</br>
 					Terzo</br>
 					Quarto</br>
-					Quinto</br>
+					Quinto</br> 
 				</div>
 			<div class="news">Novit&agrave;</div>
 				<div class="content_max_view">
-					Primo</br>
-					Secondo</br>
-					Terzo</br>
-					Quarto</br>
-					Quinto</br> 
+RIGHT
+
+# creo dinamicamente i link ai 5 film più recenti 
+my $i;
+for($i = 0; $i < 5; $i++) {
+	my $id = "$sortId[$i]";
+	my $nodeset = function->findFilm("//collection/film[\@id=$id]/title/text()");
+	print "<a href=\"film.cgi?id=$id\" >$nodeset</a></br>";
+
+}
+
+print <<RIGHT;
 				</div>
 			<div class="news">User Online</div>
 			<div class="content_max_view">100 visitatori online </div>
 		</div>		
 RIGHT
 }
+
 
 sub footer {
 
@@ -246,6 +230,31 @@ print <<FOOTER;
 FOOTER
 	
 }
+
+
+# ritorna gli id di tutti i film, ordinati per data di uscita ( dal + recente al meno recente )
+sub sortIdFilmByDate{
+
+my $nodeset = function->findFilm();
+
+my $id;
+my $date;
+my %hash;
+
+my $buffer;
+
+foreach my $node ($nodeset->get_nodelist) {
+	$id = $node->findvalue('@id')->string_value."\n";
+	$date= $node->find('date/text()')->string_value."\n";
+	$date =~ s/-//g;
+	$hash{$id}= $date;
+}
+
+my @sortId = reverse sort { $hash{$a} <=> $hash{$b} } keys %hash;
+return @sortId;
+
+}
+
 
 
 # funzione di ricerca film: se non riceve parametri (!$_[1]) ricerca tutti i film,
