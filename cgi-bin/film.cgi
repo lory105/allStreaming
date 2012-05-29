@@ -12,18 +12,27 @@ function->left("film");
 function->right();
 
 
-print<<BODY;    
-		<div id="center_side">
-			<div id="random_film">
-				<h1>Transformers</h1>
-				<img src="../images/transformers.jpg" class="preview"/>	
-				<p>La lotta tra il bene (gli Autobots) e il male (i Decepticons), dal pianeta Cybertron si spostata sulla Terra dove milioni di anni fa caduto il Cubo di Energon, il potere supremo capace di infondere la vita ai Transformers. Sam Witwicky - nipote dell'esploratore che per primo, durante una missione nel Circolo Polare Artico sul finire del 1800, ebbe a che fare con Megatron, il capo dei Decepticons - l'unico che pu aiutare Optimus Prime e i suoi Autobots a ritrovare il cubo e distruggerlo prima che finisca nelle mani dei nemici.</p>
-				</br>
-				<b>Link:</b></br>
-				<a href="#">NowVideo</a> <br>
-		
-			</div>
-BODY
+my $var=new CGI;
+my $id = $var->param('id');
+my $nodeset=function->findFilm( "//collection/film[\@id=\"$id\"]");
+foreach my $node ($nodeset->get_nodelist) {
+	print "<div id=\"center_side\">"."\n";
+	print "<div id=\"random_film\">"."\n";
+	my $title=$node->find('title')->string_value;
+	print "<h1>$title</h1>"."\n";
+	my $img=$node->find('image')->string_value;
+	print "<img src=\"../$img\" class=\"preview\"/>";
+	my $description = $node->find('description')->string_value;
+	print "<p>$description</p></br>";
+	my $address=$node->find('address');
+	foreach my $try ($address->get_nodelist) {
+	  my $linkname=$try->find('linkName')->string_value;
+	  my $link=$try->find('link')->string_value;
+	  print "<p><b>Link:</b> <a href=\"$link\">$linkname</a> </p>";
+	}
+	print "</div>";
+}  
+
 function->loadComments();
 print <<BODY;
 		</div>

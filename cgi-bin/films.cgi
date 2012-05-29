@@ -34,12 +34,12 @@ print<<BODY;
 			</div>
 			<div id="genre">
 				<h2>Genere</h2></br>
-				<a href="film.cgi">Action</a><hr>
-				<a href="#">Thriller</a><hr>
-				<a href="#">Horror</a><hr>
-				<a href="#">Comics</a><hr>
-				<a href="#">Cartoon</a><hr>
-				<a href="#">Altro</a><hr>
+				<a href="researchFilm.cgi?type=Family&value=Action">Action</a><hr></hr>
+				<a href="researchFilm.cgi?type=Family&value=Thriller">Thriller</a><hr></hr>
+				<a href="researchFilm.cgi?type=Family&value=Horror">Horror</a><hr></hr>
+				<a href="researchFilm.cgi?type=Family&value=Comics">Comics</a><hr></hr>
+				<a href="researchFilm.cgi?type=Family&value=Cartoon">Cartoon</a><hr></hr>
+				<a href="researchFilm.cgi?type=Family&value=Vario">Altro</a><hr></hr>
 			</div>
 		</div>
 

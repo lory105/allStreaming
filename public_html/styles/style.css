@@ -193,8 +193,9 @@ a:hover{
 }
 
 .preview{
-	width:80%;
 	border:1px solid grey; padding:5px; background:white;
+	max-width:60%;
+	max-height:60%;
 }
 
 #year{
