@@ -3,7 +3,7 @@
 <collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" 
 xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org users.xsd">
 
-	<user id="user-1">
+	<user id="1">
 		<name>Giacomo</name>
 		<surname>Zanon</surname>
 		<username>jack</username>
@@ -13,7 +13,7 @@ xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreamin
 		<dateRegistration>2007-10-26T21:32:52</dateRegistration>
 		<admin>false</admin>
 	</user>
-	<user id="user-2">
+	<user id="2">
 		<name>Luca</name>
 		<surname>Scassa</surname>
 		<username>luck</username>
@@ -23,7 +23,7 @@ xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreamin
 		<dateRegistration>2008-11-26T21:32:52</dateRegistration>
 		<admin>false</admin>
 	</user>
-		<user id="user-3">
+	<user id="3">
 		<name>Samuele</name>
 		<surname>Zamba</surname>
 		<username>d</username>

@@ -12,6 +12,7 @@ use XML::XPath;
 #use XML::LibXML;
 use Digest::MD5 qw(md5 md5_hex md5_base64);
 use XML::XSLT;
+use Switch;
 
 # x Lory
 use DateTime;  # --> http://stackoverflow.com/questions/2203678/how-can-i-print-a-datetime-in-the-xsdatetime-format-in-perl
@@ -384,5 +385,54 @@ sub loadComments {
 COMMENTS
 	  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# funzione che ritorna il massimo id
+# riceve come parametro l'indicatore di dove devo cercare: "film", "serie", "user" o "comment"
+sub getMaxId {
+
+my $path = $_[1];
+my $xp;
+
+switch ($path) {
+	case "film" { $xp = XML::XPath->new(filename => $filmsXml); }
+	case "serie" { $xp = XML::XPath->new(filename => $seriesXml); }
+	case "comment" { $xp = XML::XPath->new(filename => $commentsXml); }
+	case "user" { $xp = XML::XPath->new(filename => $usersXml);}
+}
+
+my $query = "/collection/$path/\@id[not(. <=../preceding-sibling::$path/\@id) and not(. <=../following-sibling::$path/\@id)]";
+
+my $maxId = $xp->findnodes( $query );
+
+return $maxId;
+}
+
 
 1;
