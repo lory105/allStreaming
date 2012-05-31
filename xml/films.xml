@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="films.xsl"?>
-<collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" 
-xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org films.xsd">
+<collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org films.xsd">
 
 	<film id="1">
 		<title>Harry Potter</title>
@@ -78,4 +75,4 @@ xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreamin
 			<link>www.putlocker.com/Trasformers2</link>
 		</address>
 	</film>
-</collection>
+<film id="6"/></collection>

@@ -486,21 +486,27 @@ sub loadComments {
 		  print <<COMMENTS;
 		  <h2>Commenti</h2>
 		  <div id="commenti">
+			</br>
 			<div class="commento">
 				<div class="userComment">
 						<img src="../images/avatars/1.jpg" class="grav"/> 
-						<p><b>Lory</b></p>
+						<b>Lory</b>
+						<span class="data">23/02/2012</span>
 				</div>
+				<hr></hr>
 				<div class="userText">Proprio un bel film</div>
 			</div>
-			<hr/>
+			</br>
 			<div class="commento">
 				<div class="userComment">
 						<img src="../images/avatars/1.jpg" class="grav"/> 
-						<p><b>Lory</b></p>
+						<b>Lory</b>
+						<span class="data">23/02/2012</span>
 				</div>
+				<hr></hr>
 				<div class="userText">Proprio un bel film</div>
-			</div></br>
+			</div>
+			</br>
 		  </div>
 		  
 COMMENTS

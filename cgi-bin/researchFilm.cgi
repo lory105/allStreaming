@@ -23,16 +23,16 @@ if ($type eq "Year") {
 	my $year = $var->param('value');
 	print "<h1>Film disponibili anno $year</h1>";
 	if($year == 'pre-2000') {
-		$year=1999;
+		$year="2000-1-1";
 		my $nodeset=function->findFilm( "//collection/film[date < $year]");
 		if(($nodeset->size()) == 0 ){
 			print "<p>Nessun film disponibile.</p>";
 		}
 		foreach my $node ($nodeset->get_nodelist) {
-		my $film=$node->find('title')->string_value;
-		my $id=$node->getAttribute('id');
-		my $dynamic = "<a href=\"film.cgi?id=$id\">$film</a> <hr></hr>";
-		print $dynamic;
+			my $film=$node->find('title')->string_value;
+			my $id=$node->getAttribute('id');
+			my $dynamic = "<a href=\"film.cgi?id=$id\">$film</a> <hr></hr>";
+			print $dynamic;
 		}
 	}
 	else{
