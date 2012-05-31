@@ -8,9 +8,14 @@ use Digest::MD5 qw(md5 md5_hex md5_base64);
 use XML::XPath;
 use XML::XSLT;
 use XML::LibXML;
-use XML::XPath::XMLParser;
-use XML::LibXML::NodeList;
+
+#use XML::XPath::XMLParser;
+#use XML::LibXML::NodeList;
+#use XML::LibXML::Node
 use File::Spec;
+#use XML::LibXML::PrettyPrint;
+use XML::Twig;
+use XML::LibXML::XPathContext;
 
 # x Lory
 use DateTime;  # --> http://stackoverflow.com/questions/2203678/how-can-i-print-a-datetime-in-the-xsdatetime-format-in-perl
@@ -32,11 +37,12 @@ my $commentsXml = "../xml/comments.xml";
 
 
 ########################################################################
-###   max id of film
+###   
 
 
 ########################################################################
-###   delete user
+###   delete user da fare
+
 
 =f
 
@@ -57,7 +63,7 @@ for my $channel_node ($root->findnodes('//channel')) {
 
 ###########  oppure:
 
-=u
+=o
 
 my $parser = XML::LibXML->new;
 
@@ -65,14 +71,16 @@ my $doc = $parser->parse_file( "../xml/films.xml" );
 my $root = $doc->getDocumentElement();
 
 my $id = 3;
+my $nodeset = function->findFilm("//collection/film[\@id=\"$id\"]" );
 
-my $book = $root->findnodes("//collection/film[\@id=3]");
+#print $nodeset->find("title");
 
-print $book;
 
-#$book->parent()->removeChild($book);
+#$root->removeChild($node);
 
-foreach my $node ( $book->get_nodelist){
+
+
+foreach my $node ( $nodeset->get_nodelist){
  $node->parent()->removeChild($node);
 }
 
@@ -86,10 +94,90 @@ foreach my $node ( $book->get_nodelist){
 =cut
 
 
-########################################################################
-###   inserimento user
 
-=m
+
+
+########################################################################
+###   inserimento link film
+
+=O
+
+#function->addFilmLink();
+
+    my $parser = XML::LibXML->new;
+    my $doc = $parser->parse_file( $filmsXml );
+    my $xpc = XML::LibXML::XPathContext->new;
+    $xpc->registerNs("collection", "http://allStreaming.altervista.org");
+    my $id = 3;
+    my $node = $xpc->findnodes("//collection:film[\@id=\"$id\"]", $doc )->get_node(1);
+    my $oldNode = $node;
+
+
+    my $name = "megaup";
+    my $link = "www.mega.com";
+
+    
+
+    # extract the root element
+    my $root = $doc->getDocumentElement();
+
+    # string with the new element
+    my $newAddressNode = "\t\t<address>\n\t\t\t<name>$name</name>\n\t\t\t<link>$link</link>\n\t\t</address>\n";
+    print $newAddressNode;
+    
+
+
+    # check if it's well formed and create the node
+    my $fragment = $parser->parse_balanced_chunk($newAddressNode);
+    # insert the new child
+    $node->appendChild($fragment);
+    print $node->toString();
+    
+    $root->removeChild( $oldNode );
+    $root->appendChild($node);
+    print $root->toString();
+
+=cut
+
+
+=o
+
+my $idFilm = "3";
+my $nameLink = "maga";
+my $link = "djs";
+
+function::addFilmLinkf({ idFilm=>$idFilm, linkName=>$nameLink, link=>$link });
+
+=cut  
+
+
+
+########################################################################
+###   inserimento film ok
+
+=p
+
+my $maxId = function->getMaxId("film");
+
+$maxId = "$maxId" + 1;
+my $title = "Io Sono Leggenda";
+my $image = "../images/5.png";
+my $description = "belllo cazzo!";
+my $date = "2009-07-26";
+my $family = "horror";
+
+
+function::addFilm({ title=>$title, image=>$image, description=>$description, date=>$date, family=>$family });
+
+
+=cut
+
+
+
+########################################################################
+###   inserimento user ok
+
+=k
 
 my $maxId = function->getMaxId("user");
 
@@ -104,24 +192,8 @@ my $dateRegistration = "2009-07-26T21:32:52";
 my $admin = "false";
 
 
+function::addUser({ name=>$name, surname=>$surname, username=>$username, password=>$password, email=>$email, avatar=>$avatar, dateRegistration=>$dateRegistration, admin=>$admin });
 
-my $parser = XML::LibXML->new;
-my $doc = $parser->parse_file( $usersXml );
-# extract the root element
-my $root = $doc->getDocumentElement();
-
-
-# string with the new element
-my $newNode = "\t<user id=\"$maxId\">\n\t\t<name>$name</name>\n\t\t<surname>$surname</surname>\n\t\t<username>$username</username>\n\t\t<password>$password</password>\n\t\t<email>$email</email>\n\t\t\<avatar>$avatar</avatar>\n\t\t<dateRegistration>$dateRegistration</dateRegistration>\n\t\t<admin>$admin</admin>\n\t</user>\n";
-print $newNode;
-
-# check if it's well formed and create the node
-my $fragment = $parser->parse_balanced_chunk($newNode);
-# insert the new child
-$root->appendChild($fragment);
-# return it to text
-my $newText = $doc->toString;
-print $newText;
 
 =cut
 
@@ -154,17 +226,6 @@ print $root->toString(1);
 
 
 =cut
-
-
-
-#my $maxId = function->getMaxId("film");
-
-#$maxId = "$maxId" + 1;
-
-#print $maxId;
-
-
-
 
 
 

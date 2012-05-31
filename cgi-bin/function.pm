@@ -257,6 +257,127 @@ return @sortId;
 }
 
 
+# aggiunge un nuovo utente
+# come invocare funzione: attenzione sintassi!!!
+# function::addUser({ name=>$name, surname=>$surname, username=>$username, password=>$password, email=>$email, avatar=>$avatar, dateRegistration=>$dateRegistration, admin=>$admin });
+sub addUser{
+ 
+    my $parameters = shift;
+   
+    my $maxId = function->getMaxId("user");
+    $maxId = "$maxId" + 1;
+    
+    my $name = $parameters->{name};
+    my $surname = $parameters->{surname};
+    my $username = $parameters->{username};
+    my $password = $parameters->{password};
+    my $email = $parameters->{email};
+    my $avatar = $parameters->{avatar};
+    my $dateRegistration = $parameters->{dateRegistration};
+    my $admin = $parameters->{admin};
+
+    my $parser = XML::LibXML->new;
+    my $doc = $parser->parse_file( $usersXml );
+    # extract the root element
+    my $root = $doc->getDocumentElement();
+
+    # string with the new element
+    my $newNode = "\t<user id=\"$maxId\">\n\t\t<name>$name</name>\n\t\t<surname>$surname</surname>\n\t\t<username>$username</username>\n\t\t<password>$password</password>\n\t\t<email>$email</email>\n\t\t\<avatar>$avatar</avatar>\n\t\t<dateRegistration>$dateRegistration</dateRegistration>\n\t\t<admin>$admin</admin>\n\t</user>\n";
+    #print $newNode;
+
+    # check if it's well formed and create the node
+    my $fragment = $parser->parse_balanced_chunk($newNode);
+    # insert the new child
+    $root->appendChild($fragment);
+
+    # write to file
+    open(XML,'>',$usersXml ) || die("Cannot open file");
+    print XML $root->toString();
+    close(XML);
+}
+
+
+# aggiunge un nuovo utente
+# come invocare funzione: attenzione sintassi!!!
+# function::addUser({ name=>$name, surname=>$surname, username=>$username, password=>$password, email=>$email, avatar=>$avatar, dateRegistration=>$dateRegistration, admin=>$admin });
+sub addFilm{
+ 
+=o
+    my $parameters = shift;
+   
+    my $maxId = function->getMaxId("film");
+    $maxId = "$maxId" + 1;
+    
+    my $title = $parameters->{title};
+    my $image = $parameters->{image};
+    my $description = $parameters->{description};
+    my $date = $parameters->{date};
+    my $family = $parameters->{family};
+    
+    my $parser = XML::LibXML->new;
+    my $doc = $parser->parse_file( $filmsXml );
+    # extract the root element
+    my $root = $doc->getDocumentElement();
+
+    # string with the new element
+    my $newNode = "\t<film id=\"$maxId\">\n\t\t<title>$title</title>\n\t\t<image>$image</image>\n\t\t<description>$description</description>\n\t\t<date>$date</date>\n\t\t<family>$family</family>\n\t</film>\n";
+    #print $newNode;
+
+    # check if it's well formed and create the node
+    my $fragment = $parser->parse_balanced_chunk($newNode);
+    # insert the new child
+    $root->appendChild($fragment);
+    print $root->toString();
+    
+    # write to file
+    #open(XML,'>',$filmsXml ) || die("Cannot open file");
+    #print XML $root->toString();
+    #close(XML);
+=cut
+}
+
+
+# aggiunge un link ad un film
+# da richiamare così, Attenzione sintassi!!!
+# function::addFilmLinkf({ idFilm=>$idFilm, linkName=>$nameLink, link=>$link });
+sub addFilmLinkf{
+    
+    my $parameters = shift;
+    my $idFilm = $parameters->{idFilm};
+    my $linkName = $parameters->{linkName};
+    my $link = $parameters->{link};
+
+    my $parser = XML::LibXML->new;
+    my $doc = $parser->parse_file( $filmsXml );
+    my $xpc = XML::LibXML::XPathContext->new;
+    $xpc->registerNs("collection", "http://allStreaming.altervista.org");
+    # recupero il nodo del film da modificare
+    my $newNode = $xpc->findnodes("//collection:film[\@id=\"$idFilm\"]", $doc )->get_node(1);
+    my $oldNode = $newNode;
+
+    # extract the root element
+    my $root = $doc->getDocumentElement();
+
+    # string with the new element
+    my $newAddressNode = "\t\t<address>\n\t\t\t<linkName>$linkName</linkName>\n\t\t\t<link>$link</link>\n\t\t</address>\n";
+
+    # check if it's well formed and create the node
+    my $fragment = $parser->parse_balanced_chunk($newAddressNode);
+    # insert the new child
+    $newNode->appendChild($fragment);
+    
+    $root->removeChild( $oldNode );
+    $root->appendChild($newNode);
+    print $root->toString();
+    
+    # write to file
+    open(XML,'>',$filmsXml ) || die("Cannot open file");
+    print XML $root->toString();
+    close(XML);
+    
+}
+
+
 
 # funzione di ricerca film: se non riceve parametri (!$_[1]) ricerca tutti i film,
 # altrimenti esegue la query ricevuta in $_[1]
