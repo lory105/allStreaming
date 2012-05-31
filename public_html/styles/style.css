@@ -217,6 +217,7 @@ a:hover{
 .userLogged{
 	width:auto;
 	height:100%;
+	padding:10px;
 	/*margin-top:5px;*/
 	/*margin-bottom:5px;*/
 }
@@ -232,11 +233,13 @@ legend{
 
 .name{
 	float:left;
+	margin-left:5px;
 }
 
-#grav{
-	width:80px;
-	height:80px;
+.grav{
+	max-width:40px;
+	max-height:40px;
+	border:1px solid grey; padding:2px; background:white;
 }
 
 .pict{
@@ -254,25 +257,34 @@ legend{
 }
 
 .commento{
-	width:100%;
-	/*background-color:#efefef;*/
-	height:100%;
-	min-height:125px;
+	width:90%;
+	height:auto;
+	margin:0 auto;
 	text-align:center;
-}
-
-.userComment{
-	width:20%;
-	height:100%;
-	float:left;
-	color:orange;
-	border-right:1px solid grey;
+	padding:5px;
+	border:1px solid grey;
 	background-color:LightGrey;
 }
 
-.userText{
-	width:79%;
-	height:100%;
-	text-align:center;
+.data{
 	float:right;
+}
+
+.commentHeader{
+	float:left;
+}
+
+.userComment{
+	width:100%;
+	height:auto;
+	color:orange;
+	margin:0 auto;
+	text-align:left;
+}
+
+.userText{
+	width:100%;
+	height:auto;
+	text-align:center;
+	margin:0 auto;
 }

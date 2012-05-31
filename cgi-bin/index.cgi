@@ -22,22 +22,22 @@ print <<CENTER;
 				<h1>Film Consigliati</h1>
 				<div id="random_film">
 						<div class="film">
-							<img src="../images/sin-city.jpg" class="locandina" />
+							<img src="../images/1.jpg" class="locandina" />
 							</br>
 							<a href="../film.html">Film:Sin City</a>
 						</div>
 						<div class="film">
-							<img src="../images/shining.jpg" class="locandina" />
+							<img src="../images/2.jpg" class="locandina" />
 							</br>
 							<a href="../film.html">Film:Shining</a>
 						</div>
 						<div class="film">
-							<img src="../images/harry.jpg" class="locandina" />
+							<img src="../images/3.jpg" class="locandina" />
 							</br>
 							<a href="../film.html">Film:Harry Potter</a>
 						</div>
 						<div class="film">
-							<img src="../images/want.jpg" class="locandina" />
+							<img src="../images/4.jpg" class="locandina" />
 							</br>
 							<a href="../film.html">Film:I want you</a>
 						</div>
