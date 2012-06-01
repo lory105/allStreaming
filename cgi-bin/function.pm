@@ -113,6 +113,23 @@ print<<MENU
 		</div>	
 MENU
 	}
+
+if($_[0] eq ""){
+print<<MENU
+			<div id="navigation">Ti trovi in : Commenti</div>
+			<div id="left_side">
+			<div class="menu">Menu Principale</div>
+				<div class="content">
+					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
+					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
+					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
+					<img src="../images/comment.png"/><a href="#">Commenti</a><hr>
+					</br>
+				</div>
+		</div>	
+MENU
+	}
+
 }
 
 sub left {
