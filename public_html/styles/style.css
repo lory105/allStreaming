@@ -222,11 +222,6 @@ a:hover{
 	/*margin-bottom:5px;*/
 }
 
-legend{
-	align:center;
-	/** nol va !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! **/
-}
-
 .avatar{
 	float:left;
 }
@@ -239,6 +234,12 @@ legend{
 .grav{
 	max-width:40px;
 	max-height:40px;
+	border:1px solid grey; padding:2px; background:white;
+}
+
+.grav2{
+	max-width:80px;
+	max-height:80px;
 	border:1px solid grey; padding:2px; background:white;
 }
 
@@ -272,6 +273,12 @@ legend{
 
 .commentHeader{
 	float:left;
+}
+
+.user{
+	width:50%;
+	margin:0 auto;
+	text-align:left;
 }
 
 .userComment{

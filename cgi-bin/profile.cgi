@@ -10,19 +10,27 @@ use XML::XPath;
 use XML::XPath::XMLParser;
 use XML::LibXML;
 
-
-
-
 function->header(); 
 function->left("");
 function->right();
 
-print <<CENTER;
-		<div id="center_side">
-				<h1>Utente:</h1>
+my $var=new CGI;
+my $id = $var->param('id');
+my $nodeset=function->findUser( "//user[\@id=\"$id\"]");
+foreach my $node ($nodeset->get_nodelist) {
+	print "<div id=\"center_side\">"."\n";
 
-		</div>
-
-CENTER
+	my $name=$node->find('name')->string_value;
+	my $surname=$node->find('surname')->string_value;
+	my $avatar=$node->find('avatar')->string_value;
+	my $dateRegistration=$node->find('dateRegistration')->string_value;
+	my $email=$node->find('email')->string_value; 
+	print "<h1>Utente: $email</h1>"."\n";
+	print "<img src=\"../images/avatars/$id.jpg\" class=\"grav2\"/> "."\n";
+	print "<div class=\"user\"><p><b>Nome:</b> $name</p>"."\n";
+	print "<p><b>Cognome:</b> $surname</p>"."\n";
+	print "<p><b>Data di registrazione:</b> $dateRegistration</p></div>"."\n";
+	print "</div>"."\n";
+}  
 
 function->footer();

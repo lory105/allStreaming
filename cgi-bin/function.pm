@@ -579,7 +579,7 @@ sub loadComments {
 			<div class="commento">
 				<div class="userComment">
 						<img src="../images/avatars/1.jpg" class="grav"/> 
-						<b>Lory</b>
+						<b><a href="profile.cgi?id=1">Lory</a></b>
 						<span class="data">23/02/2012</span>
 				</div>
 				<hr></hr>
@@ -589,7 +589,7 @@ sub loadComments {
 			<div class="commento">
 				<div class="userComment">
 						<img src="../images/avatars/1.jpg" class="grav"/> 
-						<b>Lory</b>
+						<b><a href="profile.cgi?id=1">Lory</a></b>
 						<span class="data">23/02/2012</span>
 				</div>
 				<hr></hr>
@@ -653,6 +653,8 @@ my $maxId = $xp->findnodes( $query );
 
 return $maxId;
 }
+
+
 
 
 1;
