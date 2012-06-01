@@ -52,6 +52,86 @@ HEADER
 
 }
 
+sub menuNotLogged {
+if($_[0] eq "home"){
+print<<MENU
+			<div id="navigation">Ti trovi in : Home</div>
+			<div id="left_side">
+			<div class="menu">Menu Principale</div>
+				<div class="content">
+					<img src="../images/home.png"/><a href="#"><b>Home</b></a><hr>
+					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
+					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
+					<img src="../images/signin.png"/><a href="#">Registrazione</a><hr>
+					</br>
+				</div>
+		</div>	
+MENU
+}
+if($_[0] eq "serie"){
+print<<MENU
+			<div id="navigation">Ti trovi in : Serie TV</div>
+			<div id="left_side">
+			<div class="menu">Menu Principale</div>
+				<div class="content">
+					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
+					<img src="../images/series.png"/><a href="series.cgi"><b>Serie Tv</b></a><hr>
+					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
+					<img src="../images/signin.png"/><a href="#">Registrazione</a><hr>
+					</br>
+				</div>
+		</div>	
+MENU
+	}
+if($_[0] eq "film"){
+print<<MENU
+			<div id="navigation">Ti trovi in : Film</div>
+			<div id="left_side">
+			<div class="menu">Menu Principale</div>
+				<div class="content">
+					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
+					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
+					<img src="../images/film.png"/><a href="films.cgi"><b>Film</b></a><hr>
+					<img src="../images/signin.png"/><a href="#">Registrazione</a><hr>
+					</br>
+				</div>
+		</div>	
+MENU
+	}
+if($_[0] eq "commenti"){
+print<<MENU
+			<div id="navigation">Ti trovi in : Commenti</div>
+			<div id="left_side">
+			<div class="menu">Menu Principale</div>
+				<div class="content">
+					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
+					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
+					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
+					<img src="../images/signin.png"/><a href="#"><b>Registrazione</b></a><hr>
+					</br>
+				</div>
+		</div>	
+MENU
+	}
+
+if($_[0] eq ""){
+print<<MENU
+			<div id="navigation">Ti trovi in : Commenti</div>
+			<div id="left_side">
+			<div class="menu">Menu Principale</div>
+				<div class="content">
+					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
+					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
+					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
+					<img src="../images/comment.png"/><a href="#">Commenti</a><hr>
+					</br>
+				</div>
+		</div>	
+MENU
+	}
+
+}
+
 sub menu {
 if($_[0] eq "home"){
 print<<MENU
@@ -152,6 +232,7 @@ sub left {
 			</div>
 		</div>	
 LEFT
+menuNotLogged($_[1]);
   }
   elsif($session->is_empty)
   {
@@ -168,6 +249,7 @@ LEFT
 			</div>
 		</div>	
 LEFT
+menuNotLogged($_[1]);
   }
   else
   {
@@ -185,8 +267,9 @@ LEFT
 			</div>
 		</div>	
 LEFT
-  }
 menu($_[1]);
+  }
+
 }
 
 

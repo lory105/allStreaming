@@ -27,9 +27,9 @@ foreach my $node ($nodeset->get_nodelist) {
 	my $email=$node->find('email')->string_value; 
 	print "<h1>Utente: $email</h1>"."\n";
 	print "<img src=\"../images/avatars/$id.jpg\" class=\"grav2\"/> "."\n";
-	print "<div class=\"user\"><p><b>Nome:</b> $name</p>"."\n";
-	print "<p><b>Cognome:</b> $surname</p>"."\n";
-	print "<p><b>Data di registrazione:</b> $dateRegistration</p></div>"."\n";
+	print "<div class=\"user\"><p><b>Nome:</b> $name</p><hr></hr>"."\n";
+	print "<p><b>Cognome:</b> $surname</p><hr></hr>"."\n";
+	print "<p><b>Data di registrazione:</b> $dateRegistration</p><hr></hr></div>"."\n";
 	print "</div>"."\n";
 }  
 
