@@ -39,66 +39,52 @@ my $commentsXml = "../xml/comments.xml";
 ########################################################################
 ###   
 
+print function->countRegisteredUsers();
+
+#print function->sortIdFilmByDate();
+
 
 ########################################################################
-###   delete user da fare
-
-
-=f
-
-my $id=3;
-
-my $node = function->findFilm("//collection/film[\@id=\"$id\"]");
-
-my $root
-
-for my $channel_node ($root->findnodes('//channel')) {
-   for my $child_node (reverse $channel_node->childNodes()) {
-      $channel_node->removeChild($child_node);
-      $channel_node->appendChild($child_node);
-   }
-}
-
-=cut
-
-###########  oppure:
+###   inserimento serie ok
 
 =o
 
-my $parser = XML::LibXML->new;
+my $title = "Heroes";
+my $image = "heroes.png";
+my $description = "na bomba!!";
 
-my $doc = $parser->parse_file( "../xml/films.xml" );
-my $root = $doc->getDocumentElement();
-
-my $id = 3;
-my $nodeset = function->findFilm("//collection/film[\@id=\"$id\"]" );
-
-#print $nodeset->find("title");
-
-
-#$root->removeChild($node);
-
-
-
-foreach my $node ( $nodeset->get_nodelist){
- $node->parent()->removeChild($node);
-}
-
-#my $i = $book->get_nodelist;
-
-#$i->setAttribute("io","ko");
-
-
-
+function::addSerie({ title=>$title, image=>$image, description=>$description });
 
 =cut
 
+
+########################################################################
+###   delete film, serie, user ok
+
+=o
+    my $parser = XML::LibXML->new;
+    my $doc = $parser->parse_file( $usersXml );
+    my $xpc = XML::LibXML::XPathContext->new;
+    $xpc->registerNs("collection", "http://allStreaming.altervista.org");
+    my $id = 2;
+    my $node = $xpc->findnodes("//collection:user[\@id=\"$id\"]", $doc )->get_node(1);
+  
+    # extract the root element
+    my $root = $doc->getDocumentElement();
+ 
+    $root->removeChild( $node );
+    print $root->toString();
+
+=cut
+
+
+#function::removeItem({ type=>"film", id=>"3"});
 
 
 
 
 ########################################################################
-###   inserimento link film
+###   inserimento link film ok
 
 =O
 

@@ -13,7 +13,7 @@ targetNamespace="http://allStreaming.altervista.org" elementFormDefault="qualifi
 						<xsd:element name="description" type="xsd:string" />
 						<xsd:element name="date" type="xsd:date" />
 						<xsd:element name="family" type="xsd:string" />
-						<xsd:sequence minOccurs="1" maxOccurs="unbounded">
+						<xsd:sequence minOccurs="0" maxOccurs="unbounded">
 							<xsd:element name="address">
 								<xsd:complexType>
 									<xsd:sequence>

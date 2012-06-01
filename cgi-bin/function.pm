@@ -29,8 +29,8 @@ my $seriesXml = "../xml/series.xml";
 my $usersXml = "../xml/users.xml";
 # path db commenti
 my $commentsXml = "../xml/comments.xml";
-
-
+# array degli id dei film ordinati per data ( dal + recente al - recente )
+my @sortIdFilm;
 
 
 
@@ -174,13 +174,7 @@ menu($_[1]);
 
 
 sub right {
-
-my @sortId = function->sortIdFilmByDate();
-
-
-
 # year-from-dateTime(datetime)
-
 
 print <<RIGHT;
 			<div id="right_side">
@@ -196,6 +190,8 @@ print <<RIGHT;
 				<div class="content_max_view">
 RIGHT
 
+my @sortId = function->sortIdFilmByDate();
+
 # creo dinamicamente i link ai 5 film più recenti 
 my $i;
 for($i = 0; $i < 5; $i++) {
@@ -205,10 +201,11 @@ for($i = 0; $i < 5; $i++) {
 
 }
 
+my $registeredUser = function->countRegisteredUsers();
 print <<RIGHT;
 				</div>
-			<div class="news">User Online</div>
-			<div class="content_max_view">100 visitatori online </div>
+			<div class="news">Utenti iscritti</div>
+			<div class="content_max_view">$registeredUser utenti</div>
 		</div>		
 RIGHT
 }
@@ -251,17 +248,21 @@ foreach my $node ($nodeset->get_nodelist) {
 	$hash{$id}= $date;
 }
 
-my @sortId = reverse sort { $hash{$a} <=> $hash{$b} } keys %hash;
-return @sortId;
-
+@sortIdFilm = reverse sort { $hash{$a} <=> $hash{$b} } keys %hash;
 }
+
+
+# ritorna l'array degli id dei film ordinati per data ( dal +recente al -recente)
+sub getSortIdFIlm{
+    return @sortIdFilm;
+}
+
 
 
 # aggiunge un nuovo utente
 # come invocare funzione: attenzione sintassi!!!
 # function::addUser({ name=>$name, surname=>$surname, username=>$username, password=>$password, email=>$email, avatar=>$avatar, dateRegistration=>$dateRegistration, admin=>$admin });
 sub addUser{
- 
     my $parameters = shift;
    
     my $maxId = function->getMaxId("user");
@@ -291,20 +292,17 @@ sub addUser{
     $root->appendChild($fragment);
 
     # write to file
-    open(XML,'>',$usersXml ) || die("Cannot open file");
-    print XML $root->toString();
-    close(XML);
+    open(OUT,'>:utf8',$usersXml ) || die("Cannot open file");
+    print OUT $root->toString();
+    close(OUT);
 }
 
 
-# aggiunge un nuovo utente
+# aggiunge un nuovo film
 # come invocare funzione: attenzione sintassi!!!
-# function::addUser({ name=>$name, surname=>$surname, username=>$username, password=>$password, email=>$email, avatar=>$avatar, dateRegistration=>$dateRegistration, admin=>$admin });
+# function::addFilm({ title=>$title, image=>$image, description=>$description, date=>$date, family=>$family });
 sub addFilm{
- 
-=o
     my $parameters = shift;
-   
     my $maxId = function->getMaxId("film");
     $maxId = "$maxId" + 1;
     
@@ -330,18 +328,50 @@ sub addFilm{
     print $root->toString();
     
     # write to file
-    #open(XML,'>',$filmsXml ) || die("Cannot open file");
-    #print XML $root->toString();
-    #close(XML);
-=cut
+    open(OUT,'>:utf8',$filmsXml ) || die("Cannot open file");
+    print OUT $root->toString();
+    close(OUT);
 }
+
+
+
+# aggiunge una nuova serie
+# come invocare funzione: attenzione sintassi!!!
+# function::addSerie({ title=>$title, image=>$image, description=>$description });
+sub addSerie{
+    my $parameters = shift;
+    my $maxId = function->getMaxId("serie");
+    $maxId = "$maxId" + 1;
+    
+    my $title = $parameters->{title};
+    my $image = $parameters->{image};
+    my $description = $parameters->{description};
+    
+    my $parser = XML::LibXML->new;
+    my $doc = $parser->parse_file( $seriesXml );
+    # extract the root element
+    my $root = $doc->getDocumentElement();
+
+    # string with the new element
+    my $newNode = "\t<serie id=\"$maxId\">\n\t\t<title>$title</title>\n\t\t<image>$image</image>\n\t\t<description>$description</description>\n\t</serie>\n";
+
+    # check if it's well formed and create the node
+    my $fragment = $parser->parse_balanced_chunk($newNode);
+    # insert the new child
+    $root->appendChild($fragment);
+    
+    # write to file
+    open(OUT,'>:utf8',$seriesXml ) || die("Cannot open file");
+    print OUT $root->toString();
+    close(OUT);
+}
+
 
 
 # aggiunge un link ad un film
 # da richiamare così, Attenzione sintassi!!!
 # function::addFilmLinkf({ idFilm=>$idFilm, linkName=>$nameLink, link=>$link });
-sub addFilmLinkf{
-    
+sub addFilmLinkf{    
     my $parameters = shift;
     my $idFilm = $parameters->{idFilm};
     my $linkName = $parameters->{linkName};
@@ -368,15 +398,60 @@ sub addFilmLinkf{
     
     $root->removeChild( $oldNode );
     $root->appendChild($newNode);
+    # debug da togliere!!!
     print $root->toString();
     
     # write to file
-    open(XML,'>',$filmsXml ) || die("Cannot open file");
-    print XML $root->toString();
-    close(XML);
+    open(OUT,'>:utf8',$filmsXml ) || die("Cannot open file");
+    print OUT $root->toString();
+    close(OUT);
     
 }
 
+# rimuove un fils, una serie o un utente
+# riceve in input l'id dell'item da eliminare e il riferimento se è un film, una seire o un utente
+# function::removeItem({ type=>"film", id=>"3"});
+sub removeItem {
+
+    my $parameters = shift;
+    my $id = $parameters->{id};
+    my $type = $parameters->{type};  # film, serie, o user
+
+    my $parser = XML::LibXML->new;
+    my $doc; my $query; my $file;
+    
+    switch ($type) {
+	   case "film"  { $file = $filmsXml;  
+	                  $query = "//collection:film[\@id=\"$id\"]"; last;
+	   }
+	   case "serie" { $file = $seriesXml; 
+	                  $query = "//collection:serie[\@id=\"$id\"]"; last;
+	   }
+	   case "user"  { $file = $usersXml;
+	                  $query = "//collection:user[\@id=\"$id\"]"; last;
+	   }
+	   #case "comment" { my $doc = $parser->parse_file( $usersXml ); }
+    }
+    
+    $doc = $parser->parse_file( $file );
+
+    my $xpc = XML::LibXML::XPathContext->new;
+    $xpc->registerNs("collection", "http://allStreaming.altervista.org");
+
+    my $node = $xpc->findnodes( $query, $doc )->get_node(1);
+  
+    # extract the root element
+    my $root = $doc->getDocumentElement();
+ 
+    $root->removeChild( $node );
+    # debug da togliere!!!
+    print $root->toString();
+    
+    # write to file
+    open(OUT,'>:utf8',$file ) || die("Cannot open file");
+    print OUT $root->toString();
+    close(OUT);
+}
 
 
 # funzione di ricerca film: se non riceve parametri (!$_[1]) ricerca tutti i film,
@@ -408,6 +483,10 @@ return $xp->findnodes( $query );
 }
 
 
+
+
+
+
 # funzione di ricerca serie tv: se non riceve parametri (!$_[1]) ricerca tutte le serie,
 # altrimenti esegue la query ricevuta in $_[1]
 # come invocare la funzione (attenzione sintassi query!!) : 
@@ -429,7 +508,21 @@ else{ $query = "//collection/serie"; }
 #print "$query" . "\n";
 
 return $xp->findnodes( $query );
+}
 
+
+# funzione di ricerca user: se non riceve parametri (!$_[1]) ricerca tutti gli user,
+# altrimenti esegue la query ricevuta in $_[1] 
+sub findUser {
+
+# creo un oggetto XPath e gli associo il file xml dove cercare
+my $xp = XML::XPath->new(filename => $usersXml);
+
+my $query;
+if( $_[1] ){ $query= $_[1]; }
+else{ $query= "//collection/user"; }
+
+return $xp->findnodes( $query );
 }
 
 
@@ -451,27 +544,6 @@ return $crypted_password;
 }
 
 
-# funzione di ricerca user: se non riceve parametri (!$_[1]) ricerca tutti gli user,
-# altrimenti esegue la query ricevuta in $_[1] 
-sub getUser {
-
-# creo un oggetto XPath e gli associo il file xml dove cercare
-my $xp = XML::XPath->new(filename => $usersXml);
-
-####### okkk da ricordare !!!
-#my $id = "user-1";
-#my $query= "//collection/user[\@id=\"$id\"]"; ## attenzione sintassi!!
-#my $io = $xp->findnodes( $query );
-#print $io;
-#################
-
-
-my $query;
-if( $_[1] ){ $query= $_[1]; }
-else{ $query= "//collection/user"; }
-
-return $xp->findnodes( $query );
-}
 
 sub redirectTo {
 	print $_[1]->header(-location=>"$_[2]");
@@ -537,7 +609,11 @@ COMMENTS
 
 
 
-
+sub countRegisteredUsers{
+    my $nodelist = function->findUser();
+    return $nodelist->size();
+    
+}
 
 
 # funzione che ritorna il massimo id
@@ -548,10 +624,10 @@ my $path = $_[1];
 my $xp;
 
 switch ($path) {
-	case "film" { $xp = XML::XPath->new(filename => $filmsXml); }
-	case "serie" { $xp = XML::XPath->new(filename => $seriesXml); }
-	case "comment" { $xp = XML::XPath->new(filename => $commentsXml); }
-	case "user" { $xp = XML::XPath->new(filename => $usersXml);}
+	case "film" { $xp = XML::XPath->new(filename => $filmsXml); last;}
+	case "serie" { $xp = XML::XPath->new(filename => $seriesXml); last;}
+	case "comment" { $xp = XML::XPath->new(filename => $commentsXml); last;}
+	case "user" { $xp = XML::XPath->new(filename => $usersXml); last;}
 }
 
 my $query = "/collection/$path/\@id[not(. <=../preceding-sibling::$path/\@id) and not(. <=../following-sibling::$path/\@id)]";
