@@ -45,6 +45,7 @@ print <<HEADER;
 			<link rel="shortcut icon" href="images/logo.ico" type="image/x-icon" />
 			<link rel="icon" href="images/logo.ico" type="image/x-icon" />
 			<link rel="stylesheet" href="../styles/style.css" type="text/css" />
+			<script type="text/javascript" src="../javascript/validation.js"></script>
 		</head> 
 	
 HEADER
@@ -61,7 +62,7 @@ print<<MENU
 					<img src="../images/home.png"/><a href="#"><b>Home</b></a><hr>
 					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
 					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
-					<img src="../images/signin.png"/><a href="#">Registrazione</a><hr>
+					<img src="../images/signin.png"/><a href="registration.cgi">Registrazione</a><hr>
 					</br>
 				</div>
 		</div>	
@@ -76,7 +77,7 @@ print<<MENU
 					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
 					<img src="../images/series.png"/><a href="series.cgi"><b>Serie Tv</b></a><hr>
 					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
-					<img src="../images/signin.png"/><a href="#">Registrazione</a><hr>
+					<img src="../images/signin.png"/><a href="registration.cgi">Registrazione</a><hr>
 					</br>
 				</div>
 		</div>	
@@ -91,7 +92,7 @@ print<<MENU
 					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
 					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
 					<img src="../images/film.png"/><a href="films.cgi"><b>Film</b></a><hr>
-					<img src="../images/signin.png"/><a href="#">Registrazione</a><hr>
+					<img src="../images/signin.png"/><a href="registration.cgi">Registrazione</a><hr>
 					</br>
 				</div>
 		</div>	
@@ -106,7 +107,7 @@ print<<MENU
 					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
 					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
 					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
-					<img src="../images/signin.png"/><a href="#"><b>Registrazione</b></a><hr>
+					<img src="../images/signin.png"/><a href="registration.cgi"><b>Registrazione</b></a><hr>
 					</br>
 				</div>
 		</div>	
@@ -213,62 +214,43 @@ MENU
 
 sub left {
 
-	my $session = CGI::Session->load();
-	my $user = $session->param('username');
-  if($session->is_expired)
+  my $session = CGI::Session->load();
+  my $user = $session->param('username');
+  if($session->is_expired || $session->is_empty)
   {
 	  print <<LEFT;
-    <body>
-	<div id="wrapper">
-		<div id="header">
-			<div id="login">
-				<p>Your has session expired. Please login again.</p>
-				<form method="post" action="login.cgi">
-					<input type="text" name="username" value="User" size="12"/>
-					<input type="password" name="password" value="Password" size="12"/>
-					<button type="submit" id="sending">Login</button>
-				</form>
-			</div>
-		</div>	
-LEFT
-menuNotLogged($_[1]);
-  }
-  elsif($session->is_empty)
-  {
-    print <<LEFT;
-    <body>
-	<div id="wrapper">
-		<div id="header">
-			<div id="login">
-				<form method="post" action="login.cgi">
-					<input type="text" name="username" value="User" size="12"/>
-					<input type="password" name="password" value="Password" size="12"/>
-					<button type="submit" id="sending">Login</button>
-				</form>
-			</div>
-		</div>	
+		<body>
+			<div id="wrapper">
+				<div id="header">
+					<div id="login">
+						<form method="post" action="login.cgi">
+							<input type="text" name="username" value="User" size="12"/>
+							<input type="password" name="password" value="Password" size="12"/>
+							<button type="submit" id="sending">Login</button>
+						</form>
+					</div>
+				</div>	
 LEFT
 menuNotLogged($_[1]);
   }
   else
   {
 	print <<LEFT;
-    <body>
-	<div id="wrapper">
-		<div id="header">
-			<div id="login">
-				<div class="userLogged">
+		<body>
+			<div id="wrapper">
+				<div id="header">
+					<div id="login">
+						<div class="userLogged">
 LEFT
-				print "<div class=\"avatar\"> <img src=\"../images/avatars/1.jpg\" class=\"grav\"/> </div>";
-				print "<div class=\"name\">Benvenuto, <B>$user</B> <br><a href=\"logout.cgi\">Logout</a></div>";
-		print <<LEFT;			
+						print "<div class=\"avatar\"> <img src=\"../images/avatars/1.jpg\" class=\"grav\"/> </div>";
+						print "<div class=\"name\">Benvenuto, <B>$user</B> <br><a href=\"logout.cgi\">Logout</a></div>";
+	print <<LEFT;			
+					</div>
 				</div>
-			</div>
-		</div>	
+			</div>	
 LEFT
 menu($_[1]);
   }
-
 }
 
 
