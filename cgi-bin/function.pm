@@ -29,8 +29,7 @@ my $seriesXml = "../xml/series.xml";
 my $usersXml = "../xml/users.xml";
 # path db commenti
 my $commentsXml = "../xml/comments.xml";
-# array degli id dei film ordinati per data ( dal + recente al - recente )
-my @sortIdFilm;
+
 
 
 
@@ -290,7 +289,7 @@ print <<RIGHT;
 				<div class="content_max_view">
 RIGHT
 
-my @sortId = function->sortIdFilmByDate();
+my @sortId = function::sortIdItemByDate({ type=>"film" });
 
 # creo dinamicamente i link ai 5 film più recenti 
 my $i;
@@ -330,32 +329,32 @@ FOOTER
 }
 
 
-# ritorna gli id di tutti i film, ordinati per data di uscita ( dal + recente al meno recente )
-sub sortIdFilmByDate{
+# ritorna gli id dell'item (film o comment) ordinati per data ( dal + recente al meno recente )
+# es: function::sortIdFilmByDate({ type=>"film"});
+sub sortIdItemByDate{
+    my $parameters = shift;
+    my $type = $parameters->{type};
 
-my $nodeset = function::findItem({ type=>"film", query=>"//collection/film"});
+    my $nodeset = function::findItem({ type=>$type, query=>"//collection/$type"});
 
-my $id;
-my $date;
-my %hash;
+    my $id;
+    my $date;
+    my %hash;
 
-my $buffer;
+    my $buffer;
 
-foreach my $node ($nodeset->get_nodelist) {
-	$id = $node->findvalue('@id')->string_value."\n";
-	$date= $node->find('date/text()')->string_value."\n";
-	$date =~ s/-//g;
-	$hash{$id}= $date;
+    foreach my $node ($nodeset->get_nodelist) {
+    	$id = $node->findvalue('@id')->string_value."\n";
+	    $date= $node->find('date/text()')->string_value."\n";
+    	$date =~ s/-//g;  # toglie i trattini nelle date
+    	$date =~ s/T//g;
+    	$date =~ s/://g;
+    	$hash{$id}= $date;
+    }
+
+    return reverse sort { $hash{$a} <=> $hash{$b} } keys %hash;
 }
 
-@sortIdFilm = reverse sort { $hash{$a} <=> $hash{$b} } keys %hash;
-}
-
-
-# ritorna l'array degli id dei film ordinati per data ( dal +recente al -recente)
-sub getSortIdFIlm{
-    return @sortIdFilm;
-}
 
 
 
