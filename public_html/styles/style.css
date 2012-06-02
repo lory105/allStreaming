@@ -30,6 +30,15 @@ html,body {
 	margin-left: auto;
 }
 
+#registration{
+	margin:0 auto;
+	width:40%;
+	min-width:360px;
+	height:100%;
+	text-align:center;
+	margin-left: auto;
+}
+
 .content{
 	width:90%;
 	float:left;
@@ -98,12 +107,6 @@ html,body {
 		text-align:center;
 		border:1px solid grey;
 }
-
-/*
-hr {
-border: 1px dotted #999933;
-}
-*/
 
 hr {
  height:1px;
@@ -295,3 +298,14 @@ a:hover{
 	text-align:center;
 	margin:0 auto;
 }
+
+.sx{
+	text-align:left;
+	float:left;
+}
+
+.dx{
+	text-align:right;
+	float:right;
+}
+
