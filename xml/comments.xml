@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="comments.xsl"?>
+<collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org comments.xsd">
+
+	<comment id="1">
+		<idUser>1</idUser>
+		<typeVideo>film</typeVideo>
+		<idVideo>2</idVideo>
+		<date>20012-04-26T21:32:52</date>
+		<content>Un gran bel film!</content>
+	</comment>
+	<comment id="2">
+		<idUser>2</idUser>
+		<typeVideo>serie</typeVideo>
+		<idVideo>1</idVideo>
+		<date>20012-05-26T21:32:52</date>
+		<content>bella serie!</content>
+	</comment>
+	<comment id="3">
+		<idUser>2</idUser>
+		<typeVideo>serie</typeVideo>
+		<idVideo>2</idVideo>
+		<date>20012-05-27T21:32:52</date>
+		<content>bella!</content>
+	</comment>
+</collection>

@@ -9,11 +9,12 @@ targetNamespace="http://allStreaming.altervista.org" elementFormDefault="qualifi
 				<xsd:complexType>
 					<xsd:sequence>
 						<xsd:element name="idUser" type="xsd:string" />
+						<xsd:element name="typeVideo" />
 						<xsd:element name="idVideo" type="xsd:string" />
 						<xsd:element name="date" type="xsd:dateTime" />
 						<xsd:element name="content" type="xsd:string" />
 					</xsd:sequence>
-					<xsd:attribute name="id" type="xsd:string"/>
+					<xsd:attribute name="id" type="xsd:string" use="required"/>
 				</xsd:complexType>
 			</xsd:element>
 		</xsd:sequence>
