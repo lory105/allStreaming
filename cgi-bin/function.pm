@@ -278,7 +278,7 @@ my @sortId = function->sortIdFilmByDate();
 my $i;
 for($i = 0; $i < 5; $i++) {
 	my $id = "$sortId[$i]";
-	my $nodeset = function->findFilm("//collection/film[\@id=$id]/title/text()");
+	my $nodeset = function::findItem({ type=>"film", query=>"//collection/film[\@id=$id]/title/text()" });
 	print "<a href=\"film.cgi?id=$id\" >$nodeset</a></br>";
 
 }
@@ -315,7 +315,7 @@ FOOTER
 # ritorna gli id di tutti i film, ordinati per data di uscita ( dal + recente al meno recente )
 sub sortIdFilmByDate{
 
-my $nodeset = function->findFilm();
+my $nodeset = function::findItem({ type=>"film", query=>"//collection/film"});
 
 my $id;
 my $date;
@@ -565,13 +565,9 @@ return $xp->findnodes( $query );
 }
 
 
-
-
-
-
 # funzione di ricerca serie tv: se non riceve parametri (!$_[1]) ricerca tutte le serie,
 # altrimenti esegue la query ricevuta in $_[1]
-# come invocare la funzione (attenzione sintassi query!!) : 
+# come invocare la funzione (attenzione sintassi query!!) :
 # function->findSerie( "//collection/serie[\@id=\"$id\"]");
 sub findSerie {
 
@@ -590,6 +586,35 @@ else{ $query = "//collection/serie"; }
 #print "$query" . "\n";
 
 return $xp->findnodes( $query );
+}
+
+
+
+
+# funzione di ricerca film, serie, user, comment. riceve in input la query e il tipo di item da cercare
+# funzione richiamabile così:  
+# function::findItem({ type=>"serie", query=>"//collection/serie[\@id=$id]" });
+# function::findItem({ type=>"comment", query=>"//collection/comment[typeVideo=\"serie\" and idVideo=\"2\" ]" });
+sub findItem {
+    my $parameters = shift;
+    my $type = $parameters->{type};
+    my $query = $parameters->{query};
+    my $file;
+    
+    switch ($type) {
+	   case "film"    { $file = $filmsXml; last; }
+	   case "serie"   { $file = $seriesXml; last; }
+	   case "user"    { $file = $usersXml; last; }
+	   case "comment" { $file = $commentsXml; last; }
+    }
+    
+    # creo un oggetto XPath e gli associo il file xml dove cercare
+    my $xp = XML::XPath->new(filename => $file);
+
+    # debug da togliere!!!
+    #print "$query" . "\n";
+
+    return $xp->findnodes( $query );
 }
 
 

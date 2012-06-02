@@ -39,7 +39,13 @@ my $commentsXml = "../xml/comments.xml";
 ########################################################################
 ###   
 
-print function->countRegisteredUsers();
+my $id = "3";
+
+print function::findItem({ type=>"comment", query=>"//collection/comment[typeVideo=\"serie\" and idVideo=\"2\"]" })->size();
+
+#print function::findItem({ type=>"serie", query=>"//collection/serie[\@id=$id]" })->size();
+
+#print function->countRegisteredUsers();
 
 #print function->sortIdFilmByDate();
 
