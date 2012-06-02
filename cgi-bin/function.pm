@@ -259,13 +259,46 @@ sub right {
 
 print <<RIGHT;
 			<div id="right_side">
-			<div class="view">I pi&ugrave; visti</div>
+			<div class="view">Ultimi video commentati</div>
 				<div class="content_max_view">
-					Primo</br>
-					Secondo</br>
-					Terzo</br>
-					Quarto</br>
-					Quinto</br> 
+RIGHT
+
+my @sortIdComment = function::sortIdItemByDate({ type=>"comment"});
+my $video;
+my $x;
+
+my $sizeFilm;
+
+FOO: {
+    # se non ci sono commenti nel DB
+    my $arraySize = @sortIdComment;
+    if( $arraySize==0 ){ print "Non ci sono commenti"; last FOO;}
+    
+    for($x = 0; scalar @sortIdComment >$x && $x < 5; $x++) {
+            
+	    my $idComment = "$sortIdComment[$x]";
+	    my $node = function::findItem({ type=>"comment", query=>"//collection/comment[\@id=$idComment]" })->get_node(1);
+    
+	    my $typeVideo; my $idVideo;
+	
+        # dal singolo commento cerco a quale video si riferisce
+    	$typeVideo = $node->find('typeVideo')->string_value;
+	    $idVideo= $node->find('idVideo')->string_value;
+    
+        # cerco il video con l'id corrispondente 
+        if( $typeVideo eq "film"){
+            $video = function::findItem({ type=>$typeVideo, query=>"//collection/film[\@id=$idVideo]" })->get_node(1);
+        }
+        if( $typeVideo eq "serie"){
+            $video = function::findItem({ type=>$typeVideo, query=>"//collection/serie[\@id=$idVideo]" })->get_node(1);
+        }
+    
+        my $title = $video->find('title')->string_value;
+	    print "<a href=\"$typeVideo.cgi?id=$idVideo\" >$title</a></br>";
+    }
+}
+
+print <<RIGHT;
 				</div>
 			<div class="news">Novit&agrave;</div>
 				<div class="content_max_view">
@@ -354,6 +387,7 @@ sub addUser{
     my $username = $parameters->{username};
     my $password = $parameters->{password};
     my $email = $parameters->{email};
+    # $email =~ s/@/\@/g;                     # inserisce il simbolo "\" prima della "@"  forse non serve!!
     my $avatar = $parameters->{avatar};
     my $dateRegistration = $parameters->{dateRegistration};
     my $admin = $parameters->{admin};

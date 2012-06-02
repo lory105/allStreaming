@@ -41,7 +41,12 @@ my $commentsXml = "../xml/comments.xml";
 
 my $id = "3";
 
-print function::sortIdFilmByDate({ type=>"film"});
+my @arr = function::sortIdItemByDate({ type=>"comment"});
+
+my $size= @arr;
+print $size;
+
+#print function::sortIdItemByDate({ type=>"film"});
 
 #print function::findItem({ type=>"comment", query=>"//collection/comment[typeVideo=\"serie\" and idVideo=\"2\"]" })->size();
 
