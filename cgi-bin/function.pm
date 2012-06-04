@@ -689,6 +689,52 @@ sub redirectTo {
 	print $_[1]->header(-location=>"$_[2]");
 }
 
+
+sub printComment{
+    my $parameters = shift;
+    my $typeVideo = $parameters->{typeVideo};
+    my $idVideo = $parameters->{idVideo};
+    
+    print <<COMMENTS;
+	      <h2>Commenti</h2>
+		  <div id="commenti">
+		  </br>
+COMMENTS
+
+    my $comments = function::findItem({ type=>"comment", query=>"//collection/comment[idVideo=$idVideo and typeVideo=\"$typeVideo\"]" });
+
+FOO:{
+    if( $comments->size()==0 ){ print "Non ci sono commenti"; last FOO;}
+    
+    foreach my $node ($comments->get_nodelist) {
+        my $content = $node->find('content');
+        my $idUser = $node->find('idUser');
+        my $date = $node->find('date');
+        my $user = function::findItem({ type=>"user", query=>"//collection/user[\@id=$idUser]" })->get_node(1);
+        my $username = $user->find('username');
+        my $image = $user->find('image');
+    
+
+  
+    
+print <<COMMENT
+            <div class="commento">
+				<div class="userComment">
+						<img src="../images/avatars/$idUser.jpg" class="grav"/> 
+						<b><a href="profile.cgi?id=$idUser">$username</a></b>
+						<span class="data">$date</span>
+				</div>
+				<hr></hr>
+				<div class="userText">$content</div>
+			</div>
+			</br>
+COMMENT
+    }
+    
+    
+}
+}
+
 sub loadComments {
 	my $session = CGI::Session->load();
 	  if($session->is_expired || $session->is_empty){
@@ -699,6 +745,7 @@ sub loadComments {
 		  <h2>Commenti</h2>
 		  <div id="commenti">
 			</br>
+			
 			<div class="commento">
 				<div class="userComment">
 						<img src="../images/avatars/1.jpg" class="grav"/> 
@@ -709,6 +756,7 @@ sub loadComments {
 				<div class="userText">Proprio un bel film</div>
 			</div>
 			</br>
+			
 			<div class="commento">
 				<div class="userComment">
 						<img src="../images/avatars/1.jpg" class="grav"/> 
@@ -719,7 +767,8 @@ sub loadComments {
 				<div class="userText">Proprio un bel film</div>
 			</div>
 			</br>
-		  </div>
+			
+		  
 		  
 COMMENTS
 	  }

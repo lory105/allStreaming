@@ -36,10 +36,15 @@ foreach my $node ($nodeset->get_nodelist) {
 	  }
 	}
 	print "</div>";
-}    
-function->loadComments();
-print <<BODY;
-		</div>
-BODY
+}
+
+my $session = CGI::Session->load();
+
+if($session->is_expired || $session->is_empty){}
+else{
+    function::printComment({ typeVideo=>"serie", idVideo=>$id  });
+}
+
+
 
 function->footer();
