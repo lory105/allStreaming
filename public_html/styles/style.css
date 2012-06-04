@@ -312,11 +312,13 @@ a:hover{
 .correctValue{
 	color:green;
 	display: none;
+	float:right;
 }
 
 .wrongValue{
 	color:red;
 	display: none;
+	float:right;
 }
 
 
