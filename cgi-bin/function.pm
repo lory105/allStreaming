@@ -267,8 +267,6 @@ my @sortIdComment = function::sortIdItemByDate({ type=>"comment"});
 my $video;
 my $x;
 
-my $sizeFilm;
-
 FOO: {
     # se non ci sono commenti nel DB
     my $arraySize = @sortIdComment;
@@ -690,7 +688,66 @@ sub redirectTo {
 }
 
 
-sub printComment{
+
+# stampa gli ultimi X commenti inseriti
+sub printAllComments{
+
+     print <<COMMENTS;
+	      <h2>Ultimi 20 commenti</h2>
+		  <div id="commenti">
+		  </br>
+COMMENTS
+
+
+    my @sortIdComment = function::sortIdItemByDate({ type=>"comment"});
+
+    FOO: {
+        # se non ci sono commenti nel DB
+        my $arraySize = @sortIdComment;
+        if( $arraySize==0 ){ print "Non ci sono commenti"; last FOO;}
+        else{
+            my $x;
+            for($x = 0; scalar @sortIdComment >$x && $x < 20; $x++) {
+            
+	            my $idComment = "$sortIdComment[$x]";
+	            my $node = function::findItem({ type=>"comment", query=>"//collection/comment[\@id=$idComment]" })->get_node(1);
+	           
+	            my $typeVideo = $node->find('typeVideo')->string_value;
+	            my $idVideo = $node->find('idVideo');
+	            my $idUser = $node->find('idUser');
+                my $date = $node->find('date');
+	            my $content = $node->find('content');
+                
+                my $query = "//collection/". $typeVideo ."[\@id=$idVideo]";
+                my $video = function::findItem({ type=>$typeVideo, query=>$query })->get_node(1);
+                my $titleVideo = $video->find('title');
+                
+                my $user = function::findItem({ type=>"user", query=>"//collection/user[\@id=$idUser]" })->get_node(1);
+                my $username = $user->find('username');
+                my $image = $user->find('image');
+        
+                print <<COMMENT
+                <div class="commento">
+				    <div class="userComment">
+						  <img src="../images/avatars/$idUser.jpg" class="grav"/> 
+						  <b><a href="profile.cgi?id=$idUser">$username</a></b>
+						  <span ><u><a href="$typeVideo.cgi?id=$idVideo">$titleVideo</a></u></span>
+						  <span class="data">$date</span>
+				    </div>
+				    <hr></hr>
+				    <div class="userText">$content</div>
+			    </div>
+			    </br>
+COMMENT
+            }
+        }
+    }
+}
+
+
+# stampa tutti i commenti relativi ad un video
+# es: function::printCommentsVideo({ typeVideo=>"serie", idVideo=>$id  });
+sub printCommentsVideo{
     my $parameters = shift;
     my $typeVideo = $parameters->{typeVideo};
     my $idVideo = $parameters->{idVideo};
@@ -701,23 +758,21 @@ sub printComment{
 		  </br>
 COMMENTS
 
+
     my $comments = function::findItem({ type=>"comment", query=>"//collection/comment[idVideo=$idVideo and typeVideo=\"$typeVideo\"]" });
 
-FOO:{
-    if( $comments->size()==0 ){ print "Non ci sono commenti"; last FOO;}
+    FOO:{
+        if( $comments->size()==0 ){ print "Non ci sono commenti"; last FOO;}
     
-    foreach my $node ($comments->get_nodelist) {
-        my $content = $node->find('content');
-        my $idUser = $node->find('idUser');
-        my $date = $node->find('date');
-        my $user = function::findItem({ type=>"user", query=>"//collection/user[\@id=$idUser]" })->get_node(1);
-        my $username = $user->find('username');
-        my $image = $user->find('image');
-    
-
-  
-    
-print <<COMMENT
+        foreach my $node ($comments->get_nodelist) {
+            my $content = $node->find('content');
+            my $idUser = $node->find('idUser');
+            my $date = $node->find('date');
+            my $user = function::findItem({ type=>"user", query=>"//collection/user[\@id=$idUser]" })->get_node(1);
+            my $username = $user->find('username');
+            my $image = $user->find('image');
+        
+            print <<COMMENT
             <div class="commento">
 				<div class="userComment">
 						<img src="../images/avatars/$idUser.jpg" class="grav"/> 
@@ -729,10 +784,8 @@ print <<COMMENT
 			</div>
 			</br>
 COMMENT
+        }
     }
-    
-    
-}
 }
 
 sub loadComments {
@@ -767,9 +820,7 @@ sub loadComments {
 				<div class="userText">Proprio un bel film</div>
 			</div>
 			</br>
-			
-		  
-		  
+		 
 COMMENTS
 	  }
 }

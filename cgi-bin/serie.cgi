@@ -30,9 +30,9 @@ foreach my $node ($nodeset->get_nodelist) {
 	  print "<p><h3>Stagione $numb</h3></p>";
 	  my $episodes=$try->find('episode');
 	  foreach my $episode ($episodes->get_nodelist) {
-		  my $singleTitle=$episode->find('title')->string_value;
-		  my $singleLink=$episode->find('link')->string_value;
-		  print "<p><a href=\"$singleLink\"><emph>$singleTitle</emph></a></p>";
+		  my $title=$episode->find('title')->string_value;
+		  my $link=$episode->find('link')->string_value;
+		  print "<p><b>Link:</b> <a href=\"http://$link\" target=\"_blank\">$title</a></p>"; 
 	  }
 	}
 	print "</div>";
@@ -42,7 +42,7 @@ my $session = CGI::Session->load();
 
 if($session->is_expired || $session->is_empty){}
 else{
-    function::printComment({ typeVideo=>"serie", idVideo=>$id  });
+    function::printCommentsVideo({ typeVideo=>"serie", idVideo=>$id  });
 }
 
 

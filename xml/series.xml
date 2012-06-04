@@ -48,15 +48,15 @@ xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreamin
 		<season number="1">
 			<episode>
 				<title>EpisodioUnoTitolo</title>
-				<link>Nowvideo</link>
+				<link>www.Nowvideo.com</link>
 			</episode>
 			<episode>
 				<title>EpisodioDueTitolo</title>
-				<link>Nowvideo</link>
+				<link>www.Nowvideo.com</link>
 			</episode>
 			<episode>
 				<title>EpisodioTreTitolo</title>
-				<link>Nowvideo</link>
+				<link>www.Nowvideo.com</link>
 			</episode>
 		</season>
 		<season number="2">
