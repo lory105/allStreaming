@@ -98,16 +98,16 @@ print<<MENU
 		</div>	
 MENU
 	}
-if($_[0] eq "commenti"){
+if($_[0] eq "registration"){
 print<<MENU
-			<div id="navigation">Ti trovi in : Commenti</div>
+			<div id="navigation">Ti trovi in : Registratione</div>
 			<div id="left_side">
 			<div class="menu">Menu Principale</div>
 				<div class="content">
 					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
 					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
 					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
-					<img src="../images/signin.png"/><a href="registration.cgi"><b>Registrazione</b></a><hr>
+					<img src="../images/signin.png"/><a href="#"><b>Registrazione</b></a><hr>
 					</br>
 				</div>
 		</div>	
@@ -178,7 +178,7 @@ print<<MENU
 		</div>	
 MENU
 	}
-if($_[0] eq "commenti"){
+if($_[0] eq "comment"){
 print<<MENU
 			<div id="navigation">Ti trovi in : Commenti</div>
 			<div id="left_side">
@@ -331,7 +331,7 @@ print <<FOOTER;
 	</br>
 		<div id="footer">
 			<a href="#">allStreaming.com </a>-
-			<a href="#">About Us </a>-
+			<a href="aboutUs.cgi">About Us </a>-
 			<a href="#"> Contact Us</a>
 		</div>
     </body>
@@ -740,6 +740,7 @@ COMMENTS
 			    </br>
 COMMENT
             }
+            if( $x < 20 ){ print "Non ci sono altri commenti";}
         }
     }
 }
@@ -788,6 +789,8 @@ COMMENT
     }
 }
 
+
+## da togliere !!!!
 sub loadComments {
 	my $session = CGI::Session->load();
 	  if($session->is_expired || $session->is_empty){

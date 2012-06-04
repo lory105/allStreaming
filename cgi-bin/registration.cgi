@@ -21,7 +21,7 @@ print <<HEADER;
 		</head> 
 	
 HEADER
-function->left();
+function->left("registration");
 function->right();
 
 my %input = ("name" => "default");
