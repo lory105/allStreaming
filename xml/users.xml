@@ -19,7 +19,7 @@ xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreamin
 		<username>luck</username>
 		<password>lucascassa</password>
 		<email>lucas@gmail.com</email>
-		<avatar>../avatar/luck.png</avatar>
+		<avatar>../avatar/2.png</avatar>
 		<dateRegistration>2008-11-26T21:32:52</dateRegistration>
 		<admin>false</admin>
 	</user>
@@ -29,8 +29,18 @@ xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreamin
 		<username>d</username>
 		<password>guerra</password>
 		<email>d@gmail.com</email>
-		<avatar>../avatar/d.png</avatar>
+		<avatar>../avatar/3.png</avatar>
 		<dateRegistration>2009-10-26T21:32:52</dateRegistration>
 		<admin>false</admin>
+	</user>
+	<user id="4">
+		<name>Stefano</name>
+		<surname>Carrà</surname>
+		<username>admin</username>
+		<password>admin1</password>
+		<email>admin@gmail.com</email>
+		<avatar>../avatar/4.png</avatar>
+		<dateRegistration>2009-10-26T21:32:52</dateRegistration>
+		<admin>true</admin>
 	</user>
 </collection>
