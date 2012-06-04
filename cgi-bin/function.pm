@@ -216,7 +216,8 @@ sub left {
 
   my $session = CGI::Session->load();
   my $user = $session->param('username');
-  if($session->is_expired || $session->is_empty)
+  #if($session->is_expired || $session->is_empty)  # vecchia riga ( luca )
+  if( $user eq "")
   {
 	  print <<LEFT;
 		<body>
@@ -228,11 +229,18 @@ sub left {
 							<input type="password" name="password" value="Password" size="12"/>
 							<button type="submit" id="sending">Login</button>
 						</form>
+LEFT
+  my $error_login = $session->param('error_login');
+  if( $error_login eq "true" ){ $session->param("error_login", "false"); print "<p>Errore nel login</p>";}
+
+    print <<LEFT;
 					</div>
 				</div>	
 LEFT
+
 menuNotLogged($_[1]);
   }
+  
   else
   {
 	print <<LEFT;

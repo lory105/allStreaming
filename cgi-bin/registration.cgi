@@ -31,9 +31,9 @@ print <<CENTER;
 			<h1>Registrazione nuovo utente</h1>
 						<form name="registration" method="post">
 							<fieldset>
-								<legend align="center" >Insert all fields</legend>
+								<legend align="center" >Copila tutti i campi</legend>
 
-								<span class="sx"><label for="name">Name:</label></span>
+								<span class="sx"><label for="name">Nome:</label></span>
 								<span class="dx"><input type="text" name="name" id="name" value="nome" onblur="checkName();"  /></span><span class="wrongValue" id="nameError">Non valido</span><span class="correctValue" id="nameCorrect">Valido</span>
 								</br>
 								<hr></hr>
