@@ -7,7 +7,7 @@ use function;
 use CGI::Session ( '-ip_match' );
 
 function->header();
-function->left("home");
+function->left();
 function->right();
 
 
@@ -15,7 +15,7 @@ function->right();
 print <<CENTER;
 		<div id="registration">
 			<h1>Registrazione nuovo utente</h1>
-						<form name="registration" action="check_registration.cgi" method="post">
+						<form name="registration" method="post" action="validation::validation(this);">
 							<fieldset>
 								<legend align="center" >Insert all fields</legend>
 
@@ -42,8 +42,8 @@ print <<CENTER;
 								<span class="sx"><label for="confirm_password">Conferma password:</label></span>
 								<span class="dx"><input type="password" name="confirm_password" id="password" value="password" /></span>
 								</br>
-								<hr></hr>					
-								<input type="button" value="Invia" onClick="validation(this)"/>
+								<hr></hr>
+								<button type="submit">Invia</button>				
 							</fieldset>
 						</form>
 		</div>
