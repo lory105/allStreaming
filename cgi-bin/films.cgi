@@ -16,7 +16,7 @@ print<<BODY;
 		<div id="center_side">
 			<h1>Film disponibili</h1>
 			<div id="year">
-				<h2>Anno d'uscita</h2></br>
+				<h2>Anno d'uscita</h2>
 				<a href="researchFilm.cgi?type=Year&value=2012">2012</a></br>
 				<a href="researchFilm.cgi?type=Year&value=2011">2011</a></br>
 				<a href="researchFilm.cgi?type=Year&value=2010">2010</a></br>

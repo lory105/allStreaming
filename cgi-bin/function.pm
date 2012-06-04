@@ -123,7 +123,7 @@ print<<MENU
 					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
 					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
 					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
-					<img src="../images/comment.png"/><a href="#">Commenti</a><hr>
+					<img src="../images/comment.png"/><a href="comments.cgi">Commenti</a><hr>
 					</br>
 				</div>
 		</div>	
@@ -142,7 +142,7 @@ print<<MENU
 					<img src="../images/home.png"/><a href="#"><b>Home</b></a><hr>
 					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
 					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
-					<img src="../images/comment.png"/><a href="#">Commenti</a><hr>
+					<img src="../images/comment.png"/><a href="comments.cgi">Commenti</a><hr>
 					</br>
 				</div>
 		</div>	
@@ -157,7 +157,7 @@ print<<MENU
 					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
 					<img src="../images/series.png"/><a href="series.cgi"><b>Serie Tv</b></a><hr>
 					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
-					<img src="../images/comment.png"/><a href="#">Commenti</a><hr>
+					<img src="../images/comment.png"/><a href="comments.cgi">Commenti</a><hr>
 					</br>
 				</div>
 		</div>	
@@ -172,7 +172,7 @@ print<<MENU
 					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
 					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
 					<img src="../images/film.png"/><a href="films.cgi"><b>Film</b></a><hr>
-					<img src="../images/comment.png"/><a href="#">Commenti</a><hr>
+					<img src="../images/comment.png"/><a href="comments.cgi">Commenti</a><hr>
 					</br>
 				</div>
 		</div>	
@@ -187,7 +187,7 @@ print<<MENU
 					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
 					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
 					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
-					<img src="../images/comment.png"/><a href="#"><b>Commenti</b></a><hr>
+					<img src="../images/comment.png"/><a href="comments.cgi"><b>Commenti</b></a><hr>
 					</br>
 				</div>
 		</div>	
@@ -203,7 +203,7 @@ print<<MENU
 					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
 					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
 					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
-					<img src="../images/comment.png"/><a href="#">Commenti</a><hr>
+					<img src="../images/comment.png"/><a href="comments.cgi">Commenti</a><hr>
 					</br>
 				</div>
 		</div>	
