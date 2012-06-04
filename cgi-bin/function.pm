@@ -98,16 +98,16 @@ print<<MENU
 		</div>	
 MENU
 	}
-if($_[0] eq "commenti"){
+if($_[0] eq "registration"){
 print<<MENU
-			<div id="navigation">Ti trovi in : Commenti</div>
+			<div id="navigation">Ti trovi in : Registratione</div>
 			<div id="left_side">
 			<div class="menu">Menu Principale</div>
 				<div class="content">
 					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
 					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
 					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
-					<img src="../images/signin.png"/><a href="registration.cgi"><b>Registrazione</b></a><hr>
+					<img src="../images/signin.png"/><a href="#"><b>Registrazione</b></a><hr>
 					</br>
 				</div>
 		</div>	
@@ -178,7 +178,7 @@ print<<MENU
 		</div>	
 MENU
 	}
-if($_[0] eq "commenti"){
+if($_[0] eq "comment"){
 print<<MENU
 			<div id="navigation">Ti trovi in : Commenti</div>
 			<div id="left_side">
@@ -216,7 +216,8 @@ sub left {
 
   my $session = CGI::Session->load();
   my $user = $session->param('username');
-  if($session->is_expired || $session->is_empty)
+  #if($session->is_expired || $session->is_empty)  # vecchia riga ( luca )
+  if( $user eq "")
   {
 	  print <<LEFT;
 		<body>
@@ -228,11 +229,18 @@ sub left {
 							<input type="password" name="password" value="Password" size="12"/>
 							<button type="submit" id="sending">Login</button>
 						</form>
+LEFT
+  my $error_login = $session->param('error_login');
+  if( $error_login eq "true" ){ $session->param("error_login", "false"); print "<p>Errore nel login</p>";}
+
+    print <<LEFT;
 					</div>
 				</div>	
 LEFT
+
 menuNotLogged($_[1]);
   }
+  
   else
   {
 	print <<LEFT;
@@ -266,8 +274,6 @@ RIGHT
 my @sortIdComment = function::sortIdItemByDate({ type=>"comment"});
 my $video;
 my $x;
-
-my $sizeFilm;
 
 FOO: {
     # se non ci sono commenti nel DB
@@ -333,7 +339,7 @@ print <<FOOTER;
 	</br>
 		<div id="footer">
 			<a href="#">allStreaming.com </a>-
-			<a href="#">About Us </a>-
+			<a href="aboutUs.cgi">About Us </a>-
 			<a href="#"> Contact Us</a>
 		</div>
     </body>
@@ -690,7 +696,67 @@ sub redirectTo {
 }
 
 
-sub printComment{
+
+# stampa gli ultimi X commenti inseriti
+sub printAllComments{
+
+     print <<COMMENTS;
+	      <h2>Ultimi 20 commenti</h2>
+		  <div id="commenti">
+		  </br>
+COMMENTS
+
+
+    my @sortIdComment = function::sortIdItemByDate({ type=>"comment"});
+
+    FOO: {
+        # se non ci sono commenti nel DB
+        my $arraySize = @sortIdComment;
+        if( $arraySize==0 ){ print "Non ci sono commenti"; last FOO;}
+        else{
+            my $x;
+            for($x = 0; scalar @sortIdComment >$x && $x < 20; $x++) {
+            
+	            my $idComment = "$sortIdComment[$x]";
+	            my $node = function::findItem({ type=>"comment", query=>"//collection/comment[\@id=$idComment]" })->get_node(1);
+	           
+	            my $typeVideo = $node->find('typeVideo')->string_value;
+	            my $idVideo = $node->find('idVideo');
+	            my $idUser = $node->find('idUser');
+                my $date = $node->find('date');
+	            my $content = $node->find('content');
+                
+                my $query = "//collection/". $typeVideo ."[\@id=$idVideo]";
+                my $video = function::findItem({ type=>$typeVideo, query=>$query })->get_node(1);
+                my $titleVideo = $video->find('title');
+                
+                my $user = function::findItem({ type=>"user", query=>"//collection/user[\@id=$idUser]" })->get_node(1);
+                my $username = $user->find('username');
+                my $image = $user->find('image');
+        
+                print <<COMMENT
+                <div class="commento">
+				    <div class="userComment">
+						  <img src="../images/avatars/$idUser.jpg" class="grav"/> 
+						  <b><a href="profile.cgi?id=$idUser">$username</a></b>
+						  <span ><u><a href="$typeVideo.cgi?id=$idVideo">$titleVideo</a></u></span>
+						  <span class="data">$date</span>
+				    </div>
+				    <hr></hr>
+				    <div class="userText">$content</div>
+			    </div>
+			    </br>
+COMMENT
+            }
+            if( $x < 20 ){ print "Non ci sono altri commenti";}
+        }
+    }
+}
+
+
+# stampa tutti i commenti relativi ad un video
+# es: function::printCommentsVideo({ typeVideo=>"serie", idVideo=>$id  });
+sub printCommentsVideo{
     my $parameters = shift;
     my $typeVideo = $parameters->{typeVideo};
     my $idVideo = $parameters->{idVideo};
@@ -701,23 +767,21 @@ sub printComment{
 		  </br>
 COMMENTS
 
+
     my $comments = function::findItem({ type=>"comment", query=>"//collection/comment[idVideo=$idVideo and typeVideo=\"$typeVideo\"]" });
 
-FOO:{
-    if( $comments->size()==0 ){ print "Non ci sono commenti"; last FOO;}
+    FOO:{
+        if( $comments->size()==0 ){ print "Non ci sono commenti"; last FOO;}
     
-    foreach my $node ($comments->get_nodelist) {
-        my $content = $node->find('content');
-        my $idUser = $node->find('idUser');
-        my $date = $node->find('date');
-        my $user = function::findItem({ type=>"user", query=>"//collection/user[\@id=$idUser]" })->get_node(1);
-        my $username = $user->find('username');
-        my $image = $user->find('image');
-    
-
-  
-    
-print <<COMMENT
+        foreach my $node ($comments->get_nodelist) {
+            my $content = $node->find('content');
+            my $idUser = $node->find('idUser');
+            my $date = $node->find('date');
+            my $user = function::findItem({ type=>"user", query=>"//collection/user[\@id=$idUser]" })->get_node(1);
+            my $username = $user->find('username');
+            my $image = $user->find('image');
+        
+            print <<COMMENT
             <div class="commento">
 				<div class="userComment">
 						<img src="../images/avatars/$idUser.jpg" class="grav"/> 
@@ -729,12 +793,12 @@ print <<COMMENT
 			</div>
 			</br>
 COMMENT
+        }
     }
-    
-    
-}
 }
 
+
+## da togliere !!!!
 sub loadComments {
 	my $session = CGI::Session->load();
 	  if($session->is_expired || $session->is_empty){
@@ -767,9 +831,7 @@ sub loadComments {
 				<div class="userText">Proprio un bel film</div>
 			</div>
 			</br>
-			
-		  
-		  
+		 
 COMMENTS
 	  }
 }
