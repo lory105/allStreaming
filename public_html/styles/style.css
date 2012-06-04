@@ -309,3 +309,14 @@ a:hover{
 	float:right;
 }
 
+.correctValue{
+	color:green;
+	display: none;
+}
+
+.wrongValue{
+	color:red;
+	display: none;
+}
+
+
