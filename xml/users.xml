@@ -9,7 +9,7 @@ xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreamin
 		<username>jack</username>
 		<password>giacomo</password>
 		<email>giacomoz@gmail.com</email>
-		<avatar>../avatar/jack.png</avatar>
+		<avatar>../avatar/jack.jpg</avatar>
 		<dateRegistration>2007-10-26T21:32:52</dateRegistration>
 		<admin>false</admin>
 	</user>
@@ -19,7 +19,7 @@ xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreamin
 		<username>luck</username>
 		<password>lucascassa</password>
 		<email>lucas@gmail.com</email>
-		<avatar>../avatar/2.png</avatar>
+		<avatar>../avatar/luck.jpg</avatar>
 		<dateRegistration>2008-11-26T21:32:52</dateRegistration>
 		<admin>false</admin>
 	</user>
@@ -29,18 +29,30 @@ xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreamin
 		<username>d</username>
 		<password>guerra</password>
 		<email>d@gmail.com</email>
-		<avatar>../avatar/3.png</avatar>
+		<avatar>../avatar/d.png</avatar>
 		<dateRegistration>2009-10-26T21:32:52</dateRegistration>
 		<admin>false</admin>
 	</user>
+
+
 	<user id="4">
-		<name>Stefano</name>
-		<surname>Carrà</surname>
-		<username>admin</username>
-		<password>admin1</password>
-		<email>admin@gmail.com</email>
-		<avatar>../avatar/4.png</avatar>
-		<dateRegistration>2009-10-26T21:32:52</dateRegistration>
-		<admin>true</admin>
+		<name>nome</name>
+		<surname>dfewfer</surname>
+		<username>username</username>
+		<password>password</password>
+		<email>your@email.com</email>
+		<avatar>../avatar/username.png</avatar>
+		<dateRegistration>2012-06-05T13:49:54</dateRegistration>
+		<admin>false</admin>
+	</user>
+	<user id="5">
+		<name>Gioggio</name>
+		<surname>Gioggiolo</surname>
+		<username>ggggg</username>
+		<password>password</password>
+		<email>your@gioggiolo.com</email>
+		<avatar>../avatar/jack.png</avatar>
+		<dateRegistration>2012-06-05T14:05:42</dateRegistration>
+		<admin>false</admin>
 	</user>
 </collection>
