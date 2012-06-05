@@ -6,6 +6,17 @@ use warnings;
 use function;
 use CGI::Session ( '-ip_match' );
 
+
+my $session = CGI::Session->load();
+
+# X LUCA
+# controllo x vedere se l'utente è loggato
+#if( $session){                                         # NON va
+#if( ! $session->is_expired || ! $session->is_empty){   # NON va
+#    my $cgi = new CGI;
+#    print $cgi->header(-location => q[index.cgi]);
+#}
+
 print "Content-type: text/html\n\n";
 print <<HEADER;
 	<?xml version="1.0" encoding="iso-8859-1"?>
@@ -20,7 +31,7 @@ print <<HEADER;
 		</head> 
 	
 HEADER
-function->left();
+function->left("Registrazione");
 function->right();
 
 my %input = ("name" => "default");

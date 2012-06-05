@@ -9,7 +9,8 @@ use CGI::Session ( '-ip_match' );
 
 
 function->header();
-function->left("film");
+
+function->left("Film");
 function->right();
        
 print<<BODY;

@@ -1,13 +1,21 @@
 #!/usr/bin/perl
 
-use CGI;
-use strict;
-use warnings;
-use function;
-use Digest::MD5 qw(md5 md5_hex md5_base64);
-use XML::XPath;
-use XML::XSLT;
-use XML::LibXML;
+    use CGI;
+    use strict;
+  use CGI::Carp qw/fatalsToBrowser warningsToBrowser/;
+  use CGI::Session ( '-ip_match' );
+  use CGI::Session;
+
+    use warnings;
+    use function;
+    use Digest::MD5 qw(md5 md5_hex md5_base64);
+    use XML::XPath;
+    use XML::XSLT;
+    use XML::LibXML;
+
+  use function;
+  use XML::XPath;
+  use Digest::MD5 qw(md5 md5_hex md5_base64);
 
 #use XML::XPath::XMLParser;
 #use XML::LibXML::NodeList;
@@ -41,10 +49,22 @@ my $commentsXml = "../xml/comments.xml";
 
 my $id = "3";
 
-my @arr = function::sortIdItemByDate({ type=>"comment"});
+my $query = new CGI;
+my $sid = $query->cookie('CGISESSID') || undef;
 
-my $size= @arr;
-print $size;
+#my $session = CGI::Session->new or die CGI::Session->errstr;
+#my $session = new CGI::Session(undef, );
+#$sid = $session->id();
+
+
+print $sid;
+
+
+
+#my @arr = function::sortIdItemByDate({ type=>"comment"});
+
+#my $size= @arr;
+#print $size;
 
 #print function::sortIdItemByDate({ type=>"film"});
 

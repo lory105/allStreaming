@@ -8,7 +8,7 @@ use CGI::Carp qw/fatalsToBrowser warningsToBrowser/;
 use CGI::Session ( '-ip_match' );
 
 function->header();
-function->left("film");
+function->left("Film");
 function->right();
 
 
@@ -36,8 +36,6 @@ foreach my $node ($nodeset->get_nodelist) {
 my $session = CGI::Session->load();
 
 if($session->is_expired || $session->is_empty){}
-else{
-    function::printCommentsVideo({ typeVideo=>"film", idVideo=>$id  });
-}
+else{ function::printCommentsVideo({ typeVideo=>"film", idVideo=>$id  }); }
 
 function->footer();

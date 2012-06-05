@@ -12,9 +12,9 @@ use XML::LibXML;
 
 
 
+function->header();
 
-function->header(); 
-function->left("home");
+function->left("Home");
 function->right();
 
 print <<CENTER;

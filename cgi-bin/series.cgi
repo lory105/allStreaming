@@ -8,8 +8,9 @@ use CGI::Carp qw/fatalsToBrowser warningsToBrowser/;
 use CGI::Session ( '-ip_match' );
 
 
+
 function->header();
-function->left("serie");
+function->left("Serie");
 function->right();
        
 print <<BODY;

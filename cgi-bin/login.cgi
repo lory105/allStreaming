@@ -30,8 +30,8 @@ if( "$cryptedPassword" eq "$password" )
   {
       my $var = "true";
       $session->param("error_login", $var);
-      print $session->header(-location=>'index.cgi');
-      #print $q->header(-type=>"text/html",-location=>"index.cgi");  vecchia riga (luca)
+      #print $session->header(-location=>'index.cgi');
+      print $q->header(-type=>"text/html",-location=>"index.cgi?error_login=true");
   }
   
 

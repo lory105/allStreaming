@@ -49,153 +49,119 @@ print <<HEADER;
 		</head> 
 	
 HEADER
-
 }
+
 
 sub menuNotLogged {
-if($_[0] eq "home"){
-print<<MENU
-			<div id="navigation">Ti trovi in : Home</div>
+my $nav = $_[0];
+    
+print<<MENU;
+			<div id="navigation">Ti trovi in : $nav</div>
 			<div id="left_side">
 			<div class="menu">Menu Principale</div>
 				<div class="content">
-					<img src="../images/home.png"/><a href="#"><b>Home</b></a><hr>
-					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
-					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
-					<img src="../images/signin.png"/><a href="registration.cgi">Registrazione</a><hr>
-					</br>
-				</div>
-		</div>	
 MENU
-}
-if($_[0] eq "serie"){
-print<<MENU
-			<div id="navigation">Ti trovi in : Serie TV</div>
-			<div id="left_side">
-			<div class="menu">Menu Principale</div>
-				<div class="content">
-					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
-					<img src="../images/series.png"/><a href="series.cgi"><b>Serie Tv</b></a><hr>
-					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
-					<img src="../images/signin.png"/><a href="registration.cgi">Registrazione</a><hr>
-					</br>
-				</div>
-		</div>	
+    
+    switch ($nav) {
+	   case "Home"  { 
+	       print<<MENU;
+	           <img src="../images/home.png"/><a href="#"><b>Home</b></a><hr>
+	           <img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
+			   <img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
+			   <img src="../images/signin.png"/><a href="registration.cgi">Registrazione</a><hr>
 MENU
-	}
-if($_[0] eq "film"){
-print<<MENU
-			<div id="navigation">Ti trovi in : Film</div>
-			<div id="left_side">
-			<div class="menu">Menu Principale</div>
-				<div class="content">
-					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
-					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
-					<img src="../images/film.png"/><a href="films.cgi"><b>Film</b></a><hr>
-					<img src="../images/signin.png"/><a href="registration.cgi">Registrazione</a><hr>
-					</br>
-				</div>
-		</div>	
+	       last;
+	   }
+	   case "Serie" {
+	       print<<MENU;
+	       		<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
+				<img src="../images/series.png"/><a href="#"><b>Serie Tv</b></a><hr>
+				<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
+				<img src="../images/signin.png"/><a href="registration.cgi">Registrazione</a><hr>
 MENU
-	}
-if($_[0] eq "registration"){
-print<<MENU
-			<div id="navigation">Ti trovi in : Registratione</div>
-			<div id="left_side">
-			<div class="menu">Menu Principale</div>
-				<div class="content">
-					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
-					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
-					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
-					<img src="../images/signin.png"/><a href="#"><b>Registrazione</b></a><hr>
-					</br>
-				</div>
-		</div>	
+	       last;	       
+	   }
+	   case "Film" {
+	       print<<MENU;
+	       		<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
+				<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
+				<img src="../images/film.png"/><a href="#"><b>Film</b></a><hr>
+				<img src="../images/signin.png"/><a href="registration.cgi">Registrazione</a><hr>
 MENU
-	}
+	       last;	       
+	   }
+	   case "Registrazione" {
+	       print<<MENU;
+				<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
+				<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
+				<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
+				<img src="../images/signin.png"/><a href="#"><b>Registrazione</b></a><hr>
+MENU
+	       last;	       
+	   }
+    }
 
-if($_[0] eq ""){
-print<<MENU
-			<div id="navigation">Ti trovi in : Commenti</div>
-			<div id="left_side">
-			<div class="menu">Menu Principale</div>
-				<div class="content">
-					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
-					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
-					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
-					<img src="../images/comment.png"/><a href="comments.cgi">Commenti</a><hr>
+print<<MENU;
 					</br>
 				</div>
 		</div>	
 MENU
-	}
 
 }
 
 sub menu {
-if($_[0] eq "home"){
-print<<MENU
-			<div id="navigation">Ti trovi in : Home</div>
+    my $nav = $_[0];
+    
+    print<<MENU;
+			<div id="navigation">Ti trovi in : $nav</div>
 			<div id="left_side">
 			<div class="menu">Menu Principale</div>
 				<div class="content">
-					<img src="../images/home.png"/><a href="#"><b>Home</b></a><hr>
-					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
-					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
-					<img src="../images/comment.png"/><a href="comments.cgi">Commenti</a><hr>
-					</br>
-				</div>
-		</div>	
 MENU
-}
-if($_[0] eq "serie"){
-print<<MENU
-			<div id="navigation">Ti trovi in : Serie TV</div>
-			<div id="left_side">
-			<div class="menu">Menu Principale</div>
-				<div class="content">
-					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
-					<img src="../images/series.png"/><a href="series.cgi"><b>Serie Tv</b></a><hr>
-					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
-					<img src="../images/comment.png"/><a href="comments.cgi">Commenti</a><hr>
-					</br>
-				</div>
-		</div>	
-MENU
-	}
-if($_[0] eq "film"){
-print<<MENU
-			<div id="navigation">Ti trovi in : Film</div>
-			<div id="left_side">
-			<div class="menu">Menu Principale</div>
-				<div class="content">
-					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
-					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
-					<img src="../images/film.png"/><a href="films.cgi"><b>Film</b></a><hr>
-					<img src="../images/comment.png"/><a href="comments.cgi">Commenti</a><hr>
-					</br>
-				</div>
-		</div>	
-MENU
-	}
-if($_[0] eq "comment"){
-print<<MENU
-			<div id="navigation">Ti trovi in : Commenti</div>
-			<div id="left_side">
-			<div class="menu">Menu Principale</div>
-				<div class="content">
-					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
-					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
-					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
-					<img src="../images/comment.png"/><a href="comments.cgi"><b>Commenti</b></a><hr>
-					</br>
-				</div>
-		</div>	
-MENU
-	}
 
-if($_[0] eq ""){
-print<<MENU
+    switch ($nav) {
+	   case "Home"  { 
+	       print<<MENU;
+	           <img src="../images/home.png"/><a href="#"><b>Home</b></a><hr>
+	           <img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
+			   <img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
+			   <img src="../images/signin.png"/><a href="comments.cgi">Commenti</a><hr>
+MENU
+	       last;
+	   }
+	   
+	   	   case "Serie"  { 
+	       print<<MENU;
+					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
+					<img src="../images/series.png"/><a href="#"><b>Serie Tv</b></a><hr>
+					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
+					<img src="../images/comment.png"/><a href="comments.cgi">Commenti</a><hr>
+MENU
+	       last;
+	   }
+	   
+	   case "Film"  { 
+	       print<<MENU;
+					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
+					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
+					<img src="../images/film.png"/><a href="#"><b>Film</b></a><hr>
+					<img src="../images/comment.png"/><a href="comments.cgi">Commenti</a><hr>
+MENU
+	       last;
+	   }
+
+	   case "Commenti"  { 
+	       print<<MENU;
+					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
+					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
+					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
+					<img src="../images/comment.png"/><a href="#"><b>Commenti</b></a><hr>
+MENU
+	       last;
+	   }
+
+        else{
+        print<<MENU
 			<div id="navigation">Ti trovi in : Commenti</div>
 			<div id="left_side">
 			<div class="menu">Menu Principale</div>
@@ -204,22 +170,28 @@ print<<MENU
 					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
 					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
 					<img src="../images/comment.png"/><a href="comments.cgi">Commenti</a><hr>
+MENU
+        }
+    }
+
+
+
+	 print<<MENU
 					</br>
 				</div>
 		</div>	
 MENU
-	}
-
 }
+
 
 sub left {
 
-  my $session = CGI::Session->load();
-  my $user = $session->param('username');
-  #if($session->is_expired || $session->is_empty)  # vecchia riga ( luca )
-  if( $user eq "")
-  {
-	  print <<LEFT;
+    my $session = CGI::Session->load();
+    #my $cgi = new CGI;
+    #my $session  = new CGI::Session(undef, $cgi, undef );
+    #my $username = $session->param('username');
+    if($session->is_expired || $session->is_empty){
+	     print <<LEFT;
 		<body>
 			<div id="wrapper">
 				<div id="header">
@@ -230,35 +202,40 @@ sub left {
 							<button type="submit" id="sending">Login</button>
 						</form>
 LEFT
-  my $error_login = $session->param('error_login');
-  if( $error_login eq "true" ){ $session->param("error_login", "false"); print "<p>Errore nel login</p>";}
 
-    print <<LEFT;
-					</div>
+        my $q = new CGI;
+        my $error_login = $q->param('error_login');
+        if( $error_login eq "true" ){ 
+            print "<p>Errore nel login</p>";     #!! X LUCA: applica il css ( è il mess di errore k compare se il login fallisce)
+        }
+
+        print <<LEFT;
+		  			</div>
 				</div>	
 LEFT
 
-menuNotLogged($_[1]);
-  }
+
+        menuNotLogged($_[1]);
+    }
   
-  else
-  {
-	print <<LEFT;
+    else{
+        my $username = $session->param('username');
+        print <<LEFT;
 		<body>
 			<div id="wrapper">
 				<div id="header">
 					<div id="login">
 						<div class="userLogged">
 LEFT
-						print "<div class=\"avatar\"> <img src=\"../images/avatars/1.jpg\" class=\"grav\"/> </div>";
-						print "<div class=\"name\">Benvenuto, <B>$user</B> <br><a href=\"logout.cgi\">Logout</a></div>";
-	print <<LEFT;			
+		print "<div class=\"avatar\"> <img src=\"../images/avatars/1.jpg\" class=\"grav\"/> </div>";
+		print "<div class=\"name\">Benvenuto, <B>$username</B> <br><a href=\"logout.cgi\">Logout</a></div>";
+        print <<LEFT;			
 					</div>
 				</div>
 			</div>	
 LEFT
-menu($_[1]);
-  }
+        menu($_[1]);
+    }
 }
 
 
