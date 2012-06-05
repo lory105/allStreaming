@@ -47,17 +47,8 @@ my $commentsXml = "../xml/comments.xml";
 ########################################################################
 ###   
 
-my $id = "3";
 
-my $query = new CGI;
-my $sid = $query->cookie('CGISESSID') || undef;
-
-#my $session = CGI::Session->new or die CGI::Session->errstr;
-#my $session = new CGI::Session(undef, );
-#$sid = $session->id();
-
-
-print $sid;
+function::randomVideo({ number=>"5"});
 
 
 

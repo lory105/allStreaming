@@ -99,6 +99,16 @@ MENU
 MENU
 	       last;	       
 	   }
+	   
+	   case "" {
+	       print<<MENU;
+				<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
+				<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
+				<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
+				<img src="../images/signin.png"/><a href="registration.cgi">Registrazione</a><hr>
+MENU
+	       last;	       
+	   }
     }
 
 print<<MENU;
@@ -881,6 +891,62 @@ my $maxId = $xp->findnodes( $query );
 return $maxId;
 }
 
+
+# ritorna un numero "number" di video (film e serie ) scelte a random
+sub randomVideo{
+    my $parameters = shift;
+    my $number = $parameters->{number};
+    
+    print <<CENTER;
+		<div id="center_side">
+				<h1>Alcuni Film</h1>
+				<div id="random_film">
+CENTER
+    
+    my @sortIdFilm = function::sortIdItemByDate({ type=>"film"});
+
+    FOO: {
+        # se non ci sono film nel DB
+        my $arraySize = @sortIdFilm;
+        if( $arraySize==0 ){ print "Non ci sono film"; last FOO;}
+        else{
+            my @idFilmSelected; my $x;
+            
+            for($x = 0; scalar @sortIdFilm >$x && $x < $number ; $x++) {
+                FOO: {    
+                
+                my $random_number = int(rand( $arraySize ));
+                my $idFilm = $sortIdFilm[ $random_number ];
+                
+                my %params = map { $_ => 1 } @idFilmSelected;
+
+                if(exists($params{$idFilm})) { $x = $x - 1; last FOO; }
+                $idFilmSelected[$x]= $idFilm;
+                                    
+	            my $node = function::findItem({ type=>"film", query=>"//collection/film[\@id=$idFilm]" })->get_node(1);
+	           
+	            my $title = $node->find('title')->string_value;
+	            my $image = $node->find('image')->string_value;
+	            
+	            print<<CENTER
+   						<div class="film">
+							<img src=\"../$image\" class="locandina" />
+							</br>
+							<a href="film.cgi?id=$idFilm">Film: $title</a>
+						</div>
+CENTER
+                }
+            }
+            
+            print<<CENTER
+                    </div>
+		      </div>
+CENTER
+        }         
+    }
+    
+  
+}
 
 
 

@@ -7,7 +7,7 @@ use function;
 use CGI::Session ( '-ip_match' );
 
 function->header();
-function->left();
+function->left("Registrazione");
 function->right();
 
 print <<CENTER;
