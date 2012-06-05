@@ -250,7 +250,7 @@ menuNotLogged($_[1]);
 					<div id="login">
 						<div class="userLogged">
 LEFT
-						print "<div class=\"avatar\"> <img src=\"../images/avatars/1.jpg\" class=\"grav\"/> </div>";
+						print "<div class=\"avatar\"> <img src=\"../images/avatars/$user.jpg\" class=\"grav\"/> </div>";
 						print "<div class=\"name\">Benvenuto, <B>$user</B> <br><a href=\"logout.cgi\">Logout</a></div>";
 	print <<LEFT;			
 					</div>
@@ -798,7 +798,7 @@ COMMENTS
             
             <div class="commento">
 				<div class="userComment">
-						<img src="../images/avatars/$idUser.jpg" class="grav"/> 
+						<img src="../images/avatars/$username.jpg" class="grav"/> 
 						<b><a href="profile.cgi?id=$idUser">$username</a></b>
 						<span class="data">$date</span>
 				</div>

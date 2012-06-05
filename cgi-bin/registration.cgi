@@ -13,7 +13,7 @@ function->right();
 print <<CENTER;
 		<div id="registration">
 			<h1>Registrazione nuovo utente</h1>
-						<form name="registration" method="post" action="checkRegistration.cgi">
+						<form name="registration" method="post" action="checkRegistration.cgi" enctype="multipart/form-data">
 							<fieldset>
 								<legend align="center" >Inserisci tutti i campi</legend>
 
@@ -39,6 +39,10 @@ print <<CENTER;
 								<hr></hr>							
 								<span class="sx"><label for="confirm_password">Conferma password:</label></span>
 								<span class="dx"><input type="password" name="confirmPassword" id="confirmPassword" value="password" onblur="repeatPassword();"/></span><span class="wrongValue" id="confirmedError"><img src="../images/no.gif" alt="errore"/></span><span class="correctValue" id="confirmedCorrect"><img src="../images/ok.gif" alt="ok"/></span>
+								</br>
+								<hr></hr>
+								<span class="sx"><label for="upload">Aggiungi avatar:</label></span>
+								<span class="dx"><input type="file" name="photo" id="avatar" value=""/></span>
 								</br>
 								<hr></hr>
 								<button type="submit" id="end" disabled="false">Invia</button>				
