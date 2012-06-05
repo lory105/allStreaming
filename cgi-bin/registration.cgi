@@ -6,31 +6,16 @@ use warnings;
 use function;
 use CGI::Session ( '-ip_match' );
 
-print "Content-type: text/html\n\n";
-print <<HEADER;
-	<?xml version="1.0" encoding="iso-8859-1"?>
-	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-	<html xmlns="http://www.w3.org/1999/xhtml">
-		<head>
-			<title>AllStreaming</title>
-			<link rel="shortcut icon" href="images/logo.ico" type="image/x-icon" />
-			<link rel="icon" href="images/logo.ico" type="image/x-icon" />
-			<link rel="stylesheet" href="../styles/style.css" type="text/css" />
-			<script src="../javascript/validation.js" type="text/javascript" ></script>
-		</head> 
-	
-HEADER
+function->header();
 function->left();
 function->right();
-
-my %input = ("name" => "default");
 
 print <<CENTER;
 		<div id="registration">
 			<h1>Registrazione nuovo utente</h1>
-						<form name="registration" method="post">
+						<form name="registration" method="post" action="checkRegistration.cgi">
 							<fieldset>
-								<legend align="center" >Insert all fields</legend>
+								<legend align="center" >Inserisci tutti i campi</legend>
 
 								<span class="sx"><label for="name">Name:</label></span>
 								<span class="dx"><input type="text" name="name" id="name" value="nome" onblur="checkName();"  /></span><span class="wrongValue" id="nameError"><img src="../images/no.gif" alt="errore"/></span><span class="correctValue" id="nameCorrect"><img src="../images/ok.gif" alt="ok"/></span>
@@ -56,11 +41,22 @@ print <<CENTER;
 								<span class="dx"><input type="password" name="confirmPassword" id="confirmPassword" value="password" onblur="repeatPassword();"/></span><span class="wrongValue" id="confirmedError"><img src="../images/no.gif" alt="errore"/></span><span class="correctValue" id="confirmedCorrect"><img src="../images/ok.gif" alt="ok"/></span>
 								</br>
 								<hr></hr>
-								<button type="submit" onClick="total();" id="end" disabled="false">Invia</button>				
+								<button type="submit" id="end" disabled="false">Invia</button>				
 							</fieldset>
 						</form>
-		</div>
+
 
 CENTER
+
+	my $form = new CGI;
+	my $check = $form->param('err');
+	if($check eq "true"){
+		print "<span class=\"wrongRegistration\" id=\"nameError\">Attenzione: Email o Username gi&agrave esistenti</span>";
+	}
+	
+print <<TEST;
+						
+		</div>
+TEST
 
 function->footer();

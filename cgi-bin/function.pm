@@ -671,6 +671,19 @@ else{ $query= "//collection/user"; }
 return $xp->findnodes( $query );
 }
 
+#in $[1] passo lo username, in $[2] l'email
+sub checkUserRegistration{
+	my $username = $_[1];
+	my $email = $_[2];
+	my $xp = XML::XPath->new(filename => $usersXml);
+	my $query="//collection/user[username/text()=\"$username\"]";
+	my $result=$xp->findnodes( $query );
+	if($result->size() == 0){
+		$query="//collection/user[email/text()=\"$email\"]";
+		$result=$xp->findnodes( $query );
+	}
+	return $result;
+}
 
 # riceve in input lo username dell'utente che sta facendo il login, controlla nel db la presenza di tale username
 # restituendone la password corrispondente che è criptata
@@ -782,6 +795,7 @@ COMMENTS
             my $image = $user->find('image');
         
             print <<COMMENT
+            
             <div class="commento">
 				<div class="userComment">
 						<img src="../images/avatars/$idUser.jpg" class="grav"/> 
@@ -792,6 +806,7 @@ COMMENTS
 				<div class="userText">$content</div>
 			</div>
 			</br>
+		</div>
 COMMENT
         }
     }
@@ -831,6 +846,7 @@ sub loadComments {
 				<div class="userText">Proprio un bel film</div>
 			</div>
 			</br>
+		
 		 
 COMMENTS
 	  }
