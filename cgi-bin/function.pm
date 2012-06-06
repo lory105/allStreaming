@@ -199,7 +199,7 @@ sub left {
     my $session = CGI::Session->load();
     #my $cgi = new CGI;
     #my $session  = new CGI::Session(undef, $cgi, undef );
-    #my $username = $session->param('username');
+    my $username = $session->param('username');
     if($session->is_expired || $session->is_empty){
 	     print <<LEFT;
 		<body>
@@ -237,7 +237,7 @@ LEFT
 					<div id="login">
 						<div class="userLogged">
 LEFT
-		print "<div class=\"avatar\"> <img src=\"../images/avatars/1.jpg\" class=\"grav\"/> </div>";
+		print "<div class=\"avatar\"> <img src=\"../images/avatars/$username.jpg\" class=\"grav\"/> </div>";
 		print "<div class=\"name\">Benvenuto, <B>$username</B> <br><a href=\"logout.cgi\">Logout</a></div>";
         print <<LEFT;			
 					</div>
@@ -734,7 +734,7 @@ COMMENTS
                 my $username = $user->find('username');
                 my $image = $user->find('image');
         
-                print <<COMMENT
+                print <<COMMENT;
                 <div class="commento">
 				    <div class="userComment">
 						  <img src="../images/avatars/$idUser.jpg" class="grav"/> 
@@ -760,11 +760,23 @@ sub printCommentsVideo{
     my $parameters = shift;
     my $typeVideo = $parameters->{typeVideo};
     my $idVideo = $parameters->{idVideo};
+  
     
     print <<COMMENTS;
 	      <h2>Commenti</h2>
 		  <div id="commenti">
 		  </br>
+			<div class="commento">
+		  		<form name="comment" method="post" action="checkComment.cgi" >
+					<fieldset>
+					<span class="sx"><input type="text" style="min-width:400px;" name="userComment" id="userComment" value="Inserisci il tuo commento" /></span>
+					<span class="dx"><button type="submit" id="send" >Invia</button></span>
+					<input type="hidden" name="id" value="$idVideo" /> 
+					<input type="hidden" name="type" value="$typeVideo" /> 
+					</fieldset>
+				</form>
+			</div>
+		 </br>
 COMMENTS
 
 
@@ -781,7 +793,7 @@ COMMENTS
             my $username = $user->find('username');
             my $image = $user->find('image');
         
-            print <<COMMENT
+            print <<COMMENT;
             
             <div class="commento">
 				<div class="userComment">
@@ -793,75 +805,14 @@ COMMENTS
 				<div class="userText">$content</div>
 			</div>
 			</br>
-		</div>
+		
 COMMENT
         }
+      print <<CLOSE;
+     </div>
+CLOSE
     }
 }
-
-
-## da togliere !!!!
-sub loadComments {
-	my $session = CGI::Session->load();
-	  if($session->is_expired || $session->is_empty){
-			
-		}
-	  else{
-		  print <<COMMENTS;
-		  <h2>Commenti</h2>
-		  <div id="commenti">
-			</br>
-			
-			<div class="commento">
-				<div class="userComment">
-						<img src="../images/avatars/1.jpg" class="grav"/> 
-						<b><a href="profile.cgi?id=1">Lory</a></b>
-						<span class="data">23/02/2012</span>
-				</div>
-				<hr></hr>
-				<div class="userText">Proprio un bel film</div>
-			</div>
-			</br>
-			
-			<div class="commento">
-				<div class="userComment">
-						<img src="../images/avatars/1.jpg" class="grav"/> 
-						<b><a href="profile.cgi?id=1">Lory</a></b>
-						<span class="data">23/02/2012</span>
-				</div>
-				<hr></hr>
-				<div class="userText">Proprio un bel film</div>
-			</div>
-			</br>
-		
-		 
-COMMENTS
-	  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 sub countRegisteredUsers{
     my $nodelist = function->findUser();
@@ -947,7 +898,5 @@ CENTER
     
   
 }
-
-
 
 1;

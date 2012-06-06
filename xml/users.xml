@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="users.xsl"?>
-<collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" 
-xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org users.xsd">
+<collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org users.xsd">
 
 	<user id="1">
 		<name>Giacomo</name>
@@ -53,6 +50,16 @@ xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreamin
 		<email>your@gioggiolo.com</email>
 		<avatar>../avatar/jack.png</avatar>
 		<dateRegistration>2012-06-05T14:05:42</dateRegistration>
+		<admin>false</admin>
+	</user>
+	<user id="6">
+		<name>Banana</name>
+		<surname>Joe</surname>
+		<username>bananajoe</username>
+		<password>password</password>
+		<email>your@banana.com</email>
+		<avatar>../avatar/jack.png</avatar>
+		<dateRegistration>2012-06-06T07:43:04</dateRegistration>
 		<admin>false</admin>
 	</user>
 </collection>

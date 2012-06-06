@@ -36,6 +36,11 @@ foreach my $node ($nodeset->get_nodelist) {
 my $session = CGI::Session->load();
 
 if($session->is_expired || $session->is_empty){}
-else{ function::printCommentsVideo({ typeVideo=>"film", idVideo=>$id  }); }
+else{ 
+	function::printCommentsVideo({ typeVideo=>"film", idVideo=>$id  }); 
+	
+}
+
+print "</div></div>";
 
 function->footer();

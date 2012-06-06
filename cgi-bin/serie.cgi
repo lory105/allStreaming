@@ -43,5 +43,6 @@ my $session = CGI::Session->load();
 if($session->is_expired || $session->is_empty){}
 else{ function::printCommentsVideo({ typeVideo=>"serie", idVideo=>$id  }); }
 
+print "</div></div>";
 
 function->footer();
