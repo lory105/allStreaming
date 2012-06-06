@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="comments.xsl"?>
-<collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
-xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org comments.xsd">
+<collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org comments.xsd">
 
 	<comment id="1">
 		<idUser>1</idUser>
@@ -23,5 +20,42 @@ xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreamin
 		<idVideo>2</idVideo>
 		<date>20012-05-27T21:32:52</date>
 		<content>bella!</content>
+	</comment>
+
+	<comment id="4">
+		<idUser>6</idUser>
+		<typeVideo>film</typeVideo>
+		<idVideo>5</idVideo>
+		<date>2012-06-06T08:57:57</date>
+		<content>Inserisci il tuo commento</content>
+	</comment>
+	<comment id="5">
+		<idUser>6</idUser>
+		<typeVideo>film</typeVideo>
+		<idVideo>5</idVideo>
+		<date>2012-06-06T08:58:14</date>
+		<content>evvai col 6</content>
+	</comment>
+	<comment id="6">
+		<idUser>5</idUser>
+		<typeVideo>serie</typeVideo>
+		<idVideo>2</idVideo>
+		<date>2012-06-06T08:58:55</date>
+		<content>bella serie</content>
+	</comment>
+
+	<comment id="7">
+		<idUser>5</idUser>
+		<typeVideo>serie</typeVideo>
+		<idVideo>1</idVideo>
+		<date>2012-06-06T09:07:14</date>
+		<content>bella la mora</content>
+	</comment>
+	<comment id="8">
+		<idUser>5</idUser>
+		<typeVideo>film</typeVideo>
+		<idVideo>4</idVideo>
+		<date>2012-06-06T09:07:42</date>
+		<content>gioggio giogggiolo</content>
 	</comment>
 </collection>

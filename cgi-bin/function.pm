@@ -842,7 +842,6 @@ my $maxId = $xp->findnodes( $query );
 return $maxId;
 }
 
-
 # ritorna un numero "number" di video (film e serie ) scelte a random
 sub randomVideo{
     my $parameters = shift;
@@ -895,8 +894,37 @@ CENTER
 CENTER
         }         
     }
-    
-  
 }
+
+sub addComment{
+    my $parameters = shift;
+    my $maxId = function->getMaxId("comment");
+    $maxId = "$maxId" + 1;
+    
+    my $idReference = $parameters->{id};
+    my $type = $parameters->{type};
+    my $comment = $parameters->{comment};
+    my $idUser = $parameters->{idUser};
+    my $date = $parameters->{dateComment};
+    
+    my $parser = XML::LibXML->new;
+    my $doc = $parser->parse_file( $commentsXml );
+    # extract the root element
+    my $root = $doc->getDocumentElement();
+
+    # string with the new element
+    my $newNode = "\t<comment id=\"$maxId\">\n\t\t<idUser>$idUser</idUser>\n\t\t<typeVideo>$type</typeVideo>\n\t\t<idVideo>$idReference</idVideo>\n\t\t<date>$date</date>\n\t\t<content>$comment</content>\n\t</comment>\n";
+
+    # check if it's well formed and create the node
+    my $fragment = $parser->parse_balanced_chunk($newNode);
+    # insert the new child
+    $root->appendChild($fragment);
+    
+    # write to file
+    open(OUT,'>:utf8',$commentsXml ) || die("Cannot open file");
+    print OUT $root->toString();
+    close(OUT);
+}
+
 
 1;
