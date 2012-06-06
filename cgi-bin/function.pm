@@ -33,7 +33,6 @@ my $commentsXml = "../xml/comments.xml";
 
 
 
-
 sub header {
 print "Content-type: text/html\n\n";
 print <<HEADER;
@@ -199,7 +198,6 @@ sub left {
     my $session = CGI::Session->load();
     #my $cgi = new CGI;
     #my $session  = new CGI::Session(undef, $cgi, undef );
-    my $username = $session->param('username');
     if($session->is_expired || $session->is_empty){
 	     print <<LEFT;
 		<body>
@@ -690,6 +688,17 @@ return $crypted_password;
 }
 
 
+# controlla se l'utente è l'admin: ritorna true o false
+# es: if( function->checkIsAdmin() eq "false" ){ ... } 
+sub checkIsAdmin{
+    my $session = CGI::Session->load();
+    my $admin = $session->param('admin');
+
+    # se l'utente non è loggato o non è l'amministratore
+    if($session->is_expired || $session->is_empty || $admin eq "false" ){ return "false"; }
+    else{ return "true"; }
+}
+
 
 sub redirectTo {
 	print $_[1]->header(-location=>"$_[2]");
@@ -760,16 +769,20 @@ sub printCommentsVideo{
     my $parameters = shift;
     my $typeVideo = $parameters->{typeVideo};
     my $idVideo = $parameters->{idVideo};
-  
-    
+
     print <<COMMENTS;
-	      <h2>Commenti</h2>
-		  <div id="commenti">
-		  </br>
+	        <h2>Commenti</h2>
+		    <div id="commenti">
+		    </br>
+COMMENTS
+    
+    if( function->checkIsAdmin() eq "false" ){    
+        print <<COMMENTS;
 			<div class="commento">
 		  		<form name="comment" method="post" action="checkComment.cgi" >
 					<fieldset>
 					<span class="sx"><input type="text" style="min-width:400px;" name="userComment" id="userComment" value="Inserisci il tuo commento" /></span>
+					<span class="sx"><textarea rows="4" cols="10" style="min-width:400px;" id="userComment" name="userComment" value="commento" >commento</textarea></span>
 					<span class="dx"><button type="submit" id="send" >Invia</button></span>
 					<input type="hidden" name="id" value="$idVideo" /> 
 					<input type="hidden" name="type" value="$typeVideo" /> 
@@ -778,6 +791,7 @@ sub printCommentsVideo{
 			</div>
 		 </br>
 COMMENTS
+    }
 
 
     my $comments = function::findItem({ type=>"comment", query=>"//collection/comment[idVideo=$idVideo and typeVideo=\"$typeVideo\"]" });
@@ -851,6 +865,7 @@ sub randomVideo{
 		<div id="center_side">
 				<h1>Alcuni Film</h1>
 				<div id="random_film">
+				<br />
 CENTER
     
     my @sortIdFilm = function::sortIdItemByDate({ type=>"film"});
@@ -880,9 +895,11 @@ CENTER
 	            
 	            print<<CENTER
    						<div class="film">
-							<img src=\"../$image\" class="locandina" />
+   						
+							<img for="link" src=\"../$image\" class="locandina" />
 							</br>
-							<a href="film.cgi?id=$idFilm">Film: $title</a>
+							<a id="link" href="film.cgi?id=$idFilm">Film: $title</a>
+							<br /><br />
 						</div>
 CENTER
                 }

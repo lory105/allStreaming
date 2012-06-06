@@ -62,4 +62,14 @@
 		<dateRegistration>2012-06-06T07:43:04</dateRegistration>
 		<admin>false</admin>
 	</user>
+		<user id="7">
+		<name>Admin</name>
+		<surname>Admin</surname>
+		<username>admin</username>
+		<password>admin1</password>
+		<email>admin@allstreaming.com</email>
+		<avatar>../avatar/admin.png</avatar>
+		<dateRegistration>2012-06-06T08:43:04</dateRegistration>
+		<admin>true</admin>
+	</user>
 </collection>

@@ -48,7 +48,7 @@ my $commentsXml = "../xml/comments.xml";
 ###   
 
 
-function::randomVideo({ number=>"5"});
+#function::randomVideo({ number=>"5"});
 
 
 

@@ -6,10 +6,11 @@ html,body {
 }
 
 #navigation{
-	width:99%;
+	width:98,5%;
 	height:20px;
 	background-color:#d0d0d0;
 	border: 1px solid black;
+	padding-left: 1em;
 	margin:0 auto;
 }
 
@@ -40,7 +41,7 @@ html,body {
 }
 
 .content{
-	width:90%;
+	width:86%;
 	float:left;
 	border:1px solid grey;
 	padding:5px;
@@ -63,7 +64,7 @@ html,body {
 		width:20%;
 		float:left;
 		height:100%;
-		margin-top:30px;
+		margin-top:4.5em;
 		min-width:180px;
 }	
 
@@ -71,7 +72,7 @@ html,body {
 		width:20%;
 		float:right;
 		height:100%;
-		margin-top:30px;
+		margin-top:4.5em;
 		min-width:180px;
 }	
 
@@ -82,12 +83,13 @@ html,body {
 }
 
 .menu{
-		width:100%;
+		width:97%;
 		height:20px;
 		background:url(../images/title.png) repeat-x;
 		color:white;
 		text-align:center;
-		border:1px solid grey;	
+		border:1px solid grey;
+			
 }
 
 .view{
@@ -137,9 +139,11 @@ a:hover{
 }
 
 .locandina{
-	width:150px;
-	height:200px;
-	border:1px solid grey; padding:5px; background:white;
+	width:12em;
+	height:15em;
+	border:1px solid grey;
+	padding:0.2em;
+	background:white;
 }
 
 .film{
@@ -148,6 +152,21 @@ a:hover{
 	float:left;
 	margin:0 auto;
 	margin-top:20px;
+	text-align:center;
+}
+
+.infoAdmin{
+	border:1px solid grey;
+	width:30%;
+	min-width:150px;
+	float:left;
+	margin:0 auto;
+	margin:20px;
+	padding: 1em;
+	text-align:center;
+}
+
+.center{
 	text-align:center;
 }
 
