@@ -235,8 +235,14 @@ LEFT
 					<div id="login">
 						<div class="userLogged">
 LEFT
+
+		my $user = function::findItem({ type=>"user", query=>"//collection/user[username=\"$username\"]" });
+		my $id;
+		foreach my $node ($user->get_nodelist) {
+			$id = $node->find('@id')->string_value;
+		}
 		print "<div class=\"avatar\"> <img src=\"../images/avatars/$username.jpg\" class=\"grav\"/> </div>";
-		print "<div class=\"name\">Benvenuto, <B>$username</B> <br><a href=\"logout.cgi\">Logout</a></div>";
+		print "<div class=\"name\">Benvenuto, <B><a href=\"profile.cgi?id=$id\">$username</a></B> <br><a href=\"logout.cgi\">Logout</a></div>";
         print <<LEFT;			
 					</div>
 				</div>
