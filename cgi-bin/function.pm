@@ -36,17 +36,16 @@ my $commentsXml = "../xml/comments.xml";
 sub header {
 print "Content-type: text/html\n\n";
 print <<HEADER;
-	<?xml version="1.0" encoding="iso-8859-1"?>
-	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-	<html xmlns="http://www.w3.org/1999/xhtml">
-		<head>
-			<title>AllStreaming</title>
-			<link rel="shortcut icon" href="images/logo.ico" type="image/x-icon" />
-			<link rel="icon" href="images/logo.ico" type="image/x-icon" />
-			<link rel="stylesheet" href="../styles/style.css" type="text/css" />
-			<script type="text/javascript" src="../javascript/validation.js"></script>
-		</head> 
-	
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>AllStreaming</title>
+		<link rel="shortcut icon" href="images/logo.ico" type="image/x-icon" />
+		<link rel="icon" href="images/logo.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="../styles/style.css" type="text/css" />
+		<script type="text/javascript" src="../javascript/validation.js"></script>
+	</head> 
 HEADER
 }
 
@@ -55,10 +54,10 @@ sub menuNotLogged {
 my $nav = $_[0];
     
 print<<MENU;
-			<div id="navigation">Ti trovi in : $nav</div>
-			<div id="left_side">
-			<div class="menu">Menu Principale</div>
-				<div class="content">
+                    <div id="navigation">Ti trovi in : $nav</div>
+			            <div id="left_side">
+			               <div class="menu">Menu Principale</div>
+				               <div class="content">
 MENU
     
     switch ($nav) {
@@ -121,64 +120,70 @@ MENU
 sub menu {
     my $nav = $_[0];
     
+    my $session = CGI::Session->load();
+    my $id = $session->param('id');
+    
+    
     print<<MENU;
-			<div id="navigation">Ti trovi in : $nav</div>
-			<div id="left_side">
-			<div class="menu">Menu Principale</div>
-				<div class="content">
+                    <div id="navigation">Ti trovi in : $nav</div>
+			            <div id="left_side">
+			               <div class="menu">Menu Principale</div>
+				               <div class="content">
+		      <ul>
 MENU
 
     switch ($nav) {
 	   case "Home"  { 
 	       print<<MENU;
-	           <img src="../images/home.png"/><a href="#"><b>Home</b></a><hr>
-	           <img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
-			   <img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
-			   <img src="../images/signin.png"/><a href="comments.cgi">Commenti</a><hr>
+	              <li><img src="../images/home.png"/><b>Home</b><hr></li>
+	              <li><img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr></li>
+			      <li><img src="../images/film.png"/><a href="films.cgi">Film</a><hr></li>
+			      <li><img src="../images/comment.png"/><a href="comments.cgi">Commenti</a><hr></li>
+			      <li><img src="../images/profile.png"/><a href="profile.cgi?id=$id">Profilo</a><hr></li>
 MENU
 	       last;
 	   }
 	   
 	   	   case "Serie"  { 
 	       print<<MENU;
-					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
-					<img src="../images/series.png"/><a href="#"><b>Serie Tv</b></a><hr>
-					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
-					<img src="../images/comment.png"/><a href="comments.cgi">Commenti</a><hr>
+	              <li><img src="../images/home.png"/><a href="index.cgi">Home</a><hr></li>
+	              <li><img src="../images/series.png"/><b>Serie Tv</b><hr></li>
+			      <li><img src="../images/film.png"/><a href="films.cgi">Film</a><hr></li>
+			      <li><img src="../images/comment.png"/><a href="comments.cgi">Commenti</a><hr></li>
+			      <li><img src="../images/profile.png"/><a href="profile.cgi?id=$id">Profilo</a><hr></li>
 MENU
 	       last;
 	   }
 	   
 	   case "Film"  { 
 	       print<<MENU;
-					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
-					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
-					<img src="../images/film.png"/><a href="#"><b>Film</b></a><hr>
-					<img src="../images/comment.png"/><a href="comments.cgi">Commenti</a><hr>
+	              <li><img src="../images/home.png"/><a href="index.cgi">Home</a><hr></li>
+	              <li><img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr></li>
+			      <li><img src="../images/film.png"/><b>Film</b><hr></li>
+			      <li><img src="../images/comment.png"/><a href="comments.cgi">Commenti</a><hr></li>
+			      <li><img src="../images/profile.png"/><a href="profile.cgi?id=$id">Profilo</a><hr></li>
 MENU
 	       last;
 	   }
 
 	   case "Commenti"  { 
 	       print<<MENU;
-					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
-					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
-					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
-					<img src="../images/comment.png"/><a href="#"><b>Commenti</b></a><hr>
+	       	      <li><img src="../images/home.png"/><a href="index.cgi">Home</a><hr></li>
+	              <li><img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr></li>
+			      <li><img src="../images/film.png"/><a href="films.cgi">Film</a><hr></li>
+			      <li><img src="../images/comment.png"/><b>Commenti</b><hr></li>
+			      <li><img src="../images/profile.png"/><a href="profile.cgi?id=$id">Profilo</a><hr></li>
 MENU
 	       last;
 	   }
 
-        else{
+        case "Profilo" {
         print<<MENU
-			<div id="navigation">Ti trovi in : Commenti</div>
-			<div id="left_side">
-			<div class="menu">Menu Principale</div>
-				<div class="content">
-					<img src="../images/home.png"/><a href="index.cgi">Home</a><hr>
-					<img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr>
-					<img src="../images/film.png"/><a href="films.cgi">Film</a><hr>
-					<img src="../images/comment.png"/><a href="comments.cgi">Commenti</a><hr>
+	       	      <li><img src="../images/home.png"/><a href="index.cgi">Home</a><hr></li>
+	              <li><img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr></li>
+			      <li><img src="../images/film.png"/><a href="films.cgi">Film</a><hr></li>
+			      <li><img src="../images/comment.png"/><a href="comments.cgi">Commenti</a><hr></li>
+			      <li><img src="../images/profile.png"/><b>Profilo</b><hr></li>
 MENU
         }
     }
@@ -186,6 +191,7 @@ MENU
 
 
 	 print<<MENU
+	 		      </ul>
 					</br>
 				</div>
 		</div>	
@@ -200,15 +206,15 @@ sub left {
     #my $session  = new CGI::Session(undef, $cgi, undef );
     if($session->is_expired || $session->is_empty){
 	     print <<LEFT;
-		<body>
-			<div id="wrapper">
-				<div id="header">
-					<div id="login">
-						<form method="post" action="login.cgi">
-							<input type="text" name="username" value="User" size="12"/>
-							<input type="password" name="password" value="Password" size="12"/>
-							<button type="submit" id="sending">Login</button>
-						</form>
+	<body>
+		<div id="wrapper">
+			<div id="header">
+				<div id="login">
+					<form method="post" action="login.cgi">
+						<input type="text" name="username" value="User" size="12"/>
+						<input type="password" name="password" value="Password" size="12"/>
+						<button type="submit" id="sending">Login</button>
+					</form>
 LEFT
 
         my $q = new CGI;
@@ -218,8 +224,8 @@ LEFT
         }
 
         print <<LEFT;
-		  			</div>
-				</div>	
+	  			</div>
+			</div>	
 LEFT
 
 
@@ -241,12 +247,12 @@ LEFT
 		foreach my $node ($user->get_nodelist) {
 			$id = $node->find('@id')->string_value;
 		}
-		print "<div class=\"avatar\"> <img src=\"../images/avatars/$username.jpg\" class=\"grav\"/> </div>";
-		print "<div class=\"name\">Benvenuto, <B><a href=\"profile.cgi?id=$id\">$username</a></B> <br><a href=\"logout.cgi\">Logout</a></div>";
-        print <<LEFT;			
-					</div>
-				</div>
-			</div>	
+		print <<LEFT;
+                            <div class=\"avatar\"> <img src=\"../images/avatars/$username.jpg\" class=\"grav\"/> </div>
+		                    <div class=\"name\">Benvenuto, <B><a href=\"profile.cgi?id=$id\">$username</a></B> <br><a href=\"logout.cgi\">Logout</a></div>
+					    </div>
+				    </div>
+			    </div>
 LEFT
         menu($_[1]);
     }
@@ -752,7 +758,7 @@ COMMENTS
                 print <<COMMENT;
                 <div class="commento">
 				    <div class="userComment">
-						  <img src="../images/avatars/$idUser.jpg" class="grav"/> 
+						  <img src="../images/avatars/$username.jpg" class="grav"/> 
 						  <b><a href="profile.cgi?id=$idUser">$username</a></b>
 						  <span ><u><a href="$typeVideo.cgi?id=$idVideo">$titleVideo</a></u></span>
 						  <span class="data">$date</span>

@@ -11,7 +11,7 @@ use XML::XPath::XMLParser;
 use XML::LibXML;
 
 function->header(); 
-function->left("Home");
+function->left("Profilo");
 function->right();
 
 my $var=new CGI;
