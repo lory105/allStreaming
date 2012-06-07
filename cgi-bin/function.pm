@@ -188,7 +188,7 @@ MENU
            else{ 
                print<<MENU;
                <li><img src="../images/series.png"/><a href="series.cgi">Serie Tv</a>
-                   <ul><li> &nbsp;&nbsp;&nbsp;&nbsp; >  $title </li> </ul>
+                   <ul><li> &nbsp;&nbsp;&nbsp;&nbsp; >  <b>$title</b> </li> </ul>
                    <hr />
                </li>
 MENU
@@ -214,7 +214,7 @@ MENU
            else{ 
                print<<MENU;
                <li><img src="../images/film.png"/><a href="films.cgi">Film</a>
-                   <ul><li> &nbsp;&nbsp;&nbsp;&nbsp; >  $title </li> </ul>
+                   <ul><li> &nbsp;&nbsp;&nbsp;&nbsp; >  <b>$title</b> </li> </ul>
                    <hr />
                </li>
 MENU
@@ -238,13 +238,25 @@ MENU
 	   }
 
         case "Profilo" {
-        print<<MENU
+        print<<MENU;
 	       	      <li><img src="../images/home.png"/><a href="index.cgi">Home</a><hr></li>
 	              <li><img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr></li>
 			      <li><img src="../images/film.png"/><a href="films.cgi">Film</a><hr></li>
 			      <li><img src="../images/comment.png"/><a href="comments.cgi">Commenti</a><hr></li>
-			      <li><img src="../images/profile.png"/><b>Profilo</b><hr></li>
 MENU
+           my $username = $_[1];
+           if( $username eq "" ){
+			      print "<li><img src=\"../images/profile.png\"/><b>Profilo</b><hr></li>";
+           }
+           else{
+               print<<MENU;
+               <li><img src="../images/profile.png"/><a href="profile.cgi?id=$id">Profile</a>
+                   <ul><li> &nbsp;&nbsp;&nbsp;&nbsp; >  <b>$username</b> </li> </ul>
+                   <hr />
+               </li>
+MENU
+           }
+			      
         }
         case "" {
 	       print<<MENU;
@@ -581,8 +593,10 @@ sub addFilmLinkf{
     # extract the root element
     my $root = $doc->getDocumentElement();
 
+    my $maxId = function->getMaxId("link", $idFilm);
+
     # string with the new element
-    my $newAddressNode = "\t\t<address>\n\t\t\t<linkName>$linkName</linkName>\n\t\t\t<link>$link</link>\n\t\t</address>\n";
+    my $newAddressNode = "\t\t<address idLink=\"$maxId\">\n\t\t\t<linkName>$linkName</linkName>\n\t\t\t<link>$link</link>\n\t\t</address>\n";
 
     # check if it's well formed and create the node
     my $fragment = $parser->parse_balanced_chunk($newAddressNode);
@@ -601,7 +615,7 @@ sub addFilmLinkf{
     
 }
 
-# rimuove un fils, una serie o un utente
+# rimuove un film, una serie ..
 # riceve in input l'id dell'item da eliminare e il riferimento se è un film, una seire o un utente
 # function::removeItem({ type=>"film", id=>"3"});
 sub removeItem {
@@ -619,9 +633,6 @@ sub removeItem {
 	   }
 	   case "serie" { $file = $seriesXml; 
 	                  $query = "//collection:serie[\@id=\"$id\"]"; last;
-	   }
-	   case "user"  { $file = $usersXml;
-	                  $query = "//collection:user[\@id=\"$id\"]"; last;
 	   }
 	   case "comment" { $file = $commentsXml;
 	                    $query = "//collection:comment[\@id=\"$id\"]"; last;
@@ -653,8 +664,8 @@ sub removeItem {
 # es: function:removeLink({ idFilm=>$idFilm, idLink=>$idLink });
 sub removeLink{
     my $parameters = shift;
-    my $idFilm = "5";
-    my $idLink = "1";
+    my $idFilm = $parameters->{idFilm};
+    my $idLink = $parameters->{idLink};
 
     my $parser = XML::LibXML->new;
     my $doc; my $file;
@@ -685,6 +696,76 @@ sub removeLink{
     print OUT $root->toString();
     close(OUT);
 }
+
+=o
+# rimuove un episodio di una stagione di una serie
+# es: function:remove ({ idFilm=>$idFilm, idLink=>$idLink });
+sub removeEpisode{
+    my $parameters = shift;
+    my $idSerie =  $parameters->{idSerie};
+    my $idEpisode =  $parameters->{id};
+
+    my $parser = XML::LibXML->new;
+    my $doc; my $file;
+
+    my $xpc = XML::LibXML::XPathContext->new;
+    $xpc->registerNs("collection", "http://allStreaming.altervista.org");
+    
+	$file = $filmsXml;  
+	my $query1 = "//collection:film[\@id=\"$idSerie\"]";
+	my $query2 = "//collection:film[\@id=\"$idEpisode\"]/collection:address[\@idLink=\"$idLink\"]";
+    
+    $doc = $parser->parse_file( $file );
+
+    my $oldFilm = $xpc->findnodes( $query1, $doc )->get_node(1);
+    my $newFilm = $oldFilm;
+
+    my $link = $xpc->findnodes( $query2, $doc )->get_node(1);
+    
+    $newFilm->removeChild( $link );
+    
+    # extract the root element
+    my $root = $doc->getDocumentElement();
+    $root->removeChild( $oldFilm);
+    $root->appendChild( $newFilm);
+
+    # write to file
+    open(OUT,'>:utf8',$file ) || die("Cannot open file");
+    print OUT $root->toString();
+    close(OUT);
+}
+
+=cut
+
+
+# rimuove uno user
+# function::removeUser({ id=>"3"});
+sub removeUser {
+    my $parameters = shift;
+    my $id = $parameters->{id};
+
+    my $parser = XML::LibXML->new;
+    my $query = "//collection:user[\@id=\"$id\"]";
+    my $doc = $parser->parse_file( $usersXml );
+
+    my $xpc = XML::LibXML::XPathContext->new;
+    $xpc->registerNs("collection", "http://allStreaming.altervista.org");
+
+    my $node = $xpc->findnodes( $query, $doc )->get_node(1);
+  
+    # extract the root element
+    my $root = $doc->getDocumentElement();
+ 
+    $root->removeChild( $node );
+    
+    # write to file
+    open(OUT,'>:utf8',$usersXml ) || die("Cannot open file");
+    print OUT $root->toString();
+    close(OUT);
+}
+
+
+
 
 # funzione di ricerca film: se non riceve parametri (!$_[1]) ricerca tutti i film,
 # altrimenti esegue la query ricevuta in $_[1]
@@ -811,6 +892,15 @@ my $query= "//collection/user[username/text()=\"$username\"]/password/text()";
 my $crypted_password = $xp->find( $query );
 
 return $crypted_password;
+}
+
+
+# controlla se l'utente è loggato (cioè se ha la sua sessione)
+sub isLogged{
+    my $session = CGI::Session->load();
+
+    if($session->is_expired || $session->is_empty){ return "false";}
+    return "true";
 }
 
 
@@ -982,20 +1072,35 @@ sub countRegisteredUsers{
 # riceve come parametro l'indicatore di dove devo cercare: "film", "serie", "user" o "comment"
 sub getMaxId {
 
-my $path = $_[1];
-my $xp;
+my $type = $_[1];
+my $xp; my $query;
 
-switch ($path) {
-	case "film" { $xp = XML::XPath->new(filename => $filmsXml); last;}
-	case "serie" { $xp = XML::XPath->new(filename => $seriesXml); last;}
-	case "comment" { $xp = XML::XPath->new(filename => $commentsXml); last;}
-	case "user" { $xp = XML::XPath->new(filename => $usersXml); last;}
+switch ($type) {
+	case "film" { $xp = XML::XPath->new(filename => $filmsXml); 
+	              $query = "/collection/$type/\@id[not(. <=../preceding-sibling::$type/\@id) and not(. <=../following-sibling::$type/\@id)]";
+	              last;
+	}
+	case "serie" { $xp = XML::XPath->new(filename => $seriesXml);
+	               $query = "/collection/$type/\@id[not(. <=../preceding-sibling::$type/\@id) and not(. <=../following-sibling::$type/\@id)]";
+	               last;
+	}
+	case "comment" { $xp = XML::XPath->new(filename => $commentsXml);
+                     $query = "/collection/$type/\@id[not(. <=../preceding-sibling::$type/\@id) and not(. <=../following-sibling::$type/\@id)]";
+	                 last;
+	}
+	case "user" { $xp = XML::XPath->new(filename => $usersXml);
+                  $query = "/collection/$type/\@id[not(. <=../preceding-sibling::$type/\@id) and not(. <=../following-sibling::$type/\@id)]";
+	              last;
+	}
+	case "link" {$xp = XML::XPath->new(filename => $filmsXml);
+	             my $idFilm= $_[2];
+	             $query = "/collection/film[\@id=\"$idFilm\"]/address/\@idLink[not(. <=../preceding-sibling::address/\@idLink) and not(. <=../following-sibling::address/\@idLink)]";
+	             $query = "/collection/film[\@id=\"$idFilm\"]/address/\@idLink[not(. <=../preceding-sibling::address/\@idLink) and not(. <=../following-sibling::address/\@idLink)]";
+	             last;
+	} 
 }
 
-my $query = "/collection/$path/\@id[not(. <=../preceding-sibling::$path/\@id) and not(. <=../following-sibling::$path/\@id)]";
-
 my $maxId = $xp->findnodes( $query );
-
 return $maxId;
 }
 

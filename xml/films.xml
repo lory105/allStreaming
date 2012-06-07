@@ -73,7 +73,7 @@ xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreamin
 			<linkName>MegaVideo</linkName>
 			<link>www.megaup.com</link>
 		</address>
-		<address idLink="2">
+		<address idLink="3">
 			<linkName>PutLocker</linkName>
 			<link>www.putlocker.com/Trasformers2</link>
 		</address>

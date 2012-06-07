@@ -47,10 +47,24 @@ my $commentsXml = "../xml/comments.xml";
 ########################################################################
 ###   
 
-my $id= "5";
+
+function::removeUser({ id=>"2" });
 
 
-function::removeItem({ type=>"comment", id=>$id});
+=o
+my $idFilm = "1";
+my $path = "film";
+my $xp = XML::XPath->new(filename => $filmsXml);
+
+my $query = "/collection/film[\@id=\"$idFilm\"]/address/\@idLink[not(. <=../preceding-sibling::address/\@idLink) and not(. <=../following-sibling::address/\@idLink)]";
+#my $query1 = "/collection/$path/\@id[not(. <=../preceding-sibling::$path/\@id) and not(. <=../following-sibling::$path/\@id)]";
+
+my $maxId = $xp->findnodes( $query );
+
+print $maxId;
+
+
+
 
 
 =O
