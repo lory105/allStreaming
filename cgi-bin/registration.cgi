@@ -6,6 +6,13 @@ use warnings;
 use function;
 use CGI::Session ( '-ip_match' );
 
+
+
+# controllo x vedere se l'utente è loggato
+my $session = CGI::Session->load();
+if($session->is_expired || $session->is_empty){
+
+
 function->header();
 function->left("Registrazione");
 function->right();
@@ -64,3 +71,10 @@ print <<TEST;
 TEST
 
 function->footer();
+
+}
+else{
+    my $cgi = new CGI;
+    print $cgi->header(-location => q[index.cgi]);    
+}
+    
