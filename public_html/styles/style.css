@@ -5,14 +5,7 @@ html,body {
 	background-color:#efefef;
 }
 
-#navigation{
-	width:98,5%;
-	height:20px;
-	background-color:#d0d0d0;
-	border: 1px solid black;
-	padding-left: 1em;
-	margin:0 auto;
-}
+
 
 #header{
 		width:100%;
@@ -40,6 +33,26 @@ html,body {
 	margin-left: auto;
 }
 
+#navigation{
+	width:98,5%;
+	height:20px;
+	background-color:#d0d0d0;
+	border: 1px solid black;
+	padding-left: 1em;
+	margin:0 auto;
+}
+
+
+.menu{
+		width:97%;
+		height:20px;
+		background:url(../images/title.png) repeat-x;
+		color:white;
+		text-align:center;
+		border:1px solid grey;
+			
+}
+
 .content{
 	width:86%;
 	float:left;
@@ -58,6 +71,12 @@ html,body {
 	padding:5px;
 	background:white;
 	border-top:0px solid grey;
+}
+
+.content ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0.2em;
 }
 
 #left_side{
@@ -82,15 +101,7 @@ html,body {
 		margin:0 auto;
 }
 
-.menu{
-		width:97%;
-		height:20px;
-		background:url(../images/title.png) repeat-x;
-		color:white;
-		text-align:center;
-		border:1px solid grey;
-			
-}
+
 
 .view{
 		width:100%;
