@@ -246,6 +246,15 @@ MENU
 			      <li><img src="../images/profile.png"/><b>Profilo</b><hr></li>
 MENU
         }
+        case "" {
+	       print<<MENU;
+				<li><img src="../images/home.png"/><a href="index.cgi">Home</a><hr></li>
+				<li><img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr></li>
+				<li><img src="../images/film.png"/><a href="films.cgi">Film</a><hr></li>
+				<li><img src="../images/signin.png"/><a href="registration.cgi">Registrazione</a><hr></li>
+MENU
+	       last;	       
+	   }
     }
 
 

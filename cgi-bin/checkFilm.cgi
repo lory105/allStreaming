@@ -13,7 +13,8 @@ if( function->checkIsAdmin() eq "false" ){
     my $cgi = new CGI;
     print $cgi->header(-location => q[index.cgi]);   
 }
-
+else
+{
 	my $form = new CGI;
 	my $title = $form->param('title');
 	my $date = $form->param('date');
@@ -31,7 +32,7 @@ if( function->checkIsAdmin() eq "false" ){
 			}
 	close UPLOADFILE;
 
-function->header();
-function->left("");
-function->right();
-
+	function->header();
+	function->left();
+	function->right();
+}
