@@ -722,8 +722,9 @@ sub redirectTo {
 sub printAllComments{
 
      print <<COMMENTS;
-	      <h2>Ultimi 20 commenti</h2>
-		  <div id="commenti">
+			<div id="center_side">
+				<h2>Ultimi 20 commenti</h2>
+				<div id="commenti">
 		  </br>
 COMMENTS
 
@@ -772,6 +773,9 @@ COMMENT
             if( $x < 20 ){ print "Non ci sono altri commenti";}
         }
     }
+	print <<COMMENT;
+	</div>
+COMMENT
 }
 
 

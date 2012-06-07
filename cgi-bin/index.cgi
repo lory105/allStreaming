@@ -39,28 +39,28 @@ else{
     print <<CENTER;
         <div id="center_side">
 		    <h1>Pannello Admin</h1>
-		    <div id="random_film" class="center">
 		        <div class="infoAdmin">
-		            <p>Film totali: $totFilms</p>
+		            <p><b>Film totali:</b> $totFilms</p>
 		            <form method="post" action="addFilm.cgi">
                         <input name="url" type="hidden"">
-                        <input type="submit" value="+ Add Film">
+                        <input type="submit" value="+ Aggiungi Film">
                     </form>
 		        </div>
 		        <div class="infoAdmin">
-		            <p>Serie totali: $totSeries</p>
+		            <p><b>Serie totali:</b> $totSeries</p>
 		              <form method="post" action="addSerie.cgi">
                           <input name="url" type="hidden"">
-                          <input type="submit" value="+ Add Serie">
+                          <input type="submit" value="+ Aggiungi Serie">
                       </form>
 		        </div>
+
                 <div class="infoAdmin">
-		            <p>Utenti totali: $totUsers</p>
+		            <p><b>Utenti totali:</b> $totUsers</p>
 		        </div>
 		        <div class="infoAdmin">
-		            <p>Commenti totali: $totComments</p>
+		            <p><b>Commenti totali:</b> $totComments</p>
 		        </div>
-	        </div>
+
 	    </div>
 	          
 CENTER
