@@ -47,6 +47,13 @@ my $commentsXml = "../xml/comments.xml";
 ########################################################################
 ###   
 
+my $id= "5";
+
+
+function::removeItem({ type=>"comment", id=>$id});
+
+
+=O
 
 my $idFilm= "5";
 my $idLink= "1";

@@ -376,15 +376,21 @@ print <<RIGHT;
 				<div class="content_max_view">
 RIGHT
 
-my @sortId = function::sortIdItemByDate({ type=>"film" });
+my @sortIdFilm = function::sortIdItemByDate({ type=>"film" });
 
-# creo dinamicamente i link ai 5 film più recenti 
-my $i;
-for($i = 0; $i < 5; $i++) {
-	my $id = "$sortId[$i]";
-	my $nodeset = function::findItem({ type=>"film", query=>"//collection/film[\@id=$id]/title/text()" });
-	print "<a href=\"film.cgi?id=$id\" >$nodeset</a></br>";
+FOO: {
+    # se non ci sono commenti nel DB
+    my $arraySize = @sortIdFilm;
+    if( $arraySize==0 ){ print "Non ci sono film"; last FOO;}
+    
 
+    # creo dinamicamente i link ai 5 film più recenti 
+    my $i;
+    for($i = 0; scalar @sortIdFilm >$i && $i < 5; $i++) {
+	   my $id = "$sortIdFilm[$i]";
+	   my $nodeset = function::findItem({ type=>"film", query=>"//collection/film[\@id=$id]/title/text()" });
+	   print "<a href=\"film.cgi?id=$id\" >$nodeset</a></br>";
+    }
 }
 
 my $registeredUser = function->countRegisteredUsers();
@@ -618,7 +624,7 @@ sub removeItem {
 	                  $query = "//collection:user[\@id=\"$id\"]"; last;
 	   }
 	   case "comment" { $file = $commentsXml;
-	                    $query = "//collection:user[\@id=\"$id\"]"; last;
+	                    $query = "//collection:comment[\@id=\"$id\"]"; last;
 	   }
     }
     
@@ -937,6 +943,20 @@ COMMENTS
 						<img src="../images/avatars/$username.jpg" class="grav"/> 
 						<b><a href="profile.cgi?id=$idUser">$username</a></b>
 						<span class="data">$date</span>
+COMMENT
+            
+            
+            if( function->checkIsAdmin() eq "true" ){
+                my $id = $node->findvalue('@id')->string_value;
+                print<<COMMENT;
+               <form method="post" action="removeItem.cgi">
+                   <input name="type" value="comment" type="hidden">
+                   <input name="id" value="$id" type="hidden">
+                   <input type="submit" value="Rimuovi Commento">
+               </form>
+COMMENT
+            }
+            print<<COMMENT;
 				</div>
 				<hr></hr>
 				<div class="userText">$content</div>

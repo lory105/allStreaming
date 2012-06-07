@@ -20,12 +20,23 @@ function->left("Serie", $title );
 function->right();
 
 
+print<<SERIE;
+	<div id=\"center_side\">
+	<div id=\"random_film\">
+	<h1>$title</h1>
+SERIE
 
-
-	print "<div id=\"center_side\">"."\n";
-	print "<div id=\"random_film\">"."\n";
-
-	print "<h1>$title</h1>"."\n";
+my $isAdmin = function::checkIsAdmin(); 
+if( $isAdmin eq "true"){
+    print<<SERIE
+         <form method="post" action="removeItem.cgi">
+             <input name="type" value="serie" type="hidden">
+             <input name="id" value="$id" type="hidden">
+             <input type="submit" value="Rimuovi Serie">
+         </form>
+SERIE
+}
+	
 	my $img=$node->find('image')->string_value;
 	print "<img src=\"../$img\" class=\"preview\"/>";
 	my $description = $node->find('description')->string_value;

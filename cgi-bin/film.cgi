@@ -18,19 +18,44 @@ my $title=$node->find('title')->string_value;
 function->left("Film", $title );
 function->right();
 
-	print "<div id=\"center_side\">"."\n";
-	print "<div id=\"random_film\">"."\n";
+print<<FILM;
+	<div id=\"center_side\">\n
+	   <div id=\"random_film\">\n
+	       <h1>$title</h1>
+FILM
 
-	print "<h1>$title</h1>"."\n";
+
+my $isAdmin = function::checkIsAdmin(); 
+if( $isAdmin eq "true"){
+    print<<FILM
+         <form method="post" action="removeItem.cgi">
+             <input name="type" value="film" type="hidden">
+             <input name="id" value="$id" type="hidden">
+             <input type="submit" value="Rimuovi Film">
+         </form>
+FILM
+}
+
 	my $img=$node->find('image')->string_value;
 	print "<img src=\"../$img\" class=\"preview\"/>";
 	my $description = $node->find('description')->string_value;
 	print "<p>$description</p></br>";
 	my $address=$node->find('address');
 	foreach my $try ($address->get_nodelist) {
+	  my $idLink=$try->findvalue('idLink')->string_value;
 	  my $linkname=$try->find('linkName')->string_value;
 	  my $link=$try->find('link')->string_value;
-	  print "<p><b>Link:</b> <a href=\"http://$link\" target=\"_blank\">$linkname</a></p>"; 
+	  print "<p><b>Link:</b> <a href=\"http://$link\" target=\"_blank\">$linkname</a></p>";
+	  if( $isAdmin eq "true"){
+          print<<FILM
+               <form method="post" action="removeItem.cgi">
+                   <input name="type" value="link" type="hidden">
+                   <input name="id" value="$id" type="hidden">
+                   <input name="idLink" value="$idLink" type="hidden">
+                   <input type="submit" value="Rimuovi Link">
+               </form>
+FILM
+}
 	}
 	print "</div>";
   

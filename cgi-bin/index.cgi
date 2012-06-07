@@ -42,7 +42,7 @@ else{
 		        <div class="infoAdmin">
 		            <p><b>Film totali:</b> $totFilms</p>
 		            <form method="post" action="addFilm.cgi">
-                        <input name="url" type="hidden"">
+                        <input name="url" type="hidden">
                         <input type="submit" value="+ Aggiungi Film">
                     </form>
 		        </div>
