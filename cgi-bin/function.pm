@@ -787,11 +787,10 @@ COMMENTS
 			<div class="commento">
 		  		<form name="comment" method="post" action="checkComment.cgi" >
 					<fieldset>
-					<span class="sx"><input type="text" style="min-width:400px;" name="userComment" id="userComment" value="Inserisci il tuo commento" /></span>
-					<span class="sx"><textarea rows="4" cols="10" style="min-width:400px;" id="userComment" name="userComment" value="commento" >commento</textarea></span>
-					<span class="dx"><button type="submit" id="send" >Invia</button></span>
-					<input type="hidden" name="id" value="$idVideo" /> 
-					<input type="hidden" name="type" value="$typeVideo" /> 
+						<span class="sx"><textarea rows="4" cols="10" style="width:100%;" id="userComment" name="userComment" value="Inserisci il tuo commento" >commento</textarea></span>
+						<span class="dx"><button type="submit" id="send" >Invia</button></span>
+						<input type="hidden" name="id" value="$idVideo" /> 
+						<input type="hidden" name="type" value="$typeVideo" /> 
 					</fieldset>
 				</form>
 			</div>
