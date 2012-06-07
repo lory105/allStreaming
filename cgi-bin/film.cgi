@@ -8,17 +8,19 @@ use CGI::Carp qw/fatalsToBrowser warningsToBrowser/;
 use CGI::Session ( '-ip_match' );
 
 function->header();
-function->left("Film");
-function->right();
 
 
 my $var=new CGI;
 my $id = $var->param('id');
-my $nodeset=function->findFilm( "//collection/film[\@id=\"$id\"]");
-foreach my $node ($nodeset->get_nodelist) {
+my $node=function->findFilm( "//collection/film[\@id=\"$id\"]")->get_node(1);
+my $title=$node->find('title')->string_value;
+
+function->left("Film", $title );
+function->right();
+
 	print "<div id=\"center_side\">"."\n";
 	print "<div id=\"random_film\">"."\n";
-	my $title=$node->find('title')->string_value;
+
 	print "<h1>$title</h1>"."\n";
 	my $img=$node->find('image')->string_value;
 	print "<img src=\"../$img\" class=\"preview\"/>";
@@ -31,7 +33,7 @@ foreach my $node ($nodeset->get_nodelist) {
 	  print "<p><b>Link:</b> <a href=\"http://$link\" target=\"_blank\">$linkname</a></p>"; 
 	}
 	print "</div>";
-}  
+  
 
 my $session = CGI::Session->load();
 
