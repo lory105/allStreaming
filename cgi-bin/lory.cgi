@@ -48,7 +48,41 @@ my $commentsXml = "../xml/comments.xml";
 ###   
 
 
-#function::randomVideo({ number=>"5"});
+my $idFilm= "5";
+my $idLink= "1";
+
+function::removeLink({ idFilm=>$idFilm, idLink=>$idLink });
+
+=cut
+
+=o  
+$query = "//collection:film[\@id=\"$id\"]";
+
+    $doc = $parser->parse_file( $file );
+
+    my $xpc = XML::LibXML::XPathContext->new;
+    $xpc->registerNs("collection", "http://allStreaming.altervista.org");
+
+    my $node = $xpc->findnodes( $query, $doc )->get_node(1);
+  
+  print $node;
+  print $node->find('title')->string_value;
+  
+
+    # extract the root element
+    my $root = $doc->getDocumentElement();
+ 
+    $root->removeChild( $node );
+    # debug da togliere!!!
+    print $root->toString();
+    
+    # write to file
+    #open(OUT,'>:utf8',$file ) || die("Cannot open file");
+    #print OUT $root->toString();
+    #close(OUT);
+=cut
+
+
 
 
 

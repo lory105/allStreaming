@@ -9,7 +9,9 @@ use strict;
 use warnings;
 use XML::XPath;
 #use XML::XPath::XMLParser;
-#use XML::LibXML;
+use XML::LibXML;
+#use XML::LibXML::Node;
+
 use Digest::MD5 qw(md5 md5_hex md5_base64);
 use XML::XSLT;
 use Switch;
@@ -607,7 +609,7 @@ sub removeItem {
 	                  $query = "//collection:user[\@id=\"$id\"]"; last;
 	   }
 	   case "comment" { $file = $commentsXml;
-	                    my $doc = $parser->parse_file( $commentsXml );
+	                    $query = "//collection:user[\@id=\"$id\"]"; last;
 	   }
     }
     
@@ -631,6 +633,43 @@ sub removeItem {
     close(OUT);
 }
 
+
+# rimuove un link di un film
+# es: function:removeLink({ idFilm=>$idFilm, idLink=>$idLink });
+sub removeLink{
+    my $parameters = shift;
+    my $idFilm = "5";
+    my $idLink = "1";
+
+    my $parser = XML::LibXML->new;
+    my $doc; my $file;
+
+    my $xpc = XML::LibXML::XPathContext->new;
+    $xpc->registerNs("collection", "http://allStreaming.altervista.org");
+    
+	$file = $filmsXml;  
+	my $query1 = "//collection:film[\@id=\"$idFilm\"]";
+	my $query2 = "//collection:film[\@id=\"$idFilm\"]/collection:address[\@idLink=\"$idLink\"]";
+    
+    $doc = $parser->parse_file( $file );
+
+    my $oldFilm = $xpc->findnodes( $query1, $doc )->get_node(1);
+    my $newFilm = $oldFilm;
+
+    my $link = $xpc->findnodes( $query2, $doc )->get_node(1);
+    
+    $newFilm->removeChild( $link );
+    
+    # extract the root element
+    my $root = $doc->getDocumentElement();
+    $root->removeChild( $oldFilm);
+    $root->appendChild( $newFilm);
+
+    # write to file
+    open(OUT,'>:utf8',$file ) || die("Cannot open file");
+    print OUT $root->toString();
+    close(OUT);
+}
 
 # funzione di ricerca film: se non riceve parametri (!$_[1]) ricerca tutti i film,
 # altrimenti esegue la query ricevuta in $_[1]
