@@ -530,7 +530,7 @@ sub addFilm{
     my $fragment = $parser->parse_balanced_chunk($newNode);
     # insert the new child
     $root->appendChild($fragment);
-    print $root->toString();
+    #print $root->toString();
     
     # write to file
     open(OUT,'>:utf8',$filmsXml ) || die("Cannot open file");

@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="films.xsl"?>
-<collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
-xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org films.xsd">
+<collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org films.xsd">
 
 	<film id="1">
 		<title>Harry Potter</title>
@@ -77,5 +74,12 @@ xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreamin
 			<linkName>PutLocker</linkName>
 			<link>www.putlocker.com/Trasformers2</link>
 		</address>
+	</film>
+	<film id="6">
+		<title>Lorax il guardiano della foresta</title>
+		<image>images/films/6.jpg</image>
+		<description>Dai creatori di "cattivissimo me" nasce un nuovo fantastico film di animazione: Lorax - il guardiano della foresta. Lorax e' un termine che viene utilizzato negli Stati Uniti, un Lorax e' colui che riesce a parlare con gli alberi e a comunicare con le foreste, una sorta di "sciamano" della natura. La vicenda e' ambientata in un mondo che non conosce gli alberi, racconta la storia di Audrey che decide di sposare colui che le portera' al cospetto un albero. Ted, il protagonista da sempre innamorato di Audrey, tentera' in tutti i modi di accontentare il suo desiderio vivendo cosi' una fantastica avventura. Ma l'impresa e' assai ardua e Ted non trova nessun albero, delle voci parlano di un certo Onceler che e' l'unico al mondo che sa di sia possibile trovare un albero. Ted allora incomincera' a viaggiare, attraversando deserti e l'oscurita' piu' totale per trovare questa persona, scoprendo sempre di piu' cio' che e' accaduto alle piante e ai boschi. Questa commedia e' di carattere ecologistico dedicata soprattutto alle classi piu' giovani mettendo in chiaro la differenza tra progresso e vita, analizzando quanto la tecnologia possa distruggere il mondo in cui viviamo, creando cosi' un vero e proprio paradosso che ci fara' entusiasmare.</description>
+		<date>2012-05-24</date>
+		<family>Cartoon</family>
 	</film>
 </collection>
