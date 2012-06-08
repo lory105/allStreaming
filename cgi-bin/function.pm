@@ -547,7 +547,7 @@ sub addSerie{
     my $parameters = shift;
     my $maxId = function->getMaxId("serie");
     $maxId = "$maxId" + 1;
-    
+   
     my $title = $parameters->{title};
     my $image = $parameters->{image};
     my $description = $parameters->{description};
@@ -561,9 +561,11 @@ sub addSerie{
     my $newNode = "\t<serie id=\"$maxId\">\n\t\t<title>$title</title>\n\t\t<image>$image</image>\n\t\t<description>$description</description>\n\t</serie>\n";
 
     # check if it's well formed and create the node
-    my $fragment = $parser->parse_balanced_chunk($newNode);
+    my $fragment = $parser->parse_balanced_chunk($newNode); print "ciao";
     # insert the new child
     $root->appendChild($fragment);
+    
+    	
     
     # write to file
     open(OUT,'>:utf8',$seriesXml ) || die("Cannot open file");

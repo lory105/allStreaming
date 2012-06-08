@@ -22,7 +22,7 @@ function->right();
 print<<BODY;
 		<div id="registration">
 			<h1>Inserimento nuova serie</h1>
-						<form name="addSerie" method="post" action="checkFilm.cgi">
+						<form name="addSerie" method="post" action="checkSerie.cgi" enctype="multipart/form-data">
 							<fieldset>
 								<legend align="center" >Compila tutti i campi</legend>
 
