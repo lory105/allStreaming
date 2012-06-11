@@ -33,6 +33,12 @@ if( $isAdmin eq "true"){
              <input name="id" value="$id" type="hidden">
              <input type="submit" value="Rimuovi Film">
          </form>
+         <form method="post" action="addLink.cgi">
+             <input name="type" value="film" type="hidden">
+             <input name="id" value="$id" type="hidden">
+             <input type="submit" value="Aggiungi Link">
+         </form>
+           <br></br>
 FILM
 }
 

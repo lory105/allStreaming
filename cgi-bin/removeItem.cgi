@@ -38,6 +38,7 @@ switch ($type ) {
     case "film" {  
         my $id = $q->param('id');
 	    function::removeItem({ type=>$type, id=>$id });
+	    print $q->header(-location => q[index.cgi]);   
 	    last;
 	}
 	case "serie"  {
@@ -48,24 +49,18 @@ switch ($type ) {
 	case "comment"  {
 	    my $id = $q->param('id');
 	    function::removeItem({ type=>$type, id=>$id });
+	    print $q->header(-location => q[index.cgi]);   
 	    last;
 	}
 	case "link" {
 	    my $idFilm = $q->param('idFilm');
 	    my $idLink = $q->param('idLink');
 	    function::removeLink({ idFilm=>$idFilm, idLink=>$idLink });
+	    print $q->header(-location => q[index.cgi]);     
         last;
 	}
+
+    
     
 }
-
-
-
-
-
-
-
-
-
-print $page->redirect("index.cgi");
 

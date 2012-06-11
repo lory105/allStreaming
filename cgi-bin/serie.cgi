@@ -34,6 +34,7 @@ if( $isAdmin eq "true"){
              <input name="id" value="$id" type="hidden">
              <input type="submit" value="Rimuovi Serie">
          </form>
+              <br></br>
 SERIE
 }
 	

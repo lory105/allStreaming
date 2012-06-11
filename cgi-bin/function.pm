@@ -545,8 +545,8 @@ sub addFilm{
 # function::addSerie({ title=>$title, image=>$image, description=>$description });
 sub addSerie{
     my $parameters = shift;
-    my $maxId = function->getMaxId("serie");
-    $maxId = "$maxId" + 1;
+    my $max = function->getMaxId("serie");
+    $max = "$max" + 1;
    
     my $title = $parameters->{title};
     my $image = $parameters->{image};
@@ -558,10 +558,9 @@ sub addSerie{
     my $root = $doc->getDocumentElement();
 
     # string with the new element
-    my $newNode = "\t<serie id=\"$maxId\">\n\t\t<title>$title</title>\n\t\t<image>$image</image>\n\t\t<description>$description</description>\n\t</serie>\n";
-
+    my $newNode = "\t<serie id=\"$max\">\n\t\t<title>$title</title>\n\t\t<image>$image</image>\n\t\t<description>$description</description>\n\t</serie>\n";
     # check if it's well formed and create the node
-    my $fragment = $parser->parse_balanced_chunk($newNode); print "ciao";
+    my $fragment = $parser->parse_balanced_chunk($newNode); 
     # insert the new child
     $root->appendChild($fragment);
     
@@ -653,12 +652,13 @@ sub removeItem {
  
     $root->removeChild( $node );
     # debug da togliere!!!
-    print $root->toString();
+
     
     # write to file
     open(OUT,'>:utf8',$file ) || die("Cannot open file");
     print OUT $root->toString();
     close(OUT);
+
 }
 
 

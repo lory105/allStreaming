@@ -14,7 +14,7 @@ targetNamespace="http://allStreaming.altervista.org" elementFormDefault="qualifi
 						<xsd:sequence minOccurs="0" maxOccurs="unbounded">
 							<xsd:element name="season">
 								<xsd:complexType>
-								<xsd:sequence minOccurs="1" maxOccurs="unbounded">
+								<xsd:sequence minOccurs="0" maxOccurs="unbounded">
 									<xsd:element name="episode">
 										<xsd:complexType>
 										<xsd:sequence>
@@ -37,4 +37,4 @@ targetNamespace="http://allStreaming.altervista.org" elementFormDefault="qualifi
 	</xsd:element>
 </xsd:schema>
 
-<!-- tutti gli id dei film devono iniziare con la lettera "s" per contraddistinguerli dagli id dai film -->
+

@@ -40,8 +40,6 @@ else{
 
 	
 	function::addSerie({ title=>$title, image=>$image, description=>$description });
-
-	print "$title , $image , $description";
 	    print <<CENTER;
         <div id="center_side">
 			<h1>Successo</h1>

@@ -33,4 +33,4 @@ targetNamespace="http://allStreaming.altervista.org" elementFormDefault="qualifi
 	</xsd:element>
 </xsd:schema>
 
-<!-- tutti gli id dei film devono iniziare con la lettera "f" per contraddistinguerli dagli id delle serie -->
+
