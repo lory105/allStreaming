@@ -56,7 +56,7 @@ switch ($type ) {
 	    my $idFilm = $q->param('idFilm');
 	    my $idLink = $q->param('idLink');
 	    function::removeLink({ idFilm=>$idFilm, idLink=>$idLink });
-	    print $q->header(-location => q[index.cgi]);     
+	    print $page->redirect("film.cgi?id=$idFilm"); 
         last;
 	}
 

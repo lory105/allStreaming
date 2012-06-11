@@ -34,17 +34,6 @@
 			<link>www.megaup.com</link>
 		</address>
 		
-	</film><film id="2">
-		<title>The Shining</title>
-		<image>images/films/2.jpg</image>
-		<description>Jack Torrance - ex istitutore e scrittore in crisi con tendenza all'alcoolismo - nella speranza di ritrovare se stesso e l'ispirazione accetta di fungere da custode per la stagione invernale dell'immenso e deserto Hotel Overlook, sulle Montagne Rocciose. Dieci anni prima, in analoghe circostanze, un uomo, prima di suicidarsi, ha fatto a pezzi le due figliolette e la moglie...</description>
-		<date>1980-09-24</date>
-		<family>Thriller</family>
-		
-		<address idLink="2">
-			<linkName>PutLocker</linkName>
-			<link>www.putlocker.com</link>
-		</address>
 	</film><film id="4">
 		<title>Transformers</title>
 		<image>images/films/4.jpg</image>
@@ -67,4 +56,25 @@
 			<linkName>PutLocker</linkName>
 			<link>www.putlocker.com</link>
 		</address>
-	</film></collection>
+	</film><film id="2">
+		<title>The Shining</title>
+		<image>images/films/2.jpg</image>
+		<description>Jack Torrance - ex istitutore e scrittore in crisi con tendenza all'alcoolismo - nella speranza di ritrovare se stesso e l'ispirazione accetta di fungere da custode per la stagione invernale dell'immenso e deserto Hotel Overlook, sulle Montagne Rocciose. Dieci anni prima, in analoghe circostanze, un uomo, prima di suicidarsi, ha fatto a pezzi le due figliolette e la moglie...</description>
+		<date>1980-09-24</date>
+		<family>Thriller</family>
+		
+		
+			
+		
+		
+		
+		
+		<address idLink="">
+			<linkName>Nowvideo</linkName>
+			<link>www.google.it</link>
+		</address>
+		<address idLink="">
+			<linkName>Test</linkName>
+			<link>www.google.it</link>
+		</address>
+</film></collection>

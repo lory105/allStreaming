@@ -607,7 +607,6 @@ sub addFilmLinkf{
     $root->removeChild( $oldNode );
     $root->appendChild($newNode);
     # debug da togliere!!!
-    print $root->toString();
     
     # write to file
     open(OUT,'>:utf8',$filmsXml ) || die("Cannot open file");
