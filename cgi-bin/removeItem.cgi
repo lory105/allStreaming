@@ -21,15 +21,15 @@ my $usersXml = "../xml/users.xml";
 my $commentsXml = "../xml/comments.xml";
 
 
-my $page=new CGI;
+my $q=new CGI;
 
 # se non è un admin
 if( function::checkIsAdmin() eq "false"){
-    print $page->redirect("index.cgi");
+    print $q->redirect("index.cgi");
 }
 
 
-my $q=new CGI;
+
 my $type = $q->param('type');
 
 
@@ -56,7 +56,7 @@ switch ($type ) {
 	    my $idFilm = $q->param('idFilm');
 	    my $idLink = $q->param('idLink');
 	    function::removeLink({ idFilm=>$idFilm, idLink=>$idLink });
-	    print $page->redirect("film.cgi?id=$idFilm"); 
+	    print $q->redirect("film.cgi?id=$idFilm"); 
         last;
 	}
 

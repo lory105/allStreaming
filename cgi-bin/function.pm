@@ -350,17 +350,19 @@ print <<RIGHT;
 RIGHT
 
 my @sortIdComment = function::sortIdItemByDate({ type=>"comment"});
-my $video;
-my $x;
 
 FOO: {
     # se non ci sono commenti nel DB
     my $arraySize = @sortIdComment;
+    my @idFilmSelected;
+    my @idSerieSelected;
     if( $arraySize==0 ){ print "Non ci sono commenti"; last FOO;}
     
-    for($x = 0; scalar @sortIdComment >$x && $x < 5; $x++) {
+    my $video; my $x; my $y=1;
+    
+    for($x = 0; scalar @sortIdComment >$y && $x < 5; $x++) {
             
-	    my $idComment = "$sortIdComment[$x]";
+	    my $idComment = "$sortIdComment[$y]";
 	    my $node = function::findItem({ type=>"comment", query=>"//collection/comment[\@id=$idComment]" })->get_node(1);
     
 	    my $typeVideo; my $idVideo;
@@ -371,14 +373,30 @@ FOO: {
     
         # cerco il video con l'id corrispondente 
         if( $typeVideo eq "film"){
-            $video = function::findItem({ type=>$typeVideo, query=>"//collection/film[\@id=$idVideo]" })->get_node(1);
+            # controllo di non aver già inserito il film con id = $idVideo            
+            my %params = map { $_ => 1 } @idFilmSelected;
+            if(exists($params{$idVideo})) { $x = $x - 1; }
+            else{
+                push( @idFilmSelected, $idVideo);
+                $video = function::findItem({ type=>$typeVideo, query=>"//collection/film[\@id=$idVideo]" })->get_node(1);
+                my $title = $video->find('title')->string_value;
+	            print "<a href=\"$typeVideo.cgi?id=$idVideo\" >$title</a></br>";
+            }
         }
-        if( $typeVideo eq "serie"){
-            $video = function::findItem({ type=>$typeVideo, query=>"//collection/serie[\@id=$idVideo]" })->get_node(1);
+        #if( $typeVideo eq "serie"){
+         else{
+            # controllo di non aver già inserito la serire con id = $idVideo
+            my %params = map { $_ => 1 } @idSerieSelected;
+            if(exists($params{$idVideo})) { $x = $x - 1; }
+            else{        
+                push( @idSerieSelected, $idVideo);
+                $video = function::findItem({ type=>$typeVideo, query=>"//collection/serie[\@id=$idVideo]" })->get_node(1);
+                my $title = $video->find('title')->string_value;
+        	    print "<a href=\"$typeVideo.cgi?id=$idVideo\" >$title</a></br>";
+            }
         }
     
-        my $title = $video->find('title')->string_value;
-	    print "<a href=\"$typeVideo.cgi?id=$idVideo\" >$title</a></br>";
+	    $y = $y+1;
     }
 }
 

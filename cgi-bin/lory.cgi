@@ -48,7 +48,22 @@ my $commentsXml = "../xml/comments.xml";
 ###   
 
 
-function::removeUser({ id=>"2" });
+my @array;
+
+#@array = "io";
+#@array = "egli";
+#@array = "tu";
+
+my $id= 4;
+
+push( @array, "io");
+push( @array, $id);
+
+print @array;
+
+
+
+#function::removeUser({ id=>"2" });
 
 
 =o

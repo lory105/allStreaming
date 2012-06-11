@@ -42,18 +42,18 @@ if( $isAdmin eq "true"){
 FILM
 }
 
-	my $img=$node->find('image')->string_value;
-	print "<img src=\"../$img\" class=\"preview\"/>";
-	my $description = $node->find('description')->string_value;
-	print "<p>$description</p></br>";
-	my $address=$node->find('address');
-	foreach my $try ($address->get_nodelist) {
-	  my $idLink=$try->findvalue('@idLink')->string_value;
-	  my $linkname=$try->find('linkName')->string_value;
-	  my $link=$try->find('link')->string_value;
-	  print "<p><b>Link:</b> <a href=\"http://$link\" target=\"_blank\">$linkname</a></p>";
-	  if( $isAdmin eq "true"){
-          print<<FILM
+my $img=$node->find('image')->string_value;
+print "<img src=\"../$img\" class=\"preview\"/>";
+my $description = $node->find('description')->string_value;
+print "<p>$description</p></br>";
+my $address=$node->find('address');
+foreach my $try ($address->get_nodelist) {
+    my $idLink=$try->findvalue('@idLink')->string_value;
+    my $linkname=$try->find('linkName')->string_value;
+    my $link=$try->find('link')->string_value;
+    print "<p><b>Link:</b> <a href=\"http://$link\" target=\"_blank\">$linkname</a></p>";
+    if( $isAdmin eq "true"){
+        print<<FILM
                <form method="post" action="removeItem.cgi">
                    <input name="type" value="link" type="hidden">
                    <input name="idFilm" value="$id" type="hidden">
@@ -61,17 +61,16 @@ FILM
                    <input type="submit" value="Rimuovi Link">
                </form>
 FILM
+    }
 }
-	}
-	print "</div>";
-  
+
+print "</div>";
 
 my $session = CGI::Session->load();
 
 if($session->is_expired || $session->is_empty){}
 else{ 
-	function::printCommentsVideo({ typeVideo=>"film", idVideo=>$id  }); 
-	
+	function::printCommentsVideo({ typeVideo=>"film", idVideo=>$id  }); 	
 }
 
 print "</div></div>";
