@@ -52,7 +52,7 @@ SERIE
 	
 	if( $isAdmin eq "true"){
     print<<SERIE
-		 <h3>Stagione $numb -- <a href=\"AddEpisode.cgi?id=$id%idSeason=$numb\" >Aggiungi Episodio</a></h3>
+		 <h3>Stagione $numb -- <a href=\"addEpisode.cgi?id=$id&idSeason=$numb\" >Aggiungi Episodio</a></h3>
 SERIE
 		}
 	  else{

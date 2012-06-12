@@ -50,7 +50,27 @@
 				</episode>
 			</season>
 </serie>
-<serie id="2">
+<serie id="1">
+	<title>The Mentalist</title>
+	<image>images/series/1.jpg</image>
+	<description>Patrick Jane "consulente" al California Bureau of Investigation, dove aiuta la squadra investigativa coordinata da Teresa Lisbon e formata da Kimball Cho, Wayne Rigsby e Grace Van Pelt usando il suo particolare talento di Mentalist. La sua dote gli permette di notare ogni piccolo dettaglio, ogni sfuggevole particolare all?apparenza inutile, che per Patrick diventa un prezioso tassello del puzzle che lo porter a risolvere caso dopo caso...</description>
+			<season number="1">
+				<episode idEpisode="1">
+					<title>EpisodioUnoTitolo</title>
+					<link>Nowvideo</link>
+				</episode>
+			</season>
+			<season number="2">
+				<episode idEpisode="1">
+					<title>EpisodioDueTitolo</title>
+					<link>Nowvideo</link>
+				</episode>
+			</season>
+		<season number="3">
+		</season>
+		<season number="4">
+		</season>
+</serie><serie id="2">
 	<title>The Tudors</title>
 	<image>images/series/2.jpg</image>
 	<description>La serie segue le vicende della famiglia Tudors (dinastia composta dai cinque sovrani che regnarono tra il 1485 e il 1603 in Inghilterra). In particolare, rilancia la figura di uno dei personaggi pi noti e controversi della storia inglese, Enrico VIII, re re d?Inghilterra e di Irlanda fino al 1547.</description>
@@ -72,24 +92,5 @@
 		</season>
 		<season number="3">
 		</season>
-</serie><serie id="1">
-	<title>The Mentalist</title>
-	<image>images/series/1.jpg</image>
-	<description>Patrick Jane "consulente" al California Bureau of Investigation, dove aiuta la squadra investigativa coordinata da Teresa Lisbon e formata da Kimball Cho, Wayne Rigsby e Grace Van Pelt usando il suo particolare talento di Mentalist. La sua dote gli permette di notare ogni piccolo dettaglio, ogni sfuggevole particolare all?apparenza inutile, che per Patrick diventa un prezioso tassello del puzzle che lo porter a risolvere caso dopo caso...</description>
-			<season number="1">
-				<episode idEpisode="1">
-					<title>EpisodioUnoTitolo</title>
-					<link>Nowvideo</link>
-				</episode>
-			</season>
-			<season number="2">
-				<episode idEpisode="1">
-					<title>EpisodioDueTitolo</title>
-					<link>Nowvideo</link>
-				</episode>
-			</season>
-		<season number="3">
-		</season>
-		<season number="4">
-		</season>
+
 </serie></collection>
