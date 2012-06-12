@@ -48,7 +48,7 @@ foreach my $node ($nodeset->get_nodelist) {
 	
 	print "<img src=\"../images/avatars/$username.jpg\" class=\"grav2\"/> "."\n";
 	if( function->checkIsAdmin() eq "true" || $session->param('id') == $id ){
-	        print<<PROFILE
+	        print<<PROFILE;
 	      <br></br>
          <form method="post" action="removeItem.cgi">
              <input name="type" value="user" type="hidden">
