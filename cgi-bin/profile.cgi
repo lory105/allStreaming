@@ -45,8 +45,11 @@ foreach my $node ($nodeset->get_nodelist) {
 	print "<h1>Utente: $username</h1>";
 	
 	my $session = CGI::Session->load();
+	
+	print "<img src=\"../images/avatars/$username.jpg\" class=\"grav2\"/> "."\n";
 	if( function->checkIsAdmin() eq "true" || $session->param('id') == $id ){
-	        print<<PROFILE
+	        print<<PROFILE;
+	      <br></br>
          <form method="post" action="removeItem.cgi">
              <input name="type" value="user" type="hidden">
              <input name="id" value="$id" type="hidden">
@@ -54,9 +57,6 @@ foreach my $node ($nodeset->get_nodelist) {
          </form>
 PROFILE
 	}
-	
-	
-	print "<img src=\"../images/avatars/$username.jpg\" class=\"grav2\"/> "."\n";
 	print "<div class=\"user\"><p><b>Nome:</b> $name</p><hr></hr>"."\n";
 	print "<p><b>Cognome:</b> $surname</p><hr></hr>"."\n";
 	print "<p><b>Data di registrazione:</b> $dateRegistration</p><hr></hr></div>"."\n";

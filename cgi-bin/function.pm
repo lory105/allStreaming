@@ -154,6 +154,7 @@ sub menu {
     
     my $session = CGI::Session->load();
     my $id = $session->param('id');
+    my $self = $session->param('username');
     
     
     print<<MENU;
@@ -245,7 +246,7 @@ MENU
 			      <li><img src="../images/comment.png"/><a href="comments.cgi">Commenti</a><hr></li>
 MENU
            my $username = $_[1];
-           if( $username eq "" ){
+           if( $username eq "" || $username eq $self){
 			      print "<li><img src=\"../images/profile.png\"/><b>Profilo</b><hr></li>";
            }
            else{
