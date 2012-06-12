@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="series.xsl"?>
-<collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
-xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org series.xsd">
+<collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org series.xsd">
 
 <serie id="1">
 	<title>The Mentalist</title>
@@ -20,27 +17,29 @@ xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreamin
 				</episode>
 			</season>
 </serie>
+
 <serie id="2">
-	<title>The Tudors</title>
-	<image>images/series/2.jpg</image>
-	<description>La serie segue le vicende della famiglia Tudors (dinastia composta dai cinque sovrani che regnarono tra il 1485 e il 1603 in Inghilterra). In particolare, rilancia la figura di uno dei personaggi pi noti e controversi della storia inglese, Enrico VIII, re re d?Inghilterra e di Irlanda fino al 1547.</description>
-		<season number="1">
-			<episode>
-				<title>EpisodioUnoTitolo</title>
-				<link>Nowvideo</link>
-			</episode>
-			<episode>
-				<title>EpisodioDueTitolo</title>
-				<link>Nowvideo</link>
-			</episode>
-		</season>
-		<season number="2">
-			<episode>
-				<title>EpisodioDueTitolo</title>
-				<link>Nowvideo</link>
-			</episode>
-		</season>
+<title>The Tudors</title>
+<image>images/series/2.jpg</image>
+<description>La serie segue le vicende della famiglia Tudors (dinastia composta dai cinque sovrani che regnarono tra il 1485 e il 1603 in Inghilterra). In particolare, rilancia la figura di uno dei personaggi pi noti e controversi della storia inglese, Enrico VIII, re re d?Inghilterra e di Irlanda fino al 1547.</description>
+<season number="1">
+<episode>
+<title>EpisodioUnoTitolo</title>
+<link>Nowvideo</link>
+</episode>
+<episode>
+<title>EpisodioDueTitolo</title>
+<link>Nowvideo</link>
+</episode>
+</season>
+<season number="2">
+<episode>
+<title>EpisodioDueTitolo</title>
+<link>Nowvideo</link>
+</episode>
+</season>
 </serie>
+
 <serie id="3">
 	<title>The Shield</title>
 	<image>images/series/3.jpg</image>
