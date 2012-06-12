@@ -47,7 +47,7 @@ foreach my $node ($nodeset->get_nodelist) {
 	my $session = CGI::Session->load();
 	
 	print "<img src=\"../images/avatars/$username.jpg\" class=\"grav2\"/> "."\n";
-	if( function->checkIsAdmin() eq "true" || $session->param('id') == $id ){
+	if( (function->checkIsAdmin() eq "true" && $session->param('id') != $id) || ( $session->param('id') == $id && function->checkIsAdmin() eq "false") ){
 	        print<<PROFILE;
 	      <br></br>
          <form method="post" action="removeItem.cgi">

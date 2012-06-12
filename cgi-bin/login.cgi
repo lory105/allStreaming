@@ -18,9 +18,9 @@ my $cryptedPassword = function->getPassword($username);
 
 $session = new CGI::Session();
 
-if( "$cryptedPassword" eq "$password" ){
+#if( "$cryptedPassword" eq "$password" ){
 # da sostituire con:
-#if( "$cryptedPassword" eq md5($password) ){
+if( "$cryptedPassword" eq md5_hex($password) ){
 
     my $user = function::findItem({type=>"user", query=>"//collection/user[username/text()=\"$username\"]"})->get_node(1);
     

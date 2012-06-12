@@ -1,10 +1,13 @@
-<collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org users.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="user.xsl"?>
+<collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org users.xsd">
 
 	<user id="1">
 		<name>Giacomo</name>
 		<surname>Zanon</surname>
 		<username>jack</username>
-		<password>giacomo</password>
+		<password>5f4dcc3b5aa765d61d8327deb882cf99</password>
 		<email>giacomoz@gmail.com</email>
 		<avatar>../avatar/jack.jpg</avatar>
 		<dateRegistration>2007-10-26T21:32:52</dateRegistration>
@@ -14,7 +17,7 @@
 		<name>Luca</name>
 		<surname>Scassa</surname>
 		<username>luck</username>
-		<password>lucascassa</password>
+		<password>5f4dcc3b5aa765d61d8327deb882cf99</password>
 		<email>lucas@gmail.com</email>
 		<avatar>../avatar/luck.jpg</avatar>
 		<dateRegistration>2008-11-26T21:32:52</dateRegistration>
@@ -24,19 +27,17 @@
 		<name>Samuele</name>
 		<surname>Zamba</surname>
 		<username>d</username>
-		<password>guerra</password>
+		<password>5f4dcc3b5aa765d61d8327deb882cf99</password>
 		<email>d@gmail.com</email>
 		<avatar>../avatar/d.png</avatar>
 		<dateRegistration>2009-10-26T21:32:52</dateRegistration>
 		<admin>false</admin>
 	</user>
-
-
 	<user id="4">
 		<name>nome</name>
 		<surname>dfewfer</surname>
 		<username>username</username>
-		<password>password</password>
+		<password>5f4dcc3b5aa765d61d8327deb882cf99</password>
 		<email>your@email.com</email>
 		<avatar>../avatar/username.png</avatar>
 		<dateRegistration>2012-06-05T13:49:54</dateRegistration>
@@ -46,7 +47,7 @@
 		<name>Gioggio</name>
 		<surname>Gioggiolo</surname>
 		<username>ggggg</username>
-		<password>password</password>
+		<password>5f4dcc3b5aa765d61d8327deb882cf99</password>
 		<email>your@gioggiolo.com</email>
 		<avatar>../avatar/jack.png</avatar>
 		<dateRegistration>2012-06-05T14:05:42</dateRegistration>
@@ -56,7 +57,7 @@
 		<name>Banana</name>
 		<surname>Joe</surname>
 		<username>bananajoe</username>
-		<password>password</password>
+		<password>5f4dcc3b5aa765d61d8327deb882cf99</password>
 		<email>your@banana.com</email>
 		<avatar>../avatar/jack.png</avatar>
 		<dateRegistration>2012-06-06T07:43:04</dateRegistration>
@@ -66,7 +67,7 @@
 		<name>Admin</name>
 		<surname>Admin</surname>
 		<username>admin</username>
-		<password>admin1</password>
+		<password>5f4dcc3b5aa765d61d8327deb882cf99</password>
 		<email>admin@allstreaming.com</email>
 		<avatar>../avatar/admin.png</avatar>
 		<dateRegistration>2012-06-06T08:43:04</dateRegistration>

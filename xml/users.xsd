@@ -15,8 +15,8 @@ targetNamespace="http://allStreaming.altervista.org" elementFormDefault="qualifi
 							<xsd:simpleType>
 								<xsd:restriction base="xsd:string">
 									<!-- xsd:pattern value="[a-zA-Z0-9]"/   da sistemare se voglio mettere dei controlli -->
-								    <xsd:minLength value="6" />
-									<xsd:maxLength value="20" />
+								    <xsd:minLength />
+									<xsd:maxLength />
 								</xsd:restriction>
 							</xsd:simpleType>
 						</xsd:element> 

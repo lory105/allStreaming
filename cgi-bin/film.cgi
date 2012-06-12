@@ -64,7 +64,7 @@ FILM
     }
 }
 
-print "</div>";
+print "<br /></div>";
 
 my $session = CGI::Session->load();
 

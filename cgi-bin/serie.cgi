@@ -42,31 +42,45 @@ if( $isAdmin eq "true"){
 SERIE
 }
 	
-	my $img=$node->find('image')->string_value;
-	print "<img src=\"../$img\" class=\"preview\"/>";
-	my $description = $node->find('description')->string_value;
-	print "<p>$description</p></br>";
-	my $seasons=$node->find('season');
-	foreach my $try ($seasons->get_nodelist) {
-	my $numb=$try->getAttribute('number');
-	
-	if( $isAdmin eq "true"){
-    print<<SERIE
-		 <h3>Stagione $numb -- <a href=\"addEpisode.cgi?id=$id&idSeason=$numb\" >Aggiungi Episodio</a></h3>
-SERIE
-		}
-	  else{
-		  print "<h3>Stagione $numb</h3>";
-	  }
-	  my $episodes=$try->find('episode');
-	  foreach my $episode ($episodes->get_nodelist) {
-		  my $title=$episode->find('title')->string_value;
-		  my $link=$episode->find('link')->string_value;
-		  print "<p><b>Link:</b> <a href=\"http://$link\" target=\"_blank\">$title</a></p>";
-	  }
-	}
-	print "</div>";
+my $img=$node->find('image')->string_value;
+print "<img src=\"../$img\" class=\"preview\"/>";
+my $description = $node->find('description')->string_value;
+print "<p>$description</p></br>";
+my $seasons=$node->find('season');
+my @sortIdSeason;       # array contenente il numero delle stagioni
+my %sortSeason;         # key = number season, value = node season
 
+# memorizzo i numeri delle stagioni della serie per stamparle in ordine crescente
+foreach my $node ($seasons->get_nodelist) {
+	my $number=$node->getAttribute('number');
+	
+	$sortSeason{$number}= $node;
+	push( @sortIdSeason, $number);
+}
+
+# ordino l'array con i numeri delle stagini in modo crescente
+@sortIdSeason = sort { $a <=> $b } @sortIdSeason;
+	
+my $x;
+for($x=0; $x < scalar @sortIdSeason; $x++){
+    my $number = $sortIdSeason[$x];
+    my $node = $sortSeason{ $number };
+    
+	if( $isAdmin eq "true"){
+        print<<SERIE
+		 <h3>Stagione $number -- <a href=\"addEpisode.cgi?id=$id&idSeason=$number\" >Aggiungi Episodio</a></h3>
+SERIE
+	}
+    else{ print "<h3>Stagione $number</h3>"; }
+	my $episodes=$node->find('episode');
+	foreach my $episode ($episodes->get_nodelist) {
+		my $title=$episode->find('title')->string_value;
+		my $link=$episode->find('link')->string_value;
+		print "<p><b>Link:</b> <a href=\"http://$link\" target=\"_blank\">$title</a></p>";
+	}
+}
+
+print "</div>";
 
 my $session = CGI::Session->load();
 

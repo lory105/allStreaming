@@ -495,6 +495,7 @@ sub addUser{
     my $surname = $parameters->{surname};
     my $username = $parameters->{username};
     my $password = $parameters->{password};
+    $password = md5_hex($password);
     my $email = $parameters->{email};
     # $email =~ s/@/\@/g;                     # inserisce il simbolo "\" prima della "@"  forse non serve!!
     my $avatar = $parameters->{avatar};
@@ -517,6 +518,7 @@ sub addUser{
 
     # write to file
     open(OUT,'>:utf8',$usersXml ) || die("Cannot open file");
+    print OUT "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
     print OUT $root->toString();
     close(OUT);
 }
@@ -553,6 +555,7 @@ sub addFilm{
     
     # write to file
     open(OUT,'>:utf8',$filmsXml ) || die("Cannot open file");
+    print OUT "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
     print OUT $root->toString();
     close(OUT);
 }
@@ -587,6 +590,7 @@ sub addSerie{
     
     # write to file
     open(OUT,'>:utf8',$seriesXml ) || die("Cannot open file");
+    print OUT "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
     print OUT $root->toString();
     close(OUT);
 }
@@ -637,6 +641,7 @@ sub addEpisode{
     
     # write to file
     open(OUT,'>:utf8',$seriesXml ) || die("Cannot open file");
+    print OUT "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
     print OUT $root->toString();
     close(OUT);
 }
@@ -674,6 +679,7 @@ sub addSeason{
     
     # write to file
     open(OUT,'>:utf8',$seriesXml ) || die("Cannot open file");
+    print OUT "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
     print OUT $root->toString();
     close(OUT); 
 }
@@ -719,6 +725,7 @@ sub addFilmLinkf{
     
     # write to file
     open(OUT,'>:utf8',$filmsXml ) || die("Cannot open file");
+    print OUT "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
     print OUT $root->toString();
     close(OUT);
     
@@ -764,6 +771,7 @@ sub removeItem {
     
     # write to file
     open(OUT,'>:utf8',$file ) || die("Cannot open file");
+    print OUT "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
     print OUT $root->toString();
     close(OUT);
 
@@ -803,6 +811,7 @@ sub removeLink{
 
     # write to file
     open(OUT,'>:utf8',$file ) || die("Cannot open file");
+    print OUT "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
     print OUT $root->toString();
     close(OUT);
 }
@@ -841,6 +850,7 @@ sub removeEpisode{
 
     # write to file
     open(OUT,'>:utf8',$file ) || die("Cannot open file");
+    print OUT "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
     print OUT $root->toString();
     close(OUT);
 }
@@ -879,6 +889,7 @@ sub removeUser {
     
     # write to file
     open(OUT,'>:utf8',$usersXml ) || die("Cannot open file");
+    print OUT "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
     print OUT $root->toString();
     close(OUT);
 }
@@ -1314,6 +1325,7 @@ sub addComment{
     
     # write to file
     open(OUT,'>:utf8',$commentsXml ) || die("Cannot open file");
+    print OUT "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
     print OUT $root->toString();
     close(OUT);
 }
