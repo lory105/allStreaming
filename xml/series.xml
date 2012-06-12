@@ -92,4 +92,8 @@
 				<title>haha</title>
 				<link>www</link>
 			</episode>
+			<episode idEpisode="3">
+				<title>test</title>
+				<link>test</link>
+			</episode>
 </season></serie></collection>
