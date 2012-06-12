@@ -47,7 +47,8 @@ my $commentsXml = "../xml/comments.xml";
 ########################################################################
 ###   
 
-my $id = 2;
+my $idSerie = "2";
+my $idSeason="3";
 my $nameLink = "puu";
 my $link = "poo";
 my $empty;
@@ -55,7 +56,9 @@ my $empty;
 
 #print function->getMaxId("season", $id );
 
-function::addSeason({ idSerie=>$id });
+function::addEpisode({ idSerie=>$idSerie, idSeason=>$idSeason, title=>"haha", link=>"www" });
+
+#function::addSeason({ idSerie=>$id });
 
 #function::removeUser({ id=>"2" });
 

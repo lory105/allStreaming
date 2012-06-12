@@ -86,6 +86,10 @@
 				<link>Nowvideo</link>
 			</episode>
 		</season>
-		<season number="3">
-		</season>
-</serie></collection>
+		
+<season number="3">
+					<episode idEpisode="3">
+				<title>haha</title>
+				<link>www</link>
+			</episode>
+</season></serie></collection>
