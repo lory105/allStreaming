@@ -593,6 +593,7 @@ sub addSerie{
 
 
 # aggiunge un episodio ad una stagione di una serie
+#function::addEpisode({idSerie=>$idSerie, idSeason=>$idSeason, title=>$title, link=>$link});
 sub addEpisode{
     my $parameters = shift;
     my $idSerie = $parameters->{idSerie};

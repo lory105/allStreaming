@@ -31,3 +31,12 @@ use XML::LibXML;
 	    print $page->redirect("film.cgi?id=$id");
 	}
 	
+	if($type eq "episode"){
+		my $idSeason = $form->param('idSeason');
+		my $title = $form->param('title');
+		my $link = $form->param('link');
+		function::addEpisode({idSerie=>$id, idSeason=>$idSeason, title=>$title, link=>$link});
+	    my $page = new CGI;
+	    print $page->redirect("serie.cgi?id=$id");
+	}
+	
