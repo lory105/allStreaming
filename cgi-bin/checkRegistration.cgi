@@ -39,7 +39,7 @@ use XML::LibXML;
 		function->header(); 
 		function->left("");
 		function->right();
-		my $upload_filehandle = $form->upload("photo");
+		my $upload_filehandle = $form->upload("photo");		
 		open(UPLOADFILE, ">$upload_dir/$user.jpg") or die "Can't open '$upload_dir/$filename': $!";
 		binmode UPLOADFILE;
 

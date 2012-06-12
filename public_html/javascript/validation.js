@@ -7,6 +7,10 @@ var mail=0;
 var psw=0;
 var confirm=0;
 var pass = "";
+var title=0;
+var descr=0;
+var data=0;
+var url=0;
 
 function checkName() {
 		var temp = document.getElementById("name").value;
@@ -149,6 +153,86 @@ function repeatPassword() {
 	total();
 }
 
+function checkTitle() {
+		var temp = document.getElementById("title").value;
+		var posizione = temp.search(/^\D{3}(\D)*$/);
+		if (posizione != 0 && temp != "") {
+			document.getElementById("title").style.backgroundColor = "#F00";
+			document.getElementById("titleError").style.display = "inline";
+			document.getElementById("titleCorrect").style.display = "none";
+			title=0;
+		}
+		if (posizione == 0) {
+			document.getElementById("title").style.backgroundColor = "#00CC00";
+			document.getElementById("titleError").style.display = "none";
+			document.getElementById("titleCorrect").style.display = "inline";
+			title=1;
+		}
+		if (temp == "") {
+			document.getElementById("title").style.backgroundColor = "#F00";
+			document.getElementById("titleError").style.display = "inline";
+			document.getElementById("titleCorrect").style.display = "none";
+			title=0;
+		}
+		totalFilm();
+}
+
+function checkTitleSerie() {
+		var temp = document.getElementById("title").value;
+		var posizione = temp.search(/^\D{3}(\D)*$/);
+		if (posizione != 0 && temp != "") {
+			document.getElementById("title").style.backgroundColor = "#F00";
+			document.getElementById("titleError").style.display = "inline";
+			document.getElementById("titleCorrect").style.display = "none";
+			title=0;
+		}
+		if (posizione == 0) {
+			document.getElementById("title").style.backgroundColor = "#00CC00";
+			document.getElementById("titleError").style.display = "none";
+			document.getElementById("titleCorrect").style.display = "inline";
+			title=1;
+		}
+		if (temp == "") {
+			document.getElementById("title").style.backgroundColor = "#F00";
+			document.getElementById("titleError").style.display = "inline";
+			document.getElementById("titleCorrect").style.display = "none";
+			title=0;
+		}
+		totalSerie();
+}
+
+function checkDescr() {
+		var temp = document.getElementById("description").value;
+		if (temp == "") {
+			document.getElementById("descrError").style.display = "inline";
+			document.getElementById("descrCorrect").style.display = "none";
+			descr=0;
+		}
+		else
+		{
+			document.getElementById("descrError").style.display = "none";
+			document.getElementById("descrCorrect").style.display = "inline";
+			descr=1;
+		}
+		totalFilm();
+}
+
+function checkDescrSerie() {
+		var temp = document.getElementById("description").value;
+		if (temp == "") {
+			document.getElementById("descrError").style.display = "inline";
+			document.getElementById("descrCorrect").style.display = "none";
+			descr=0;
+		}
+		else
+		{
+			document.getElementById("descrError").style.display = "none";
+			document.getElementById("descrCorrect").style.display = "inline";
+			descr=1;
+		}
+		totalSerie();
+}
+
 function total() {
 	document.getElementById("end").disabled=false;
 	var test = name+surname+mail+user+psw+confirm;
@@ -159,3 +243,100 @@ function total() {
 		document.getElementById("end").disabled =true;
 	}
 }
+
+function checkDate(){
+	
+		var temp = document.getElementById("date").value;
+		var posizione = temp.search(/^\d{4}\-\d{1,2}\-\d{1,2}$/);
+		if (posizione != 0 && temp != "") {
+			document.getElementById("date").style.backgroundColor = "#F00";
+			document.getElementById("dataError").style.display = "inline";
+			document.getElementById("dataCorrect").style.display = "none";
+			data=0;
+		}
+		if (posizione == 0) {
+			document.getElementById("date").style.backgroundColor = "#00CC00";
+			document.getElementById("dataError").style.display = "none";
+			document.getElementById("dataCorrect").style.display = "inline";
+			data=1;
+		}
+		if (temp == "") {
+			document.getElementById("date").style.backgroundColor = "#F00";
+			document.getElementById("dataError").style.display = "inline";
+			document.getElementById("dataCorrect").style.display = "none";
+			data=0;
+		}
+		totalFilm();
+}
+
+function totalFilm() {
+	document.getElementById("newFilm").disabled=false;
+	var test = title+descr+data;
+	if(test == 3){
+		document.getElementById("newFilm").disabled=false;
+	}
+	else{
+		document.getElementById("newFilm").disabled =true;
+	}
+}
+
+function totalSerie() {
+	document.getElementById("newSerie").disabled=false;
+	var test = title+descr;
+	if(test == 2){
+		document.getElementById("newSerie").disabled=false;
+	}
+	else{
+		document.getElementById("newSerie").disabled =true;
+	}
+	
+}
+
+function checkTitleLink() {
+		var temp = document.getElementById("title").value;
+		var posizione = temp.search(/^\D{3}(\D)*$/);
+		if (posizione != 0 && temp != "") {
+			document.getElementById("title").style.backgroundColor = "#F00";
+			title=0;
+		}
+		if (posizione == 0) {
+			document.getElementById("title").style.backgroundColor = "#00CC00";
+			title=1;
+		}
+		if (temp == "") {
+			document.getElementById("title").style.backgroundColor = "#F00";
+			title=0;
+		}
+		totalLink();
+}
+
+function checkUrlLink() {
+		var temp = document.getElementById("link").value;
+		var posizione = temp.search(/[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi);
+		if (posizione != 0 && temp != "") {
+			document.getElementById("link").style.backgroundColor = "#F00";
+			url=0;
+		}
+		if (posizione == 0) {
+			document.getElementById("link").style.backgroundColor = "#00CC00";
+			url=1;
+		}
+		if (temp == "") {
+			document.getElementById("link").style.backgroundColor = "#F00";
+			url=0;
+		}
+		totalLink();
+}
+
+function totalLink() {
+	document.getElementById("newLink").disabled=false;
+	var test = title+url;
+	if(test == 2){
+		document.getElementById("newLink").disabled=false;
+	}
+	else{
+		document.getElementById("newLink").disabled =true;
+	}
+}
+
+

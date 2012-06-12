@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org series.xsd">
 
 
@@ -73,18 +74,15 @@
 		<season number="3">
 		</season>
 </serie>
+
 <serie id="1">
 	<title>The Mentalist</title>
 	<image>images/series/1.jpg</image>
 	<description>Patrick Jane "consulente" al California Bureau of Investigation, dove aiuta la squadra investigativa coordinata da Teresa Lisbon e formata da Kimball Cho, Wayne Rigsby e Grace Van Pelt usando il suo particolare talento di Mentalist. La sua dote gli permette di notare ogni piccolo dettaglio, ogni sfuggevole particolare all?apparenza inutile, che per Patrick diventa un prezioso tassello del puzzle che lo porter a risolvere caso dopo caso...</description>
 			
-		<season number="2">
-				<episode idEpisode="1">
-					<title>EpisodioDueTitolo</title>
-					<link>Nowvideo</link>
-				</episode>
-		</season>
-		<season number="1">
+		
+		
+<season number="1">
 				<episode idEpisode="1">
 					<title>EpisodioUnoTitolo</title>
 					<link>Nowvideo</link>
@@ -93,6 +91,21 @@
 					<title>haha</title>
 					<link>www</link>
 				</episode>
-		</season>
-</serie>
-</collection>
+					<episode idEpisode="2">
+				<title>John il rosso</title>
+				<link>http://www.nowvideo.eu/video/67o75hkjthzuf</link>
+			</episode>
+			<episode idEpisode="2">
+				<title>Prova</title>
+				<link>http://www.nowvideo.eu/video/67o75hkjthzuf</link>
+			</episode>
+</season><season number="2">
+				<episode idEpisode="1">
+					<title>EpisodioDueTitolo</title>
+					<link>Nowvideo</link>
+				</episode>
+					<episode idEpisode="2">
+				<title>test</title>
+				<link>www.google.it</link>
+			</episode>
+</season></serie></collection>

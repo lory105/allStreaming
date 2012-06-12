@@ -31,10 +31,10 @@ use XML::LibXML;
 					<input name="type" value="film" type="hidden">
 					<input name="id" value="$id" type="hidden">			
 					<label for="title">Titolo:</label>
-					<input type="text" name="title" />
+					<input type="text" name="title" id="title" onblur="checkTitleLink();" />
 					<label for="link">Link:</label>
-					<input type="text" name="link" />
-					<input type="submit" value="Invia">
+					<input type="text" name="link" id="link" onblur="checkUrlLink();"/>
+					<input type="submit" value="Invia" id="newLink" disabled="false">
 				</fieldset>
 			 </form>
 			</div>

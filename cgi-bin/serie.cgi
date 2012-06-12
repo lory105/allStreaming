@@ -73,11 +73,13 @@ SERIE
 	}
     else{ print "<h3>Stagione $number</h3>"; }
 	my $episodes=$node->find('episode');
+	print "<div class=\"episodes\">";
 	foreach my $episode ($episodes->get_nodelist) {
 		my $title=$episode->find('title')->string_value;
 		my $link=$episode->find('link')->string_value;
-		print "<p><b>Link:</b> <a href=\"http://$link\" target=\"_blank\">$title</a></p>";
+		print "<p style=\"text-align:left;\"><b>Link:</b> <a href=\"http://$link\" target=\"_blank\">$title</a></p>";
 	}
+	print "</div><br></br>";
 }
 
 print "</div>";
