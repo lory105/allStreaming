@@ -67,8 +67,16 @@
 		<description>Jack Torrance - ex istitutore e scrittore in crisi con tendenza all'alcoolismo - nella speranza di ritrovare se stesso e l'ispirazione accetta di fungere da custode per la stagione invernale dell'immenso e deserto Hotel Overlook, sulle Montagne Rocciose. Dieci anni prima, in analoghe circostanze, un uomo, prima di suicidarsi, ha fatto a pezzi le due figliolette e la moglie...</description>
 		<date>1980-09-24</date>
 		<family>Thriller</family>
+		
+		
+		
 		<address idLink="1">
-			<linkName>puu</linkName>
-			<link>poo</link>
+			<linkName>NowVideo</linkName>
+			<link>der</link>
 		</address>
+		<address idLink="2">
+			<linkName>PutLocker</linkName>
+			<link>aaa</link>
+		</address>
+		
 </film></collection>

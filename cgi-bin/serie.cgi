@@ -34,6 +34,11 @@ if( $isAdmin eq "true"){
              <input name="id" value="$id" type="hidden">
              <input type="submit" value="Rimuovi Serie">
          </form>
+         <form method="post" action="addSeason.cgi">
+             <input name="type" value="serie" type="hidden">
+             <input name="id" value="$id" type="hidden">
+             <input type="submit" value="Aggiungi stagione">
+         </form>
               <br></br>
 SERIE
 }
@@ -44,13 +49,21 @@ SERIE
 	print "<p>$description</p></br>";
 	my $seasons=$node->find('season');
 	foreach my $try ($seasons->get_nodelist) {
-	  my $numb=$try->getAttribute('number');
-	  print "<p><h3>Stagione $numb</h3></p>";
+	my $numb=$try->getAttribute('number');
+	
+	if( $isAdmin eq "true"){
+    print<<SERIE
+		 <h3>Stagione $numb -- <a href=\"AddEpisode.cgi?id=$id%idSeason=$numb\" >Aggiungi Episodio</a></h3>
+SERIE
+		}
+	  else{
+		  print "<h3>Stagione $numb</h3>";
+	  }
 	  my $episodes=$try->find('episode');
 	  foreach my $episode ($episodes->get_nodelist) {
 		  my $title=$episode->find('title')->string_value;
 		  my $link=$episode->find('link')->string_value;
-		  print "<p><b>Link:</b> <a href=\"http://$link\" target=\"_blank\">$title</a></p>"; 
+		  print "<p><b>Link:</b> <a href=\"http://$link\" target=\"_blank\">$title</a></p>";
 	  }
 	}
 	print "</div>";
