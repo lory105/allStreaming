@@ -1,5 +1,6 @@
 <collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org films.xsd">
 
+
 <film id="6">
 		<title>Lorax il guardiano della foresta</title>
 		<image>images/films/6.jpg</image>
