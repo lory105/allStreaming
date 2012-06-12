@@ -1081,9 +1081,9 @@ COMMENTS
 				    <div class="userComment">
 						  <img src="../images/avatars/$username.jpg" class="grav"/> 
 						  <b><a href="profile.cgi?id=$idUser">$username</a></b>
-						  <span ><u><a href="$typeVideo.cgi?id=$idVideo">$titleVideo</a></u></span>
 						  <span class="data">$date</span>
 				    </div>
+				    <b><a href="$typeVideo.cgi?id=$idVideo">$titleVideo</a></b>
 				    <hr></hr>
 				    <div class="userText">$content</div>
 			    </div>

@@ -35,7 +35,6 @@ if( $isAdmin eq "true"){
              <input type="submit" value="Rimuovi Serie">
          </form>
          <form method="post" action="addSeason.cgi">
-             <input name="type" value="serie" type="hidden">
              <input name="id" value="$id" type="hidden">
              <input type="submit" value="Aggiungi stagione">
          </form>
