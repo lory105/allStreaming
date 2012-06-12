@@ -47,20 +47,14 @@ my $commentsXml = "../xml/comments.xml";
 ########################################################################
 ###   
 
+my $idFilm = 2;
+my $nameLink = "puu";
+my $link = "poo";
+my $empty;
 
-my @array;
+function::addFilmLinkf({ idFilm=>$idFilm, linkName=>$nameLink, link=>$link });
 
-#@array = "io";
-#@array = "egli";
-#@array = "tu";
-
-my $id= 4;
-
-push( @array, "io");
-push( @array, $id);
-
-print @array;
-
+if( ! $empty ){ print "ok";}
 
 
 #function::removeUser({ id=>"2" });

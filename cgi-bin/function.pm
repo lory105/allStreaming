@@ -613,6 +613,7 @@ sub addFilmLinkf{
     my $root = $doc->getDocumentElement();
 
     my $maxId = function->getMaxId("link", $idFilm);
+    $maxId = "$maxId" + 1;
 
     # string with the new element
     my $newAddressNode = "\t\t<address idLink=\"$maxId\">\n\t\t\t<linkName>$linkName</linkName>\n\t\t\t<link>$link</link>\n\t\t</address>\n";
@@ -1120,6 +1121,8 @@ switch ($type) {
 }
 
 my $maxId = $xp->findnodes( $query );
+
+if( ! $maxId ){ return 0;}
 return $maxId;
 }
 
