@@ -848,20 +848,22 @@ sub removeEpisode{
 
 
 # rimuove uno user
-# function::removeUser({ id=>"3"});
+# function::removeUser({ idUser=>"3"});
 sub removeUser {
     my $parameters = shift;
-    my $id = $parameters->{id};
+    my $idUser = $parameters->{idUser};
 
+    # rimuovo tutti i commenti dell'utente
+    my $comments = function::findItem({ type=>"comment", query=>"//collection/comment[ idUser=\"$idUser\"]" });
 
-    # prima rimuovo tutti i commenti dell'utente  !!
-
-
-    ######
+    foreach my $node ( $comments->get_nodelist){
+        my $idComment=$node->findvalue('@id');
+        function::removeItem({ type=>"comment", id=>$idComment});
+    }
     
-    
+    # rimuovo l'utente
     my $parser = XML::LibXML->new;
-    my $query = "//collection:user[\@id=\"$id\"]";
+    my $query = "//collection:user[\@id=\"$idUser\"]";
     my $doc = $parser->parse_file( $usersXml );
 
     my $xpc = XML::LibXML::XPathContext->new;

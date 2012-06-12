@@ -59,14 +59,19 @@ switch ($type ) {
 	    print $q->redirect("film.cgi?id=$idFilm"); 
         last;
 	}
-=o da fare
+
 	case "user" {
 	    my $idUser = $q->param('id');
-	    function::removeUser({ idFilm=>$idFilm, idLink=>$idLink });
-	    print $q->redirect("film.cgi?id=$idFilm"); 
+	    function::removeUser({ idUser=>$idUser });
+        my $session = CGI::Session->load();
+        $session->delete();
+        my $page=new CGI;
+        print $page->redirect("index.cgi");
+	    
+	    
+	    #print $q->redirect("logout.cgi"); 
         last;
 	}
-=cut
     
     
 }

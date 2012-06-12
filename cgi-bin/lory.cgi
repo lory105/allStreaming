@@ -56,11 +56,11 @@ my $empty;
 
 #print function->getMaxId("season", $id );
 
-function::addEpisode({ idSerie=>$idSerie, idSeason=>$idSeason, title=>"haha", link=>"www" });
+#function::addEpisode({ idSerie=>$idSerie, idSeason=>$idSeason, title=>"haha", link=>"www" });
 
 #function::addSeason({ idSerie=>$id });
 
-#function::removeUser({ id=>"2" });
+function::removeUser({ id=>"2" });
 
 
 =o
