@@ -607,8 +607,11 @@ sub addEpisode{
     my $xpc = XML::LibXML::XPathContext->new;
     $xpc->registerNs("collection", "http://allStreaming.altervista.org");
     # recupero il nodo del film da modificare
-    my $newNode = $xpc->findnodes("//collection:serie[\@id=\"$idSerie\"]", $doc )->get_node(1);
+    my $newNode = $xpc->findnodes("//collection:serie[\@id=\"$idSerie\"]/collection:season[\@number=\"$idSeason\"]", $doc )->get_node(1);
     my $oldNode = $newNode;
+
+    my $newSeason = $xpc->findnodes("//collection:serie[\@id=\"$idSerie\"]", $doc )->get_node(1);
+    my $oldSeason = $newSeason;
 
     # extract the root element
     my $root = $doc->getDocumentElement();
@@ -617,16 +620,20 @@ sub addEpisode{
     $maxId = "$maxId" + 1;
 
     # string with the new element
-    my $newAddressNode = "\t\t\t\t<episode idEpisode=\"$maxId\">\n\t\t\t\t\t<title>$title</title>\n\t\t\t\t\t<link>$link</link>\n\t\t\t\t</episode>\n";
+    my $newAddressNode = "\t\t\t<episode idEpisode=\"$maxId\">\n\t\t\t\t<title>$title</title>\n\t\t\t\t<link>$link</link>\n\t\t\t</episode>\n";
 
     # check if it's well formed and create the node
     my $fragment = $parser->parse_balanced_chunk($newAddressNode);
     # insert the new child
     $newNode->appendChild($fragment);
     
-    $root->removeChild( $oldNode );
-    $root->appendChild($newNode);
+    $newSeason->removeChild( $oldNode );
+    $newSeason->appendChild($newNode);
+    
+    $root->removeChild( $oldSeason );
+    $root->appendChild($newSeason);
     # debug da togliere!!!
+    #print $root->toString();
     
     # write to file
     open(OUT,'>:utf8',$seriesXml ) || die("Cannot open file");
