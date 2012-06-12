@@ -47,15 +47,15 @@ my $commentsXml = "../xml/comments.xml";
 ########################################################################
 ###   
 
-my $idFilm = 2;
+my $id = 2;
 my $nameLink = "puu";
 my $link = "poo";
 my $empty;
 
-function::addFilmLinkf({ idFilm=>$idFilm, linkName=>$nameLink, link=>$link });
 
-if( ! $empty ){ print "ok";}
+#print function->getMaxId("season", $id );
 
+function::addSeason({ idSerie=>$id });
 
 #function::removeUser({ id=>"2" });
 

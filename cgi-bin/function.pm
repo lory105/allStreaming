@@ -591,6 +591,87 @@ sub addSerie{
 }
 
 
+# aggiunge un episodio ad una stagione di una serie
+sub addEpisode{
+    my $parameters = shift;
+    my $idSerie = $parameters->{idSerie};
+    my $idSeason = $parameters->{idSeason};
+    my $title = $parameters->{title};
+    my $link = $parameters->{link};
+
+
+    my $parser = XML::LibXML->new;
+    my $doc = $parser->parse_file( $seriesXml );
+    my $xpc = XML::LibXML::XPathContext->new;
+    $xpc->registerNs("collection", "http://allStreaming.altervista.org");
+    # recupero il nodo del film da modificare
+    my $newNode = $xpc->findnodes("//collection:serie[\@id=\"$idSerie\"]", $doc )->get_node(1);
+    my $oldNode = $newNode;
+
+    # extract the root element
+    my $root = $doc->getDocumentElement();
+
+    my $maxId = function->getMaxId("link", $idSerie);
+    $maxId = "$maxId" + 1;
+
+    # string with the new element
+    my $newAddressNode = "\t\t\t\t<episode idEpisode=\"$maxId\">\n\t\t\t\t\t<title>$title</title>\n\t\t\t\t\t<link>$link</link>\n\t\t\t\t</episode>\n";
+
+    # check if it's well formed and create the node
+    my $fragment = $parser->parse_balanced_chunk($newAddressNode);
+    # insert the new child
+    $newNode->appendChild($fragment);
+    
+    $root->removeChild( $oldNode );
+    $root->appendChild($newNode);
+    # debug da togliere!!!
+    
+    # write to file
+    open(OUT,'>:utf8',$seriesXml ) || die("Cannot open file");
+    print OUT $root->toString();
+    close(OUT);
+}
+
+# aggiunge in modo incrementale una stagione ad una serie
+# function::addSeason({ idSerie=>$id });
+sub addSeason{
+    my $parameters = shift;
+    my $idSerie = $parameters->{idSerie};
+    
+    my $parser = XML::LibXML->new;
+    my $doc = $parser->parse_file( $seriesXml );
+    my $xpc = XML::LibXML::XPathContext->new;
+    $xpc->registerNs("collection", "http://allStreaming.altervista.org");
+    # recupero il nodo della serie da modificare
+    my $newNode = $xpc->findnodes("//collection:serie[\@id=\"$idSerie\"]", $doc )->get_node(1);
+    my $oldNode = $newNode;
+
+    # extract the root element
+    my $root = $doc->getDocumentElement();
+
+    my $maxId = function->getMaxId( "season", $idSerie );
+    $maxId = "$maxId" +1;
+
+    # string with the new element
+    my $newAddressNode = "\t\t<season number=\"$maxId\">\n\t\t</season>\n";
+
+    # check if it's well formed and create the node
+    my $fragment = $parser->parse_balanced_chunk($newAddressNode);
+    # insert the new child
+    $newNode->appendChild($fragment);
+    
+    $root->removeChild( $oldNode );
+    $root->appendChild($newNode);
+    
+    # write to file
+    open(OUT,'>:utf8',$seriesXml ) || die("Cannot open file");
+    print OUT $root->toString();
+    close(OUT); 
+}
+
+
+
+
 
 # aggiunge un link ad un film
 # da richiamare così, Attenzione sintassi!!!
@@ -764,6 +845,13 @@ sub removeUser {
     my $parameters = shift;
     my $id = $parameters->{id};
 
+
+    # prima rimuovo tutti i commenti dell'utente  !!
+
+
+    ######
+    
+    
     my $parser = XML::LibXML->new;
     my $query = "//collection:user[\@id=\"$id\"]";
     my $doc = $parser->parse_file( $usersXml );
@@ -1090,6 +1178,7 @@ sub countRegisteredUsers{
 
 # funzione che ritorna il massimo id
 # riceve come parametro l'indicatore di dove devo cercare: "film", "serie", "user" o "comment"
+# es function->getMaxId("film", $idFilm );
 sub getMaxId {
 
 my $type = $_[1];
@@ -1115,9 +1204,14 @@ switch ($type) {
 	case "link" {$xp = XML::XPath->new(filename => $filmsXml);
 	             my $idFilm= $_[2];
 	             $query = "/collection/film[\@id=\"$idFilm\"]/address/\@idLink[not(. <=../preceding-sibling::address/\@idLink) and not(. <=../following-sibling::address/\@idLink)]";
-	             $query = "/collection/film[\@id=\"$idFilm\"]/address/\@idLink[not(. <=../preceding-sibling::address/\@idLink) and not(. <=../following-sibling::address/\@idLink)]";
 	             last;
-	} 
+	}
+	case "season" {$xp = XML::XPath->new(filename => $seriesXml);
+	             my $idSerie= $_[2];
+	             $query = "/collection/serie[\@id=\"$idSerie\"]/season/\@number[not(. <=../preceding-sibling::season/\@number) and not(. <=../following-sibling::season/\@number)]";
+	             last;
+	}	
+	
 }
 
 my $maxId = $xp->findnodes( $query );
