@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+# script per la visalizzazione delle serie TV
 
 use CGI;
 use strict;
@@ -6,7 +7,6 @@ use warnings;
 use function;
 use CGI::Carp qw/fatalsToBrowser warningsToBrowser/;
 use CGI::Session ( '-ip_match' );
-
 
 
 function->header();

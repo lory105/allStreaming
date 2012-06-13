@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="user.xsl"?>
-<collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
-xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org users.xsd">
+<collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org users.xsd">
 
 	<user id="1">
 		<name>Giacomo</name>
@@ -73,4 +71,26 @@ xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreamin
 		<dateRegistration>2012-06-06T08:43:04</dateRegistration>
 		<admin>true</admin>
 	</user>
+	<user id="8">
+		<name>Bruno</name>
+		<surname>Rampa</surname>
+		<username>brunello</username>
+		<password>5f4dcc3b5aa765d61d8327deb882cf99</password>
+		<email>bruno.rampa@libero.it</email>
+		<avatar>../avatar/jack.png</avatar>
+		<dateRegistration>2012-06-13T21:27:26</dateRegistration>
+		<admin>false</admin>
+	</user>
+	
+	<user id="9">
+		<name>Paolo</name>
+		<surname>Bratto</surname>
+		<username>bratt</username>
+		<password>5f4dcc3b5aa765d61d8327deb882cf99</password>
+		<email>bratt@yahoo.it</email>
+		<avatar>../avatar/jack.png</avatar>
+		<dateRegistration>2012-06-13T21:41:52</dateRegistration>
+		<admin>false</admin>
+	</user>
+	
 </collection>

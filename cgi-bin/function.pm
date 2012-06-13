@@ -4,23 +4,17 @@ package function;
 
 use CGI;
 use CGI::Carp qw(fatalsToBrowser warningsToBrowser);
-#use CGI qw(:standard);
 use strict;
 use warnings;
 use XML::XPath;
-#use XML::XPath::XMLParser;
 use XML::LibXML;
-#use XML::LibXML::Node;
-
 use Digest::MD5 qw(md5 md5_hex md5_base64);
 use XML::XSLT;
 use Switch;
 
-# x Lory
-use DateTime;  # --> http://stackoverflow.com/questions/2203678/how-can-i-print-a-datetime-in-the-xsdatetime-format-in-perl
+
+use DateTime;
 use Date::Format;
-
-
 
 
 # path db films
@@ -89,7 +83,7 @@ MENU
     switch ($nav) {
 	   case "Home"  { 
 	       print<<MENU;
-	           <li><img src="../images/home.png"/><a href="#"><b>Home</b></a><hr></li>
+	           <li><img src="../images/home.png"/><b>Home</b><hr></li>
 	           <li><img src="../images/series.png"/><a href="series.cgi">Serie Tv</a><hr></li>
 			   <li><img src="../images/film.png"/><a href="films.cgi">Film</a><hr></li>
 			   <li><img src="../images/signin.png"/><a href="registration.cgi">Registrazione</a><hr></li>
@@ -464,7 +458,7 @@ print <<FOOTER;
 	</div>
 	</br>
 		<div id="footer">
-			<a href="#">allStreaming.com </a>-
+			<span>allStreaming.com </span>-
 			<a href="aboutUs.cgi">About Us </a>-
 			<a href="#"> Contact Us</a>
 		</div>

@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+# script per la ricerca dei film
 
 use CGI;
 use strict;
@@ -19,7 +20,7 @@ print <<BODY;
 		<div id="center_side">
 BODY
 
-if ($type eq "Year") {
+if ($type eq "Year"){
 	my $year = $var->param('value');
 	print "<h1>Film disponibili anno $year</h1>";
 	if($year == 'pre-2000') {
@@ -49,15 +50,15 @@ if ($type eq "Year") {
 	}
 }
 else{
-		my $family = $var->param('value');
-		print "<h1>Film genere $family</h1>";
-		my $set=function->findFilm( "//collection/film[family = \"$family\"]");
-		foreach my $node ($set->get_nodelist) {
-			my $film=$node->find('title')->string_value;
-			my $id=$node->getAttribute('id');
-			my $dynamic = "<a href=\"film.cgi?id=$id\">$film</a> <hr></hr>";
-			print $dynamic;
-		}
+    my $family = $var->param('value');
+	print "<h1>Film genere $family</h1>";
+	my $set=function->findFilm( "//collection/film[family = \"$family\"]");
+	foreach my $node ($set->get_nodelist) {
+		my $film=$node->find('title')->string_value;
+		my $id=$node->getAttribute('id');
+		my $dynamic = "<a href=\"film.cgi?id=$id\">$film</a> <hr></hr>";
+		print $dynamic;
+	}
 }
 
 print <<BODY;

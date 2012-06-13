@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+# script per la visualizzazione di un determinato film
 
 use CGI;
 use strict;
@@ -6,7 +7,6 @@ use warnings;
 use function;
 use CGI::Carp qw/fatalsToBrowser warningsToBrowser/;
 use CGI::Session ( '-ip_match' );
-
 
 
 my $var=new CGI;
@@ -68,8 +68,8 @@ print "<br /></div>";
 
 my $session = CGI::Session->load();
 
-if($session->is_expired || $session->is_empty){}
-else{ 
+# se l'utente è loggato stampo i commenti al film
+if( function->isLogged() eq "true"){
 	function::printCommentsVideo({ typeVideo=>"film", idVideo=>$id  }); 	
 }
 

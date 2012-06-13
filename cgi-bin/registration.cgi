@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+# script per la visualizzazione della pagina di registrazione
 
 use CGI;
 use strict;
@@ -8,16 +9,19 @@ use CGI::Session ( '-ip_match' );
 
 
 
-# controllo x vedere se l'utente è loggato
-my $session = CGI::Session->load();
-if($session->is_expired || $session->is_empty){
+# se l'utente è già loggato lo redirigo alla home
+if( function->isLogged() eq "true"){
+  	my $page=new CGI;
+	print $page->redirect("index.cgi");
+}
 
+# altrimenti stampo la pagine per la registrazione
+else{
+    function->header();
+    function->left("Registrazione");
+    function->right();
 
-function->header();
-function->left("Registrazione");
-function->right();
-
-print <<CENTER;
+    print <<CENTER;
 		<div id="registration">
 			<h1>Registrazione nuovo utente</h1>
 						<form name="registration" method="post" action="checkRegistration.cgi" enctype="multipart/form-data">
@@ -59,22 +63,14 @@ print <<CENTER;
 
 CENTER
 
-	my $form = new CGI;
-	my $check = $form->param('err');
-	if($check eq "true"){
-		print "<span class=\"wrongRegistration\" id=\"nameError\">Attenzione: Email o Username gi&agrave esistenti</span>";
-	}
+    my $form = new CGI;
+    my $check = $form->param('err');
+    if($check eq "true"){
+	   print "<span class=\"wrongRegistration\" id=\"nameError\">Attenzione: Email o Username gi&agrave esistenti</span>";
+    }
 	
-print <<TEST;
-						
-		</div>
-TEST
+    print "</div>";
 
-function->footer();
-
-}
-else{
-    my $cgi = new CGI;
-    print $cgi->header(-location => q[index.cgi]);    
+    function->footer();
 }
     

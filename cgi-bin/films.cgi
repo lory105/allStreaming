@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+# script per la visualizzazione dei film
 
 use CGI;
 use strict;
@@ -9,7 +10,6 @@ use CGI::Session ( '-ip_match' );
 
 
 function->header();
-
 function->left("Film");
 function->right();
        

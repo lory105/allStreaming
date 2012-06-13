@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+# script che esegue il logout e redirige alla home
 
   use CGI;
   use CGI::Carp qw/fatalsToBrowser warningsToBrowser/;

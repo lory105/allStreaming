@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+# script per la visalizzazione di una determinata serie TV
 
 use CGI;
 use strict;
@@ -6,8 +7,6 @@ use warnings;
 use function;
 use CGI::Carp qw/fatalsToBrowser warningsToBrowser/;
 use CGI::Session ( '-ip_match' );
-
-
 
 
 my $var=new CGI;
@@ -84,10 +83,9 @@ SERIE
 
 print "</div>";
 
-my $session = CGI::Session->load();
-
-if($session->is_expired || $session->is_empty){}
-else{ function::printCommentsVideo({ typeVideo=>"serie", idVideo=>$id  }); }
+if( function->isLogged() eq "true"){ 
+    function::printCommentsVideo({ typeVideo=>"serie", idVideo=>$id  });
+}
 
 print "</div></div>";
 

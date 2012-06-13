@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+# script per la visualizzazione della home page
 
 use CGI;
 use strict;
@@ -11,22 +12,18 @@ use XML::XPath::XMLParser;
 use XML::LibXML;
 
 
-
 function->header();
-
 function->left("Home");
 function->right();
 
 
-my $session = CGI::Session->load();
-my $admin = $session->param('admin');
-
 # se l'utente non è loggato o non è l'amministratore
-if($session->is_expired || $session->is_empty || $admin eq "false" ){ function::randomVideo({number=>"4"}); }
+if( function->isLogged() eq "false" || function->checkIsAdmin() eq "false" ){ 
+    function::randomVideo({number=>"4"});
+}
 
 # se è l'amministratore
 else{
-    
     my $totFilms = function::findItem({ type=>"film", query=>"//collection/film"});
     $totFilms = $totFilms->size();
     my $totSeries = function::findItem({ type=>"serie", query=>"//collection/serie"});
@@ -64,9 +61,6 @@ else{
 	    </div>
 	          
 CENTER
-    
-    
 }
-
 
 function->footer();

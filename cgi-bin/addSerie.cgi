@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+# script per l'inserimento di una nuova serie TV 
 
 use CGI;
 use strict;
@@ -8,24 +9,25 @@ use CGI::Carp qw/fatalsToBrowser warningsToBrowser/;
 use CGI::Session ( '-ip_match' );
 
 
-# controllo se è l'admin
+# se non è l'admin lo redirigo alla home
 if( function->checkIsAdmin() eq "false" ){
-    my $cgi = new CGI;
-    print $cgi->header(-location => q[index.cgi]);   
+  	my $page=new CGI;
+	print $page->redirect("index.cgi");
 }
 
-function->header();
-function->left("Serie");
-function->right();
 
+# altrimenti stampo la pagina
+else{
+    function->header();
+    function->left("Serie");
+    function->right();
        
-print<<BODY;
+    print<<BODY;
 		<div id="registration">
 			<h1>Inserimento nuova serie</h1>
 						<form name="addSerie" method="post" action="checkSerie.cgi" enctype="multipart/form-data">
 							<fieldset>
 								<legend align="center" >Compila tutti i campi</legend>
-
 								<span class="sx"><label for="title">Title:</label></span>
 								<span class="dx"><input type="text" id="title" name="title" value="title" onblur="checkTitleSerie();" /></span><span class="wrongValue" id="titleError"><img src="../images/no.gif" alt="errore"/></span><span class="correctValue" id="titleCorrect"><img src="../images/ok.gif" alt="ok"/></span>
 								</br>
@@ -46,4 +48,5 @@ print<<BODY;
 		</div>
 BODY
 
-function->footer();
+    function->footer();
+}

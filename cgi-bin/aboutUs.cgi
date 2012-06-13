@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+# script riguardante le informazioni di allStreaming
 
 use CGI;
 use strict;
@@ -9,7 +10,7 @@ use CGI::Session ( '-ip_match' );
 
 
 function->header();
-function->left("Film");
+function->left("Home");
 function->right();
 
 

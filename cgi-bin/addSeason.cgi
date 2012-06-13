@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+# script per l'inserimento di una nuova stagione ad una data serie TV 
 
 use CGI;
 use strict;
@@ -8,13 +9,17 @@ use CGI::Carp qw/fatalsToBrowser warningsToBrowser/;
 use CGI::Session ( '-ip_match' );
 
 
-# controllo se è l'admin
+# se non è l'admin lo redirigo alla home
 if( function->checkIsAdmin() eq "false" ){
-    my $cgi = new CGI;
-    print $cgi->header(-location => q[index.cgi]);   
+  	my $page=new CGI;
+	print $page->redirect("index.cgi");
 }
 
-my $var=new CGI;
-my $id = $var->param('id');
-function::addSeason({ idSerie=>$id });
-print $var->redirect("serie.cgi?id=$id");
+
+# altrimenti eseguo l'operazione
+else{
+    my $var=new CGI;
+    my $id = $var->param('id');
+    function::addSeason({ idSerie=>$id });
+    print $var->redirect("serie.cgi?id=$id");
+}

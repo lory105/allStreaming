@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+# script per la rimozione di un item generico
 
 use CGI;
 use strict;
@@ -23,15 +24,7 @@ my $commentsXml = "../xml/comments.xml";
 
 my $q=new CGI;
 
-# se non è un admin
-if( function::checkIsAdmin() eq "false"){
-    print $q->redirect("index.cgi");
-}
-
-
-
 my $type = $q->param('type');
-
 
 
 switch ($type ) {
@@ -44,6 +37,7 @@ switch ($type ) {
 	case "serie"  {
 	    my $id = $q->param('id');
 	    function::removeItem({ type=>$type, id=>$id });
+	    print $q->header(-location => q[index.cgi]); 
 	    last;
 	}
 	case "comment"  {
@@ -59,7 +53,6 @@ switch ($type ) {
 	    print $q->redirect("film.cgi?id=$idFilm"); 
         last;
 	}
-
 	case "user" {
 	    my $idUser = $q->param('id');
 	    function::removeUser({ idUser=>$idUser });
@@ -67,12 +60,7 @@ switch ($type ) {
         $session->delete();
         my $page=new CGI;
         print $page->redirect("index.cgi");
-	    
-	    
-	    #print $q->redirect("logout.cgi"); 
         last;
-	}
-    
-    
+	}  
 }
 

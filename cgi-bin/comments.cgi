@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+# script per la visualizzazione dei commenti
 
 use CGI;
 use strict;
@@ -8,20 +9,20 @@ use CGI::Carp qw/fatalsToBrowser warningsToBrowser/;
 use CGI::Session ( '-ip_match' );
 
 
-# controllo x vedere se l'utente è loggato
-my $session = CGI::Session->load();
-if($session->is_expired || $session->is_empty){
-    my $cgi = new CGI;
-    print $cgi->header(-location => q[index.cgi]);
+# se l'utente non è loggato lo redirigo alla home
+if( function->isLogged() eq "false"){
+  	my $page=new CGI;
+	print $page->redirect("index.cgi");
 }
 
+# altrimenti stampo i commenti
+else{
+    function->header();
+    function->left("Commenti");
 
-function->header();
-function->left("Commenti");
+    function->right();
 
-function->right();
+    function::printAllComments();
 
-function::printAllComments();
-
-
-function->footer();
+    function->footer();
+}

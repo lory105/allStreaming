@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+# script per l'inserimento di un nuovo film
 
 use CGI;
 use strict;
@@ -8,19 +9,21 @@ use CGI::Carp qw/fatalsToBrowser warningsToBrowser/;
 use CGI::Session ( '-ip_match' );
 
 
-# controllo se è l'admin
+# se non è l'admin lo redirigo alla home
 if( function->checkIsAdmin() eq "false" ){
-    my $cgi = new CGI;
-    print $cgi->header(-location => q[index.cgi]);   
+  	my $page=new CGI;
+	print $page->redirect("index.cgi");
 }
 
 
-function->header();
-function->left("Film");
-function->right();
+# altrimenti stampo la pagina
+else{
+    function->header();
+    function->left("Film");
+    function->right();
 
        
-print<<BODY;
+    print<<BODY;
 		<div id="registration">
 			<h1>Inserimento nuovo film</h1>
 						<form name="addFilm" method="post" action="checkFilm.cgi" enctype="multipart/form-data">
@@ -62,4 +65,5 @@ print<<BODY;
 		</div>
 BODY
 
-function->footer();
+    function->footer();
+}
