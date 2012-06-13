@@ -1,31 +1,30 @@
 html,body {
 	font-family:verdana, arial, helvetica, sans-serif;
-	/*background-color:#aacffd;*/
 	height: 100%;
+	min-width:52em;
 	background-color:#efefef;
 }
 
 #header{
 		width:100%;
-		height:90px;
+		height:5em;
 		background:url(../images/header.png) repeat-x;
 		margin:0 auto;
-		padding-bottom:10px;
+		padding-bottom:1em;
 }
 
 #center_side{
 	margin:0 auto;
 	width:60%;
-	min-width:360px;
+	min-width:24em;
 	height:100%;
 	text-align:center;
-	margin-left: auto;
 }
 
 #registration{
 	margin:0 auto;
 	width:40%;
-	min-width:360px;
+	min-width:24em;
 	height:100%;
 	text-align:center;
 	margin-left: auto;
@@ -33,31 +32,31 @@ html,body {
 
 #navigation{
 	width:95%;
-	height:20px;
+	height:1.2em;
 	background-color:#d0d0d0;
-	border: 1px solid black;
+	border: 0.1em solid black;
 	padding-left: 1em;
 	margin:0 auto;
 }
 
 
 .menu{
-		width:97%;
-		height:20px;
+		width:100%;
+		height:1.2em;
 		background:url(../images/title.png) repeat-x;
 		color:white;
 		text-align:center;
-		border:1px solid grey;
+		border:0.1em solid grey;
 			
 }
 
 .content{
-	width:86%;
 	float:left;
-	border:1px solid grey;
-	padding:5px;
+	width:90%;
+	border:0.1em solid grey;
+	padding:0.3em;
 	background:white;
-	border-top:0px solid grey;
+	border-top:0em solid grey;
 
 }
 
@@ -65,10 +64,10 @@ html,body {
 	float:left;
 	width:90%;
 	text-align:center;
-	border:1px solid grey;
-	padding:5px;
+	border:0.1em solid grey;
+	padding:0.3em;
 	background:white;
-	border-top:0px solid grey;
+	border-top:0em solid grey;
 }
 
 .content ul {
@@ -79,93 +78,99 @@ html,body {
 
 #left_side{
 		width:20%;
+		min-width:11em;
 		float:left;
 		height:100%;
 		margin-top:2em;
-		min-width:180px;
 }	
 
 #right_side{
 		width:20%;
+		min-width:11em;
 		float:right;
 		height:100%;
 		margin-top:2em;
-		min-width:180px;
 }	
-
-#corpse{
-		width:100%;
-		height:400px;
-		margin:0 auto;
-}
-
-
 
 .view{
 		width:100%;
-		height:20px;
+		height:1.2em;
 		background:url(../images/title.png) repeat-x;
 		color:white;
 		text-align:center;
-		border:1px solid grey;
+		border:0.1em solid grey;
 }
 
 .news{
 		width:100%;
-		margin-top:180px;
+		margin-top:9em;
 		background:url(../images/title.png) repeat-x;
 		color:white;
 		text-align:center;
-		border:1px solid grey;
+		border:0.1em solid grey;
 }
 
 hr {
- height:1px;
+ height:0.1px;
  color:white; 
 }
 
 #random_film{
 	width:95%;
-	height:100%;
 	margin:0 auto;
-	margin-top:30px;
+	margin-top:2em;
 	background-color:white;	
 	text-align:center;
-	border:1px solid grey;
-	min-height:700px;
+	border:0.1em solid grey;
+	min-height:42em;
+	min-width:24em;
 }
+
+
 
 a{
 	background-color: transparent;
-	color: Black;
-	text-decoration: none;
+	color: Blue;
+	text-decoration : underline;
 }
 
 a:hover{
-	background-color: #FF6347;
+	background-color: Yellow;
 	color: Black;
 	text-decoration: none;
 }
 
+a:visited{
+	background-color: transparent;
+	color: Red;
+	text-decoration : underline;
+}
+
+.differentLink{
+	background-color: transparent;
+	color: Yellow;
+	text-decoration : underline;
+}
+
 .locandina{
-	width:12em;
-	height:15em;
-	border:1px solid grey;
+	width:200px;
+	height:250px;
+	border:0.1em solid grey;
 	padding:0.2em;
 	background:white;
 }
 
 .film{
 	width:50%;
-	min-width:150px;
+	min-width:11em;
 	float:left;
 	margin:0 auto;
-	margin-top:20px;
+	margin-top:2em;
 	text-align:center;
 }
 
 .infoAdmin{
-	border:1px solid grey;
+	border:0.1em solid grey;
 	width:40%;
 	min-width:150px;
 	float:left;
@@ -182,7 +187,7 @@ a:hover{
 
 #footer{
 	width:100%;
-	height: 30px;
+	height:2em;
 	background:url(../images/header.png) repeat-x;
 	text-align:center;
 	
@@ -190,16 +195,13 @@ a:hover{
 
 #login{
 	float:right;
-	height:98%;
-	/*border:1px solid grey;
-	/*margin-right:10px;*/
+	height:3em;
 }
 
 #logout{
 	float:right;
 	color: blue;
 }
-
 
 #sending{
 	width:29px;
@@ -211,47 +213,45 @@ a:hover{
 #listed{
 	width:95%;
 	background-color:white;
-	border:1px solid grey;
+	border:0.1em solid grey;
 }
 
 #wrapper{
 	min-height:100%;
 	height:auto;
-	margin:0 auto -30px; /* margine negativo altezza footer */
+	margin:0 auto -2em; /* margine negativo altezza footer */
 }
 .pushfooter{
-	height:30px; /* altezza footer */
+	height:2em; /* altezza footer */
 	clear:both; /* clear di eventuali float se presenti nel layout */
 }
 
 .preview{
-	border:1px solid grey; padding:5px; background:white;
+	border:0.1em solid grey; padding:2em; background:white;
 	max-width:60%;
 	max-height:60%;
 }
 
 #year{
-	width:48%;
-	height:370px;
+	width:46%;
+	height:23em;
 	float:left;
 	background-color:white;
-	border:1px solid grey;
+	border:0.1em solid grey;
 }
 
 #genre{
-	width:48%;
-	height:370px;
+	width:46%;
+	height:23em;
 	float:left;
 	background-color:white;
-	border:1px solid grey;
+	border:0.1em solid grey;
 }
 
 .userLogged{
 	width:auto;
 	height:100%;
-	padding:10px;
-	/*margin-top:5px;*/
-	/*margin-bottom:5px;*/
+	padding:0.5em;
 }
 
 .avatar{
@@ -260,19 +260,19 @@ a:hover{
 
 .name{
 	float:left;
-	margin-left:5px;
+	margin-left:0.7em;
 }
 
 .grav{
 	max-width:40px;
 	max-height:40px;
-	border:1px solid grey; padding:2px; background:white;
+	border:0.1em solid grey; padding:0.15em; background:white;
 }
 
 .grav2{
 	max-width:80px;
 	max-height:80px;
-	border:1px solid grey; padding:2px; background:white;
+	border:0.1em solid grey; padding:0.15em; background:white;
 }
 
 .pict{
@@ -286,7 +286,7 @@ a:hover{
 	height:auto;
 	margin:0 auto;
 	background-color:white;
-	border:1px solid grey;
+	border:0.1em solid grey;
 }
 
 .commento{
@@ -294,8 +294,8 @@ a:hover{
 	height:auto;
 	margin:0 auto;
 	text-align:center;
-	padding:5px;
-	border:1px solid grey;
+	padding:1em;
+	border:0.1em solid grey;
 	background-color:LightGrey;
 }
 

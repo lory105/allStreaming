@@ -7,7 +7,6 @@ use function;
 use CGI::Carp qw/fatalsToBrowser warningsToBrowser/;
 use CGI::Session ( '-ip_match' );
 
-function->header();
 
 
 my $var=new CGI;
@@ -15,6 +14,7 @@ my $id = $var->param('id');
 my $node=function->findFilm( "//collection/film[\@id=\"$id\"]")->get_node(1);
 my $title=$node->find('title')->string_value;
 
+function->header($title);
 function->left("Film", $title );
 function->right();
 

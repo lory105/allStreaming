@@ -8,14 +8,14 @@ use CGI::Carp qw/fatalsToBrowser warningsToBrowser/;
 use CGI::Session ( '-ip_match' );
 
 
-function->header();
+
 
 my $var=new CGI;
 my $id = $var->param('id');
 my $node=function->findSerie( "//collection/serie[\@id=\"$id\"]")->get_node(1);
 my $title=$node->find('title')->string_value;
 
-
+function->header($title);
 function->left("Serie", $title );
 function->right();
 
@@ -77,7 +77,7 @@ SERIE
 	foreach my $episode ($episodes->get_nodelist) {
 		my $title=$episode->find('title')->string_value;
 		my $link=$episode->find('link')->string_value;
-		print "<p style=\"text-align:left;\"><b>Link:</b> <a href=\"http://$link\" target=\"_blank\">$title</a></p>";
+		print "<p style=\"text-align:left;\"><a href=\"http://$link\" target=\"_blank\">$title</a></p>";
 	}
 	print "</div><br></br>";
 }

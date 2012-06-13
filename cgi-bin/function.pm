@@ -36,19 +36,42 @@ my $commentsXml = "../xml/comments.xml";
 
 
 sub header {
-print "Content-type: text/html\n\n";
-print <<HEADER;
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<title>AllStreaming</title>
-		<link rel="shortcut icon" href="images/logo.ico" type="image/x-icon" />
-		<link rel="icon" href="images/logo.ico" type="image/x-icon" />
-		<link rel="stylesheet" href="../styles/style.css" type="text/css" />
-		<script type="text/javascript" src="../javascript/validation.js"></script>
-	</head> 
+	print "Content-type: text/html\n\n";
+	my $information = $_[1];
+	if ($information eq ""){
+	print <<HEADER;	
+	<?xml version="1.0" encoding="iso-8859-1"?>
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<title>AllStreaming</title>
+			<link rel="shortcut icon" href="images/logo.ico" type="image/x-icon" />
+			<link rel="icon" href="images/logo.ico" type="image/x-icon" />
+			<link rel="stylesheet" href="../styles/style.css" type="text/css" />
+			<meta name="description" content="Streaming film e serie TV" />
+			<meta name="keywords" content="streaming, film, serie TV" />
+			<script type="text/javascript" src="../javascript/validation.js"></script>
+		</head> 
 HEADER
+	}
+	else{
+	print <<META;
+	<?xml version="1.0" encoding="iso-8859-1"?>
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<title>AllStreaming - $information</title>
+			<link rel="shortcut icon" href="images/logo.ico" type="image/x-icon" />
+			<link rel="icon" href="images/logo.ico" type="image/x-icon" />
+			<link rel="stylesheet" href="../styles/style.css" type="text/css" />
+			<meta name="description" content="Streaming film e serie TV" />
+			<meta name="keywords" content="streaming, film, serie TV, $information" />
+			<script type="text/javascript" src="../javascript/validation.js"></script>
+		</head> 
+
+META
+
+	}
 }
 
 
@@ -158,7 +181,7 @@ sub menu {
     
     
     print<<MENU;
-                    <div id="navigation">Ti trovi in : $nav</div>
+                    <div id="navigation">Ti trovi in : <b>$nav</b></div>
 			            <div id="left_side">
 			               <div class="menu">Menu Principale</div>
 				               <div class="content">
@@ -184,7 +207,7 @@ MENU
 
            my $title = $_[1];
            if( $title eq "" ){
-			      print "<li><img src=\"../images/series.png\"/><b>Serie</b><hr></li>";
+			      print "<li><img src=\"../images/series.png\"/><b>Serie Tv</b><hr></li>";
            }
            else{ 
                print<<MENU;
@@ -331,7 +354,7 @@ LEFT
 		}
 		print <<LEFT;
                             <div class=\"avatar\"> <img src=\"../images/avatars/$username.jpg\" class=\"grav\"/> </div>
-		                    <div class=\"name\">Benvenuto, <B><a href=\"profile.cgi?id=$id\">$username</a></B> <br><a href=\"logout.cgi\">Logout</a></div>
+		                    <div class=\"name\">Benvenuto, <B><a href=\"profile.cgi?id=$id\" class="differentLink">$username</a></B> <br><a href=\"logout.cgi\" class="differentLink">Logout</a></div>
 					    </div>
 				    </div>
 			    </div>
@@ -1248,10 +1271,10 @@ sub randomVideo{
     my $number = $parameters->{number};
     
     print <<CENTER;
-		<div id="center_side">
-				<h1>Alcuni Film</h1>
-				<div id="random_film">
-				<br />
+		<div id="center_side">\n
+			<h1>Film proposti</h1>\n
+				<div id="random_film">\n
+					
 CENTER
     
     my @sortIdFilm = function::sortIdItemByDate({ type=>"film"});
@@ -1284,7 +1307,7 @@ CENTER
    						
 							<img for="link" src=\"../$image\" class="locandina" />
 							</br>
-							<a id="link" href="film.cgi?id=$idFilm">Film: $title</a>
+							<a id="link" href="film.cgi?id=$idFilm">$title</a>
 							<br /><br />
 						</div>
 CENTER

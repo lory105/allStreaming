@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org comments.xsd">
 	<comment id="1">
 		<idUser>1</idUser>
@@ -61,5 +62,12 @@
 		<idVideo>4</idVideo>
 		<date>2012-06-12T08:36:54</date>
 		<content>Bella</content>
+	</comment>
+	<comment id="12">
+		<idUser>6</idUser>
+		<typeVideo>film</typeVideo>
+		<idVideo>5</idVideo>
+		<date>2012-06-13T16:58:58</date>
+		<content>Lory leader</content>
 	</comment>
 </collection>
