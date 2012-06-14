@@ -98,7 +98,7 @@ MENU
 
            my $title = $_[1];
            if( $title eq "" ){
-			      print "<li><img src=\"../images/series.png\"/><b>Serie</b><hr></li>";
+			      print "<li><img src=\"../images/series.png\" alt=\"Icona Serie\"/><b>Serie</b><hr></li>";
            }
            else{ 
                print<<MENU;
@@ -311,9 +311,11 @@ sub left {
 			<div id="header">
 				<div id="login">
 					<form method="post" action="login.cgi">
-						<input type="text" name="username" value="User" size="12"/>
-						<input type="password" name="password" value="Password" size="12"/>
-						<button type="submit" id="sending"  alt="Login button">Login</button>
+						<fieldset>
+						<label for="username">Username:</label><input type="text" name="username" value="User" size="12" tabindex="1" />
+						<label for="password">Password:</label><input type="password" name="password" value="Password" size="12" tabindex="2" />
+						<button type="submit" id="sending"  alt="Login button" tabindex="3">Login</button>
+						</fieldset>
 					</form>
 LEFT
 
@@ -1147,8 +1149,8 @@ COMMENTS
 			<div class="commento">
 		  		<form name="comment" method="post" action="checkComment.cgi" >
 					<fieldset>
-						<span class="sx"><textarea rows="4" cols="10" style="width:100%;" id="userComment" name="userComment" value="Inserisci il tuo commento" >commento</textarea></span>
-						<span class="dx"><button type="submit" id="send" >Invia</button></span>
+						<span class="sx"><textarea rows="4" cols="10" style="width:100%;" id="userComment" name="userComment" value="Inserisci il tuo commento" tabindex="4">commento</textarea></span>
+						<span class="dx"><button type="submit" id="send" tabindex="5">Invia</button></span>
 						<input type="hidden" name="id" value="$idVideo" /> 
 						<input type="hidden" name="type" value="$typeVideo" /> 
 					</fieldset>
@@ -1189,7 +1191,7 @@ COMMENT
 				   <fieldset>
                    <input name="type" value="comment" type="hidden">
                    <input name="id" value="$id" type="hidden">
-                   <input type="submit" value="Rimuovi Commento">
+                   <input type="submit" value="Rimuovi Commento" tabindex="8">
                    </fieldset>
                </form>
 COMMENT

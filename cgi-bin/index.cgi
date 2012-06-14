@@ -39,15 +39,19 @@ else{
 		        <div class="infoAdmin">
 		            <p><b>Film totali:</b> $totFilms</p>
 		            <form method="post" action="addFilm.cgi">
+						<fieldset>
                         <input name="url" type="hidden">
-                        <input type="submit" value="+ Aggiungi Film">
+                        <input type="submit" value="+ Aggiungi Film" tabindex="6">
+                        </fieldset>
                     </form>
 		        </div>
 		        <div class="infoAdmin">
 		            <p><b>Serie totali:</b> $totSeries</p>
 		              <form method="post" action="addSerie.cgi">
+						<fieldset>
                           <input name="url" type="hidden"">
-                          <input type="submit" value="+ Aggiungi Serie">
+                          <input type="submit" value="+ Aggiungi Serie" tabindex="7">
+                        </fieldset>
                       </form>
 		        </div>
 

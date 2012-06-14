@@ -29,14 +29,18 @@ my $isAdmin = function::checkIsAdmin();
 if( $isAdmin eq "true"){
     print<<FILM
          <form method="post" action="removeItem.cgi">
+         <fieldset>
              <input name="type" value="film" type="hidden">
              <input name="id" value="$id" type="hidden">
              <input type="submit" value="Rimuovi Film">
+         </fieldset>
          </form>
          <form method="post" action="addLink.cgi">
+         <fieldset>
              <input name="type" value="film" type="hidden">
              <input name="id" value="$id" type="hidden">
-             <input type="submit" value="Aggiungi Link">
+             <input type="submit" value="Aggiungi Link"
+         </fieldset>
          </form>
            <br></br>
 FILM
@@ -55,10 +59,12 @@ foreach my $try ($address->get_nodelist) {
     if( $isAdmin eq "true"){
         print<<FILM
                <form method="post" action="removeItem.cgi">
+				<fieldset>
                    <input name="type" value="link" type="hidden">
                    <input name="idFilm" value="$id" type="hidden">
                    <input name="idLink" value="$idLink" type="hidden">
                    <input type="submit" value="Rimuovi Link">
+                 </fieldset>
                </form>
 FILM
     }
