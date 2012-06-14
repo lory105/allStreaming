@@ -360,6 +360,11 @@ a:visited{
 	margin:0 auto;
 }
 
+.jump {
+	position: absolute;
+	height:0;
+	overflow: hidden;
+}
 
 
 

@@ -21,16 +21,7 @@
 		<dateRegistration>2008-11-26T21:32:52</dateRegistration>
 		<admin>false</admin>
 	</user>
-	<user id="3">
-		<name>Samuele</name>
-		<surname>Zamba</surname>
-		<username>d</username>
-		<password>5f4dcc3b5aa765d61d8327deb882cf99</password>
-		<email>d@gmail.com</email>
-		<avatar>../avatar/d.png</avatar>
-		<dateRegistration>2009-10-26T21:32:52</dateRegistration>
-		<admin>false</admin>
-	</user>
+	
 	<user id="4">
 		<name>nome</name>
 		<surname>dfewfer</surname>
