@@ -154,7 +154,7 @@ MENU
 	       last;	       
 	   }
 	   
-	   case "" {
+	   default {
 	       print<<MENU;
 				<li><img src="../images/home.png"  alt="Icona Home"/><a href="index.cgi">Home</a><hr></li>
 				<li><img src="../images/series.png"  alt="Icona Serie"/><a href="series.cgi">Serie Tv</a><hr></li>
@@ -292,7 +292,7 @@ MENU
            }
 			      
         }
-        case "" {
+        default {
 	       print<<MENU;
 				<li><img src="../images/home.png"  alt="Icona Home"/><a href="index.cgi">Home</a><hr></li>
 				<li><img src="../images/series.png"  alt="Icona Serie"/><a href="series.cgi">Serie Tv</a><hr></li>
@@ -324,6 +324,7 @@ sub left {
 	<body>
 		<div id="wrapper">
 			<div id="header">
+			 <span id="logo" >te piase??</span>
 				<div id="login">
 					<form method="post" action="login.cgi">
 						<fieldset>
@@ -479,8 +480,7 @@ print <<FOOTER;
 	</br>
 		<div id="footer">
 			<span>allStreaming.com </span>-
-			<a href="aboutUs.cgi">About Us </a>-
-			<a href="#"> Contact Us</a>
+			<a href="aboutUs.cgi">About Us </a>
 		</div>
     </body>
 </html>
@@ -1130,6 +1130,20 @@ COMMENTS
 						  <img src="../images/avatars/$username.jpg" class="grav" alt="Avatar utente"/> 
 						  <b><a href="profile.cgi?id=$idUser">$username</a></b>
 						  <span class="data">$date</span>
+COMMENT
+		        if( function->checkIsAdmin() eq "true" ){
+                my $id = $node->findvalue('@id')->string_value;
+                print<<COMMENT;
+               <form method="post" action="removeItem.cgi">
+				   <fieldset>
+                   <input name="type" value="comment" type="hidden">
+                   <input name="id" value="$id" type="hidden">
+                   <input type="submit" value="Rimuovi Commento" tabindex="8">
+                   </fieldset>
+               </form>
+COMMENT
+            }
+                print<<COMMENT;
 				    </div>
 				    <b><a href="$typeVideo.cgi?id=$idVideo">$titleVideo</a></b>
 				    <hr></hr>

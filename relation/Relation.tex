@@ -1,0 +1,319 @@
+% GUIDA VELOCE:
+% --------------------------------------------------------------------
+% X INIZIA UN UNOVO CAPITOLO:
+% \chapter{??? NOME CAPITOLO}}
+% \section{ ?? }
+% \subsection{ ?? }
+%
+% --------------------------------------------------------------------
+% PAROLA CONTENUTA NEL GLOSSARIO:
+% scrivere la parola seguita da $^g$
+% esempio: User$^g$
+%
+% --------------------------------------------------------------------
+% PER ANDARE A CAPO SENZA RIENTRO INSERIRE:
+% \\
+%
+% --------------------------------------------------------------------
+
+% GRASSETO:
+% \textbf{parola}
+%
+% --------------------------------------------------------------------
+% CORSIVO:
+% \emph{parola}
+% --------------------------------------------------------------------
+% PER SCRIVERE IN ROSSO:
+% \red{parola}
+%
+% --------------------------------------------------------------------
+% PER SCRIVERE TRA VIRGOLETTE
+% ''parola''
+%
+% --------------------------------------------------------------------
+% PER EVITARE IL RIENTRO AUTOMATICO DI UN CAPOVERSO:
+% \noindent testo....
+%
+% --------------------------------------------------------------------
+
+% PER SCRIVERE CARATTERI PARTICOLARI COME: { } _ ecc.. SCRIVERLI PRECEDUTI DA \
+% ES: \{ \_
+%
+% --------------------------------------------------------------------
+% X INSERIRE UN LINK:
+% \url{http://www.math.unipd.it/~tullio/IS-1/2011/Progetto/C3.pdf}
+%
+% --------------------------------------------------------------------
+% PER COMMENTARE INTERE PARTI:
+% \comment{ comment }
+%
+% --------------------------------------------------------------------
+% PER SCRIVERE NOTE DURANTE IL TESTO:
+% parola \footnote{ note riguardanti la parola }
+%
+% --------------------------------------------------------------------
+% PER SCRIVERE CODICE SORGENTE:
+%
+% \lstset{language=c++,
+% stringstyle=\color{blue}\textrm,
+% commentstyle=\rmfamily, numbers= none}
+
+% \begin{lstlisting}
+% CODICE
+% \end{lstlisting}
+%
+% --------------------------------------------------------------------
+% !!!!!!!! PER COSE + COMPLESSE VEDI: !!!!!!!!!!!!!!!!!!!!!!!
+% !!!!!!!! PMAC/latex/GUIDA LATEX!!!.tex !!!!!!!!!!!!!!!!!!!!!!!
+
+% per tutto il resto chiedi a lory prima di fare/scrivere cazzate !!!!!!!!!!
+
+
+
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc} % uso utf8x xk x linux, mentre latin1 è per windows
+\usepackage{lmodern} %insieme di font molto completo consigliato da LatexFacile pg13 in basso
+\usepackage{microtype} %migliora riempimento delle righe. vedi LatexImpaziente pg41
+%attiva il rientro di ogni prima riga di ogni sezione: capitolo,paragrafo ecc. vd LatexImpaziente pg41
+\usepackage{indentfirst}
+\usepackage{graphicx} % per inseire immagini
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{lastpage} %serve per poter scrivere page 1 of N
+% setta i bordi della pagina: dx e sx 3.2cm di rientro + nel lato di rilagatura rientra di altri 0mm
+\usepackage[a4paper,top=2.7cm,bottom=2.7cm,left=2.7cm,right=2.7cm, bindingoffset=0mm]{geometry}
+\usepackage{listings} % per inserire codice sorgente
+\usepackage{float} % per gestire oggetti flottanti ( es immagini tabelle posizionebili con "H" che forza il posizionamento nel punto specifico )
+
+% serve per creare tabelle lunghe + di una pagina con \begin{longtable} (vd Tabelle.pdf pg11-12)
+\usepackage{longtable}
+
+\usepackage{fancyhdr} % per impostare lo stile della pagina più personalizzato, + fancyhdr ( per regolare testatina e piè di pagina ) vedi itfancyhrd
+
+
+\pagestyle{fancy}
+% settaggi di pagestyle(fancy)
+\lhead{\includegraphics[scale=0.20]{images/nastro}}
+%\chead{}
+\rhead{\textbf{Tecnologie Web \\ Data: \DataRilascio}}
+\lfoot{\NomeDocumento}
+\cfoot{}
+\rfoot{ \textbf \thepage\ of \pageref{LastPage}}
+\renewcommand{\footrulewidth}{0.4pt}
+
+%ridefinisco il plain per cosare l'indice (a questo punto si potrebbe lasciare tutto il documento in plain
+\fancypagestyle{plain}{
+%\lhead{\includegraphics[scale=0.20]{SevenFold_small}}
+%\chead{}
+\rhead{\textbf{{ Tecnologie Web}}}
+\lfoot{\NomeDocumento}
+\cfoot{}
+\rfoot{ \textbf \thepage\ of \pageref{LastPage}}
+\renewcommand{\footrulewidth}{0.4pt}
+}
+
+% da ultimo:
+\usepackage{hyperref} %x l'interpretazione di indirizzi o link ipertestuali (vd LatexImpaziente pg47 )
+\hypersetup{backref, colorlinks=true, linkcolor=black, urlcolor=black}
+
+\usepackage{url} % x l'interpretazioni di internet o link ipertestuali (vd LatexImpaziente pg47 )
+%\UrlFont{color =blue}
+%\urlstyle{helvetic}
+
+% Define a new 'leo' style for the package that will use a smaller font.
+\makeatletter
+\def\url@leostyle{%
+  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\ttfamily}}}
+\makeatother
+%% Now actually use the newly defined style.
+\urlstyle{leo}
+
+
+\newcommand{\mail}[1]{\textcolor{Black}{ \texttt{#1}}} %per interpretare mail (vd LatexImpaziente pg47 )
+\newcommand{\cambiaFont}[2]{{\fontencoding{T1}\fontfamily{#1}\selectfont#2}}
+\newcommand{\red}[1]{ \textcolor{red}{#1} } % per scrivere testo in rosso
+\newcommand{\blue}[1]{ \textcolor{blue}{#1} } % per scrivere testo in blu
+\newcommand{\comment}[1]{} % per inserire commenti
+
+\newcommand{\attribute}[2]{ \item[\textcolor{PineGreen}{ \texttt{#1}}] \textcolor{PineGreen}{\texttt{#2\\}}\ \ \ }
+\newcommand{\method}[2]{ \item[\textcolor{MidnightBlue}{ \texttt{#1}}] \textcolor{MidnightBlue}{ \texttt{#2\\}}\ \ \ }
+
+\newcommand{ \class}[1]{ \item[ \textcolor{MidnightBlue}{\texttt{-}}] \textcolor{MidnightBlue}{\texttt{#1}}}
+\newcommand{ \classe}[1]{ \noindent \textcolor{MidnightBlue}{\texttt{-}} \textcolor{MidnightBlue}{\texttt{#1}}}
+
+\newcommand{\tab}{\hspace*{1.5em}}
+
+
+% INSERIRE QUI IL NOME DEL DOCUMENTO SEGUITO DA UNO SPAZIO
+% ( così il nome si imposta in automatico nelle varie ricorrenze standard)
+\newcommand{\NomeDocumento}{Relazione progetto: \textit{"AllStreaming"}}
+
+% INSERIRE QUI LA DATA DEL RILASCIO DELLA VERSIONE ATTUALE
+\newcommand{\DataRilascio}{19-06-2012}
+
+
+\begin{document}
+
+
+% --------------------------------------------------------------------
+
+% TITOLO ( 1° pagina)
+
+\vspace*{1cm}
+\begin{center}
+
+%\cambiaFont{Cyklop}{Sevenfold}
+%\cambiaFont{fve}{\Huge{Sevenfold}}
+
+
+\vspace{1.5cm}
+
+\textit{\Huge{Relazione per il progetto \\del corso di Tecnologie Web:}}\\
+\vspace{1.3cm}
+\cambiaFont{fve}{\Huge{\color{blue}{""AllStreaming""}}}
+\vspace*{1.8cm}
+
+\large{Università degli studi di Padova\\
+anno accademico 2011-2012}
+
+\vspace*{1cm}
+
+\includegraphics[scale=0.35]{images/nastro10e.png}
+
+\end{center}
+
+
+% --------------------------------------------------------------------
+
+% INFORMAZIONI DEL DOCUMENTO ( 1° pagina)
+
+\vspace*{2cm}
+\begin{center}
+
+\begin{tabular}{ r | l }
+\multicolumn{2}{c}{\textbf{\Large{Informazioni del documento}} }\\
+\hline
+\rule[-1.5mm]{0mm}{0.7cm}
+\textbf{Titolo del documento} & \NomeDocumento\\
+\rule[-1.5mm]{0mm}{0.5cm}
+\textbf{Date}& \DataRilascio\\
+\rule[-1.5mm]{0mm}{0.5cm}
+\textbf{Autori}& \underline{Lorigiola Giacomo} [ 592992 ]\\
+& \underline{Luca Guerra} [???]\\
+\rule[-1.5mm]{0mm}{0.5cm}
+\textbf{Destinatario}&Prof.essa Ombretta Gaggi\\
+\end{tabular}
+
+\end{center}
+
+% --------------------------------------------------------------------
+
+% SOMMARIO ( 2° pagina)
+
+\newpage
+
+\vspace*{0.5cm} % il vertical space va preceduto da una riga vuota!!!
+\begin{center}
+
+\textbf{{\Large{Sommario}}}
+
+Questo documento intende presentare una analisi al progetto di Tecnologie Web intitolato "AllStreaming".
+
+
+\vspace*{0.2cm} % il vertical space va preceduto da una riga vuota!!!
+
+\end{center}
+
+
+
+% --------------------------------------------------------------------
+% INDICI:
+
+\newpage
+
+% INDICE CAPITOLI
+\tableofcontents % genera l'indice di tutto il documento
+
+\let\cleardoublepage\clearpage % toglie la pagina bianca dopo l'indice
+
+% INDICE TABELLE
+% \listoftables
+
+% INDICE FIGURE
+\listoffigures
+
+
+% --------------------------------------------------------------------
+
+% INTRODUZIONE ( 1° CAPITOLO ) QUESTO CAPITOLO VA MESSO IN OGNI DOCUMENTO!!!!!!!!
+
+\newpage
+
+
+\section{Introduzione}
+L'obbiettivo del sito è..\\
+il sito parla di..\\
+
+
+\section{Mappa del sito}
+suddivisione pagine\\
+schema logico/mappa\\
+
+home\\
+serie Tv -> serie\\
+film -> film\\
+Registrazione / Profilo \\
+
+aboutUS\\
+
+parlare di ogni pagina cosa fa/serve\\
+
+
+\section{Struttura delle pagine (layout)}
+layout normale (con immagine)\\
+layout smartphone (con immagine)\\
+layout stampa (con immagine)\\
+
+
+suddivisione pagina:\\
+header\\
+right(nav) center left(ultimi commentati, novità, utenti iscritti)\\
+footer\\
+
+
+
+\section{Tecnologie utilizzate e "passed"}
+
+xhtl css js perl
+
+
+
+
+\subsubsection{Client class }
+\begin{center}
+\begin{figure}[H]
+\centering
+%\includegraphics[scale=0.45]{clientClassDiagramm.png}
+\caption{Client class diagram}
+\label{ww-lists }
+\end{figure}
+\end{center}
+
+
+
+\subsubsection{Server class }
+\begin{center}
+\begin{figure}[H]
+\centering
+%\includegraphics[scale=0.5]{serverClassDiagramm.png}
+\caption{Server class diagram}
+\label{ww-lists }
+\end{figure}
+\end{center}
+
+
+
+
+\end{document}

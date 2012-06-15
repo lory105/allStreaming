@@ -7,10 +7,21 @@ html,body {
 
 #header{
 		width:100%;
-		height:5em;
-		background:url(../images/header.png) repeat-x;
+		height:7em;
+		background:url(../images/header1.png) repeat-x;
 		margin:0 auto;
 		padding-bottom:1em;
+}
+
+#logo {
+    background-image: url(../images/nastro.png);
+    background-repeat: no-repeat;
+/*    display: block; */
+    float: left; 
+    height: 7.4em; 
+    width: 55%;
+    min-width: 7em;
+    margin-left: 0.1em;
 }
 
 #center_side{
@@ -149,7 +160,7 @@ a:visited{
 
 .differentLink{
 	background-color: transparent;
-	color: Yellow;
+	color: #3707F4;
 	text-decoration : underline;
 }
 
@@ -255,6 +266,7 @@ a:visited{
 }
 
 .userLogged{
+	background:url(../images/trasparency6b.png);
 	width:auto;
 	height:100%;
 	padding:0.5em;

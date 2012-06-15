@@ -10,7 +10,7 @@ use CGI::Session ( '-ip_match' );
 
 
 function->header();
-function->left("Home");
+function->left("About Us");
 function->right();
 
 
