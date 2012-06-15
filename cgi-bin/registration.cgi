@@ -36,7 +36,7 @@ else{
 								<span class="dx"><input type="text" name="surname" id="surname" value="cognome" onblur="checkSurname();"/></span><span class="wrongValue" id="surnameError"><img src="../images/no.gif" alt="errore"/></span><span class="correctValue" id="surnameCorrect"><img src="../images/ok.gif" alt="ok"/></span>
 								</br>
 								<hr></hr>								
-								<span class="sx"><label for="user">Username (lettere e numeri):</label></span>
+								<span class="sx"><label for="user">Username:</label></span>
 								<span class="dx"><input type="text" name="username" id="user" value="username" onblur="checkUser();"/></span><span class="wrongValue" id="userError"><img src="../images/no.gif" alt="errore"/></span><span class="correctValue" id="userCorrect"><img src="../images/ok.gif" alt="ok"/></span>
 								</br>
 								<hr></hr>
