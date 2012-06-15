@@ -142,7 +142,7 @@ a:hover{
 
 a:visited{
 	background-color: transparent;
-	color: Red;
+	color: #800080;
 	text-decoration : underline;
 }
 
@@ -194,8 +194,10 @@ a:visited{
 }
 
 #login{
+	margin: 0.2em;
 	float:right;
 	height:3em;
+	background:url(../images/trasparency4.png);
 }
 
 #logout{
@@ -366,5 +368,17 @@ a:visited{
 	overflow: hidden;
 }
 
+.white{
+	color: white;
+}
 
-
+#aboutUs{
+	width:45%;
+	margin:0 auto;
+	margin-top:2em;
+	background:url(../images/nastro10f.png) no-repeat;
+	text-align:center;
+	border:0.1em solid grey;
+	min-height:42em;
+	min-width:24em;
+}

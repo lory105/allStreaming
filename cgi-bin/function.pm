@@ -322,7 +322,7 @@ LEFT
         my $q = new CGI;
         my $error_login = $q->param('error_login');
         if( $error_login eq "true" ){ 
-            print "<p>Errore nel login</p>";     #!! X LUCA: applica il css ( è il mess di errore k compare se il login fallisce)
+            print "<span class=\"white\">Errore nel login</span>";     #!! X LUCA: applica il css ( è il mess di errore k compare se il login fallisce)
         }
 
         print <<LEFT;
@@ -362,7 +362,6 @@ LEFT
 
 
 sub right {
-# year-from-dateTime(datetime)
 
 print <<RIGHT;
 			<div id="right_side">

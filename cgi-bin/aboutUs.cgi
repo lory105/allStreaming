@@ -14,6 +14,13 @@ function->left("Home");
 function->right();
 
 
+print<<CENTER;
+<div id="aboutUs">
+
+
+</div>
+CENTER
+
 
 
 function->footer();
