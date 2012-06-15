@@ -85,8 +85,8 @@ MENU
 	   case "Home"  { 
 	       print<<MENU;
 	           <li><img src="../images/home.png" alt="Icona Home"/><b>Home</b><hr></li>
-	           <li><img src="../images/series.png" alt="Icona Serie"/><a href="series.cgi">Serie Tv</a><hr></li>
-			   <li><img src="../images/film.png" alt="Icona Film"/><a href="films.cgi">Film</a><hr></li>
+	           <li><img src="../images/series.png" alt="Icona Serie"/><a href="series.cgi" >Serie Tv</a><hr></li>
+			   <li><img src="../images/film.png" alt="Icona Film"/><a href="films.cgi" >Film</a><hr></li>
 			   <li><img src="../images/signin.png" alt="Icona Registrazione"/><a href="registration.cgi">Registrazione</a><hr></li>
 MENU
 	       last;
@@ -424,6 +424,7 @@ FOO: {
 
 print <<RIGHT;
 				</div>
+			</br>
 			<div class="news">Novit&agrave;</div>
 				<div class="content_max_view">
 RIGHT
@@ -448,6 +449,7 @@ FOO: {
 my $registeredUser = function->countRegisteredUsers();
 print <<RIGHT;
 				</div>
+			</br>
 			<div class="news">Utenti iscritti</div>
 			<div class="content_max_view">$registeredUser utenti</div>
 		</div>		

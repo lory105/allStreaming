@@ -40,6 +40,7 @@ else{
     	print UPLOADFILE;
     }
     close UPLOADFILE;
+    
     function::addFilm({ title=>$title, image=>$image, description=>$description, date=>$date, family=>$family });
     print <<CENTER;
         <div id="center_side">
