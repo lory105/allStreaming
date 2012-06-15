@@ -74,6 +74,13 @@ my $nav = $_[0];
     
 print<<MENU;
                     <div id="navigation">Ti trovi in : $nav</div>
+MENU
+
+	if($nav eq "Home"){
+			print "<h1 style=\"	text-align:center; margin-bottom:0em;\">Film proposti</h1>";
+	}    
+    
+print<<MENU;            
 			            <div id="left_side">
 						   <a class="jump" href="#center_side">Salta il Menu principale</a>
 			               <div class="menu">Menu Principale</div>
@@ -177,11 +184,19 @@ sub menu {
     
     print<<MENU;
                     <div id="navigation">Ti trovi in : <b>$nav</b></div>
+MENU
+	
+	if($nav eq "Home"){
+			print "<h1 style=\"	text-align:center; margin-bottom:0em;\">Film proposti</h1>";
+	}
+	
+    print<<MENU;
 			            <div id="left_side">
 			               <div class="menu">Menu Principale</div>
 				               <div class="content">
 		      <ul>
 MENU
+
 
     switch ($nav) {
 	   case "Home"  { 
@@ -1270,9 +1285,7 @@ sub randomVideo{
     
     print <<CENTER;
 		<div id="center_side">\n
-			<h1>Film proposti</h1>\n
 				<div id="random_film">\n
-					
 CENTER
     
     my @sortIdFilm = function::sortIdItemByDate({ type=>"film"});
@@ -1304,9 +1317,9 @@ CENTER
    						<div class="film">
    						
 							<img for="link" src=\"../$image\" class="locandina" alt="Locandina $title"/>
-							</br>
+							<br />
 							<a id="link" href="film.cgi?id=$idFilm">$title</a>
-							<br /><br />
+
 						</div>
 CENTER
                 }

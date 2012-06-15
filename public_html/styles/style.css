@@ -1,7 +1,7 @@
 html,body {
 	font-family:verdana, arial, helvetica, sans-serif;
 	height: 100%;
-	min-width:52em;
+	min-width:14em;
 	background-color:#efefef;
 }
 
@@ -15,10 +15,11 @@ html,body {
 
 #center_side{
 	margin:0 auto;
-	width:60%;
-	min-width:24em;
+	width:60;
+	min-width:14em;
 	height:100%;
 	text-align:center;
+	overflow:auto;
 }
 
 #registration{
@@ -122,8 +123,8 @@ hr {
 	background-color:white;	
 	text-align:center;
 	border:0.1em solid grey;
-	min-height:42em;
-	min-width:24em;
+	min-width:12em;
+	overflow: auto;
 }
 
 
@@ -153,8 +154,10 @@ a:visited{
 }
 
 .locandina{
-	width:200px;
-	height:250px;
+	max-width:200px;
+	max-height:250px;
+	min-width:10em;
+	min-height:12em;
 	border:0.1em solid grey;
 	padding:0.2em;
 	background:white;
@@ -163,10 +166,11 @@ a:visited{
 .film{
 	width:50%;
 	min-width:11em;
+	height:20em;
 	float:left;
-	margin:0 auto;
-	margin-top:2em;
 	text-align:center;
+	margin:0 auto;
+	padding-top:1em;
 }
 
 .infoAdmin{
@@ -197,7 +201,7 @@ a:visited{
 	margin: 0.2em;
 	float:right;
 	height:3em;
-	background:url(../images/trasparency4.png);
+	/*background:url(../images/trasparency4.png);*/
 }
 
 #logout{
