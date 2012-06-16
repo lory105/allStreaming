@@ -41,7 +41,8 @@ sub header {
 			<title>AllStreaming</title>
 			<link rel="shortcut icon" href="images/logo.ico" type="image/x-icon" />
 			<link rel="icon" href="images/logo.ico" type="image/x-icon" />
-			<link rel="stylesheet" href="../styles/style.css" type="text/css" />
+			<link rel="stylesheet" media="screen" href="../styles/baseStyle.css" type="text/css" />
+			<link rel="stylesheet" media="print" href="../styles/printStyle.css" type="text/css" />
 			<meta name="description" content="Streaming film e serie TV" />
 			<meta name="keywords" content="streaming, film, serie TV" />
 			<script type="text/javascript" src="../javascript/validation.js"></script>
@@ -57,7 +58,8 @@ HEADER
 			<title>AllStreaming - $information</title>
 			<link rel="shortcut icon" href="images/logo.ico" type="image/x-icon" />
 			<link rel="icon" href="images/logo.ico" type="image/x-icon" />
-			<link rel="stylesheet" href="../styles/style.css" type="text/css" />
+			<link rel="stylesheet" media="screen" href="../styles/baseStyle.css" type="text/css" />
+			<link rel="stylesheet" media="print" href="../styles/printStyle.css" type="text/css" />
 			<meta name="description" content="Streaming film e serie TV" />
 			<meta name="keywords" content="streaming, film, serie TV, $information" />
 			<script type="text/javascript" src="../javascript/validation.js"></script>
@@ -324,7 +326,6 @@ sub left {
 	<body>
 		<div id="wrapper">
 			<div id="header">
-			 <span id="logo" >te piase??</span>
 				<div id="login">
 					<form method="post" action="login.cgi">
 						<fieldset>
