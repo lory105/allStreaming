@@ -21,21 +21,19 @@ targetNamespace="http://allStreaming.altervista.org" elementFormDefault="qualifi
 											<xsd:element name="title" type="xsd:string" />
 											<xsd:element name="link" type="xsd:string" />
 										</xsd:sequence>
-										<xsd:attribute name="idEpisode" type="xsd:string"/>
+										<xsd:attribute name="idEpisode" type="xsd:string" use="required" />
 										</xsd:complexType>
 									</xsd:element>	
 								</xsd:sequence>
-								<xsd:attribute name="number" type="xsd:string"/>
+								<xsd:attribute name="number" type="xsd:string" use="required"/>
 								</xsd:complexType>
 							</xsd:element>
 						</xsd:sequence>
 					</xsd:sequence>
-					<xsd:attribute name="id" type="xsd:string"/>
+					<xsd:attribute name="id" type="xsd:string" use="required"/>
 				</xsd:complexType>
 			</xsd:element>
 		</xsd:sequence>
 		</xsd:complexType>
 	</xsd:element>
 </xsd:schema>
-
-

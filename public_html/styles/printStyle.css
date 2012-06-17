@@ -97,6 +97,9 @@ hr {
 	width:100%;
 	height:2em;
 	text-align:center;
+	margin-top: 1em;
+	border-top:0.1em solid grey;
+	border-color: black;
 }
 
 #login{
@@ -115,6 +118,14 @@ hr {
 	width:95%;
 	background-color:white;
 	border:0.1em solid grey;
+}
+
+
+#registration{
+	width: 90%;
+	text-align:center;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #wrapper{
@@ -187,10 +198,11 @@ hr {
 }
 
 .commento{
-	width:90%;
+	width:80%;
 	height:auto;
 	margin:0 auto;
 	text-align:center;
+	border:0.1em solid grey;
 }
 
 .data{

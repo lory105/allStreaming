@@ -76,7 +76,7 @@ SERIE
 	foreach my $episode ($episodes->get_nodelist) {
 		my $title=$episode->find('title')->string_value;
 		my $link=$episode->find('link')->string_value;
-		print "<p style=\"text-align:left;\"><a href=\"http://$link\" target=\"_blank\">$title</a></p>";
+		print "<p><a href=\"http://$link\" target=\"_blank\">$title</a></p>";
 	}
 	print "</div><br></br>";
 }
