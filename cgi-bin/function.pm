@@ -326,11 +326,12 @@ sub left {
 	<body>
 		<div id="wrapper">
 			<div id="header">
+				<div id="pres"><h1>AllStreaming</h1></div>
 				<div id="login">
 					<form method="post" action="login.cgi">
-						<fieldset>
-						<label for="username">Username:</label><input type="text" name="username" value="User" size="12" tabindex="1" />
-						<label for="password">Password:</label><input type="password" name="password" value="Password" size="12" tabindex="2" />
+						<fieldset style="border:0em; margin-top:1em;">
+						<label for="username"><b>Username:</b></label><input type="text" name="username" value="User" size="12" tabindex="1" />
+						<label for="password"><b>Password:</b></label><input type="password" name="password" value="Password" size="12" tabindex="2" />
 						<button type="submit" id="sending"  alt="Login button" tabindex="3">Login</button>
 						</fieldset>
 					</form>
@@ -357,6 +358,7 @@ LEFT
 		<body>
 			<div id="wrapper">
 				<div id="header">
+					<div id="pres"><h1>AllStreaming</h1></div>
 					<div id="login">
 						<div class="userLogged">
 LEFT

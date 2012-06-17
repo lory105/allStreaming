@@ -7,24 +7,15 @@ html,body {
 }
 
 #header{
-		display:none;
-}
-
-#logo {
-    background-image: url(../images/nastro.png);
-    background-repeat: no-repeat;
-/*    display: block; */
-    float: left; 
-    height: 7.4em; 
-    width: 55%;
-    min-width: 7em;
-    margin-left: 0.1em;
+		width:100%;
+		height:7em;
+		margin:0 auto;
+		padding-bottom:1em;
 }
 
 #center_side{
-	width:50%;
+	width:100%;
 	margin:0 auto;
-	min-width:14em;
 	text-align:center;
 	overflow:auto;
 	
@@ -46,72 +37,13 @@ html,body {
 	margin:0 auto;
 }
 
-
-.menu{
-		width:100%;
-		height:1.2em;
-		color:white;
-		text-align:center;
-		border:0.1em solid black;
-			
-}
-
-.content{
-	float:left;
-	width:90%;
-	border:0.1em solid grey;
-	padding:0.3em;
-	background:white;
-	border-top:0em solid grey;
-
-}
-
-.content_max_view{
-	float:left;
-	width:90%;
-	text-align:center;
-	border:0.1em solid grey;
-	padding:0.3em;
-	background:white;
-	border-top:0em solid grey;
-}
-
-.content ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0.2em;
-}
-
 #left_side{
-		width:20%;
-		min-width:11em;
-		float:left;
-		margin-top:2em;
+		display:none;
 }	
 
 #right_side{
-		width:20%;
-		min-width:11em;
-		float:right;
-		margin-top:2em;
+		display:none;
 }	
-
-.view{
-		width:100%;
-		height:1.2em;
-		color:white;
-		text-align:center;
-		border:0.1em solid black;
-}
-
-.news{
-		width:100%;
-		height:1.2em;
-		margin-top:9em;
-		color:white;
-		text-align:center;
-		border:0.1em solid black;
-}
 
 hr {
  height:0.1px;
@@ -127,20 +59,6 @@ hr {
 	overflow: auto;
 }
 
-
-
-a{
-	background-color: transparent;
-	color: Blue;
-	text-decoration : underline;
-}
-
-.differentLink{
-	background-color: transparent;
-	color: #3707F4;
-	text-decoration : underline;
-}
-
 .locandina{
 	max-width:200px;
 	max-height:250px;
@@ -153,10 +71,10 @@ a{
 
 .film{
 	width:50%;
-	min-width:11em;
 	height:20em;
 	text-align:center;
 	margin:0 auto;
+	float:left;
 }
 
 .infoAdmin{
