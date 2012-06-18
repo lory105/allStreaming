@@ -75,7 +75,7 @@ sub menuNotLogged {
 my $nav = $_[0];
     
 print<<MENU;
-                    <div id="navigation">Ti trovi in : $nav</div>
+                    <div id="navigation">Ti trovi in : <b>$nav</b></div>
 MENU
 
 	if($nav eq "Home"){
@@ -327,23 +327,23 @@ sub left {
 		<div id="wrapper">
 			<div id="header">
 				<div id="pres"><h1>AllStreaming</h1></div>
-				<div id="login">
+				<div id="login">			
 					<form method="post" action="login.cgi">
 						<fieldset style="border:0em; margin-top:1em;">
 						<label for="username"><b>Username:</b></label><input type="text" name="username" value="User" size="12" tabindex="1" />
 						<label for="password"><b>Password:</b></label><input type="password" name="password" value="Password" size="12" tabindex="2" />
 						<button type="submit" id="sending"  alt="Login button" tabindex="3">Login</button>
+LEFT
+						
+						my $q = new CGI;
+						my $error_login = $q->param('error_login');
+						if( $error_login eq "true" ){ 
+							print "<label><b style=\"color:red;\">Errore nel login</b></label>"; 
+						}
+		print<<LEFT;
+						
 						</fieldset>
 					</form>
-LEFT
-
-        my $q = new CGI;
-        my $error_login = $q->param('error_login');
-        if( $error_login eq "true" ){ 
-            print "<span class=\"white\">Errore nel login</span>";     #!! X LUCA: applica il css ( è il mess di errore k compare se il login fallisce)
-        }
-
-        print <<LEFT;
 	  			</div>
 			</div>	
 LEFT
@@ -482,8 +482,12 @@ print <<FOOTER;
 	</div>
 	</br>
 		<div id="footer">
-			<span>allStreaming.com </span>-
-			<a href="aboutUs.cgi">About Us </a>
+			<span>
+					<a href="http://validator.w3.org/check?uri=referer"><img src="../images/html10.png"/ class="validation"/></a>
+					<a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="../images/css.gif" class="validation"/></a>
+					allStreaming.com 
+			</span>-
+			<a href="aboutUs.cgi">Chi Siamo </a>
 		</div>
     </body>
 </html>
