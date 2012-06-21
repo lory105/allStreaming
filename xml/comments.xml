@@ -47,4 +47,153 @@
 		<date>2012-06-13T22:13:39</date>
 		<content>Veramente spettacolare lo consiglio!!</content>
 	</comment>
+	<comment id="14">
+		<idUser>1</idUser>
+		<typeVideo>film</typeVideo>
+		<idVideo>9</idVideo>
+		<date>2012-06-21T13:35:45</date>
+		<content>Un pò cruento</content>
+	</comment>
+	<comment id="15">
+		<idUser>1</idUser>
+		<typeVideo>film</typeVideo>
+		<idVideo>4</idVideo>
+		<date>2012-06-21T13:36:18</date>
+		<content>Bel film</content>
+	</comment>
+	<comment id="16">
+		<idUser>1</idUser>
+		<typeVideo>film</typeVideo>
+		<idVideo>10</idVideo>
+		<date>2012-06-21T13:36:34</date>
+		<content>Epico</content>
+	</comment>
+	<comment id="17">
+		<idUser>1</idUser>
+		<typeVideo>film</typeVideo>
+		<idVideo>11</idVideo>
+		<date>2012-06-21T13:36:58</date>
+		<content>La trama è un pò stupida</content>
+	</comment>
+	<comment id="18">
+		<idUser>2</idUser>
+		<typeVideo>film</typeVideo>
+		<idVideo>1</idVideo>
+		<date>2012-06-21T13:37:48</date>
+		<content>Aspettiamo il prossimo</content>
+	</comment>
+	<comment id="19">
+		<idUser>2</idUser>
+		<typeVideo>film</typeVideo>
+		<idVideo>6</idVideo>
+		<date>2012-06-21T13:38:10</date>
+		<content>divertente</content>
+	</comment>
+	<comment id="20">
+		<idUser>2</idUser>
+		<typeVideo>film</typeVideo>
+		<idVideo>2</idVideo>
+		<date>2012-06-21T13:38:28</date>
+		<content>Gran bel film</content>
+	</comment>
+	<comment id="21">
+		<idUser>2</idUser>
+		<typeVideo>film</typeVideo>
+		<idVideo>17</idVideo>
+		<date>2012-06-21T13:39:07</date>
+		<content>Consigliato</content>
+	</comment>
+	<comment id="22">
+		<idUser>4</idUser>
+		<typeVideo>film</typeVideo>
+		<idVideo>8</idVideo>
+		<date>2012-06-21T13:39:49</date>
+		<content>Uno dei migliori film mai visti</content>
+	</comment>
+	<comment id="23">
+		<idUser>4</idUser>
+		<typeVideo>film</typeVideo>
+		<idVideo>7</idVideo>
+		<date>2012-06-21T13:41:02</date>
+		<content>Miglior film di sempre secondo IMDb</content>
+	</comment>
+	<comment id="24">
+		<idUser>4</idUser>
+		<typeVideo>serie</typeVideo>
+		<idVideo>3</idVideo>
+		<date>2012-06-21T13:41:37</date>
+		<content>La miglior serie poliziesca mai prodotta</content>
+	</comment>
+	<comment id="25">
+		<idUser>4</idUser>
+		<typeVideo>serie</typeVideo>
+		<idVideo>1</idVideo>
+		<date>2012-06-21T13:42:12</date>
+		<content>divertentissima</content>
+	</comment>
+	<comment id="26">
+		<idUser>5</idUser>
+		<typeVideo>film</typeVideo>
+		<idVideo>7</idVideo>
+		<date>2012-06-21T13:44:04</date>
+		<content>stupendo</content>
+	</comment>
+	<comment id="27">
+		<idUser>5</idUser>
+		<typeVideo>film</typeVideo>
+		<idVideo>5</idVideo>
+		<date>2012-06-21T13:44:28</date>
+		<content>Americanata</content>
+	</comment>
+	<comment id="28">
+		<idUser>5</idUser>
+		<typeVideo>film</typeVideo>
+		<idVideo>14</idVideo>
+		<date>2012-06-21T13:45:42</date>
+		<content>Brad Pitt aveva la controfigura</content>
+	</comment>
+	<comment id="29">
+		<idUser>6</idUser>
+		<typeVideo>film</typeVideo>
+		<idVideo>12</idVideo>
+		<date>2012-06-21T13:47:36</date>
+		<content>film da vedere
+</content>
+	</comment>
+	<comment id="30">
+		<idUser>6</idUser>
+		<typeVideo>serie</typeVideo>
+		<idVideo>4</idVideo>
+		<date>2012-06-21T13:48:34</date>
+		<content>Quando esce la terza stagione?</content>
+	</comment>
+	<comment id="31">
+		<idUser>6</idUser>
+		<typeVideo>serie</typeVideo>
+		<idVideo>1</idVideo>
+		<date>2012-06-21T13:49:37</date>
+		<content>Mi piace l'auto di Patrick</content>
+	</comment>
+	<comment id="32">
+		<idUser>8</idUser>
+		<typeVideo>film</typeVideo>
+		<idVideo>17</idVideo>
+		<date>2012-06-21T13:51:17</date>
+		<content>divertente
+</content>
+	</comment>
+	<comment id="33">
+		<idUser>8</idUser>
+		<typeVideo>film</typeVideo>
+		<idVideo>15</idVideo>
+		<date>2012-06-21T13:51:50</date>
+		<content>Mi piace la cioccolata</content>
+	</comment>
+	<comment id="34">
+		<idUser>8</idUser>
+		<typeVideo>film</typeVideo>
+		<idVideo>13</idVideo>
+		<date>2012-06-21T13:52:10</date>
+		<content>Il primo della saga</content>
+	</comment>
 </collection>

@@ -13,7 +13,7 @@
 	</user>
 	<user id="2">
 		<name>Luca</name>
-		<surname>Scassa</surname>
+		<surname>Marchegiani</surname>
 		<username>luck</username>
 		<password>5f4dcc3b5aa765d61d8327deb882cf99</password>
 		<email>lucas@gmail.com</email>
@@ -24,21 +24,21 @@
 	
 	<user id="4">
 		<name>Jacopo</name>
-		<surname>Immortali</surname>
-		<username>username</username>
+		<surname>Milano</surname>
+		<username>becks</username>
 		<password>5f4dcc3b5aa765d61d8327deb882cf99</password>
 		<email>your@email.com</email>
-		<avatar>../avatar/username.png</avatar>
+		<avatar>../avatar/becks.jpg</avatar>
 		<dateRegistration>2012-06-05T13:49:54</dateRegistration>
 		<admin>false</admin>
 	</user>
 	<user id="5">
-		<name>Gioggio</name>
-		<surname>Gioggiolo</surname>
-		<username>ggggg</username>
+		<name>Alberto</name>
+		<surname>Albero</surname>
+		<username>tree</username>
 		<password>5f4dcc3b5aa765d61d8327deb882cf99</password>
-		<email>your@gioggiolo.com</email>
-		<avatar>../avatar/jack.png</avatar>
+		<email>tree@hotmail.com</email>
+		<avatar>../avatar/tree.jpg</avatar>
 		<dateRegistration>2012-06-05T14:05:42</dateRegistration>
 		<admin>false</admin>
 	</user>
@@ -48,7 +48,7 @@
 		<username>bananajoe</username>
 		<password>5f4dcc3b5aa765d61d8327deb882cf99</password>
 		<email>your@banana.com</email>
-		<avatar>../avatar/jack.png</avatar>
+		<avatar>../avatar/bananajoe.jpg</avatar>
 		<dateRegistration>2012-06-06T07:43:04</dateRegistration>
 		<admin>false</admin>
 	</user>
@@ -58,7 +58,7 @@
 		<username>admin</username>
 		<password>5f4dcc3b5aa765d61d8327deb882cf99</password>
 		<email>admin@allstreaming.com</email>
-		<avatar>../avatar/admin.png</avatar>
+		<avatar>../avatar/admin.jpg</avatar>
 		<dateRegistration>2012-06-06T08:43:04</dateRegistration>
 		<admin>true</admin>
 	</user>
@@ -68,7 +68,7 @@
 		<username>brunello</username>
 		<password>5f4dcc3b5aa765d61d8327deb882cf99</password>
 		<email>bruno.rampa@libero.it</email>
-		<avatar>../avatar/jack.png</avatar>
+		<avatar>../avatar/brunello.jpg</avatar>
 		<dateRegistration>2012-06-13T21:27:26</dateRegistration>
 		<admin>false</admin>
 	</user>
@@ -79,7 +79,7 @@
 		<username>bratt</username>
 		<password>5f4dcc3b5aa765d61d8327deb882cf99</password>
 		<email>bratt@yahoo.it</email>
-		<avatar>../avatar/jack.png</avatar>
+		<avatar>../avatar/bratt.jpg</avatar>
 		<dateRegistration>2012-06-13T21:41:52</dateRegistration>
 		<admin>false</admin>
 	</user>

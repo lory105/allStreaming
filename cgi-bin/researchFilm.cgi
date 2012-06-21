@@ -32,7 +32,7 @@ if ($type eq "Year"){
 		foreach my $node ($nodeset->get_nodelist) {
 			my $film=$node->find('title')->string_value;
 			my $id=$node->getAttribute('id');
-			my $dynamic = "<a href=\"film.cgi?id=$id\">$film</a> <hr></hr>";
+			my $dynamic = "<a href=\"film.cgi?id=$id\">$film</a> <hr />";
 			print $dynamic;
 		}
 	}
@@ -44,7 +44,7 @@ if ($type eq "Year"){
 		foreach my $node ($nodeset->get_nodelist) {
 		my $film=$node->find('title')->string_value;
 		my $id=$node->getAttribute('id');
-		my $dynamic = "<a href=\"film.cgi?id=$id\">$film</a> <hr></hr>";
+		my $dynamic = "<a href=\"film.cgi?id=$id\">$film</a> <hr />";
 		print $dynamic;
 		}
 	}
@@ -56,7 +56,7 @@ else{
 	foreach my $node ($set->get_nodelist) {
 		my $film=$node->find('title')->string_value;
 		my $id=$node->getAttribute('id');
-		my $dynamic = "<a href=\"film.cgi?id=$id\">$film</a> <hr></hr>";
+		my $dynamic = "<a href=\"film.cgi?id=$id\">$film</a> <hr />";
 		print $dynamic;
 	}
 }

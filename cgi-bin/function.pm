@@ -169,7 +169,7 @@ MENU
 
 print<<MENU;
                     </ul>
-					</br>
+					<br />
 				</div>
 		</div>	
 MENU
@@ -309,7 +309,7 @@ MENU
 
 	 print<<MENU
 	 		      </ul>
-					</br>
+					<br />
 				</div>
 		</div>	
 MENU
@@ -420,7 +420,7 @@ FOO: {
                 push( @idFilmSelected, $idVideo);
                 $video = function::findItem({ type=>$typeVideo, query=>"//collection/film[\@id=$idVideo]" })->get_node(1);
                 my $title = $video->find('title')->string_value;
-	            print "<a href=\"$typeVideo.cgi?id=$idVideo\" >$title</a></br>";
+	            print "<a href=\"$typeVideo.cgi?id=$idVideo\" >$title</a><br />";
             }
         }
         #if( $typeVideo eq "serie"){
@@ -432,7 +432,7 @@ FOO: {
                 push( @idSerieSelected, $idVideo);
                 $video = function::findItem({ type=>$typeVideo, query=>"//collection/serie[\@id=$idVideo]" })->get_node(1);
                 my $title = $video->find('title')->string_value;
-        	    print "<a href=\"$typeVideo.cgi?id=$idVideo\" >$title</a></br>";
+        	    print "<a href=\"$typeVideo.cgi?id=$idVideo\" >$title</a><br />";
             }
         }
     
@@ -442,7 +442,7 @@ FOO: {
 
 print <<RIGHT;
 				</div>
-			</br>
+			<br />
 			<div class="news">Novit&agrave;</div>
 				<div class="content_max_view">
 RIGHT
@@ -460,14 +460,14 @@ FOO: {
     for($i = 0; scalar @sortIdFilm >$i && $i < 5; $i++) {
 	   my $id = "$sortIdFilm[$i]";
 	   my $nodeset = function::findItem({ type=>"film", query=>"//collection/film[\@id=$id]/title/text()" });
-	   print "<a href=\"film.cgi?id=$id\" >$nodeset</a></br>";
+	   print "<a href=\"film.cgi?id=$id\" >$nodeset</a><br />";
     }
 }
 
 my $registeredUser = function->countRegisteredUsers();
 print <<RIGHT;
 				</div>
-			</br>
+			<br />
 			<div class="news">Utenti iscritti</div>
 			<div class="content_max_view">$registeredUser utenti</div>
 		</div>		
@@ -480,7 +480,7 @@ sub footer {
 print <<FOOTER;
 	<div class="pushfooter"></div>
 	</div>
-	</br>
+	<br />
 		<div id="footer">
 			<span>
 					<a href="http://validator.w3.org/check?uri=referer"><img src="../images/html10.png"/ class="validation"/></a>
@@ -1100,7 +1100,7 @@ sub printAllComments{
 			<div id="center_side">
 				<h2>Ultimi 20 commenti</h2>
 				<div id="commenti">
-		  </br>
+		  <br />
 COMMENTS
 
 
@@ -1153,17 +1153,17 @@ COMMENT
                 print<<COMMENT;
 				    </div>
 				    <b><a href="$typeVideo.cgi?id=$idVideo">$titleVideo</a></b>
-				    <hr></hr>
+				    <hr />
 				    <div class="userText">$content</div>
 			    </div>
-			    </br>
+			    <br />
 COMMENT
             }
             if( $x < 20 ){ print "Non ci sono altri commenti";}
         }
     }
 	print <<COMMENT;
-	</div>
+	</div></div>
 COMMENT
 }
 
@@ -1178,7 +1178,7 @@ sub printCommentsVideo{
     print <<COMMENTS;
 	        <h2>Commenti</h2>
 		    <div id="commenti">
-		    </br>
+		    <br />
 COMMENTS
     
     if( function->checkIsAdmin() eq "false" ){    
@@ -1193,7 +1193,7 @@ COMMENTS
 					</fieldset>
 				</form>
 			</div>
-		 </br>
+		 <br />
 COMMENTS
     }
 
@@ -1235,10 +1235,10 @@ COMMENT
             }
             print<<COMMENT;
 				</div>
-				<hr></hr>
+				<hr />
 				<div class="userText">$content</div>
 			</div>
-			</br>
+			<br />
 		
 COMMENT
         }

@@ -49,7 +49,7 @@ else{
 	    if( (function->checkIsAdmin() eq "true" && $session->param('id') != $id) ||
 	        ( $session->param('id') == $id && function->checkIsAdmin() eq "false") ){
 	        print<<PROFILE;
-	               <br></br>
+	               <br />
                    <form method="post" action="removeItem.cgi">
                        <input name="type" value="user" type="hidden">
                        <input name="id" value="$id" type="hidden">
@@ -57,12 +57,12 @@ else{
                    </form>
 PROFILE
 	    }
-	    print "<div class=\"user\"><p><b>Nome:</b> $name</p><hr></hr>"."\n";
-	    print "<p><b>Cognome:</b> $surname</p><hr></hr>"."\n";
-	    print "<p><b>Data di registrazione:</b> $dateRegistration</p><hr></hr></div>"."\n";
+	    print "<div class=\"user\"><p><b>Nome:</b> $name</p><hr />"."\n";
+	    print "<p><b>Cognome:</b> $surname</p><hr />"."\n";
+	    print "<p><b>Data di registrazione:</b> $dateRegistration</p><hr /></div>"."\n";
     }  
     print "</div>"."\n";
-    print "</div>"."\n";
+
 
     function->footer();
 }

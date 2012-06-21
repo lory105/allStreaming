@@ -30,32 +30,32 @@ else{
 
 								<span class="sx"><label for="name">Name:</label></span>
 								<span class="dx"><input type="text" name="name" id="name" value="nome" onblur="checkName();"  /></span><span class="wrongValue" id="nameError"><img src="../images/no.gif" alt="errore"/></span><span class="correctValue" id="nameCorrect"><img src="../images/ok.gif" alt="ok"/></span>
-								</br>
-								<hr></hr>
+								<br />
+								<hr />
 								<span class="sx"><label for="surname">Cognome:</label></span>
 								<span class="dx"><input type="text" name="surname" id="surname" value="cognome" onblur="checkSurname();"/></span><span class="wrongValue" id="surnameError"><img src="../images/no.gif" alt="errore"/></span><span class="correctValue" id="surnameCorrect"><img src="../images/ok.gif" alt="ok"/></span>
-								</br>
-								<hr></hr>								
+								<br />
+								<hr />								
 								<span class="sx"><label for="user">Username:</label></span>
 								<span class="dx"><input type="text" name="username" id="user" value="username" onblur="checkUser();"/></span><span class="wrongValue" id="userError"><img src="../images/no.gif" alt="errore"/></span><span class="correctValue" id="userCorrect"><img src="../images/ok.gif" alt="ok"/></span>
-								</br>
-								<hr></hr>
+								<br />
+								<hr />
 								<span class="sx"><label for="email">Email:</label></span>
 								<span class="dx"><input type="text" name="email" id="email" value="your\@email.com" onblur="checkEmail();"/></span><span class="wrongValue" id="emailError"><img src="../images/no.gif" alt="errore"/></span><span class="correctValue" id="emailCorrect"><img src="../images/ok.gif" alt="ok"/></span>
-								</br>
-								<hr></hr>						
+								<br />
+								<hr />						
 								<span class="sx"><label for="password">Password:</label></span>
 								<span class="dx"><input type="password" name="password" id="password" value="password" onblur="checkPassword();"/></span><span class="wrongValue" id="passwordError"><img src="../images/no.gif" alt="errore"/></span><span class="correctValue" id="passwordCorrect"><img src="../images/ok.gif" alt="ok"/></span>
-								</br>
-								<hr></hr>							
+								<br />
+								<hr />							
 								<span class="sx"><label for="confirmPassword">Conferma password:</label></span>
 								<span class="dx"><input type="password" name="confirmPassword" id="confirmPassword" value="password" onblur="repeatPassword();"/></span><span class="wrongValue" id="confirmedError"><img src="../images/no.gif" alt="errore"/></span><span class="correctValue" id="confirmedCorrect"><img src="../images/ok.gif" alt="ok"/></span>
-								</br>
-								<hr></hr>
+								<br />
+								<hr />
 								<span class="sx"><label for="avatar">Aggiungi avatar:</label></span>
 								<span class="dx"><input type="file" name="photo" id="avatar" value=""/></span>
-								</br>
-								<hr></hr>
+								<br />
+								<hr />
 								<button type="submit" id="end" disabled="false">Invia</button>				
 							</fieldset>
 						</form>

@@ -37,7 +37,7 @@ if( $isAdmin eq "true"){
              <input name="id" value="$id" type="hidden">
              <input type="submit" value="Aggiungi stagione">
          </form>
-              <br></br>
+              <br />
 SERIE
 }
 	
@@ -78,7 +78,7 @@ SERIE
 		my $link=$episode->find('link')->string_value;
 		print "<p><a href=\"$link\" target=\"_blank\">$title</a></p>";
 	}
-	print "</div><br></br>";
+	print "</div><br />";
 }
 
 print "</div>";
@@ -87,6 +87,6 @@ if( function->isLogged() eq "true"){
     function::printCommentsVideo({ typeVideo=>"serie", idVideo=>$id  });
 }
 
-print "</div></div>";
+print "</div>";
 
 function->footer();

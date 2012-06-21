@@ -49,7 +49,7 @@ else{
 		            <p><b>Serie totali:</b> $totSeries</p>
 		              <form method="post" action="addSerie.cgi">
 						<fieldset>
-                          <input name="url" type="hidden"">
+                          <input name="url" type="hidden">
                           <input type="submit" value="+ Aggiungi Serie" tabindex="7">
                         </fieldset>
                       </form>

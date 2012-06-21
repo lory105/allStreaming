@@ -42,7 +42,7 @@ if( $isAdmin eq "true"){
              <input type="submit" value="Aggiungi Link">
          </fieldset>
          </form>
-           <br></br>
+           <br />
 FILM
 }
 
@@ -79,6 +79,6 @@ if( function->isLogged() eq "true"){
 	function::printCommentsVideo({ typeVideo=>"film", idVideo=>$id  }); 	
 }
 
-print "</div></div>";
+print "</div>";
 
 function->footer();
