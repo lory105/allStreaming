@@ -32,6 +32,11 @@ my $commentsXml = "../xml/comments.xml";
 sub header {
 	print "Content-type: text/html\n\n";
 	my $information = $_[1];
+	
+	#################################################################################################
+	# A COSA SERVE STO IF?? NON ENTRA MAI NELL'ELSE SOTTO XK NESSUN  ###################################
+	# CGI RICHIAMA HEADED PASSANDOGLI PARAMETRI !!!  ######################################################
+	################################################################################################
 	if ($information eq ""){
 	print <<HEADER;	
 	<?xml version="1.0" encoding="iso-8859-1"?>
@@ -39,12 +44,13 @@ sub header {
 	<html xmlns="http://www.w3.org/1999/xhtml">
 		<head>
 			<title>AllStreaming</title>
+			<meta name="description" content="Streaming film e serie TV" />
+			<meta name="keywords" content="streaming, film, serie TV" />
 			<link rel="shortcut icon" href="images/logo.ico" type="image/x-icon" />
 			<link rel="icon" href="images/logo.ico" type="image/x-icon" />
 			<link rel="stylesheet" media="screen" href="../styles/baseStyle.css" type="text/css" />
 			<link rel="stylesheet" media="print" href="../styles/printStyle.css" type="text/css" />
-			<meta name="description" content="Streaming film e serie TV" />
-			<meta name="keywords" content="streaming, film, serie TV" />
+            <link rel="stylesheet" media="handheld screen and (max-width:480px), only screen and (max-device-width:480px)" href="../styles/smartStyle.css" type="text/css" />
 			<script type="text/javascript" src="../javascript/validation.js"></script>
 		</head> 
 HEADER
