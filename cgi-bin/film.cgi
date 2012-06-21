@@ -29,17 +29,17 @@ my $isAdmin = function::checkIsAdmin();
 if( $isAdmin eq "true"){
     print<<FILM
          <form method="post" action="removeItem.cgi">
-         <fieldset>
+         <fieldset style="border:0em;">
              <input name="type" value="film" type="hidden">
              <input name="id" value="$id" type="hidden">
              <input type="submit" value="Rimuovi Film">
          </fieldset>
          </form>
          <form method="post" action="addLink.cgi">
-         <fieldset>
+         <fieldset style="border:0em;">
              <input name="type" value="film" type="hidden">
              <input name="id" value="$id" type="hidden">
-             <input type="submit" value="Aggiungi Link"
+             <input type="submit" value="Aggiungi Link">
          </fieldset>
          </form>
            <br></br>
@@ -55,11 +55,11 @@ foreach my $try ($address->get_nodelist) {
     my $idLink=$try->findvalue('@idLink')->string_value;
     my $linkname=$try->find('linkName')->string_value;
     my $link=$try->find('link')->string_value;
-    print "<p><b>Link:</b> <a href=\"http://$link\" target=\"_blank\">$linkname</a></p>";
+    print "<p><b>Link:</b> <a href=\"$link\" target=\"_blank\">$linkname</a></p>";
     if( $isAdmin eq "true"){
         print<<FILM
                <form method="post" action="removeItem.cgi">
-				<fieldset>
+				<fieldset style="border:0">
                    <input name="type" value="link" type="hidden">
                    <input name="idFilm" value="$id" type="hidden">
                    <input name="idLink" value="$idLink" type="hidden">

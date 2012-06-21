@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org series.xsd">
+<collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org series.xsd" encoding="UTF-8">
+
+
+
+
+
+
 
 
 
@@ -9,103 +15,159 @@
 	<description>Un poliziesco crudo e realistico come nessun altro fino ad ora. Il detective Vic mackey è a capo di un'unita scelta chiamata Squadra d'Assalto, composta da poliziotti specializzati nella lotta al crimine e disposti ad agire secondo le regole di Vic. Ma queste regole spesso oltrepassano il labile confine tra legalità e illegalità. Il nuovo capitano del distretto non condivide questi metodi e vorrebbe sbarazzarsi di Vic...salvo ricorrere al suo aiuto ogni volta che la situazione si fa critica...</description>
 		<season number="1">
 			<episode idEpisode="1">
-				<title>EpisodioUnoTitolo</title>
-				<link>www.Nowvideo.com</link>
+				<title>Squadra d'assalto</title>
+				<link>http://www.putlocker.com/file/F3EAF105A08FCA78</link>
 			</episode>
 			<episode idEpisode="2">
-				<title>EpisodioDueTitolo</title>
-				<link>www.Nowvideo.com</link>
+				<title>Terzo grado</title>
+				<link>http://www.putlocker.com/file/5F520E2952FEBCF0</link>
 			</episode>
 			<episode idEpisode="3">
-				<title>EpisodioTreTitolo</title>
-				<link>www.Nowvideo.com</link>
+				<title>Indiziato di stupro</title>
+				<link>http://www.putlocker.com/file/0E467B03AFD8E28B</link>
 			</episode>
-		</season>
-		<season number="2">
-			<episode idEpisode="1">
-				<title>EpisodioUnoTitolo</title>
-				<link>Nowvideo</link>
+			<episode idEpisode="4">
+				<title>Guerra tra bande</title>
+				<link>http://www.putlocker.com/file/126D1F755E392891</link>
 			</episode>
-		</season>
-		<season number="3">
-			<episode idEpisode="1">
-				<title>EpisodioTreTitolo</title>
-				<link>Nowvideo</link>
+			<episode idEpisode="5">
+				<title>Recuperare la cocaina</title>
+				<link>http://www.putlocker.com/file/F37C7A01ADDCB125</link>
 			</episode>
-		</season>
-</serie>
-<serie id="4">
-	<title>How I met your mother</title>
-	<image>images/series/4.jpg</image>
-	<description>Patrick Jane "consulente" al California Bureau of Investigation, dove aiuta la squadra investigativa coordinata da Teresa Lisbon e formata da Kimball Cho, Wayne Rigsby e Grace Van Pelt usando il suo particolare talento di Mentalist. La sua dote gli permette di notare ogni piccolo dettaglio, ogni sfuggevole particolare all?apparenza inutile, che per Patrick diventa un prezioso tassello del puzzle che lo porter a risolvere caso dopo caso...</description>
-			<season number="1">
-				<episode idEpisode="1">
-					<title>EpisodioUnoTitolo</title>
-					<link>Nowvideo</link>
-				</episode>
-			</season>
-			<season number="2">
-				<episode idEpisode="1">
-					<title>EpisodioDueTitolo</title>
-					<link>Nowvideo</link>
-				</episode>
-			</season>
-</serie>
-<serie id="2">
-	<title>The Tudors</title>
-	<image>images/series/2.jpg</image>
-	<description>La serie segue le vicende della famiglia Tudors (dinastia composta dai cinque sovrani che regnarono tra il 1485 e il 1603 in Inghilterra). In particolare, rilancia la figura di uno dei personaggi pi noti e controversi della storia inglese, Enrico VIII, re re d?Inghilterra e di Irlanda fino al 1547.</description>
-		<season number="1">
-			<episode idEpisode="1">
-				<title>EpisodioUnoTitolo</title>
-				<link>Nowvideo</link>
-			</episode>
-			<episode idEpisode="2">
-				<title>EpisodioDueTitolo</title>
-				<link>Nowvideo</link>
-			</episode>
-		</season>
-		<season number="2">
-			<episode idEpisode="1">
-				<title>EpisodioDueTitolo</title>
-				<link>Nowvideo</link>
-			</episode>
-		</season>
-		<season number="3">
+			<episode idEpisode="6">
+				<title>Dente per dente</title>
+				<link>http://www.putlocker.com/file/87329E0692BF9F9D</link>
+			</episode>												
 		</season>
 </serie>
 
-<serie id="1">
-	<title>The Mentalist</title>
-	<image>images/series/1.jpg</image>
-	<description>Patrick Jane "consulente" al California Bureau of Investigation, dove aiuta la squadra investigativa coordinata da Teresa Lisbon e formata da Kimball Cho, Wayne Rigsby e Grace Van Pelt usando il suo particolare talento di Mentalist. La sua dote gli permette di notare ogni piccolo dettaglio, ogni sfuggevole particolare all?apparenza inutile, che per Patrick diventa un prezioso tassello del puzzle che lo porter a risolvere caso dopo caso...</description>
-			
-		
+<serie id="4">
+	<title>How I met your mother</title>
+	<image>images/series/4.jpg</image>
+	<description>Vincitrice di 2 Emmy Award la serie televisiva How I Met Your Mother ( in italia viene chiamata E alla fine arriva Mamma ) è stata prodotta nel 2004 dall'emittente televisivo CBS , composta da 6 stagioni , in piu forse sara' rinnovata per una settima stagione . In italia va in onda nel primo pomeriggio su italia 1 , avendo un discreto successo .Nel telefilm How I Met Your Mother, Ted Mosby (Josh Radnor), ormai un affermato architetto, racconta ai suoi due figli la storia fra lui e la loro madre. Comincia da quando era ancora un ragazzo e viveva a New York, single e deciso a trovare la donna della sua vita. Ted conosce Robin Scherbatsky, una ragazza canadese, reporter di una piccola emittente televisiva, con la quale ha inizio un complicato rapporto che oscilla fra amicizia e amore. Presto La ragazza si unisce al gruppo di amici di Ted: Marshall e Lily, fidanzati dai tempi del college, e Barney, ricco e donnaiolo, appare inizialmente il più atipico, ma andrà via via acquisendo una sua profondità.</description>
+
 		
 <season number="1">
-				<episode idEpisode="1">
-					<title>EpisodioUnoTitolo</title>
-					<link>Nowvideo</link>
-				</episode>
-				<episode idEpisode="2">
-					<title>haha</title>
-					<link>www</link>
-				</episode>
-					<episode idEpisode="2">
-				<title>John il rosso</title>
-				<link>http://www.nowvideo.eu/video/67o75hkjthzuf</link>
+			<episode idEpisode="1">
+				<title>Una storia lunga</title>
+				<link>http://www.nowvideo.eu/video/z2yq00i5el1n4</link>
+			</episode>
+						<episode idEpisode="2">
+				<title>La giraffa viola</title>
+				<link>http://www.nowvideo.eu/video/lwkxzld20cuhd</link>
+			</episode>
+						<episode idEpisode="3">
+				<title>Il dolce sapore della libertà</title>
+				<link>http://www.nowvideo.eu/video/0b16vm15nk4kd</link>
+			</episode>
+						<episode idEpisode="4">
+				<title>Il ritorno della camicia</title>
+				<link>http://www.nowvideo.eu/video/60qhj5wrzpdei</link>
+			</episode>
+						<episode idEpisode="5">
+				<title>Disco club</title>
+				<link>http://www.nowvideo.eu/video/avmpvmuec9y7w</link>
+			</episode>
+						<episode idEpisode="6">
+				<title>La zucca supersexy</title>
+				<link>http://www.nowvideo.eu/video/0wqax4arf92gj</link>
+			</episode>
+						<episode idEpisode="7">
+				<title>Questione di compatibilità</title>
+				<link>http://www.nowvideo.eu/video/z2yq00i5el1n4</link>
+			</episode>
+</season>		
+<season number="2">
+						<episode idEpisode="1">
+				<title>Dove eravamo</title>
+				<link>http://www.nowvideo.eu/video/623ltjdl6q15i</link>
+			</episode>
+						<episode idEpisode="2">
+				<title>Il rospo e lo scorpione</title>
+				<link>http://www.nowvideo.eu/video/6ycb7ah6n2ur6</link>
+			</episode>
+						<episode idEpisode="3">
+				<title>Il brunch</title>
+				<link>http://www.nowvideo.eu/video/fxb3hkm2fihmo</link>
+			</episode>
+
+		</season>
+</serie><serie id="2">
+	<title>The Tudors</title>
+	<image>images/series/2.jpg</image>
+	<description>La serie segue le vicende della famiglia Tudors (dinastia composta dai cinque sovrani che regnarono tra il 1485 e il 1603 in Inghilterra). In particolare, rilancia la figura di uno dei personaggi più noti e controversi della storia inglese, Enrico VIII, re d'Inghilterra e di Irlanda fino al 1547.</description>
+
+		<season number="1">
+			<episode idEpisode="1">
+				<title>Episodio1</title>
+				<link>http://videopremium.net/2pxb89dabs36</link>
 			</episode>
 			<episode idEpisode="2">
-				<title>Prova</title>
-				<link>http://www.nowvideo.eu/video/67o75hkjthzuf</link>
+				<title>Episodio2</title>
+				<link>http://videopremium.net/wle9eer9b6qg</link>
 			</episode>
-</season><season number="2">
-				<episode idEpisode="1">
-					<title>EpisodioDueTitolo</title>
-					<link>Nowvideo</link>
-				</episode>
-					<episode idEpisode="2">
-				<title>test</title>
-				<link>www.google.it</link>
+			<episode idEpisode="3">
+				<title>Episodio3</title>
+				<link>http://videopremium.net/fbuoesqkle9w</link>
 			</episode>
-</season></serie></collection>
+			<episode idEpisode="4">
+				<title>Episodio4</title>
+				<link>http://videopremium.net/hv5ckoxqwmtp</link>
+			</episode>			
+			<episode idEpisode="5">
+				<title>Episodio5</title>
+				<link>http://videopremium.net/1uikddpmaxjn</link>
+			</episode>
+		</season>
+		<season number="2">
+			<episode idEpisode="1">
+				<title>Episodio1</title>
+				<link>http://videopremium.net/8itwjlgsaate</link>
+			</episode>
+			<episode idEpisode="2">
+				<title>Episodio2</title>
+				<link>http://videopremium.net/8na5ogupo298</link>
+			</episode>
+			<episode idEpisode="3">
+				<title>Episodio3</title>
+				<link>http://videopremium.net/xtvx7yfccbsz</link>
+			</episode>		
+		</season>
+</serie><serie id="1">
+	<title>The Mentalist</title>
+	<image>images/series/1.jpg</image>
+	<description>Patrick Jane "consulente" al California Bureau of Investigation, dove aiuta la squadra investigativa coordinata da Teresa Lisbon e formata da Kimball Cho, Wayne Rigsby e Grace Van Pelt usando il suo particolare talento di "Mentalist". La sua dote gli permette di notare ogni piccolo dettaglio, ogni sfuggevole particolare all'apparenza inutile, che per Patrick diventa un prezioso tassello del puzzle che lo porterà caso dopo caso a John il Rosso...</description>
+			
+		<season number="1">
+			<episode idEpisode="1">
+				<title>John il rosso</title>
+				<link>http://www.putlocker.com/file/425BB22DC0A464A3</link>
+			</episode>
+			<episode idEpisode="2">
+				<title>Capelli rossi e nastro argentato</title>
+				<link>http://www.putlocker.com/file/3106E4EB4604CABB</link>
+			</episode>
+			<episode idEpisode="3">
+				<title>Marea Rossa</title>
+				<link>http://www.putlocker.com/file/56D3755F71F5ED31</link>
+			</episode>
+			<episode idEpisode="4">
+				<title>Signore in rosso</title>
+				<link>http://www.putlocker.com/file/12ACF62D36346C17</link>
+			</episode>		
+		</season>
+		<season number="2">
+			<episode idEpisode="1">
+				<title>Conto in rosso</title>
+				<link>http://www.putlocker.com/file/25A4F6A226901034</link>
+			</episode>
+			<episode idEpisode="2">
+				<title>La lettera rosso scarlatto</title>
+				<link>http://www.putlocker.com/file/7F424553C71B34DA</link>
+			</episode>
+			<episode idEpisode="3">
+				<title>Distintivo rosso</title>
+				<link>http://www.putlocker.com/file/EB7B9D189D23A8CD</link>
+			</episode>
+		</season>
+</serie></collection>

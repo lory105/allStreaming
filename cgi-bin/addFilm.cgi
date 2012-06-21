@@ -49,7 +49,7 @@ else{
                                     <option value="Horror">Horror</option>
                                     <option value="Comics">Comics</option>
                                     <option value="Cartoon">Cartoon</option>
-                                    <option value="Altro">Altro</option>
+                                    <option value="Vario">Altro</option>
                                 </select></span>
 								</br>
     							<hr></hr>								

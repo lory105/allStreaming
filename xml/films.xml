@@ -1,82 +1,105 @@
-<collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org films.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org films.xsd" encoding="UTF-8">
 
 
-<film id="6">
-		<title>Lorax il guardiano della foresta</title>
-		<image>images/films/6.jpg</image>
-		<description>Dai creatori di "cattivissimo me" nasce un nuovo fantastico film di animazione: Lorax - il guardiano della foresta. Lorax e' un termine che viene utilizzato negli Stati Uniti, un Lorax e' colui che riesce a parlare con gli alberi e a comunicare con le foreste, una sorta di "sciamano" della natura. La vicenda e' ambientata in un mondo che non conosce gli alberi, racconta la storia di Audrey che decide di sposare colui che le portera' al cospetto un albero. Ted, il protagonista da sempre innamorato di Audrey, tentera' in tutti i modi di accontentare il suo desiderio vivendo cosi' una fantastica avventura. Ma l'impresa e' assai ardua e Ted non trova nessun albero, delle voci parlano di un certo Onceler che e' l'unico al mondo che sa di sia possibile trovare un albero. Ted allora incomincera' a viaggiare, attraversando deserti e l'oscurita' piu' totale per trovare questa persona, scoprendo sempre di piu' cio' che e' accaduto alle piante e ai boschi. Questa commedia e' di carattere ecologistico dedicata soprattutto alle classi piu' giovani mettendo in chiaro la differenza tra progresso e vita, analizzando quanto la tecnologia possa distruggere il mondo in cui viviamo, creando cosi' un vero e proprio paradosso che ci fara' entusiasmare.</description>
-		<date>2012-05-24</date>
-		<family>Cartoon</family>
-</film>
-<film id="5">
-		<title>The Avengers</title>
-		<image>images/films/5.jpg</image>
-		<description>Quando la comparsa di un nemico inatteso minaccia la tranquillit e la sicurezza del mondo, Nick Fury, direttore dell'agenzia internazionale per il mantenimento della pace conosciuta come S.H.I.E.L.D., si trova ad aver bisogno di una squadra che salvi il pianeta dall'orlo del disastro...</description>
-		<date>2012-09-24</date>
-		<family>Comics</family>
-		
-		<address idLink="3">
-			<linkName>PutLocker</linkName>
-			<link>www.putlocker.com/TheAvengers</link>
-		</address>
-</film>
-<film id="1">
-		<title>Harry Potter</title>
-		<image>images/films/1.jpg</image>
-		<description>Ultimo capitolo della saga del mago pi famoso del mondo. Ricordiamo che in ballo c' una profezia, che, per chi ha letto il libro, gi ne sono noti gli esiti, per tutti gli altri non resta che pazientare ancora un po' per sapere chi tra Harry Potter e Voldemort, riuscir a spuntarla...</description>
-		<date>2011-09-24</date>
-		<family>Action</family>
-		<address idLink="1">
-			<linkName>Megavideo</linkName>
-			<link>www.megaup.com</link>
-		</address>
-		
-</film>
-<film id="4">
-		<title>Transformers</title>
-		<image>images/films/4.jpg</image>
-		<description>La lotta tra il bene (gli Autobots) e il male (i Decepticons), dal pianeta Cybertron si spostata sulla Terra dove milioni di anni fa caduto il Cubo di Energon, il potere supremo capace di infondere la vita ai Transformers. Sam Witwicky - nipote dell'esploratore che per primo, durante una missione nel Circolo Polare Artico sul finire del 1800, ebbe a che fare con Megatron, il capo dei Decepticons - l'unico che pu aiutare Optimus Prime e i suoi Autobots a ritrovare il cubo e distruggerlo prima che finisca nelle mani dei nemici.</description>
-		<date>2009-09-24</date>
-		<family>Action</family>
-		
-		<address idLink="2">
-			<linkName>PutLocker</linkName>
-			<link>www.putlocker.com</link>
-		</address>
-</film>
 
 
-<film id="3">
-		<title>Sin City</title>
-		<image>images/films/3.jpg</image>
-		<description>Il film comincia con una scena ambientata in una notte di pioggia, su una balconata di un grattacielo della violenta e corrotta Sin City, una ragazza (Marley Shelton) impegnata ad ammirare il panorama notturno della citt viene avvicinata e successivamente sedotta da un affascinante ragazzo (Josh Hartnett)...</description>
-		<date>2006-09-24</date>
-		<family>Action</family>
-		
-		<address idLink="2">
-			<linkName>PutLocker</linkName>
-			<link>www.putlocker.com</link>
-		</address>
-		<address idLink="2">
-			<linkName>puu</linkName>
-			<link>poo</link>
-		</address>
-</film><film id="2">
+
+
+
+
+	
+
+<film id="2">
 		<title>The Shining</title>
 		<image>images/films/2.jpg</image>
 		<description>Jack Torrance - ex istitutore e scrittore in crisi con tendenza all'alcoolismo - nella speranza di ritrovare se stesso e l'ispirazione accetta di fungere da custode per la stagione invernale dell'immenso e deserto Hotel Overlook, sulle Montagne Rocciose. Dieci anni prima, in analoghe circostanze, un uomo, prima di suicidarsi, ha fatto a pezzi le due figliolette e la moglie...</description>
 		<date>1980-09-24</date>
 		<family>Thriller</family>
-		
-		
+		<address idLink="1">
+			<linkName>NowVideo</linkName>
+			<link>http://www.nowvideo.eu/video/fce2c114a23e6</link>
+		</address>
+</film><film id="6">
+		<title>Lorax il guardiano della foresta</title>
+		<image>images/films/6.jpg</image>
+		<description>Dai creatori di "cattivissimo me" nasce un nuovo fantastico film di animazione: Lorax - il guardiano della foresta. Lorax e' un termine che viene utilizzato negli Stati Uniti, un Lorax e' colui che riesce a parlare con gli alberi e a comunicare con le foreste, una sorta di "sciamano" della natura. La vicenda e' ambientata in un mondo che non conosce gli alberi, racconta la storia di Audrey che decide di sposare colui che le portera' al cospetto un albero. Ted, il protagonista da sempre innamorato di Audrey, tentera' in tutti i modi di accontentare il suo desiderio vivendo cosi' una fantastica avventura. Ma l'impresa e' assai ardua e Ted non trova nessun albero, delle voci parlano di un certo Onceler che e' l'unico al mondo che sa di sia possibile trovare un albero. Ted allora incomincera' a viaggiare, attraversando deserti e l'oscurita' piu' totale per trovare questa persona, scoprendo sempre di piu' cio' che e' accaduto alle piante e ai boschi. Questa commedia e' di carattere ecologistico dedicata soprattutto alle classi piu' giovani mettendo in chiaro la differenza tra progresso e vita, analizzando quanto la tecnologia possa distruggere il mondo in cui viviamo, creando cosi' un vero e proprio paradosso che ci fara' entusiasmare.</description>
+		<date>2012-05-24</date>
+		<family>Cartoon</family>
+		<address idLink="1">
+			<linkName>NowVideo</linkName>
+			<link>http://www.nowvideo.eu/video/c7hf59v9b5d77</link>
+		</address>
+</film><film id="4">
+		<title>Transformers</title>
+		<image>images/films/4.jpg</image>
+		<description>La lotta tra il bene (gli Autobots) e il male (i Decepticons), dal pianeta Cybertron si è spostata sulla Terra dove milioni di anni fa è caduto il Cubo di Energon, il potere supremo capace di infondere la vita ai Transformers. Sam Witwicky - nipote dell'esploratore che per primo, durante una missione nel Circolo Polare Artico sul finire del 1800, ebbe a che fare con Megatron, il capo dei Decepticons - è l'unico che può aiutare Optimus Prime e i suoi Autobots a ritrovare il cubo e distruggerlo prima che finisca nelle mani dei nemici.</description>
+		<date>2009-09-24</date>
+		<family>Action</family>
+		<address idLink="1">
+			<linkName>Megavideo</linkName>
+			<link>http://www.megavideo.com/?d=HZ43ZDOX</link>
+		</address>
+</film><film id="5">
+		<title>The Avengers</title>
+		<image>images/films/5.jpg</image>
+		<description>Quando la comparsa di un nemico inatteso minaccia la tranquillità e la sicurezza del mondo, Nick Fury, direttore dell'agenzia internazionale per il mantenimento della pace conosciuta come S.H.I.E.L.D., si trova ad aver bisogno di una squadra che salvi il pianeta dall'orlo del disastro...</description>
+		<date>2012-09-24</date>
+		<family>Comics</family>
+		<address idLink="1">
+			<linkName>NowVideo</linkName>
+			<link>http://www.nowvideo.eu/video/3trcctb6er401</link>
+		</address>
+</film><film id="1">
+		<title>Harry Potter- ep 7.1</title>
+		<image>images/films/1.jpg</image>
+		<description>Ultimo capitolo della saga del mago più famoso del mondo. Ricordiamo che in ballo c'è una profezia, che, per chi ha letto il libro, già ne sono noti gli esiti, per tutti gli altri non resta che pazientare ancora un po' per sapere chi tra Harry Potter e Voldemort, riuscirà a spuntarla...</description>
+		<date>2011-09-24</date>
+		<family>Action</family>
 		
 		<address idLink="1">
 			<linkName>NowVideo</linkName>
-			<link>der</link>
+			<link>http://www.nowvideo.eu/video/9bb610f38ea93</link>
 		</address>
-		<address idLink="2">
-			<linkName>PutLocker</linkName>
-			<link>aaa</link>
-		</address>
+</film><film id="3">
+		<title>Sin City</title>
+		<image>images/films/3.jpg</image>
+		<description>Il film comincia con una scena ambientata in una notte di pioggia, su una balconata di un grattacielo della violenta e corrotta Sin City, una ragazza (Marley Shelton) impegnata ad ammirare il panorama notturno della città viene avvicinata e successivamente sedotta da un affascinante ragazzo (Josh Hartnett)...</description>
+		<date>2006-09-24</date>
+		<family>Action</family>
 		
+		<address idLink="1">
+			<linkName>NowVideo</linkName>
+			<link>http://www.nowvideo.eu/video/312cfd781ac8d</link>
+		</address>
+</film>	
+<film id="7">
+		<title>Le ali della libertà</title>
+		<image>images/films/7.jpg</image>
+		<description>Dirigente bancario, Andy Dufresne, condannato malgrado la sua innocenza all'ergastolo nella prigione di Stato di Shawshank per l'assassinio della moglie e del suo amante, affronta il carcere con coraggio e calma: la speranza e la riflessione lo assistono sempre...
+</description>
+		<date>1994-03-22</date>
+		<family>Vario</family>
+			<address idLink="1">
+			<linkName>NowVideo</linkName>
+			<link>http://www.nowvideo.eu/video/jqu8s2f6n9wjz</link>
+		</address>
+</film>	<film id="8">
+		<title>Il padrino</title>
+		<image>images/films/8.jpg</image>
+		<description>Anni Quaranta. Come consuetudine, durante il rinfresco per festeggiare le nozze della figlia Conny con Carlo, il "padrino" don Vito Corleone promette assistenza e protezione a familiari e amici. Invia il figliastro Tom Hagen in California per convincere in ogni modo...</description>
+		<date>1972-09-23</date>
+		<family>Thriller</family>
+	</film>
+	
+<film id="9">
+		<title>Seven</title>
+		<image>images/films/9.jpg</image>
+		<description>L'anziano ed esperto detective William Somerset mentre sta per andare in pensione viene affiancato dal giovane e irruento collega David Mills....</description>
+		<date>1995-10-11</date>
+		<family>Horror</family>
+			<address idLink="1">
+			<linkName>Megavideo</linkName>
+			<link>http://www.megavideo.com/?v=0QXJHOVJ</link>
+		</address>
 </film></collection>

@@ -2,7 +2,7 @@
 <!-- films schema, model "bambole russe" -->
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://allStreaming.altervista.org"
 targetNamespace="http://allStreaming.altervista.org" elementFormDefault="qualified">
-	<xsd:element name="collection">
+	<xsd:element name="collection" encoding="UTF-8">
 		<xsd:complexType>
 		<xsd:sequence>
 			<xsd:element name="film" minOccurs="0" maxOccurs="unbounded">

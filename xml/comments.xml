@@ -21,20 +21,8 @@
 		<date>20012-05-27T21:32:52</date>
 		<content>bella!</content>
 	</comment>
-	<comment id="4">
-		<idUser>6</idUser>
-		<typeVideo>film</typeVideo>
-		<idVideo>5</idVideo>
-		<date>2012-06-06T08:57:57</date>
-		<content>Inserisci il tuo commento</content>
-	</comment>
-	<comment id="5">
-		<idUser>6</idUser>
-		<typeVideo>film</typeVideo>
-		<idVideo>5</idVideo>
-		<date>2012-06-06T08:58:14</date>
-		<content>evvai col 6</content>
-	</comment>
+	
+	
 	<comment id="6">
 		<idUser>5</idUser>
 		<typeVideo>serie</typeVideo>
@@ -42,13 +30,7 @@
 		<date>2012-06-06T08:58:55</date>
 		<content>bella serie</content>
 	</comment>
-	<comment id="7">
-		<idUser>5</idUser>
-		<typeVideo>serie</typeVideo>
-		<idVideo>1</idVideo>
-		<date>2012-06-06T09:07:14</date>
-		<content>bella la mora</content>
-	</comment>
+	
 	
 	<comment id="11">
 		<idUser>6</idUser>
@@ -57,13 +39,7 @@
 		<date>2012-06-12T08:36:54</date>
 		<content>Bella</content>
 	</comment>
-	<comment id="12">
-		<idUser>6</idUser>
-		<typeVideo>film</typeVideo>
-		<idVideo>5</idVideo>
-		<date>2012-06-13T16:58:58</date>
-		<content>Lory leader</content>
-	</comment>
+	
 	<comment id="13">
 		<idUser>9</idUser>
 		<typeVideo>film</typeVideo>
