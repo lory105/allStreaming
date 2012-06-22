@@ -11,7 +11,7 @@ use XML::LibXML;
 use Digest::MD5 qw(md5 md5_hex md5_base64);
 use XML::XSLT;
 use Switch;
-
+use Encode;
 
 use DateTime;
 use Date::Format;
@@ -542,7 +542,9 @@ sub addUser{
     $maxId = "$maxId" + 1;
     
     my $name = $parameters->{name};
+    $name= encode("utf8", $name);
     my $surname = $parameters->{surname};
+    $surname= encode("utf8", $surname);
     my $username = $parameters->{username};
     my $password = $parameters->{password};
     $password = md5_hex($password);
@@ -583,8 +585,10 @@ sub addFilm{
     $maxId = "$maxId" + 1;
     
     my $title = $parameters->{title};
+    $title= encode("utf8", $title);
     my $image = $parameters->{image};
     my $description = $parameters->{description};
+    $description= encode("utf8", $description);
     my $date = $parameters->{date};
     my $family = $parameters->{family};
     
@@ -621,8 +625,10 @@ sub addSerie{
     $max = "$max" + 1;
    
     my $title = $parameters->{title};
+    $title= encode("utf8", $title);
     my $image = $parameters->{image};
     my $description = $parameters->{description};
+    $description= encode("utf8", $description);
     
     my $parser = XML::LibXML->new;
     my $doc = $parser->parse_file( $seriesXml );
@@ -653,6 +659,7 @@ sub addEpisode{
     my $idSerie = $parameters->{idSerie};
     my $idSeason = $parameters->{idSeason};
     my $title = $parameters->{title};
+    $title= encode("utf8", $title);
     my $link = $parameters->{link};
 
 
@@ -745,6 +752,7 @@ sub addFilmLinkf{
     my $parameters = shift;
     my $idFilm = $parameters->{idFilm};
     my $linkName = $parameters->{linkName};
+    $linkName= encode("utf8", $linkName);
     my $link = $parameters->{link};
 
     my $parser = XML::LibXML->new;
@@ -1368,6 +1376,7 @@ sub addComment{
     my $idReference = $parameters->{id};
     my $type = $parameters->{type};
     my $comment = $parameters->{comment};
+    $comment= encode("utf8", $comment);
     my $idUser = $parameters->{idUser};
     my $date = $parameters->{dateComment};
     
