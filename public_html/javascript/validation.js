@@ -111,23 +111,23 @@ function checkEmail() {
 }
 
 function checkPassword() {
-		var password = document.getElementById("password").value;
+		var password = document.getElementById("Password").value;
 		var posizione = password.search(/^[a-zA-Z0-9\_\*\-\+\!\?\,\:\;\.\xE0\xE8\xE9\xF9\xF2\xEC\x27]{6,12}/);
 		if (posizione != 0 && password != "") {
-			document.getElementById("password").style.backgroundColor = "#F00";
+			document.getElementById("Password").style.backgroundColor = "#F00";
 			document.getElementById("passwordError").style.display = "inline";
 			document.getElementById("passwordCorrect").style.display = "none";
 			psw=0;
 		}
 		if (posizione == 0) {
-			document.getElementById("password").style.backgroundColor = "#00CC00";
+			document.getElementById("Password").style.backgroundColor = "#00CC00";
 			document.getElementById("passwordError").style.display = "none";
 			document.getElementById("passwordCorrect").style.display = "inline";
 			pass=password;
 			psw=1;
 		}
 		if (password == "") {
-			document.getElementById("password").style.backgroundColor = "#FFFFFF";
+			document.getElementById("Password").style.backgroundColor = "#FFFFFF";
 			document.getElementById("passwordError").style.display = "none";
 			document.getElementById("passwordCorrect").style.display = "none";
 			psw=0;
