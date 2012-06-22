@@ -52,7 +52,7 @@
 		<typeVideo>film</typeVideo>
 		<idVideo>9</idVideo>
 		<date>2012-06-21T13:35:45</date>
-		<content>Un pò cruento</content>
+		<content>Un po' cruento</content>
 	</comment>
 	<comment id="15">
 		<idUser>1</idUser>
@@ -73,7 +73,7 @@
 		<typeVideo>film</typeVideo>
 		<idVideo>11</idVideo>
 		<date>2012-06-21T13:36:58</date>
-		<content>La trama è un pò stupida</content>
+		<content>La trama è un po' stupida</content>
 	</comment>
 	<comment id="18">
 		<idUser>2</idUser>
@@ -195,5 +195,12 @@
 		<idVideo>13</idVideo>
 		<date>2012-06-21T13:52:10</date>
 		<content>Il primo della saga</content>
+	</comment>
+	<comment id="35">
+		<idUser>1</idUser>
+		<typeVideo>serie</typeVideo>
+		<idVideo>1</idVideo>
+		<date>2012-06-21T22:23:27</date>
+		<content>Impressionante come serie, è spettacolare..</content>
 	</comment>
 </collection>

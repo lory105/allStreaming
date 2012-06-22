@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org films.xsd" encoding="UTF-8">
-
-
-
-
-
-
-
-
-	
+<collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org films.xsd">
 
 <film id="2">
 		<title>The Shining</title>
@@ -199,4 +190,5 @@
 			<linkName>MovShare</linkName>
 			<link>http://www.movshare.net/video/3som85qhbv6ab</link>
 		</address>
-</film></collection>
+</film>
+</collection>

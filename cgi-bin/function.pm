@@ -11,7 +11,7 @@ use XML::LibXML;
 use Digest::MD5 qw(md5 md5_hex md5_base64);
 use XML::XSLT;
 use Switch;
-
+use Encode;
 
 use DateTime;
 use Date::Format;
@@ -32,6 +32,11 @@ my $commentsXml = "../xml/comments.xml";
 sub header {
 	print "Content-type: text/html\n\n";
 	my $information = $_[1];
+	
+	#################################################################################################
+	# A COSA SERVE STO IF?? NON ENTRA MAI NELL'ELSE SOTTO XK NESSUN  ###################################
+	# CGI RICHIAMA HEADED PASSANDOGLI PARAMETRI !!!  ######################################################
+	################################################################################################
 	if ($information eq ""){
 	print <<HEADER;	
 	<?xml version="1.0" encoding="iso-8859-1"?>
@@ -39,12 +44,13 @@ sub header {
 	<html xmlns="http://www.w3.org/1999/xhtml">
 		<head>
 			<title>AllStreaming</title>
+			<meta name="description" content="Streaming film e serie TV" />
+			<meta name="keywords" content="streaming, film, serie TV" />
 			<link rel="shortcut icon" href="images/logo.ico" type="image/x-icon" />
 			<link rel="icon" href="images/logo.ico" type="image/x-icon" />
 			<link rel="stylesheet" media="screen" href="../styles/baseStyle.css" type="text/css" />
 			<link rel="stylesheet" media="print" href="../styles/printStyle.css" type="text/css" />
-			<meta name="description" content="Streaming film e serie TV" />
-			<meta name="keywords" content="streaming, film, serie TV" />
+            <link rel="stylesheet" media="handheld screen and (max-width:480px), only screen and (max-device-width:480px)" href="../styles/smartStyle.css" type="text/css" />
 			<script type="text/javascript" src="../javascript/validation.js"></script>
 		</head> 
 HEADER
@@ -537,7 +543,9 @@ sub addUser{
     $maxId = "$maxId" + 1;
     
     my $name = $parameters->{name};
+    $name= encode("utf8", $name);
     my $surname = $parameters->{surname};
+    $surname= encode("utf8", $surname);
     my $username = $parameters->{username};
     my $password = $parameters->{password};
     $password = md5_hex($password);
@@ -578,8 +586,10 @@ sub addFilm{
     $maxId = "$maxId" + 1;
     
     my $title = $parameters->{title};
+    $title= encode("utf8", $title);
     my $image = $parameters->{image};
     my $description = $parameters->{description};
+    $description= encode("utf8", $description);
     my $date = $parameters->{date};
     my $family = $parameters->{family};
     
@@ -616,8 +626,10 @@ sub addSerie{
     $max = "$max" + 1;
    
     my $title = $parameters->{title};
+    $title= encode("utf8", $title);
     my $image = $parameters->{image};
     my $description = $parameters->{description};
+    $description= encode("utf8", $description);
     
     my $parser = XML::LibXML->new;
     my $doc = $parser->parse_file( $seriesXml );
@@ -648,6 +660,7 @@ sub addEpisode{
     my $idSerie = $parameters->{idSerie};
     my $idSeason = $parameters->{idSeason};
     my $title = $parameters->{title};
+    $title= encode("utf8", $title);
     my $link = $parameters->{link};
 
 
@@ -740,6 +753,7 @@ sub addFilmLinkf{
     my $parameters = shift;
     my $idFilm = $parameters->{idFilm};
     my $linkName = $parameters->{linkName};
+    $linkName= encode("utf8", $linkName);
     my $link = $parameters->{link};
 
     my $parser = XML::LibXML->new;
@@ -1363,6 +1377,7 @@ sub addComment{
     my $idReference = $parameters->{id};
     my $type = $parameters->{type};
     my $comment = $parameters->{comment};
+    $comment= encode("utf8", $comment);
     my $idUser = $parameters->{idUser};
     my $date = $parameters->{dateComment};
     
