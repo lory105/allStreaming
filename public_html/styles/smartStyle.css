@@ -1,0 +1,383 @@
+html,body {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	height: 100%;
+    font-size:1em;
+	background-color:#efefef;
+}
+
+#header{
+		width:100%;
+		height:7em;
+		margin:0 auto;
+		padding-bottom:1em;
+}
+
+#pres {
+}
+
+#login{
+
+}
+
+#center_side{
+	margin:0 auto;
+	width:60%;
+	min-width:14em;
+	height:100%;
+	text-align:center;
+	overflow:auto;
+}
+
+#registration{
+	margin:0 auto;
+	width:40%;
+	min-width:22em;
+	height:100%;
+	text-align:center;
+	margin-left: auto;
+}
+
+#navigation{
+	width:95%;
+	height:1.2em;
+	background-color:#d0d0d0;
+	border: 0.1em solid black;
+	margin:0 auto;
+	overflow:auto;
+}
+
+
+.menu{
+		width:100%;
+		height:1.2em;
+		background:url(../images/title.png) repeat-x;
+		color:white;
+		text-align:center;
+		border:0.1em solid grey;
+			
+}
+
+.content{
+	float:left;
+	width:90%;
+	border:0.1em solid grey;
+	padding:0.3em;
+	background:white;
+	border-top:0em solid grey;
+
+}
+
+.content_max_view{
+	float:left;
+	width:90%;
+	text-align:center;
+	border:0.1em solid grey;
+	padding:0.3em;
+	background:white;
+	border-top:0em solid grey;
+}
+
+.content ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0.2em;
+}
+
+#left_side{
+		width:20%;
+		height:100%;
+		margin-top:2em;
+}	
+
+#right_side{
+		display:none;
+}	
+
+.view{
+		width:100%;
+		height:1.2em;
+		background:url(../images/title.png) repeat-x;
+		color:white;
+		text-align:center;
+		border:0.1em solid grey;
+}
+
+.news{
+		width:100%;
+		height:1.2em;
+		margin-top:9em;
+		background:url(../images/title.png) repeat-x;
+		color:white;
+		text-align:center;
+		border:0.1em solid grey;
+}
+
+hr {
+ height:0.1px;
+ color:white; 
+}
+
+#random_film{
+	width:95%;
+	margin:0 auto;
+	margin-top:2em;
+	background-color:white;	
+	text-align:center;
+	border:0.1em solid grey;
+	min-width:12em;
+	overflow: auto;
+}
+
+
+
+a{
+	background-color: transparent;
+	color: Blue;
+	text-decoration : underline;
+}
+
+a:hover{
+	background-color: Yellow;
+	color: Black;
+	text-decoration: none;
+}
+
+a:visited{
+	background-color: transparent;
+	color: #800080;
+	text-decoration : underline;
+}
+
+.differentLink{
+	background-color: transparent;
+	color: #3707F4;
+	text-decoration : underline;
+}
+
+.locandina{
+	max-width:200px;
+	max-height:250px;
+	min-width:10em;
+	min-height:12em;
+	border:0.1em solid grey;
+	padding:0.2em;
+	background:white;
+}
+
+.film{
+	width:50%;
+	min-width:11em;
+	height:20em;
+	float:left;
+	text-align:center;
+	margin:0 auto;
+	padding-top:1em;
+}
+
+.infoAdmin{
+	border:0.1em solid grey;
+	width:40%;
+	min-width:150px;
+	float:left;
+	margin:0 auto;
+	margin:20px;
+	padding: 1em;
+	text-align:center;
+	background-color:white;
+}
+
+.center{
+	text-align:center;
+}
+
+#footer{
+	width:100%;
+	height:2em;
+	background:url(../images/header.png) repeat-x;
+	text-align:center;
+	
+}
+
+#logout{
+	float:right;
+	color: blue;
+}
+
+#sending{
+	width:29px;
+	height:29px;
+	background:url(../images/login.gif);
+	color:transparent;
+}
+
+#listed{
+	width:95%;
+	background-color:white;
+	border:0.1em solid grey;
+}
+
+#wrapper{
+	min-height:100%;
+	height:auto;
+	margin:0 auto -2em; /* margine negativo altezza footer */
+}
+.pushfooter{
+	height:2em; /* altezza footer */
+	clear:both; /* clear di eventuali float se presenti nel layout */
+}
+
+.preview{
+	border:0.1em solid grey; padding:2em; background:white;
+	max-width:60%;
+	max-height:60%;
+}
+
+#year{
+	width:46%;
+	height:23em;
+	float:left;
+	background-color:white;
+	border:0.1em solid grey;
+}
+
+#genre{
+	width:46%;
+	height:23em;
+	float:left;
+	background-color:white;
+	border:0.1em solid grey;
+}
+
+.userLogged{
+	min-width:14em;
+	margin-top:1.5em;
+	
+}
+
+.avatar{
+	float:left;
+}
+
+.name{
+	float:left;
+	margin-left:0.7em;
+}
+
+.grav{
+	max-width:40px;
+	max-height:40px;
+	border:0.1em solid grey; padding:0.15em; background:white;
+}
+
+.grav2{
+	max-width:80px;
+	max-height:80px;
+	border:0.1em solid grey; padding:0.15em; background:white;
+}
+
+.pict{
+	width:80px;
+	height:auto;
+	color:orange;
+}
+
+#commenti{
+	width:95%;
+	height:auto;
+	margin:0 auto;
+	background-color:white;
+	border:0.1em solid grey;
+}
+
+.commento{
+	width:90%;
+	height:auto;
+	margin:0 auto;
+	text-align:center;
+	padding:1em;
+	border:0.1em solid grey;
+	background-color:LightGrey;
+}
+
+.data{
+	float:right;
+}
+
+.commentHeader{
+	float:left;
+}
+
+.user{
+	width:50%;
+	margin:0 auto;
+	text-align:left;
+}
+
+.userComment{
+	width:100%;
+	height:auto;
+	color:orange;
+	margin:0 auto;
+	text-align:left;
+}
+
+.userText{
+	width:100%;
+	height:auto;
+	text-align:center;
+	margin:0 auto;
+}
+
+.sx{
+	width:35%;
+	text-align:left;
+	float:left;
+}
+
+.dx{
+	text-align:right;
+	float:right;
+}
+
+.correctValue{
+	color:green;
+	display: none;
+	float:right;
+}
+
+.wrongValue{
+	color:red;
+	display: none;
+	float:right;
+}
+
+.wrongRegistration{
+	color:red;
+}
+
+.episodes{
+	text-align: center;
+	width:30%;
+	margin:0 auto;
+}
+
+.jump {
+	position: absolute;
+	height:0;
+	overflow: hidden;
+}
+
+.white{
+	color: white;
+}
+
+#aboutUs{
+	width:45%;
+	margin:0 auto;
+	margin-top:2em;
+	text-align:center;
+}
+
+.validation{
+	float:left;
+}
