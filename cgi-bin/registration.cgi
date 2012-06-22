@@ -44,8 +44,8 @@ else{
 								<span class="dx"><input type="text" name="email" id="email" value="your\@email.com" onblur="checkEmail();"/></span><span class="wrongValue" id="emailError"><img src="../images/no.gif" alt="errore"/></span><span class="correctValue" id="emailCorrect"><img src="../images/ok.gif" alt="ok"/></span>
 								<br />
 								<hr />						
-								<span class="sx"><label for="password">Password:</label></span>
-								<span class="dx"><input type="password" name="password" id="password" value="password" onblur="checkPassword();"/></span><span class="wrongValue" id="passwordError"><img src="../images/no.gif" alt="errore"/></span><span class="correctValue" id="passwordCorrect"><img src="../images/ok.gif" alt="ok"/></span>
+								<span class="sx"><label for="Password">Password:</label></span>
+								<span class="dx"><input type="password" name="password" id="Password" value="password" onblur="checkPassword();"/></span><span class="wrongValue" id="passwordError"><img src="../images/no.gif" alt="errore"/></span><span class="correctValue" id="passwordCorrect"><img src="../images/ok.gif" alt="ok"/></span>
 								<br />
 								<hr />							
 								<span class="sx"><label for="confirmPassword">Conferma password:</label></span>

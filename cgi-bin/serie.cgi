@@ -29,22 +29,22 @@ my $isAdmin = function::checkIsAdmin();
 if( $isAdmin eq "true"){
     print<<SERIE
          <form method="post" action="removeItem.cgi">
-             <input name="type" value="serie" type="hidden">
-             <input name="id" value="$id" type="hidden">
-             <input type="submit" value="Rimuovi Serie">
+             <input name="type" value="serie" type="hidden" />
+             <input name="id" value="$id" type="hidden" />
+             <input type="submit" value="Rimuovi Serie" />
          </form>
-         <form method="post" action="addSeason.cgi">
-             <input name="id" value="$id" type="hidden">
-             <input type="submit" value="Aggiungi stagione">
+         <form method="post" action="addSeason.cgi" >
+             <input name="id" value="$id" type="hidden" />
+             <input type="submit" value="Aggiungi stagione" />
          </form>
               <br />
 SERIE
 }
 	
 my $img=$node->find('image')->string_value;
-print "<img src=\"../$img\" class=\"preview\"/>";
+print "<img src=\"../$img\" class=\"preview\" alt=\"Locandina serie\"/>";
 my $description = $node->find('description')->string_value;
-print "<p>$description</p></br>";
+print "<p>$description</p><br />";
 my $seasons=$node->find('season');
 my @sortIdSeason;       # array contenente il numero delle stagioni
 my %sortSeason;         # key = number season, value = node season
