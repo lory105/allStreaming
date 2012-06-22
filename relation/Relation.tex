@@ -155,6 +155,8 @@
 
 \newcommand{\serie}{\textit{Serie Tv}}
 \newcommand{\film}{\textit{Film}}
+\newcommand{\all}{\textit{AllStreaming}}
+\newcommand{\n}{\noindent}
 
 
 \begin{document}
@@ -261,26 +263,116 @@ L'obbiettivo del sito è fornire un portale unitario per la visualizzazione di l
 Gli utenti potranno selezionare il video di loro interesse scegliendo tra quelli disponibili nelle apposite sezioni \film \ e \serie, e seguendo i link riportati, accedere ai più famosi portali di streaming per la visualizzazione del video scelto.\\
 
 
-Il sito realizzato è stato caricato nel server di tecnologie-web della facoltà, alle login \textbf{glorigio} e \textbf{lguerra}.
+\noindent Il sito realizzato è stato caricato nel server di tecnologie-web della facoltà, alle login \textbf{glorigio} e \textbf{lguerra}.\\
+
+\noindent E' possibile accedere al sito oltre che come visitatore, anche come amministratore o utente registrato con le seguenti credenziali:
+\begin{itemize}
+
+
+\item credenziali amministratore del sito:\\
+\textit{username:} \textbf{admin}\\
+\textit{password:} \textbf{password}
+\item credenziali utente registrato:\\
+\textit{username:} \textbf{jack}\\
+\textit{password:} \textbf{password}\\
+\end{itemize}
+
+
+\section{Considerazioni generali}
+
+Il sito web è stato pensato e realizzato al fine di rendere semplice ed intuitiva la navigazione al suo interno, permettendo così un agevole accesso alle informazini in esso contenute.\\
+Qesti aspetti fondamentali, che ogni sito ben struttutato dovrebbe avere, possono essere riassunti nei seguenti punti:
+\begin{itemize}
+\item \textit{reperibilità dei contenuti}
+\item \textit{accessibilità}
+\end{itemize}
+
+\n La reperibilità dei contenuti è un aspetto fondamentale in quanto permette agli utenti di poter trovare nel minor tempo possibile e nel minor numero di ''click'' possibili le informazioni ricercate rendendo così il sito molto immediato.\\
+
+\n E' stata posta inoltre particolare attenzione all' accessibilità del sito, dettata dalla considerazione che gli utenti visualizzatori potrebbero essere di svariate tipologie e condizioni fisiche.\\
+Gli utenti infatti potrebbero avere disabilità e quindi per esempio difficoltà nell'utilizzo dei normali strumenti come mouse o tastiera, oppure difficoltà visive che richiedono l'utilizzo degli screen reader per effettuare la navigazione internet.\\
+Ancora, gli utenti potrebbero accedere al sito attraveso vecchi browser, oppure dispositivi mobili come tablet o smartphone che dispongono di schermi relativamente piccoli per poter visualizzare comodamente il layout completo del sito.\\
+
+
+\section{Utenti}
+Gli utenti che possono visualizzare il sito sono stati suddivisi in tre differenti categorie:
+\begin{itemize}
+\item \textbf{utente visitatore}
+\item \textbf{utente registrato}
+\item \textbf{admin}
+\end{itemize}
+
+\n Al sito può accedere liberamente qualsiasi utente che desidera farne uso, non è infatti richiesta alcuna iscrizione al sito per potervi accedere. E' previstà però una limitazione per gli utenti visitatori che non sono registrati e loggati al sito, i quali non possono ne visualizzare i commenti ai video rilasciati dagli utenti registrati, ne vedere i profili di tali utenti.\\
+L'utente registrato è l'utente che ha deciso di iscriversi al sito attraverso l'apposita sezione di registrazione, creando il proprio profilo personale.\\
+E' previsto inoltre un utente admin che ha il compito di manutentore del sito; tra le varie funzionalità egli può eliminare utenti iscritti, inserire film serie Tv, e aggiungere a questi informazioni correlate come stagioni, episodi e link per la visualizzazione in streaming.
+
+
+\section{Pagine del sito}
+Per garantire una navigazione semplice e veloce, le pagine sono state suddivise per argomenti e in modo gerarchico garantendo così un accesso immediato alle sezioni desiderate.\\
+Inoltre in base alla tipologia di utente che accede al sito, potranno essere visualizzate differenti pagine.\\
+
+\subsection{Suddivisione delle pagine}
+Di seguito viene presentata in modo schematico la suddivisione della pagine alle quali possono accedervi gli utenti in base alla loro tipologia.
+
+\begin{itemize}
+
+\item \textbf{Suddivisione pagine per utente visitatore:}
+
+\begin{center}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.55]{images/mapVisitatore.png}
+\caption{Mappa utente visitatore}
+\end{figure}
+\end{center}
+
+
+\item \textbf{Suddivisione pagine del sito per utente registrato e admin:}
+
+\begin{center}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.55]{images/mapRegistrato.png}
+\caption{Mappa utente registrato e admin}
+\end{figure}
+\end{center}
+
+
+\end{itemize}
+
+
+\subsection{Pagine principali:}
+Per ogni pagina del sito, viene di seguito posta una presentazione e descrizione; in base alla tipologia di utente, una determinata pagina può non essere visibile, o visibile in modo differente.
+
+\begin{itemize}
+\item \textbf{Home}:\\
+Per gli utenti visitatori e registrati questa pagina presenta una anteprima di alcuni film proposti.\\
+Per l'utente admin invece questa pagina permette di visualizzare le informazini generali del sito come il numero degli utenti iscritti, il numero di film e serie inserite. Da qui inoltre l'admin ha la possibilità di visualizzare i link alle pagine per l'inserimento di un nuovo film o di una nuova serie.
+\item \textbf{Serie Tv}:\\
+Questa pagina è medesima per qualsiasi utente, e permette la visualizzazione dell'elenco di tutte le Serie Tv presenti nel sito. Una volta scelta la Serie Tv, cliccandovi si accede alla pagine specifica della serie.
+\item \textbf{Film}:\\
+Anche questa pagine è edesima per qualsiasi utente, e permette la ricerca un un film presente nel sito scegliendo per tipologia o per anno. Una volta scelto il film, cliccandovi si acced alla pagine specifica del film.
+
+\item \textbf{Registrazione}:\\
+Questa pagina è visualizzabile unicamente dagli utenti visualizzatori del sito e permette la registrazione. Viene proposta una form per l'inserimento dei campi come nome cognome username ecc..
+
+\item \textbf{Commenti}:\\
+Questa pagine può essere visualizzata unicamente dagli utenti registrati o dall'admin del sito. Permette la visualizzazione dei commenti rilasciati dagli utenti registrati. Per ogni commento viene indicato l'autore, il video al quale il commento si riverisce e il commento stesso.\\
+L'admin inoltre per ogni commento visualizzato ha a disposizione un particolare link che permette la rimozione del commento.
+
+\item \textbf{Profilo}:\\
+Questa pagina può essere visualizzata unicamente dagli utenti registrati e dall'admin. Permette la visualizzazione del proprio profilo o del profilo degli altri utenti. Da qui ogni utente può effettuare la rimozione della propria registrazione al sito, con l'automatica rimozione anche di tutti i propri commenti.\\
+\n Per l'admin non è prevista la propria cancellazione della registrazione, ma egli può rimuovere qualsiasi altro utente iscritto.
+
+\item \textbf{Chi siamo}:\\
+Questa pagina è visualizzabile da tutti gli utenti e permette di visualizzare le informazioni generali a riguardo del sito.
+
+
+\end{itemize}
 
 
 
-
-\section{Mappa del sito}
-suddivisione pagine\\
-schema logico/mappa\\
-
-home\\
-serie Tv -> serie\\
-film -> film\\
-Registrazione / Profilo \\
-
-aboutUS\\
-
-parlare di ogni pagina cosa fa/serve\\
-
-
-\section{Struttura delle pagine (layout)}
+\subsection{Struttura delle pagine: layout}
 layout normale (con immagine)\\
 layout smartphone (con immagine)\\
 layout stampa (con immagine)\\
