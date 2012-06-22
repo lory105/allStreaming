@@ -13,7 +13,7 @@
 
 - ultimi video commentati: rimpicciolendo la pagina, commentati scende
 
-
+- in chrome la registrazione non andava: il bottove invia non si accendeva mai
 
 
 
