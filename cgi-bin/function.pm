@@ -190,7 +190,7 @@ sub menu {
                     <div id="navigation">Ti trovi in : <b>$nav</b></div>
 MENU
 	
-	if($nav eq "Home"){
+	if($nav eq "Home" && (function->checkIsAdmin() eq "false")){
 			print "<h1 style=\"	text-align:center; margin-bottom:0em;\">Film proposti</h1>";
 	}
 	
