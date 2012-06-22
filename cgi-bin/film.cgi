@@ -47,9 +47,9 @@ FILM
 }
 
 my $img=$node->find('image')->string_value;
-print "<img src=\"../$img\" class=\"preview\"/>";
+print "<img src=\"../$img\" class=\"preview\" alt=\"Locandina film\"/>";
 my $description = $node->find('description')->string_value;
-print "<p>$description</p></br>";
+print "<p>$description</p><br />";
 my $address=$node->find('address');
 foreach my $try ($address->get_nodelist) {
     my $idLink=$try->findvalue('@idLink')->string_value;
