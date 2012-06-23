@@ -33,7 +33,7 @@ use Switch;
 use function;
 
 use Encode;
-use Unicode::String qw(utf8 latin1);
+#use Unicode::String qw(utf8 latin1);
 
 #####################################  file db xml
 # path db films
@@ -57,22 +57,24 @@ my $link = "poo";
 my $empty;
 
 
-my $string = "ioèo";
+#my $string = "ioèo";
 
-print $string;
+#print $string;
 
-print encode("utf8", $string);
+#print encode("utf8", $string);
 
 
-=o
-my $id= "4";
+binmode(STDOUT, ":utf8");
+
+my $id= "19";
 my $node=function->findFilm( "//collection/film[\@id=\"$id\"]")->get_node(1);
-my $string=$node->find('description')->string_value;
+my $tit=$node->find('title')->string_value;
+my $des=$node->find('description')->string_value;
 
 
-print $string;
+print $tit;
    
-#print decode("iso-8859-1", $string); 
+print decode("iso-8859-1", $tit); 
 
 
    # my $description= encode("utf8", $descriptionn);

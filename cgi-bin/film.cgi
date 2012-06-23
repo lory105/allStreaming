@@ -9,11 +9,22 @@ use CGI::Carp qw/fatalsToBrowser warningsToBrowser/;
 use CGI::Session ( '-ip_match' );
 
 
+# LUCA !!!!!!!!!!!!!!!!!!!!!!!! #################################
+binmode(STDOUT, ":utf8");
+
+
 my $var=new CGI;
 my $id = $var->param('id');
 my $node=function->findFilm( "//collection/film[\@id=\"$id\"]")->get_node(1);
 my $title=$node->find('title')->string_value;
+
+# prove per vedere risultati ####################################
 $title=function->convert($title);
+#$title=function->convert("però");
+#$title= "però";
+
+#binmode(STDOUT, ":utf8");
+
 
 function->header($title);
 function->left("Film", $title );
@@ -31,16 +42,16 @@ if( $isAdmin eq "true"){
     print<<FILM
          <form method="post" action="removeItem.cgi">
          <fieldset style="border:0em;">
-             <input name="type" value="film" type="hidden">
-             <input name="id" value="$id" type="hidden">
-             <input type="submit" value="Rimuovi Film">
+             <input name="type" value="film" type="hidden" />
+             <input name="id" value="$id" type="hidden" />
+             <input type="submit" value="Rimuovi Film" />
          </fieldset>
          </form>
          <form method="post" action="addLink.cgi">
          <fieldset style="border:0em;">
-             <input name="type" value="film" type="hidden">
-             <input name="id" value="$id" type="hidden">
-             <input type="submit" value="Aggiungi Link">
+             <input name="type" value="film" type="hidden" />
+             <input name="id" value="$id" type="hidden" />
+             <input type="submit" value="Aggiungi Link" />
          </fieldset>
          </form>
            <br />
@@ -63,10 +74,10 @@ foreach my $try ($address->get_nodelist) {
         print<<FILM
                <form method="post" action="removeItem.cgi">
 				<fieldset style="border:0">
-                   <input name="type" value="link" type="hidden">
-                   <input name="idFilm" value="$id" type="hidden">
-                   <input name="idLink" value="$idLink" type="hidden">
-                   <input type="submit" value="Rimuovi Link">
+                   <input name="type" value="link" type="hidden" />
+                   <input name="idFilm" value="$id" type="hidden" />
+                   <input name="idLink" value="$idLink" type="hidden" />
+                   <input type="submit" value="Rimuovi Link" />
                  </fieldset>
                </form>
 FILM
