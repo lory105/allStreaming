@@ -28,7 +28,7 @@ else{
 			<h1>Inserimento nuovo film</h1>
 						<form name="addFilm" method="post" action="checkFilm.cgi" enctype="multipart/form-data">
 							<fieldset>
-								<legend align="center" >Compila tutti i campi</legend>
+								<legend>Compila tutti i campi</legend>
 
 								<span class="sx"><label for="title">Title:</label></span>
 								<span class="dx"><input type="text" id="title" name="title" value="title" onblur="checkTitle();" /></span><span class="wrongValue" id="titleError"><img src="../images/no.gif" alt="errore"/></span><span class="correctValue" id="titleCorrect"><img src="../images/ok.gif" alt="ok"/></span>
@@ -59,7 +59,7 @@ else{
 								<br />
 								<br />
 								<hr />							
-								<button type="submit" id="newFilm" disabled="false">Invia</button>				
+								<button type="submit" id="newFilm" disabled="disabled">Invia</button>				
 							</fieldset>
 						</form>
 		</div>

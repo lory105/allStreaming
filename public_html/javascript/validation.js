@@ -234,13 +234,13 @@ function checkDescrSerie() {
 }
 
 function total() {
-	document.getElementById("end").disabled=false;
-	var test = name+surname+mail+user+psw+confirm;
+	document.getElementById("end").disabled="disabled";
+	var test = parseInt(name)+parseInt(surname)+parseInt(mail)+parseInt(user)+parseInt(psw)+parseInt(confirm);
 	if(test == 6){
-		document.getElementById("end").disabled=false;
+		document.getElementById("end").disabled = !document.getElementById("end").disabled;
 	}
 	else{
-		document.getElementById("end").disabled =true;
+		document.getElementById("end").disabled="disabled";
 	}
 }
 
@@ -270,24 +270,27 @@ function checkDate(){
 }
 
 function totalFilm() {
-	document.getElementById("newFilm").disabled=false;
-	var test = title+descr+data;
+
+	document.getElementById("newFilm").disabled="disabled";
+	var test = parseInt(title)+parseInt(descr)+parseInt(data);
 	if(test == 3){
-		document.getElementById("newFilm").disabled=false;
+		document.getElementById("newFilm").disabled = !document.getElementById("newFilm").disabled;
 	}
 	else{
-		document.getElementById("newFilm").disabled =true;
+		document.getElementById("newFilm").disabled="disabled";
 	}
+	
 }
 
 function totalSerie() {
-	document.getElementById("newSerie").disabled=false;
-	var test = title+descr;
+
+	document.getElementById("newSerie").disabled="disabled";
+	var test = parseInt(title)+parseInt(descr);
 	if(test == 2){
-		document.getElementById("newSerie").disabled=false;
+		document.getElementById("newSerie").disabled = !document.getElementById("newSerie").disabled;
 	}
 	else{
-		document.getElementById("newSerie").disabled =true;
+		document.getElementById("newSerie").disabled="disabled";
 	}
 	
 }
@@ -329,14 +332,17 @@ function checkUrlLink() {
 }
 
 function totalLink() {
-	document.getElementById("newLink").disabled=false;
-	var test = title+url;
+
+	document.getElementById("newLink").disabled="disabled";
+	var test = parseInt(title)+parseInt(url);
 	if(test == 2){
-		document.getElementById("newLink").disabled=false;
+		document.getElementById("newLink").disabled = !document.getElementById("newLink").disabled;
 	}
 	else{
-		document.getElementById("newLink").disabled =true;
+		document.getElementById("newLink").disabled="disabled";
 	}
+	
+	
 }
 
 

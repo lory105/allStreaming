@@ -207,7 +207,7 @@ anno accademico 2011-2012}
 \rule[-1.5mm]{0mm}{0.5cm}
 \textbf{Autori}& \underline{Lorigiola Giacomo} [ 592992 ]\\
 & \underline{Spiga Gabriele} [592141]\\
-& \underline{Luca Guerra} [???]\\
+& \underline{Luca Guerra} [591394]\\
 \rule[-1.5mm]{0mm}{0.5cm}
 \textbf{Destinatario}&Prof.essa Ombretta Gaggi\\
 \end{tabular}
@@ -225,7 +225,7 @@ anno accademico 2011-2012}
 
 \textbf{{\Large{Sommario}}}
 
-Questo documento intende presentare una analisi al progetto di Tecnologie Web intitolato "AllStreaming".
+Questo documento intende presentare una analisi del progetto per il corso di Tecnologie Web intitolato "AllStreaming", giustificando le scelte architetturali e tecnologiche intraprese in corso di progetto.
 
 
 \vspace*{0.2cm} % il vertical space va preceduto da una riga vuota!!!
@@ -259,9 +259,10 @@ Questo documento intende presentare una analisi al progetto di Tecnologie Web in
 
 
 \section{Introduzione}
-L'obbiettivo del sito è fornire un portale unitario per la visualizzazione di link attraverso i quali poter accedere alla visualizzazione in streaming di contenuti video come film o serie Tv.
-Gli utenti potranno selezionare il video di loro interesse scegliendo tra quelli disponibili nelle apposite sezioni \film \ e \serie, e seguendo i link riportati, accedere ai più famosi portali di streaming per la visualizzazione del video scelto.\\
-
+Il tema scelto ci sembra quanto mai attuale, in quanto da 3 anni a questa parte sono nati innumerevoli portali che forniscono un servizio simile a quello che proponiamo, costituendo una valida e soprattutto più economica alternativa a tradizionali abbonamenti pay-per-view.
+L'obiettivo del sito è fornire un portale unitario per la visualizzazione di link attraverso i quali poter accedere alla visualizzazione in streaming di contenuti video come film o serie Tv.
+Gli utenti potranno selezionare il video di loro interesse scegliendo tra quelli disponibili nelle apposite sezioni \film \ e \serie, e seguendo i link riportati, accedere ai più gettonati siti di hosting per la visualizzazione del video scelto.\\
+Importante notare che il tutto è perfettamente legale, visto che come specificato nella sezione "Chi Siamo", il sito si limita a reindirizzare l'utente verso i contenuti, i quali non sono ospitati dal server stesso.
 
 \noindent Il sito realizzato è stato caricato nel server di tecnologie-web della facoltà, alle login \textbf{glorigio} e \textbf{lguerra}.\\
 
@@ -281,17 +282,17 @@ Gli utenti potranno selezionare il video di loro interesse scegliendo tra quelli
 \section{Considerazioni generali}
 
 Il sito web è stato pensato e realizzato al fine di rendere semplice ed intuitiva la navigazione al suo interno, permettendo così un agevole accesso alle informazini in esso contenute.\\
-Qesti aspetti fondamentali, che ogni sito ben struttutato dovrebbe avere, possono essere riassunti nei seguenti punti:
+Questi aspetti fondamentali, che ogni sito ben struttutato dovrebbe avere, possono essere riassunti nei seguenti punti:
 \begin{itemize}
 \item \textit{reperibilità dei contenuti}
 \item \textit{accessibilità}
 \end{itemize}
 
-\n La reperibilità dei contenuti è un aspetto fondamentale in quanto permette agli utenti di poter trovare nel minor tempo possibile e nel minor numero di ''click'' possibili le informazioni ricercate rendendo così il sito molto immediato.\\
+\n La reperibilità dei contenuti è un aspetto fondamentale in quanto permette agli utenti di poter trovare nel minor tempo possibile e nel minor numero di ''click'' possibili le informazioni ricercate rendendo così il sito molto immediato. L'utilizzo ottimizzato delle locandine rende questa operazione molto più semplice\\
 
 \n E' stata posta inoltre particolare attenzione all' accessibilità del sito, dettata dalla considerazione che gli utenti visualizzatori potrebbero essere di svariate tipologie e condizioni fisiche.\\
-Gli utenti infatti potrebbero avere disabilità e quindi per esempio difficoltà nell'utilizzo dei normali strumenti come mouse o tastiera, oppure difficoltà visive che richiedono l'utilizzo degli screen reader per effettuare la navigazione internet.\\
-Ancora, gli utenti potrebbero accedere al sito attraveso vecchi browser, oppure dispositivi mobili come tablet o smartphone che dispongono di schermi relativamente piccoli per poter visualizzare comodamente il layout completo del sito.\\
+Gli utenti infatti potrebbero avere disabilità e quindi per esempio difficoltà nell'utilizzo dei normali strumenti come mouse o tastiera, oppure difficoltà visive che richiedono l'utilizzo degli screen reader per effettuare la navigazione internet; sono infatti disponibili funzioni per saltare la lettura dei menu o delle parti di testo che appaiono in ogni pagina, al fine di velocizzare l'accesso ai contenuti veri e propri.\\
+Ancora, gli utenti potrebbero accedere al sito attraveso vecchi browser, oppure dispositivi mobili come tablet o smartphone che dispongono di schermi relativamente piccoli per poter visualizzare comodamente il layout completo del sito, per questo sono disponibili diversi fogli di stile. Infatti in fase di progettazione sono state tenute completamente separate le parti di struttura e contenuto da quelle di presentazione. \\
 
 
 \section{Utenti}
@@ -302,9 +303,9 @@ Gli utenti che possono visualizzare il sito sono stati suddivisi in tre differen
 \item \textbf{admin}
 \end{itemize}
 
-\n Al sito può accedere liberamente qualsiasi utente che desidera farne uso, non è infatti richiesta alcuna iscrizione al sito per potervi accedere. E' previstà però una limitazione per gli utenti visitatori che non sono registrati e loggati al sito, i quali non possono ne visualizzare i commenti ai video rilasciati dagli utenti registrati, ne vedere i profili di tali utenti.\\
+\n Al sito può accedere liberamente qualsiasi utente che desidera farne uso, non è infatti richiesta alcuna iscrizione al sito per potervi accedere. E' previstà però una limitazione per gli utenti visitatori che non sono registrati e autenticati nel sito, i quali non possono nè visualizzare i commenti ai video rilasciati dagli utenti registrati, nè vedere i profili di tali utenti.\\
 L'utente registrato è l'utente che ha deciso di iscriversi al sito attraverso l'apposita sezione di registrazione, creando il proprio profilo personale.\\
-E' previsto inoltre un utente admin che ha il compito di manutentore del sito; tra le varie funzionalità egli può eliminare utenti iscritti, inserire film serie Tv, e aggiungere a questi informazioni correlate come stagioni, episodi e link per la visualizzazione in streaming.
+E' previsto inoltre un utente admin che ha il compito di manutentore del sito; tra le varie funzionalità egli può eliminare utenti iscritti, inserire film serie Tv, aggiungere a questi informazioni correlate come stagioni, episodi e link per la visualizzazione in streaming ed eliminare eventuali commenti inopportuni.
 
 
 \section{Pagine del sito}
@@ -321,7 +322,7 @@ Di seguito viene presentata in modo schematico la suddivisione della pagine alle
 \begin{center}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.55]{images/mapVisitatore.png}
+\includegraphics[scale=0.60]{images/mapVisitatore.png}
 \caption{Mappa utente visitatore}
 \end{figure}
 \end{center}
@@ -332,7 +333,7 @@ Di seguito viene presentata in modo schematico la suddivisione della pagine alle
 \begin{center}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.55]{images/mapRegistrato.png}
+\includegraphics[scale=0.60]{images/mapRegistrato.png}
 \caption{Mappa utente registrato e admin}
 \end{figure}
 \end{center}
@@ -384,7 +385,7 @@ Di seguito viene riportata una rappresentazione schematica del layout generale d
 \begin{center}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{images/baseLayout.png}
+\includegraphics[scale=0.8]{images/baseLayout.png}
 \caption{Schema layout base}
 \end{figure}
 \end{center}
@@ -427,9 +428,13 @@ right(nav) center left(ultimi commentati, novità, utenti iscritti)\\
 footer\\
 
 
+\section{Reperibilità delle pagina dai motori di ricerca}
+
+In un sito come quello presentato, è fondamentale il posizionamento assegnatogli dai diversi motori di ricerca. Tuttavia, diversamente da un sito tradizionale, un utente generico non sarà interessato a cercare "AllStreaming" (per esempio su Google), bensì è molto più probabile che cerchi il titolo del film o della serie a cui è interessato seguito dalla keyword "streaming".\\ 
+Un esempio pratico potrebbe essere "Alla ricerca di Nemo streaming Ita"; per questo i metatag keyword presenti all'interno di ogni pagina film o serie, sono generati dinamicamente, prevedendo anche il titolo della stessa.
 
 \section{Tecnologie/Struttura ??}
-xhtl css js perl
+Lo cavemo?
 
 
 

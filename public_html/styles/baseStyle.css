@@ -396,3 +396,7 @@ a:visited{
 .validation{
 	float:left;
 }
+
+legend{
+   color:red;
+}

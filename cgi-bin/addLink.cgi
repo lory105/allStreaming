@@ -35,7 +35,7 @@ else{
 			 <h1>Aggiunta nuovo Link</h1>
 			 <form method="post" action="checkLink.cgi">
 			 	<fieldset>
-					<legend align="center" >Inserisci tutti i campi</legend>
+					<legend>Inserisci tutti i campi</legend>
 					<input name="type" value="film" type="hidden">
 					<input name="id" value="$id" type="hidden">			
 					<label for="title">Titolo:</label>
@@ -44,7 +44,7 @@ else{
 					<label for="link">Link:</label>
 					<input type="text" name="link" id="link" onblur="checkUrlLink();"/>
 					<br />
-					<input type="submit" value="Invia" id="newLink" disabled="false">
+					<button type="submit" id="newLink" disabled="disabled">Invia</button>	
 				</fieldset>
 			 </form>
 			</div>

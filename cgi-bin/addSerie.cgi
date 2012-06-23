@@ -27,7 +27,7 @@ else{
 			<h1>Inserimento nuova serie</h1>
 						<form name="addSerie" method="post" action="checkSerie.cgi" enctype="multipart/form-data">
 							<fieldset>
-								<legend align="center" >Compila tutti i campi</legend>
+								<legend>Compila tutti i campi</legend>
 								<span class="sx"><label for="title">Title:</label></span>
 								<span class="dx"><input type="text" id="title" name="title" value="title" onblur="checkTitleSerie();" /></span><span class="wrongValue" id="titleError"><img src="../images/no.gif" alt="errore"/></span><span class="correctValue" id="titleCorrect"><img src="../images/ok.gif" alt="ok"/></span>
 								<br />
@@ -42,7 +42,7 @@ else{
 								<br />
 								<br />
 								<hr />							
-								<button type="submit" id="newSerie" disabled="false">Invia</button>				
+								<button type="submit" id="newSerie" disabled="disabled">Invia</button>				
 							</fieldset>
 						</form>
 		</div>

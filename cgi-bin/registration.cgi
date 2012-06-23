@@ -26,7 +26,7 @@ else{
 			<h1>Registrazione nuovo utente</h1>
 						<form name="registration" method="post" action="checkRegistration.cgi" enctype="multipart/form-data">
 							<fieldset>
-								<legend align="center" >Inserisci tutti i campi</legend>
+								<legend>Inserisci tutti i campi</legend>
 
 								<span class="sx"><label for="name">Name:</label></span>
 								<span class="dx"><input type="text" name="name" id="name" value="nome" onblur="checkName();"  /></span><span class="wrongValue" id="nameError"><img src="../images/no.gif" alt="errore"/></span><span class="correctValue" id="nameCorrect"><img src="../images/ok.gif" alt="ok"/></span>
@@ -56,7 +56,7 @@ else{
 								<span class="dx"><input type="file" name="photo" id="avatar" value=""/></span>
 								<br />
 								<hr />
-								<button type="submit" id="end" disabled="false">Invia</button>				
+								<button type="submit" id="end" disabled="disabled">Invia</button>				
 							</fieldset>
 						</form>
 

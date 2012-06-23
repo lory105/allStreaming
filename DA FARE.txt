@@ -1,20 +1,19 @@
 
-- film proposti compare nel pannello admin: Da togliere
+- film proposti compare nel pannello admin: Da togliere /fatto
 
-- nel link al smartCss come fa a capire quando deve essere applicato?? senza i pezzi 480 ecc ( Lory)
+- nel link al smartCss come fa a capire quando deve essere applicato?? senza i pezzi 480 ecc ( Lory) /non va se lo metti
 
-- sistemare registrazione: la prima psw è semrpe verde, la seconda semrpe rossa
+- sistemare registrazione: la prima psw è semrpe verde, la seconda semrpe rossa /fatto
 
-- validare colore!!
+- validare colore!! /da fare
 
-- validare xml (dovrebbe essere a posto)
+- validare xml (dovrebbe essere a posto) /speremo
 
-- validare css
+- validare css /a posto
 
-- ultimi video commentati: rimpicciolendo la pagina, commentati scende
+- ultimi video commentati: rimpicciolendo la pagina, commentati scende / da mi no, luni vedemo caso mai
 
-- in chrome la registrazione non andava: il bottove invia non si accendeva mai
-
+- in chrome la registrazione non andava: il bottove invia non si accendeva mai / un delirio ma adesso va
 
 
 
