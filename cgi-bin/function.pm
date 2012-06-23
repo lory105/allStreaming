@@ -30,15 +30,16 @@ my $commentsXml = "../xml/comments.xml";
 
 
 sub header {
-	print "Content-type: text/html\n\n";
+	print"Content-type: text/html\n\n";
 	my $information = $_[1];
 	if ($information eq ""){
-	print <<HEADER;	
-	<?xml version="1.0" encoding="iso-8859-1"?>
+	print <<HEADER;
+<?xml version="1.0" encoding="UTF-8"?><!-- <?xml version="1.0" encoding="iso-8859-1"?> -->
 	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-	<html xmlns="http://www.w3.org/1999/xhtml">
+	<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
 		<head>
 			<title>AllStreaming</title>
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 			<meta name="description" content="Streaming film e serie TV" />
 			<meta name="keywords" content="streaming, film, serie TV" />
 			<link rel="shortcut icon" href="images/logo.ico" type="image/x-icon" />
@@ -52,11 +53,12 @@ HEADER
 	}
 	else{
 	print <<META;
-	<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="iso-8859-1"?>
 	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 	<html xmlns="http://www.w3.org/1999/xhtml">
 		<head>
 			<title>AllStreaming - $information</title>
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 			<link rel="shortcut icon" href="images/logo.ico" type="image/x-icon" />
 			<link rel="icon" href="images/logo.ico" type="image/x-icon" />
 			<link rel="stylesheet" media="screen" href="../styles/baseStyle.css" type="text/css" />
