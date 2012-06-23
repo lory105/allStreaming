@@ -15,11 +15,13 @@
 
 - in chrome la registrazione non andava: il bottove invia non si accendeva mai / un delirio ma adesso va
 
+- visualizzando la pagina senza immagini:
+	-mettere spazio tra i due link delle validazioni w3c nel footer ( dalla teoria vuole spazi tra 2 link vicini) (spazio= &nbsp;)
+	- mettere una scritta nel bottone-immagine di login!!
 
 
-
-
-
+- inserire tabindex in ordine giusto ( si possono vedere con la web develoer di firefox: informazioni > tabindex )
+ 
 
 
 

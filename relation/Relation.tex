@@ -312,7 +312,7 @@ E' previsto inoltre un utente admin che ha il compito di manutentore del sito; t
 Per garantire una navigazione semplice e veloce, le pagine sono state suddivise per argomenti e in modo gerarchico garantendo così un accesso immediato alle sezioni desiderate.\\
 Inoltre in base alla tipologia di utente che accede al sito, potranno essere visualizzate differenti pagine.\\
 
-\subsection{Suddivisione delle pagine}
+\subsection{Suddivisione}
 Di seguito viene presentata in modo schematico la suddivisione della pagine alle quali possono accedervi gli utenti in base alla loro tipologia.
 
 \begin{itemize}
@@ -342,8 +342,8 @@ Di seguito viene presentata in modo schematico la suddivisione della pagine alle
 \end{itemize}
 
 
-\subsection{Pagine principali:}
-Per ogni pagina del sito, viene di seguito posta una presentazione e descrizione; in base alla tipologia di utente, una determinata pagina può non essere visibile, o visibile in modo differente.
+\subsection{Descrizione:}
+Per ogni pagina principale del sito, viene di seguito posta una presentazione e descrizione; in base alla tipologia di utente, una determinata pagina può non essere visibile, o visibile in modo differente.
 
 \begin{itemize}
 \item \textbf{Home}:\\
@@ -373,7 +373,7 @@ Questa pagina è visualizzabile da tutti gli utenti e permette di visualizzare l
 
 
 
-\subsection{Struttura delle pagine: layout e css}
+\subsection{Struttura: layout e css}
 Per il sito realizzato solo previsti tre differenti layout di base realizzati con tre figli di stile, che vengono applicati a seconda delle occorrenze.
 
 \begin{itemize}
@@ -392,6 +392,10 @@ Di seguito viene riportata una rappresentazione schematica del layout generale d
 
 L'Header è la parte superiore di presentazione del sito, troviamo poi il nav, parte molto importante perchè aiuta la navigazione indicando per ogni pagina la posizione corrente.\\
 A destra è situto il Menu principale per la navigazione, mentre nel Center è presentato il contenuto fondamentale della pagina visualizzata. A sinistra vi sono delle parti informative sugli ultimi video commentati, sulle novità e gli utenti iscritti, mentre sotto a chiusura è posto il Footer.
+
+
+\red{parlare del layout fluido ed elastico e mettere immagini della pagina con i ridimensionamenti}
+
 
 
 \item \textbf{Layout per la stampa:}\\
@@ -414,7 +418,7 @@ Sono stati pertanto tolti Left e Right contenenti il primo il menù del sito non
 
 \item \textbf{Layout per dispositivi smartphone:}\\
 Per la visualizzazione del sito attraverso dispositivi portatili, viene applicato un layout apposito attraverso il foglio di stile del file \textit{smartStyle.css}. Questo layout permette la visualizzazione dei contenuti delle pagine del sito in una suddivisione dello spazio migliorata; i dispositivi portatili infatti dispondono di dimensioni dello schermo molto ridotte e va pertanto creato un layout che si articoli in senso verticale.\\
-E' stato pertanto mantenuto l'Header, e il Nav, mentre il Left
+E' stato pertanto creato un layout verticale, nel quale è stato mantenuto l'Header e il Nav, mentre il Left contenente il menu è stato posto sotto il Nav. Sotto il Nav possiamo trovare il Center e il Footer. Il Right è stato tolto in quanto non contiene informazioni principali basilari.
 
 
 \begin{center}
@@ -427,12 +431,6 @@ E' stato pertanto mantenuto l'Header, e il Nav, mentre il Left
 
 \end{itemize}
 
-
-
-suddivisione pagina:\\
-header\\
-right(nav) center left(ultimi commentati, novità, utenti iscritti)\\
-footer\\
 
 
 \section{Reperibilità delle pagina dai motori di ricerca}
@@ -454,7 +452,41 @@ Tutte le pagine condividono lo stesso file ''.css'' per lo stile, intercambiabil
 \end{center}
 
 \section{Accessibilità}
-Lory scrivi qua
+
+Per garantire accessibilità al sito, di cui è stato menzionato in apertura del documento, sono state utilizzate svariate strategie.
+Innanzi tutto la struttura della pagina è chiara e facilmente intuitiva, senza presentare sovraccaricamento delle informazioni.
+I layout sono fluidi ed elastici e permettono il ridimensionamento della pagina, per maggiori informazioni fare riferimento alla sezione  Pagine del sito > Struttura: layout e css
+
+E' stato utilizzato un carattere del testo chiaro, senza utilizzo di corsivi poco intuitivi, testi lampegginati o scorrevoli che potrebbero essere di difficile lettura.\\
+Non vi sono caratteri eccessivamente piccoli, e non sono presenti parole sottolineate diverse da link.\\
+
+I link sono facilmente riconoscibili poichè seguono gli standard web e non soluzioni proprietarie che possono disorientare l'utente: i link non visitati sono di colore blu mentre quelli visitati presentano il conore viola scuro.\\
+
+Attraverso l'utilizzo di \textbf{tabindex} è stato dato un ordine di tabulazione ai link per accedervi con l'utilizzo del tab.\\
+
+Non abbiamo messo le \textbf{accesskey} perchè..\\
+\red{(LUCAAA completaaaa!!)}\\
+
+Sono stati inseriti suggerimenti per gli screen reader e nascosto parti, in modo tale da rendere più veloce la lettura da parte di questi dispositivi utilizzati dagli utenti con difficoltà visive.\\
+hidden; display:none;\\
+(LUCAAA completaaaa scrivendo + nel dettagli cosa abbiamo fatto!!)\\
+
+
+\n Le immagini sono state inserite con il tag \textbf{img} sono nel caso in cui queste siano state ritenite come parte integrante del contenuto.. per esempio....
+\red{(LUCAAA completaaaa!!)}\\
+Mentre le immagini che riguardano il solo layout, sono state inserite attraverso il foglio di stile con l'utilizzo del comando \textbf{backgoround}, come per esempio l'immagine dell'Header.\\
+
+E' stato fatto ampio uso del comando \textbf{alt} per le immagini, attribuendo contenuto vuoto per le immagini di layout, e contenuto significativo per le immagini ritenute importanti per la comprensione della pagina.\\
+
+Tutte le form presenti nel sito sono state rese accessibili grazie alle seguenti attenzioni:\\
+sono state corredate con il campo \textbf{title} per fornire informazioni aggiuntive, i campi appartenenti ad una stessa form sono stati raggruppati con il tag \textbf{fildset} ed inoltre ad ogni campo è stata inserita una etichetta grazie all'utilizzo delle \textbf{label}, facilitando così l'inserimento dei valori.\\
+
+Particolare attenzione è stata data anche al colore utilizzato, per garantire accessibilità anche agli utenti che non sono in grado di distinguere o visualizzare il colore. Le informazioni principali infatti sono state vincolare da colore, e nonostante ciò, sono state comunque rafforzate con grasseto o sottolineatura per i link.
+Inoltre i rapporti di contrasto all'interno della pagina rispettano valori accettabili,... 
+\ref{testare con il validatore colori IE accessibility toolbar da fare lun in laboratorio}
+Altre informazioni sui colori sono riportate nella sezione \textit{Validazioni}.
+
+
 
 \section{Validazioni}
 Tutti i file sono stati validati con gli strumenti on-line dl w3c, sia per la parte html che per la parte css.
