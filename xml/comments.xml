@@ -52,11 +52,7 @@
 		<typeVideo>film</typeVideo>
 		<idVideo>9</idVideo>
 		<date>2012-06-21T13:35:45</date>
-<<<<<<< HEAD
-		<content>Un pÃ² cruento</content>
-=======
 		<content>Un pò cruento</content>
->>>>>>> 55da98cedfe34a9c2b7ec4e994c5a4231ea51a45
 	</comment>
 	<comment id="15">
 		<idUser>1</idUser>
@@ -77,11 +73,7 @@
 		<typeVideo>film</typeVideo>
 		<idVideo>11</idVideo>
 		<date>2012-06-21T13:36:58</date>
-<<<<<<< HEAD
-		<content>La trama Ã¨ un pÃ² stupida</content>
-=======
 		<content>La trama è un pò stupida</content>
->>>>>>> 55da98cedfe34a9c2b7ec4e994c5a4231ea51a45
 	</comment>
 	<comment id="18">
 		<idUser>2</idUser>
@@ -209,7 +201,7 @@
 		<typeVideo>serie</typeVideo>
 		<idVideo>1</idVideo>
 		<date>2012-06-21T22:23:27</date>
-		<content>Impressionante come serie, Ã¨ spettacolare..</content>
+		<content>Impressionante come serie, è spettacolare..</content>
 	</comment>
 
 	

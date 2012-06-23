@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="iso-8859-1"?>
 <collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org films.xsd">
-=======
-<?xml version="1.0" encoding="UTF-8"?>
-<collection xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://allStreaming.altervista.org" xs:schemaLocation="http://allStreaming.altervista.org films.xsd" >
->>>>>>> 55da98cedfe34a9c2b7ec4e994c5a4231ea51a45
+
 
 <film id="2">
 <title>The Shining</title>
@@ -29,7 +25,7 @@
 </film><film id="4">
 <title>Transformers</title>
 <image>images/films/4.jpg</image>
-<description>La lotta tra il bene (gli Autobots) e il male (i Decepticons), dal pianeta Cybertron si è spostata sulla Terra dove milioni di anni fa è caduto il Cubo di Energon, il potere supremo capace di infondere la vita ai Transformers. Sam Witwicky - nipote dell'esploratore che per primo, durante una missione nel Circolo Polare Artico sul finire del 1800, ebbe a che fare con Megatron, il capo dei Decepticons - è l'unico che può aiutare Optimus Prime e i suoi Autobots a ritrovare il cubo e distruggerlo prima che finisca nelle mani dei nemici.</description>
+<description>La lotta tra il bene (gli Autobots) e il male (i Decepticons), dal pianeta Cybertron si � spostata sulla Terra dove milioni di anni fa � caduto il Cubo di Energon, il potere supremo capace di infondere la vita ai Transformers. Sam Witwicky - nipote dell'esploratore che per primo, durante una missione nel Circolo Polare Artico sul finire del 1800, ebbe a che fare con Megatron, il capo dei Decepticons - è l'unico che può aiutare Optimus Prime e i suoi Autobots a ritrovare il cubo e distruggerlo prima che finisca nelle mani dei nemici.</description>
 <date>2009-09-24</date>
 <family>Action</family>
 <address idLink="1">
@@ -60,7 +56,7 @@
 </film><film id="3">
 <title>Sin City</title>
 <image>images/films/3.jpg</image>
-<description>Il film comincia con una scena ambientata in una notte di pioggia, su una balconata di un grattacielo della violenta e corrotta Sin City, una ragazza (Marley Shelton) impegnata ad ammirare il panorama notturno della città viene avvicinata e successivamente sedotta da un affascinante ragazzo (Josh Hartnett)...</description>
+<description>Il film comincia con una scena ambientata in una notte di pioggia, su una balconata di un grattacielo della violenta e corrotta Sin City, una ragazza (Marley Shelton) impegnata ad ammirare il panorama notturno della citt� viene avvicinata e successivamente sedotta da un affascinante ragazzo (Josh Hartnett)...</description>
 <date>2006-09-24</date>
 <family>Action</family>
 
@@ -70,7 +66,7 @@
 </address>
 </film>
 <film id="7">
-<title>Le ali della libertà</title>
+<title>Le ali della libert�</title>
 <image>images/films/7.jpg</image>
 <description>Dirigente bancario, Andy Dufresne, condannato malgrado la sua innocenza all'ergastolo nella prigione di Stato di Shawshank per l'assassinio della moglie e del suo amante, affronta il carcere con coraggio e calma: la speranza e la riflessione lo assistono sempre...
 </description>
@@ -171,7 +167,7 @@
 </address>
 </film>
 <film id="16">
-<title>Non è un paese per vecchi</title>
+<title>Non � un paese per vecchi</title>
 <image>images/films/16.jpg</image>
 <description>Llewelyn Moss trova, in una zona desertica, un camioncino circondato da cadaveri. Il carico è di eroina e in una valigetta ci sono due milioni di dollari. Llewelyn è una persona onesta ma quel denaro lo tenta troppo. Decide di tenerselo dando il via a una reazione a catena che neppure il disilluso sceriffo Bell può riuscire ad arginare. Moss deve fuggire, in particolare, le 'attenzioni' di un sanguinario e misterioso inseguitore.</description>
 <date>2007-05-14</date>
@@ -196,10 +192,6 @@
 <link>http://www.movshare.net/video/3som85qhbv6ab</link>
 </address>
 </film>
-
-	
-<<<<<<< HEAD
-	
 	<film id="18">
 		<title>title�</title>
 		<image>images/films/18.jpg</image>
@@ -208,6 +200,4 @@
 		<family>Thriller</family>
 	</film>
 </collection>
-=======
-</collection>
->>>>>>> 55da98cedfe34a9c2b7ec4e994c5a4231ea51a45
+
