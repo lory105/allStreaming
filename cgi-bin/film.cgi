@@ -13,6 +13,7 @@ my $var=new CGI;
 my $id = $var->param('id');
 my $node=function->findFilm( "//collection/film[\@id=\"$id\"]")->get_node(1);
 my $title=$node->find('title')->string_value;
+$title=function->convert($title);
 
 function->header($title);
 function->left("Film", $title );
@@ -49,11 +50,13 @@ FILM
 my $img=$node->find('image')->string_value;
 print "<img src=\"../$img\" class=\"preview\" alt=\"Locandina film\"/>";
 my $description = $node->find('description')->string_value;
+$description=function->convert($description);
 print "<p>$description</p><br />";
 my $address=$node->find('address');
 foreach my $try ($address->get_nodelist) {
     my $idLink=$try->findvalue('@idLink')->string_value;
     my $linkname=$try->find('linkName')->string_value;
+    $linkname=function->convert($linkname);
     my $link=$try->find('link')->string_value;
     print "<p><b>Link:</b> <a href=\"$link\" target=\"_blank\">$linkname</a></p>";
     if( $isAdmin eq "true"){

@@ -26,7 +26,15 @@ my $usersXml = "../xml/users.xml";
 # path db commenti
 my $commentsXml = "../xml/comments.xml";
 
-
+sub convert {
+	my $string = $_[1];
+	$string =~ s/è/&egrave;/g;
+	$string =~ s/ò/&ograve;/g;
+	$string =~ s/ù/&ugrave;/g;
+	$string =~ s/ì/&igrave;/g;
+	$string =~ s/à/&agrave;/g;
+	return $string;
+}
 
 
 sub header {
@@ -583,10 +591,10 @@ sub addFilm{
     $maxId = "$maxId" + 1;
     
     my $title = $parameters->{title};
-    $title= encode("utf8", $title);
+    $title= encode("iso-8859-1", $title);
     my $image = $parameters->{image};
     my $description = $parameters->{description};
-    $description= encode("utf8", $description);
+    $description= encode("iso-8859-1", $description);
     my $date = $parameters->{date};
     my $family = $parameters->{family};
     
@@ -606,8 +614,8 @@ sub addFilm{
     #print $root->toString();
     
     # write to file
-    open(OUT,'>:utf8',$filmsXml ) || die("Cannot open file");
-    print OUT "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+    open(OUT,'>',$filmsXml ) || die("Cannot open file");
+    print OUT "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n";
     print OUT $root->toString();
     close(OUT);
 }
@@ -623,10 +631,10 @@ sub addSerie{
     $max = "$max" + 1;
    
     my $title = $parameters->{title};
-    $title= encode("utf8", $title);
+    $title= encode("iso-8859-1", $title);
     my $image = $parameters->{image};
     my $description = $parameters->{description};
-    $description= encode("utf8", $description);
+    $description= encode("iso-8859-1", $description);
     
     my $parser = XML::LibXML->new;
     my $doc = $parser->parse_file( $seriesXml );
@@ -643,8 +651,8 @@ sub addSerie{
     	
     
     # write to file
-    open(OUT,'>:utf8',$seriesXml ) || die("Cannot open file");
-    print OUT "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+    open(OUT,'>',$seriesXml ) || die("Cannot open file");
+    print OUT "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n";
     print OUT $root->toString();
     close(OUT);
 }
@@ -657,7 +665,7 @@ sub addEpisode{
     my $idSerie = $parameters->{idSerie};
     my $idSeason = $parameters->{idSeason};
     my $title = $parameters->{title};
-    $title= encode("utf8", $title);
+    $title= encode("iso-8859-1", $title);
     my $link = $parameters->{link};
 
 
@@ -695,8 +703,8 @@ sub addEpisode{
     #print $root->toString();
     
     # write to file
-    open(OUT,'>:utf8',$seriesXml ) || die("Cannot open file");
-    print OUT "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+    open(OUT,'>',$seriesXml ) || die("Cannot open file");
+    print OUT "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n";
     print OUT $root->toString();
     close(OUT);
 }
@@ -733,8 +741,8 @@ sub addSeason{
     $root->appendChild($newNode);
     
     # write to file
-    open(OUT,'>:utf8',$seriesXml ) || die("Cannot open file");
-    print OUT "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+    open(OUT,'>',$seriesXml ) || die("Cannot open file");
+    print OUT "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n";
     print OUT $root->toString();
     close(OUT); 
 }
@@ -750,7 +758,7 @@ sub addFilmLinkf{
     my $parameters = shift;
     my $idFilm = $parameters->{idFilm};
     my $linkName = $parameters->{linkName};
-    $linkName= encode("utf8", $linkName);
+    $linkName= encode("iso-8859-1", $linkName);
     my $link = $parameters->{link};
 
     my $parser = XML::LibXML->new;
@@ -780,8 +788,8 @@ sub addFilmLinkf{
     # debug da togliere!!!
     
     # write to file
-    open(OUT,'>:utf8',$filmsXml ) || die("Cannot open file");
-    print OUT "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+    open(OUT,'>',$filmsXml ) || die("Cannot open file");
+    print OUT "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n";
     print OUT $root->toString();
     close(OUT);
     
@@ -979,6 +987,7 @@ return $xp->findnodes( $query );
 }
 
 
+
 # funzione di ricerca serie tv: se non riceve parametri (!$_[1]) ricerca tutte le serie,
 # altrimenti esegue la query ricevuta in $_[1]
 # come invocare la funzione (attenzione sintassi query!!) :
@@ -1134,10 +1143,12 @@ COMMENTS
 	            my $idUser = $node->find('idUser');
                 my $date = $node->find('date');
 	            my $content = $node->find('content');
+	            $content=function->convert($content);
                 
                 my $query = "//collection/". $typeVideo ."[\@id=$idVideo]";
                 my $video = function::findItem({ type=>$typeVideo, query=>$query })->get_node(1);
                 my $titleVideo = $video->find('title');
+                $titleVideo=function->convert($titleVideo);
                 
                 my $user = function::findItem({ type=>"user", query=>"//collection/user[\@id=$idUser]" })->get_node(1);
                 my $username = $user->find('username');
@@ -1217,6 +1228,7 @@ COMMENTS
     
         foreach my $node ($comments->get_nodelist) {
             my $content = $node->find('content');
+            $content=function->convert($content);
             my $idUser = $node->find('idUser');
             my $date = $node->find('date');
             my $user = function::findItem({ type=>"user", query=>"//collection/user[\@id=$idUser]" })->get_node(1);
@@ -1374,7 +1386,7 @@ sub addComment{
     my $idReference = $parameters->{id};
     my $type = $parameters->{type};
     my $comment = $parameters->{comment};
-    $comment= encode("utf8", $comment);
+    $comment= encode("iso-8859-1", $comment);
     my $idUser = $parameters->{idUser};
     my $date = $parameters->{dateComment};
     
@@ -1392,8 +1404,8 @@ sub addComment{
     $root->appendChild($fragment);
     
     # write to file
-    open(OUT,'>:utf8',$commentsXml ) || die("Cannot open file");
-    print OUT "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+    open(OUT,'>',$commentsXml ) || die("Cannot open file");
+    print OUT "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n";
     print OUT $root->toString();
     close(OUT);
 }
