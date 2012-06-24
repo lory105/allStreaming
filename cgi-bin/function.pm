@@ -583,7 +583,7 @@ sub addUser{
     #print $newNode;
 
     # check if it's well formed and create the node
-    my $fragment = $parser->parse_balanced_chunk($newNode);
+    my $fragment = $parser->parse_balanced_chunk($newNode, "iso-8859-1");
     # insert the new child
     $root->appendChild($fragment);
 
@@ -620,7 +620,7 @@ sub addFilm{
     my $newNode = "\t<film id=\"$maxId\">\n\t\t<title>$title</title>\n\t\t<image>$image</image>\n\t\t<description>$description</description>\n\t\t<date>$date</date>\n\t\t<family>$family</family>\n\t</film>\n";
 
     # check if it's well formed and create the node
-    my $fragment = $parser->parse_balanced_chunk($newNode);
+    my $fragment = $parser->parse_balanced_chunk($newNode, "iso-8859-1");
     # insert the new child
     $root->appendChild($fragment);
     
@@ -656,7 +656,7 @@ sub addSerie{
     # string with the new element
     my $newNode = "\t<serie id=\"$max\">\n\t\t<title>$title</title>\n\t\t<image>$image</image>\n\t\t<description>$description</description>\n\t</serie>\n";
     # check if it's well formed and create the node
-    my $fragment = $parser->parse_balanced_chunk($newNode); 
+    my $fragment = $parser->parse_balanced_chunk($newNode, "iso-8859-1"); 
     # insert the new child
     $root->appendChild($fragment);
     
@@ -702,7 +702,7 @@ sub addEpisode{
     my $newAddressNode = "\t\t\t<episode idEpisode=\"$maxId\">\n\t\t\t\t<title>$title</title>\n\t\t\t\t<link>$link</link>\n\t\t\t</episode>\n";
 
     # check if it's well formed and create the node
-    my $fragment = $parser->parse_balanced_chunk($newAddressNode);
+    my $fragment = $parser->parse_balanced_chunk($newAddressNode, "iso-8859-1");
     # insert the new child
     $newNode->appendChild($fragment);
     
@@ -745,7 +745,7 @@ sub addSeason{
     my $newAddressNode = "\t\t<season number=\"$maxId\">\n\t\t</season>\n";
 
     # check if it's well formed and create the node
-    my $fragment = $parser->parse_balanced_chunk($newAddressNode);
+    my $fragment = $parser->parse_balanced_chunk($newAddressNode, "iso-8859-1");
     # insert the new child
     $newNode->appendChild($fragment);
     
@@ -791,7 +791,7 @@ sub addFilmLinkf{
     my $newAddressNode = "\t\t<address idLink=\"$maxId\">\n\t\t\t<linkName>$linkName</linkName>\n\t\t\t<link>$link</link>\n\t\t</address>\n";
 
     # check if it's well formed and create the node
-    my $fragment = $parser->parse_balanced_chunk($newAddressNode);
+    my $fragment = $parser->parse_balanced_chunk($newAddressNode, "iso-8859-1");
     # insert the new child
     $newNode->appendChild($fragment);
     
@@ -1410,7 +1410,7 @@ sub addComment{
     my $newNode = "\t<comment id=\"$maxId\">\n\t\t<idUser>$idUser</idUser>\n\t\t<typeVideo>$type</typeVideo>\n\t\t<idVideo>$idReference</idVideo>\n\t\t<date>$date</date>\n\t\t<content>$comment</content>\n\t</comment>\n";
 
     # check if it's well formed and create the node
-    my $fragment = $parser->parse_balanced_chunk($newNode);
+    my $fragment = $parser->parse_balanced_chunk($newNode, "iso-8859-1");
     # insert the new child
     $root->appendChild($fragment);
     
