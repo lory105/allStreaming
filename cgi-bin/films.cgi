@@ -18,29 +18,29 @@ print<<BODY;
 			<h1>Film disponibili</h1>
 			<div id="year">
 				<h2>Anno d'uscita</h2>
-				<a href="researchFilm.cgi?type=Year&value=2012">2012</a><br />
-				<a href="researchFilm.cgi?type=Year&value=2011">2011</a><br />
-				<a href="researchFilm.cgi?type=Year&value=2010">2010</a><br />
-				<a href="researchFilm.cgi?type=Year&value=2009">2009</a><br />
-				<a href="researchFilm.cgi?type=Year&value=2008">2008</a><br />
-				<a href="researchFilm.cgi?type=Year&value=2007">2007</a><br />
-				<a href="researchFilm.cgi?type=Year&value=2006">2006</a><br />
-				<a href="researchFilm.cgi?type=Year&value=2005">2005</a><br />
-				<a href="researchFilm.cgi?type=Year&value=2004">2004</a><br />
-				<a href="researchFilm.cgi?type=Year&value=2003">2003</a><br />
-				<a href="researchFilm.cgi?type=Year&value=2002">2002</a><br />
-				<a href="researchFilm.cgi?type=Year&value=2001">2001</a><br />
-				<a href="researchFilm.cgi?type=Year&value=2000">2000</a><br />
-				<a href="researchFilm.cgi?type=Year&value=pre-2000">pre-2000</a><br />
+				<a href="researchFilm.cgi?type=Year&value=all" tabindex="5" ><b>Tutti</b></a><br />
+				<a href="researchFilm.cgi?type=Year&value=2012" tabindex="5" >2012</a><br />
+				<a href="researchFilm.cgi?type=Year&value=2011" tabindex="5" >2011</a><br />
+				<a href="researchFilm.cgi?type=Year&value=2010" tabindex="5" >2010</a><br />
+				<a href="researchFilm.cgi?type=Year&value=2009" tabindex="5" >2009</a><br />
+				<a href="researchFilm.cgi?type=Year&value=2008" tabindex="5" >2008</a><br />
+				<a href="researchFilm.cgi?type=Year&value=2007" tabindex="5" >2007</a><br />
+				<a href="researchFilm.cgi?type=Year&value=2006" tabindex="5" >2006</a><br />
+				<a href="researchFilm.cgi?type=Year&value=2005" tabindex="5" >2005</a><br />
+				<a href="researchFilm.cgi?type=Year&value=2004" tabindex="5" >2004</a><br />
+				<a href="researchFilm.cgi?type=Year&value=2003" tabindex="5" >2003</a><br />
+				<a href="researchFilm.cgi?type=Year&value=2002" tabindex="5" >2002</a><br />
+				<a href="researchFilm.cgi?type=Year&value=2001" tabindex="5" >2001</a><br />
+				<a href="researchFilm.cgi?type=Year&value=pre-2001" tabindex="5" >pre-2001</a><br />
 			</div>
 			<div id="genre">
 				<h2>Genere</h2><br />
-				<a href="researchFilm.cgi?type=Family&value=Action">Action</a><hr />
-				<a href="researchFilm.cgi?type=Family&value=Thriller">Thriller</a><hr />
-				<a href="researchFilm.cgi?type=Family&value=Horror">Horror</a><hr />
-				<a href="researchFilm.cgi?type=Family&value=Comics">Comics</a><hr />
-				<a href="researchFilm.cgi?type=Family&value=Cartoon">Cartoon</a><hr />
-				<a href="researchFilm.cgi?type=Family&value=Vario">Altro</a><hr />
+				<a href="researchFilm.cgi?type=Family&value=Action" tabindex="5" >Action</a><hr />
+				<a href="researchFilm.cgi?type=Family&value=Thriller" tabindex="5" >Thriller</a><hr />
+				<a href="researchFilm.cgi?type=Family&value=Horror" tabindex="5" >Horror</a><hr />
+				<a href="researchFilm.cgi?type=Family&value=Comics" tabindex="5" >Comics</a><hr />
+				<a href="researchFilm.cgi?type=Family&value=Cartoon" tabindex="5" >Cartoon</a><hr />
+				<a href="researchFilm.cgi?type=Family&value=Vario" tabindex="5" >Altro</a><hr />
 			</div>
 		</div>
 

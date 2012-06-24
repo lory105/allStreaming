@@ -7,7 +7,7 @@ use warnings;
 use function;
 use CGI::Carp qw/fatalsToBrowser warningsToBrowser/;
 use CGI::Session ( '-ip_match' );
-
+use Switch;
 
 function->header();
 function->left("Film");
@@ -21,35 +21,58 @@ print <<BODY;
 BODY
 
 if ($type eq "Year"){
-	my $year = $var->param('value');
-	print "<h1>Film disponibili anno $year</h1>";
-	if($year == 'pre-2000') {
-		$year="2000-1-1";
-		my $nodeset=function->findFilm( "//collection/film[date < $year]");
-		if(($nodeset->size()) == 0 ){
-			print "<p>Nessun film disponibile.</p>";
-		}
-		foreach my $node ($nodeset->get_nodelist) {
-			my $film=$node->find('title')->string_value;
-			$film=function->convert($film);
-			my $id=$node->getAttribute('id');
-			my $dynamic = "<a href=\"film.cgi?id=$id\">$film</a> <hr />";
-			print $dynamic;
-		}
-	}
-	else{
-		my $nodeset=function->findFilm( "//collection/film[date = $year]");
-		if(($nodeset->size()) == 0 ){
-			print "<p>Nessun film disponibile.</p>";
-		}
-		foreach my $node ($nodeset->get_nodelist) {
-		my $film=$node->find('title')->string_value;
-		$film=function->convert($film);
-		my $id=$node->getAttribute('id');
-		my $dynamic = "<a href=\"film.cgi?id=$id\">$film</a> <hr />";
-		print $dynamic;
-		}
-	}
+    my $year = $var->param('value');
+	
+    switch ($year){
+	    case "pre-2001"{
+	        print "<h1>Film disponibili anno $year</h1>";
+	        $year="2001";
+		    my $nodeset=function->findFilm( "//collection/film[substring(date, 1, 4) < $year]");
+		    if(($nodeset->size()) == 0 ){
+	            print "<p>Nessun film disponibile.</p>";
+		    }
+		    foreach my $node ($nodeset->get_nodelist) {
+                my $film=$node->find('title')->string_value;
+			    $film=function->convert($film);
+			    my $id=$node->getAttribute('id');
+			    my $dynamic = "<a href=\"film.cgi?id=$id\" tabindex=\"5\">$film</a> <hr />";
+			    print $dynamic;
+		   }
+		   last;
+	    }
+	    
+        case "all"{
+            print "<h1>Tutti i fillm</h1>";
+		    my $nodeset=function->findFilm( "//collection/film");
+		    if(($nodeset->size()) == 0 ){
+	           print "<p>Nessun film disponibile.</p>";
+		    }
+		    foreach my $node ($nodeset->get_nodelist) {
+                my $film=$node->find('title')->string_value;
+			    $film=function->convert($film);
+			    my $id=$node->getAttribute('id');
+			    my $dynamic = "<a href=\"film.cgi?id=$id\" tabindex=\"5\">$film</a> <hr />";
+			    print $dynamic;
+		   }
+	       last;
+	   }
+	
+	   default {
+	       print "<h1>Film disponibili anno $year</h1>";
+	       my $nodeset=function->findFilm( "//collection/film[date = $year]");
+		   if(($nodeset->size()) == 0 ){
+		      print "<p>Nessun film disponibile.</p>";
+		   }
+		   foreach my $node ($nodeset->get_nodelist) {
+		      my $film=$node->find('title')->string_value;
+		      $film=function->convert($film);
+		      my $id=$node->getAttribute('id');
+		      my $dynamic = "<a href=\"film.cgi?id=$id\" tabindex=\"5\">$film</a> <hr />";
+		      print $dynamic;
+	       }
+	       last;
+	   }
+    }
 }
 else{
     my $family = $var->param('value');
@@ -59,7 +82,7 @@ else{
 		my $film=$node->find('title')->string_value;
 		$film= function->convert($film);
 		my $id=$node->getAttribute('id');
-		my $dynamic = "<a href=\"film.cgi?id=$id\">$film</a> <hr />";
+		my $dynamic = "<a href=\"film.cgi?id=$id\" tabindex=\"5\">$film</a> <hr />";
 		print $dynamic;
 	}
 }

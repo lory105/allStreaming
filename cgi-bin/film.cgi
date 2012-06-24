@@ -9,8 +9,7 @@ use CGI::Carp qw/fatalsToBrowser warningsToBrowser/;
 use CGI::Session ( '-ip_match' );
 
 
-# LUCA !!!!!!!!!!!!!!!!!!!!!!!! #################################
-binmode(STDOUT, ":iso-8859-1");
+#binmode(STDOUT, ":iso-8859-1");
 
 
 my $var=new CGI;
@@ -18,7 +17,7 @@ my $id = $var->param('id');
 my $node=function->findFilm( "//collection/film[\@id=\"$id\"]")->get_node(1);
 my $t=$node->find('title')->string_value;
 
-# prove per vedere risultati ####################################
+
 my $title=function->convert($t);
 
 

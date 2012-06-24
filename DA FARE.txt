@@ -21,7 +21,14 @@
 
 
 - inserire tabindex in ordine giusto ( si possono vedere con la web develoer di firefox: informazioni > tabindex )
- 
+
+- film pre-2000 compaiono tutti
+
+- menù novità: non stampa gli ultimi film caricati, ma guarda solo le date
+
+- sistemare i tabindex
+
+- i grasseti con le <b> le vanno bene??
 
 
 

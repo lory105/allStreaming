@@ -50,6 +50,27 @@ my $commentsXml = "../xml/comments.xml";
 ########################################################################
 ###   
 
+
+
+
+my $year="";
+my $nodeset=function->findFilm( "//collection/film[date = $year]");
+
+print $nodeset->size();
+
+
+
+
+
+
+
+
+
+
+
+=o
+
+
 my $idSerie = "2";
 my $idSeason="3";
 my $nameLink = "puu";

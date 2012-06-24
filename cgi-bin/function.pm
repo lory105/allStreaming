@@ -116,15 +116,15 @@ MENU
 	   case "Home"  { 
 	       print<<MENU;
 	           <li><img src="../images/home.png" alt="Icona Home"/><b>Home</b><hr /></li>
-	           <li><img src="../images/series.png" alt="Icona Serie"/><a href="series.cgi" >Serie Tv</a><hr /></li>
-			   <li><img src="../images/film.png" alt="Icona Film"/><a href="films.cgi" >Film</a><hr /></li>
-			   <li><img src="../images/signin.png" alt="Icona Registrazione"/><a href="registration.cgi">Registrazione</a><hr /></li>
+	           <li><img src="../images/series.png" alt="Icona Serie"/><a href="series.cgi" tabindex="4" >Serie Tv</a><hr /></li>
+			   <li><img src="../images/film.png" alt="Icona Film"/><a href="films.cgi" tabindex="4" >Film</a><hr /></li>
+			   <li><img src="../images/signin.png" alt="Icona Registrazione"/><a href="registration.cgi" tabindex="4" >Registrazione</a><hr /></li>
 MENU
 	       last;
 	   }
 	   case "Serie" {
 	       print<<MENU;
-	              <li><img src="../images/home.png"  alt="Icona Home"/><a href="index.cgi">Home</a><hr /></li>
+	              <li><img src="../images/home.png"  alt="Icona Home"/><a href="index.cgi" tabindex="4" >Home</a><hr /></li>
 MENU
 
            my $title = $_[1];
@@ -133,7 +133,7 @@ MENU
            }
            else{ 
                print<<MENU;
-               <li><img src="../images/series.png"  alt="Icona Serie"/><a href="series.cgi">Serie Tv</a>
+               <li><img src="../images/series.png"  alt="Icona Serie"/><a href="series.cgi" tabindex="4" >Serie Tv</a>
                    <ul><li> &nbsp;&nbsp;&nbsp;&nbsp; >  $title </li> </ul>
                    <hr />
                </li>
@@ -141,15 +141,15 @@ MENU
            }
 
            print<<MENU;
-			      <li><img src="../images/film.png"  alt="Icona Film"/><a href="films.cgi">Film</a><hr /></li>
-			      <li><img src="../images/signin.png"  alt="Icona Registrazione"/><a href="registration.cgi">Registrazione</a><hr /></li>
+			      <li><img src="../images/film.png"  alt="Icona Film"/><a href="films.cgi" tabindex="4" >Film</a><hr /></li>
+			      <li><img src="../images/signin.png"  alt="Icona Registrazione"/><a href="registration.cgi" tabindex="4" >Registrazione</a><hr /></li>
 MENU
 	       last;	       
 	   }
 	   case "Film" {
 	       print<<MENU;
-	              <li><img src="../images/home.png"  alt="Icona Home"/><a href="index.cgi">Home</a><hr /></li>
-	              <li><img src="../images/series.png"  alt="Icona Serie"/><a href="series.cgi">Serie Tv</a><hr /></li>
+	              <li><img src="../images/home.png"  alt="Icona Home"/><a href="index.cgi" tabindex="4" >Home</a><hr /></li>
+	              <li><img src="../images/series.png"  alt="Icona Serie"/><a href="series.cgi" tabindex="4" >Serie Tv</a><hr /></li>
 MENU
            my $title = $_[1];
            if( $title eq "" ){
@@ -157,22 +157,22 @@ MENU
            }
            else{ 
                print<<MENU;
-               <li><img src="../images/film.png"  alt="Icona Film"/><a href="films.cgi">Film</a>
+               <li><img src="../images/film.png"  alt="Icona Film"/><a href="films.cgi" tabindex="4" >Film</a>
                    <ul><li> &nbsp;&nbsp;&nbsp;&nbsp; >  $title </li> </ul>
                    <hr />
                </li>
 MENU
            }
            print<<MENU;           
-			      <li><img src="../images/signin.png"  alt="Icona Registrazione"/><a href="registration.cgi">Registrazione</a><hr /></li>
+			      <li><img src="../images/signin.png"  alt="Icona Registrazione"/><a href="registration.cgi" tabindex="4" >Registrazione</a><hr /></li>
 MENU
 	       last;	       
 	   }
 	   case "Registrazione" {
 	       print<<MENU;
-				<li><img src="../images/home.png"  alt="Icona Home"/><a href="index.cgi">Home</a><hr /></li>
-				<li><img src="../images/series.png"  alt="Icona Serie"/><a href="series.cgi">Serie Tv</a><hr /></li>
-				<li><img src="../images/film.png"  alt="Icona Film"/><a href="films.cgi">Film</a><hr /></li>
+				<li><img src="../images/home.png"  alt="Icona Home"/><a href="index.cgi"  tabindex="4" >Home</a><hr /></li>
+				<li><img src="../images/series.png"  alt="Icona Serie"/><a href="series.cgi"  tabindex="4" >Serie Tv</a><hr /></li>
+				<li><img src="../images/film.png"  alt="Icona Film"/><a href="films.cgi"  tabindex="4" >Film</a><hr /></li>
 				<li><img src="../images/signin.png"  alt="Icona Registrazione"/><b>Registrazione</b><hr /></li>
 MENU
 	       last;	       
@@ -180,10 +180,10 @@ MENU
 	   
 	   default {
 	       print<<MENU;
-				<li><img src="../images/home.png"  alt="Icona Home"/><a href="index.cgi">Home</a><hr /></li>
-				<li><img src="../images/series.png"  alt="Icona Serie"/><a href="series.cgi">Serie Tv</a><hr /></li>
-				<li><img src="../images/film.png"  alt="Icona Film"/><a href="films.cgi">Film</a><hr /></li>
-				<li><img src="../images/signin.png"  alt="Icona Registrazione"/><a href="registration.cgi">Registrazione</a><hr /></li>
+				<li><img src="../images/home.png"  alt="Icona Home"/><a href="index.cgi" tabindex="4" >Home</a><hr /></li>
+				<li><img src="../images/series.png"  alt="Icona Serie"/><a href="series.cgi" tabindex="4" >Serie Tv</a><hr /></li>
+				<li><img src="../images/film.png"  alt="Icona Film"/><a href="films.cgi" tabindex="4" >Film</a><hr /></li>
+				<li><img src="../images/signin.png"  alt="Icona Registrazione"/><a href="registration.cgi" tabindex="4" >Registrazione</a><hr /></li>
 MENU
 	       last;	       
 	   }
@@ -226,17 +226,17 @@ MENU
 	   case "Home"  { 
 	       print<<MENU;
 	              <li><img src="../images/home.png"  alt="Icona Home"/><b>Home</b><hr /></li>
-	              <li><img src="../images/series.png"  alt="Icona Serie"/><a href="series.cgi">Serie Tv</a><hr /></li>
-			      <li><img src="../images/film.png"  alt="Icona Film"/><a href="films.cgi">Film</a><hr /></li>
-			      <li><img src="../images/comment.png"  alt="Icona Commenti"/><a href="comments.cgi">Commenti</a><hr /></li>
-			      <li><img src="../images/profile.png"  alt="Icona Profilo"/><a href="profile.cgi?id=$id">Profilo</a><hr /></li>
+	              <li><img src="../images/series.png"  alt="Icona Serie" tabindex="4" /><a href="series.cgi">Serie Tv</a><hr /></li>
+			      <li><img src="../images/film.png"  alt="Icona Film" tabindex="4" /><a href="films.cgi">Film</a><hr /></li>
+			      <li><img src="../images/comment.png"  alt="Icona Commenti" tabindex="4" /><a href="comments.cgi">Commenti</a><hr /></li>
+			      <li><img src="../images/profile.png"  alt="Icona Profilo" tabindex="4" /><a href="profile.cgi?id=$id">Profilo</a><hr /></li>
 MENU
 	       last;
 	   }
 	   
 	   	   case "Serie"  { 
 	       print<<MENU;
-	              <li><img src="../images/home.png"  alt="Icona Home"/><a href="index.cgi">Home</a><hr /></li>
+	              <li><img src="../images/home.png"  alt="Icona Home"/><a href="index.cgi" tabindex="4" >Home</a><hr /></li>
 MENU
 
            my $title = $_[1];
@@ -245,7 +245,7 @@ MENU
            }
            else{ 
                print<<MENU;
-               <li><img src="../images/series.png"  alt="Icona Serie"/><a href="series.cgi">Serie Tv</a>
+               <li><img src="../images/series.png"  alt="Icona Serie"/><a href="series.cgi" tabindex="4" >Serie Tv</a>
                    <ul><li> &nbsp;&nbsp;&nbsp;&nbsp; >  <b>$title</b> </li> </ul>
                    <hr />
                </li>
@@ -253,17 +253,17 @@ MENU
            }
 
            print<<MENU;
-			      <li><img src="../images/film.png"  alt="Icona Film"/><a href="films.cgi">Film</a><hr /></li>
-			      <li><img src="../images/comment.png"  alt="Icona Commenti"/><a href="comments.cgi">Commenti</a><hr /></li>
-			      <li><img src="../images/profile.png"  alt="Icona Profilo"/><a href="profile.cgi?id=$id">Profilo</a><hr /></li>
+			      <li><img src="../images/film.png"  alt="Icona Film"/><a href="films.cgi" tabindex="4" >Film</a><hr /></li>
+			      <li><img src="../images/comment.png"  alt="Icona Commenti"/><a href="comments.cgi" tabindex="4" >Commenti</a><hr /></li>
+			      <li><img src="../images/profile.png"  alt="Icona Profilo"/><a href="profile.cgi?id=$id" tabindex="4" >Profilo</a><hr /></li>
 MENU
 	       last;
 	   }
 	   
 	   case "Film"  { 
 	       print<<MENU;
-	              <li><img src="../images/home.png"  alt="Icona Home"/><a href="index.cgi">Home</a><hr /></li>
-	              <li><img src="../images/series.png"  alt="Icona Serie"/><a href="series.cgi">Serie Tv</a><hr /></li>
+	              <li><img src="../images/home.png"  alt="Icona Home"/><a href="index.cgi" tabindex="4" >Home</a><hr /></li>
+	              <li><img src="../images/series.png"  alt="Icona Serie"/><a href="series.cgi" tabindex="4" >Serie Tv</a><hr /></li>
 MENU
            my $title = $_[1];
            if( $title eq "" ){
@@ -271,36 +271,36 @@ MENU
            }
            else{ 
                print<<MENU;
-               <li><img src="../images/film.png"  alt="Icona Film"/><a href="films.cgi">Film</a>
+               <li><img src="../images/film.png"  alt="Icona Film"/><a href="films.cgi" tabindex="4" >Film</a>
                    <ul><li> &nbsp;&nbsp;&nbsp;&nbsp; >  <b>$title</b> </li> </ul>
                    <hr />
                </li>
 MENU
            }
            print<<MENU;           
-			      <li><img src="../images/comment.png"  alt="Icona Commenti"/><a href="comments.cgi">Commenti</a><hr /></li>
-			      <li><img src="../images/profile.png"  alt="Icona Profilo"/><a href="profile.cgi?id=$id">Profilo</a><hr /></li>
+			      <li><img src="../images/comment.png"  alt="Icona Commenti"/><a href="comments.cgi" tabindex="4" >Commenti</a><hr /></li>
+			      <li><img src="../images/profile.png"  alt="Icona Profilo"/><a href="profile.cgi?id=$id" tabindex="4" >Profilo</a><hr /></li>
 MENU
 	       last;
 	   }
 
 	   case "Commenti"  { 
 	       print<<MENU;
-	       	      <li><img src="../images/home.png"  alt="Icona Home"/><a href="index.cgi">Home</a><hr /></li>
-	              <li><img src="../images/series.png"  alt="Icona Serie"/><a href="series.cgi">Serie Tv</a><hr /></li>
-			      <li><img src="../images/film.png"  alt="Icona Film"/><a href="films.cgi">Film</a><hr /></li>
+	       	      <li><img src="../images/home.png"  alt="Icona Home"/><a href="index.cgi" tabindex="4" >Home</a><hr /></li>
+	              <li><img src="../images/series.png"  alt="Icona Serie"/><a href="series.cgi" tabindex="4" >Serie Tv</a><hr /></li>
+			      <li><img src="../images/film.png"  alt="Icona Film"/><a href="films.cgi" tabindex="4" >Film</a><hr /></li>
 			      <li><img src="../images/comment.png"  alt="Icona Commenti"/><b>Commenti</b><hr /></li>
-			      <li><img src="../images/profile.png"  alt="Icona Profilo"/><a href="profile.cgi?id=$id">Profilo</a><hr /></li>
+			      <li><img src="../images/profile.png"  alt="Icona Profilo"/><a href="profile.cgi?id=$id" tabindex="4" >Profilo</a><hr /></li>
 MENU
 	       last;
 	   }
 
         case "Profilo" {
         print<<MENU;
-	       	      <li><img src="../images/home.png"  alt="Icona Home"/><a href="index.cgi">Home</a><hr /></li>
-	              <li><img src="../images/series.png"  alt="Icona Serie"/><a href="series.cgi">Serie Tv</a><hr /></li>
-			      <li><img src="../images/film.png"  alt="Icona Film"/><a href="films.cgi">Film</a><hr /></li>
-			      <li><img src="../images/comment.png"  alt="Icona Commenti"/><a href="comments.cgi">Commenti</a><hr /></li>
+	       	      <li><img src="../images/home.png"  alt="Icona Home"/><a href="index.cgi" tabindex="4" >Home</a><hr /></li>
+	              <li><img src="../images/series.png"  alt="Icona Serie"/><a href="series.cgi" tabindex="4" >Serie Tv</a><hr /></li>
+			      <li><img src="../images/film.png"  alt="Icona Film"/><a href="films.cgi" tabindex="4" >Film</a><hr /></li>
+			      <li><img src="../images/comment.png"  alt="Icona Commenti"/><a href="comments.cgi" tabindex="4" >Commenti</a><hr /></li>
 MENU
            my $username = $_[1];
            if( $username eq "" || $username eq $self){
@@ -308,7 +308,7 @@ MENU
            }
            else{
                print<<MENU;
-               <li><img src="../images/profile.png"  alt="Icona Profilo"/><a href="profile.cgi?id=$id">Profile</a>
+               <li><img src="../images/profile.png"  alt="Icona Profilo"/><a href="profile.cgi?id=$id" tabindex="4" >Profile</a>
                    <ul><li> &nbsp;&nbsp;&nbsp;&nbsp; >  <b>$username</b> </li> </ul>
                    <hr />
                </li>
@@ -318,10 +318,10 @@ MENU
         }
         default {
 	       print<<MENU;
-				<li><img src="../images/home.png"  alt="Icona Home"/><a href="index.cgi">Home</a><hr /></li>
-				<li><img src="../images/series.png"  alt="Icona Serie"/><a href="series.cgi">Serie Tv</a><hr /></li>
-				<li><img src="../images/film.png"  alt="Icona Film"/><a href="films.cgi">Film</a><hr /></li>
-				<li><img src="../images/signin.png"  alt="Icona Registrazione"/><a href="registration.cgi">Registrazione</a><hr /></li>
+				<li><img src="../images/home.png"  alt="Icona Home"/><a href="index.cgi" tabindex="4" >Home</a><hr /></li>
+				<li><img src="../images/series.png"  alt="Icona Serie"/><a href="series.cgi" tabindex="4" >Serie Tv</a><hr /></li>
+				<li><img src="../images/film.png"  alt="Icona Film"/><a href="films.cgi" tabindex="4" >Film</a><hr /></li>
+				<li><img src="../images/signin.png"  alt="Icona Registrazione"/><a href="registration.cgi" tabindex="4" >Registrazione</a><hr /></li>
 MENU
 	       last;	       
 	   }
@@ -354,7 +354,7 @@ sub left {
 						<fieldset style="border:0em; margin-top:1em;">
 						<label for="username"><b>Username:</b></label><input type="text" name="username" id="username" value="User" size="12" tabindex="1" />
 						<label for="password"><b>Password:</b></label><input type="password" name="password" id="password" value="Password" size="12" tabindex="2" />
-						<button type="submit" id="sending" tabindex="3">Login</button>
+						<button type="submit" id="sending" tabindex="3" alt="Login">Login</button>
 LEFT
 						
 						my $q = new CGI;
@@ -392,7 +392,7 @@ LEFT
 		}
 		print <<LEFT;
                             <div class=\"avatar\"> <img src=\"../images/avatars/$username.jpg\" class=\"grav\"  alt="Avatar utente"/> </div>
-		                    <div class=\"name\">Benvenuto, <b><a href=\"profile.cgi?id=$id\" class="differentLink">$username</a></b> <br /> <a href=\"logout.cgi\" class="differentLink">Logout</a></div>
+		                    <div class=\"name\">Benvenuto, <b><a href=\"profile.cgi?id=$id\" class="differentLink" tabindex="1" >$username</a></b> <br /> <a href=\"logout.cgi\" class="differentLink" tabindex="2">Logout</a></div>
 					    </div>
 				    </div>
 			    </div>
@@ -407,7 +407,7 @@ sub right {
 print <<RIGHT;
 			<div id="right_side">
 			<a class="jump" href="#center_side">Salta le ultime novit&agrave; </a>
-			<div class="view">Ultimi video commentati</div>
+			<div class="view">Ultimi commentati</div>
 				<div class="content_max_view">
 RIGHT
 
@@ -443,7 +443,7 @@ FOO: {
                 $video = function::findItem({ type=>$typeVideo, query=>"//collection/film[\@id=$idVideo]" })->get_node(1);
                 my $title = $video->find('title')->string_value;
                 $title=function->convert($title);
-	            print "<a href=\"$typeVideo.cgi?id=$idVideo\" >$title</a><br />";
+	            print "<a href=\"$typeVideo.cgi?id=$idVideo\"  tabindex=\"6\" >$title</a><br />";
             }
         }
         #if( $typeVideo eq "serie"){
@@ -456,7 +456,7 @@ FOO: {
                 $video = function::findItem({ type=>$typeVideo, query=>"//collection/serie[\@id=$idVideo]" })->get_node(1);
                 my $title = $video->find('title')->string_value;
                 $title=function->convert($title);
-        	    print "<a href=\"$typeVideo.cgi?id=$idVideo\" >$title</a><br />";
+        	    print "<a href=\"$typeVideo.cgi?id=$idVideo\" tabindex=\"6\" >$title</a><br />";
             }
         }
     
@@ -485,7 +485,7 @@ FOO: {
 	   my $id = "$sortIdFilm[$i]";
 	   my $nodeset = function::findItem({ type=>"film", query=>"//collection/film[\@id=$id]/title/text()" });
 	   $nodeset=function->convert($nodeset);
-	   print "<a href=\"film.cgi?id=$id\" >$nodeset</a><br />";
+	   print "<a href=\"film.cgi?id=$id\" tabindex=\"7\" >$nodeset</a><br />";
     }
 }
 
@@ -508,11 +508,11 @@ print <<FOOTER;
 	<br />
 		<div id="footer">
 			<span>
-					<a href="http://validator.w3.org/check?uri=referer"><img src="../images/html10.png" class="validation" alt="html validated"/> </a>
-					<a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="../images/css.gif" class="validation" alt="css validated"/> </a>
+					<a href="http://validator.w3.org/check?uri=referer" tabindex="8" ><img src="../images/html10.png" class="validation" alt="html validated&nbsp;-&nbsp;"/> </a>
+					<a href="http://jigsaw.w3.org/css-validator/check/referer" tabindex="8" ><img src="../images/css.gif" class="validation" alt="css validated"/> </a>
 					allStreaming.com 
 			</span>-
-			<a href="aboutUs.cgi">Chi Siamo </a>
+			<a href="aboutUs.cgi" tabindex="8" >Chi Siamo </a>
 		</div>
     </body>
 </html>
@@ -1374,7 +1374,7 @@ CENTER
    						
 							<img src=\"../$image\" class="locandina" alt="Locandina $title"/>
 							<br />
-							<a href="film.cgi?id=$idFilm">$title</a>
+							<a href="film.cgi?id=$idFilm" tabindex="5" >$title</a>
 
 						</div>
 CENTER
