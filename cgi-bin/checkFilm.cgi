@@ -45,7 +45,7 @@ else{
     print <<CENTER;
         <div id="center_side">
 			<h1>Successo</h1>
-			<p>Il film &egrave stato inserito correttamente.</p>
+			<p>Il film &egrave; stato inserito correttamente.</p>
         </div>
 CENTER
     function->footer();

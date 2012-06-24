@@ -13,7 +13,7 @@ my $var=new CGI;
 my $id = $var->param('id');
 my $node=function->findSerie( "//collection/serie[\@id=\"$id\"]")->get_node(1);
 my $title=$node->find('title')->string_value;
-
+$title=function->convert($title);
 function->header($title);
 function->left("Serie", $title );
 function->right();
@@ -44,6 +44,7 @@ SERIE
 my $img=$node->find('image')->string_value;
 print "<img src=\"../$img\" class=\"preview\" alt=\"Locandina serie\"/>";
 my $description = $node->find('description')->string_value;
+$description=function->convert($description);
 print "<p>$description</p><br />";
 my $seasons=$node->find('season');
 my @sortIdSeason;       # array contenente il numero delle stagioni
@@ -75,6 +76,7 @@ SERIE
 	print "<div class=\"episodes\">";
 	foreach my $episode ($episodes->get_nodelist) {
 		my $title=$episode->find('title')->string_value;
+		$title=function->convert($title);
 		my $link=$episode->find('link')->string_value;
 		print "<p><a href=\"$link\" target=\"_blank\">$title</a></p>";
 	}

@@ -21,6 +21,7 @@ BODY
 my $nodeset=function->findSerie();
 foreach my $node ($nodeset->get_nodelist) {
 	my $serie=$node->find('title')->string_value;
+	$serie=function->convert($serie);
 	my $id=$node->getAttribute('id');
 	my $dynamic = "<a href=\"serie.cgi?id=$id\">$serie</a> <hr />";
 	print $dynamic;

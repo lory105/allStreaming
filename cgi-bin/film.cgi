@@ -10,20 +10,17 @@ use CGI::Session ( '-ip_match' );
 
 
 # LUCA !!!!!!!!!!!!!!!!!!!!!!!! #################################
-binmode(STDOUT, ":utf8");
+binmode(STDOUT, ":iso-8859-1");
 
 
 my $var=new CGI;
 my $id = $var->param('id');
 my $node=function->findFilm( "//collection/film[\@id=\"$id\"]")->get_node(1);
-my $title=$node->find('title')->string_value;
+my $t=$node->find('title')->string_value;
 
 # prove per vedere risultati ####################################
-$title=function->convert($title);
-#$title=function->convert("però");
-#$title= "però";
+my $title=function->convert($t);
 
-#binmode(STDOUT, ":utf8");
 
 
 function->header($title);

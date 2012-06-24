@@ -36,19 +36,28 @@ sub convert {
 	return $string;
 }
 
+sub convertInsert {
+	my $string = $_[1];
+	$string =~ s/è/e'/g;
+	$string =~ s/ò/o'/g;
+	$string =~ s/ù/u'/g;
+	$string =~ s/ì/i'/g;
+	$string =~ s/à/a'/g;
+	return $string;
+}
+
 
 sub header {
-	print"Content-type: text/html\n\n";
+	print"Content-type: text/html; charset=ISO-8859-1\n\n";
 	my $information = $_[1];
 	if ($information eq ""){
-	    #<?xml version="1.0" encoding="UTF-8"?>
 	print <<HEADER;
     <?xml version="1.0" encoding="iso-8859-1"?>
 	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 	<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
 		<head>
 			<title>AllStreaming</title>
-			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+			<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
 			<meta name="description" content="Streaming film e serie TV" />
 			<meta name="keywords" content="streaming, film, serie TV" />
 			<link rel="shortcut icon" href="images/logo.ico" type="image/x-icon" />
@@ -64,10 +73,10 @@ HEADER
 	print <<META;
 <?xml version="1.0" encoding="iso-8859-1"?>
 	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-	<html xmlns="http://www.w3.org/1999/xhtml">
+	<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
 		<head>
 			<title>AllStreaming - $information</title>
-			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+			<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
 			<link rel="shortcut icon" href="images/logo.ico" type="image/x-icon" />
 			<link rel="icon" href="images/logo.ico" type="image/x-icon" />
 			<link rel="stylesheet" media="screen" href="../styles/baseStyle.css" type="text/css" />
@@ -433,6 +442,7 @@ FOO: {
                 push( @idFilmSelected, $idVideo);
                 $video = function::findItem({ type=>$typeVideo, query=>"//collection/film[\@id=$idVideo]" })->get_node(1);
                 my $title = $video->find('title')->string_value;
+                $title=function->convert($title);
 	            print "<a href=\"$typeVideo.cgi?id=$idVideo\" >$title</a><br />";
             }
         }
@@ -445,6 +455,7 @@ FOO: {
                 push( @idSerieSelected, $idVideo);
                 $video = function::findItem({ type=>$typeVideo, query=>"//collection/serie[\@id=$idVideo]" })->get_node(1);
                 my $title = $video->find('title')->string_value;
+                $title=function->convert($title);
         	    print "<a href=\"$typeVideo.cgi?id=$idVideo\" >$title</a><br />";
             }
         }
@@ -473,6 +484,7 @@ FOO: {
     for($i = 0; scalar @sortIdFilm >$i && $i < 5; $i++) {
 	   my $id = "$sortIdFilm[$i]";
 	   my $nodeset = function::findItem({ type=>"film", query=>"//collection/film[\@id=$id]/title/text()" });
+	   $nodeset=function->convert($nodeset);
 	   print "<a href=\"film.cgi?id=$id\" >$nodeset</a><br />";
     }
 }
@@ -549,9 +561,9 @@ sub addUser{
     $maxId = "$maxId" + 1;
     
     my $name = $parameters->{name};
-    $name= encode("utf8", $name);
+    $name= encode("iso-8859-1", $name);
     my $surname = $parameters->{surname};
-    $surname= encode("utf8", $surname);
+    $surname= encode("iso-8859-1", $surname);
     my $username = $parameters->{username};
     my $password = $parameters->{password};
     $password = md5_hex($password);
@@ -576,8 +588,8 @@ sub addUser{
     $root->appendChild($fragment);
 
     # write to file
-    open(OUT,'>:utf8',$usersXml ) || die("Cannot open file");
-    print OUT "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+    open(OUT,'>:iso-8859-1',$usersXml ) || die("Cannot open file");
+    print OUT "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n";
     print OUT $root->toString();
     close(OUT);
 }
@@ -606,13 +618,12 @@ sub addFilm{
 
     # string with the new element
     my $newNode = "\t<film id=\"$maxId\">\n\t\t<title>$title</title>\n\t\t<image>$image</image>\n\t\t<description>$description</description>\n\t\t<date>$date</date>\n\t\t<family>$family</family>\n\t</film>\n";
-    #print $newNode;
 
     # check if it's well formed and create the node
     my $fragment = $parser->parse_balanced_chunk($newNode);
     # insert the new child
     $root->appendChild($fragment);
-    #print $root->toString();
+    
     
     # write to file
     open(OUT,'>',$filmsXml ) || die("Cannot open file");
@@ -831,12 +842,10 @@ sub removeItem {
     my $root = $doc->getDocumentElement();
  
     $root->removeChild( $node );
-    # debug da togliere!!!
 
-    
     # write to file
-    open(OUT,'>:utf8',$file ) || die("Cannot open file");
-    print OUT "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+    open(OUT,'>',$file ) || die("Cannot open file");
+    print OUT "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n";
     print OUT $root->toString();
     close(OUT);
 
@@ -875,8 +884,8 @@ sub removeLink{
     $root->appendChild( $newFilm);
 
     # write to file
-    open(OUT,'>:utf8',$file ) || die("Cannot open file");
-    print OUT "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+    open(OUT,'>',$file ) || die("Cannot open file");
+    print OUT "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n";
     print OUT $root->toString();
     close(OUT);
 }
@@ -953,8 +962,8 @@ sub removeUser {
     $root->removeChild( $node );
     
     # write to file
-    open(OUT,'>:utf8',$usersXml ) || die("Cannot open file");
-    print OUT "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+    open(OUT,'>',$usersXml ) || die("Cannot open file");
+    print OUT "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n";
     print OUT $root->toString();
     close(OUT);
 }
@@ -1357,6 +1366,7 @@ CENTER
 	            my $node = function::findItem({ type=>"film", query=>"//collection/film[\@id=$idFilm]" })->get_node(1);
 	           
 	            my $title = $node->find('title')->string_value;
+	            $title=function->convert($title);
 	            my $image = $node->find('image')->string_value;
 	            
 	            print<<CENTER
