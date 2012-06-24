@@ -65,7 +65,7 @@ foreach my $try ($address->get_nodelist) {
     my $linkname=$try->find('linkName')->string_value;
     $linkname=function->convert($linkname);
     my $link=$try->find('link')->string_value;
-    print "<p><b>Link:</b> <a href=\"$link\" target=\"_blank\">$linkname</a></p>";
+    print "<p><b>Link:</b> <a href=\"$link\" target=\"_blank\"  tabindex=\"5\" >$linkname</a></p>";
     if( $isAdmin eq "true"){
         print<<FILM
                <form method="post" action="removeItem.cgi">
@@ -73,7 +73,7 @@ foreach my $try ($address->get_nodelist) {
                    <input name="type" value="link" type="hidden" />
                    <input name="idFilm" value="$id" type="hidden" />
                    <input name="idLink" value="$idLink" type="hidden" />
-                   <input type="submit" value="Rimuovi Link" />
+                   <input type="submit" value="Rimuovi Link" tabindex="5" />
                  </fieldset>
                </form>
 FILM

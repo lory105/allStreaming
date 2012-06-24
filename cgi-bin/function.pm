@@ -1168,7 +1168,7 @@ COMMENTS
                 <div class="commento">
 				    <div class="userComment">
 						  <img src="../images/avatars/$username.jpg" class="grav" alt="Avatar utente"/> 
-						  <b><a href="profile.cgi?id=$idUser">$username</a></b>
+						  <b><a href="profile.cgi?id=$idUser" tabindex="5" >$username</a></b>
 						  <span class="data">$date</span>
 COMMENT
 		        if( function->checkIsAdmin() eq "true" ){
@@ -1178,14 +1178,14 @@ COMMENT
 				   <fieldset>
                    <input name="type" value="comment" type="hidden">
                    <input name="id" value="$id" type="hidden">
-                   <input type="submit" value="Rimuovi Commento" tabindex="8">
+                   <input type="submit" value="Rimuovi Commento" tabindex="5">
                    </fieldset>
                </form>
 COMMENT
             }
                 print<<COMMENT;
 				    </div>
-				    <b><a href="$typeVideo.cgi?id=$idVideo">$titleVideo</a></b>
+				    <b><a href="$typeVideo.cgi?id=$idVideo" tabindex="5" >$titleVideo</a></b>
 				    <hr />
 				    <div class="userText">$content</div>
 			    </div>
@@ -1219,7 +1219,7 @@ COMMENTS
 			<div class="commento">
 		  		<form name="comment" method="post" action="checkComment.cgi" >
 					<fieldset>
-						<span class="sx"><textarea rows="4" cols="10" style="width:100%;" id="userComment" name="userComment" value="Inserisci il tuo commento" tabindex="4">commento</textarea></span>
+						<span class="sx"><textarea rows="4" cols="10" style="width:100%;" id="userComment" name="userComment" value="Inserisci il tuo commento" tabindex="5">commento</textarea></span>
 						<span class="dx"><button type="submit" id="send" tabindex="5">Invia</button></span>
 						<input type="hidden" name="id" value="$idVideo" /> 
 						<input type="hidden" name="type" value="$typeVideo" /> 
@@ -1250,7 +1250,7 @@ COMMENTS
             <div class="commento">
 				<div class="userComment">
 						<img src="../images/avatars/$username.jpg" class="grav" alt="Avatar utente"/> 
-						<b><a href="profile.cgi?id=$idUser">$username</a></b>
+						<b><a href="profile.cgi?id=$idUser" tabindex="5" >$username</a></b>
 						<span class="data">$date</span>
 COMMENT
             
@@ -1262,7 +1262,7 @@ COMMENT
 				   <fieldset>
                    <input name="type" value="comment" type="hidden" />
                    <input name="id" value="$id" type="hidden" />
-                   <input type="submit" value="Rimuovi Commento" tabindex="8" />
+                   <input type="submit" value="Rimuovi Commento" tabindex="5" />
                    </fieldset>
                </form>
 COMMENT

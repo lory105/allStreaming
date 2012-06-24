@@ -39,12 +39,12 @@ else{
 					<input name="type" value="film" type="hidden">
 					<input name="id" value="$id" type="hidden">			
 					<label for="title">Titolo:</label>
-					<input type="text" name="title" id="title" onblur="checkTitleLink();" />
+					<input type="text" name="title" id="title" onblur="checkTitleLink();" tabindex="5"  />
 					<br />
 					<label for="link">Link:</label>
-					<input type="text" name="link" id="link" onblur="checkUrlLink();"/>
+					<input type="text" name="link" id="link" onblur="checkUrlLink();" tabindex="5" />
 					<br />
-					<button type="submit" id="newLink" disabled="disabled">Invia</button>	
+					<button type="submit" id="newLink" disabled="disabled" tabindex="5" >Invia</button>	
 				</fieldset>
 			 </form>
 			</div>

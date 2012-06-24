@@ -23,7 +23,7 @@ foreach my $node ($nodeset->get_nodelist) {
 	my $serie=$node->find('title')->string_value;
 	$serie=function->convert($serie);
 	my $id=$node->getAttribute('id');
-	my $dynamic = "<a href=\"serie.cgi?id=$id\">$serie</a> <hr />";
+	my $dynamic = "<a href=\"serie.cgi?id=$id\" tabindex=\"5\">$serie</a> <hr />";
 	print $dynamic;
 }
 print <<BODY;

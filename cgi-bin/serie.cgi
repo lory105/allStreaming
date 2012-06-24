@@ -31,11 +31,11 @@ if( $isAdmin eq "true"){
          <form method="post" action="removeItem.cgi">
              <input name="type" value="serie" type="hidden" />
              <input name="id" value="$id" type="hidden" />
-             <input type="submit" value="Rimuovi Serie" />
+             <input type="submit" value="Rimuovi Serie"  tabindex="5" />
          </form>
          <form method="post" action="addSeason.cgi" >
              <input name="id" value="$id" type="hidden" />
-             <input type="submit" value="Aggiungi stagione" />
+             <input type="submit" value="Aggiungi stagione"  tabindex="5" />
          </form>
               <br />
 SERIE
@@ -68,7 +68,7 @@ for($x=0; $x < scalar @sortIdSeason; $x++){
     
 	if( $isAdmin eq "true"){
         print<<SERIE
-		 <h3>Stagione $number -- <a href=\"addEpisode.cgi?id=$id&idSeason=$number\" >Aggiungi Episodio</a></h3>
+		 <h3>Stagione $number -- <a href=\"addEpisode.cgi?id=$id&idSeason=$number\"  tabindex="5" >Aggiungi Episodio</a></h3>
 SERIE
 	}
     else{ print "<h3>Stagione $number</h3>"; }
@@ -78,7 +78,7 @@ SERIE
 		my $title=$episode->find('title')->string_value;
 		$title=function->convert($title);
 		my $link=$episode->find('link')->string_value;
-		print "<p><a href=\"$link\" target=\"_blank\">$title</a></p>";
+		print "<p><a href=\"$link\" target=\"_blank\"  tabindex=\"5\" >$title</a></p>";
 	}
 	print "</div><br />";
 }

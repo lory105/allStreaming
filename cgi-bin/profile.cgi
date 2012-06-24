@@ -53,7 +53,7 @@ else{
                    <form method="post" action="removeItem.cgi">
                        <input name="type" value="user" type="hidden">
                        <input name="id" value="$id" type="hidden">
-                       <input type="submit" value="Rimuovi Iscrizione">
+                       <input type="submit" value="Rimuovi Iscrizione" tabindex="5">
                    </form>
 PROFILE
 	    }
