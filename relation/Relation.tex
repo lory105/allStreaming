@@ -391,12 +391,8 @@ Di seguito viene riportata una rappresentazione schematica del layout generale d
 \end{center}
 
 L'Header è la parte superiore di presentazione del sito, troviamo poi il nav, parte molto importante perchè aiuta la navigazione indicando per ogni pagina la posizione corrente.\\
-A destra è situto il Menu principale per la navigazione, mentre nel Center è presentato il contenuto fondamentale della pagina visualizzata. A sinistra vi sono delle parti informative sugli ultimi video commentati, sulle novità e gli utenti iscritti, mentre sotto a chiusura è posto il Footer.
-
-
-\red{parlare del layout fluido ed elastico e mettere immagini della pagina con i ridimensionamenti}
-
-
+A destra è situato il Menu principale per la navigazione, mentre nel Center è presentato il contenuto fondamentale della pagina visualizzata. A sinistra vi sono delle parti informative sugli ultimi video commentati, sulle novità e gli utenti iscritti, mentre sotto a chiusura è posto il Footer.\\
+Nel caso di ridimensionamento, il layout fluido permette una corretta e ordinata visualizzazione della pagina, in particolare, in caso di ridimensionamenti estremi, i due riquadri contenenti Menu e Novità andranno a incolonnarsi, mentre la parte centrale andrà al di sotto di essi con le locandine dei film poste sequenzialmente l'una sopra all'altra.
 
 \item \textbf{Layout per la stampa:}\\
 Per eseguire le stampe delle pagine del sito, è stato creato un layout di pagina apposito attraverso il foglio di stile \textit{printStyle.css}, così da visualizzare nella pagina stampata unicamente le informazioni principali. Il layout è stato pertanto minimizzato e ''alleggerito'' senza però togliere la struttura base della pagina, sono stati infatti mantenuti:\\
@@ -464,17 +460,14 @@ I link sono facilmente riconoscibili poichè seguono gli standard web e non solu
 
 Attraverso l'utilizzo di \textbf{tabindex} è stato dato un ordine di tabulazione ai link per accedervi con l'utilizzo del tab.\\
 
-Non abbiamo messo le \textbf{accesskey} perchè..\\
-\red{(LUCAAA completaaaa!!)}\\
+Non sono state previste \textbf{accesskey} poichè molte delle voci del menù le avrebbero avute in comune con quelle utilizzate dal browser (es. f per Film era occupata da File su Firefox) generando più confusione che utilità.
 
-Sono stati inseriti suggerimenti per gli screen reader e nascosto parti, in modo tale da rendere più veloce la lettura da parte di questi dispositivi utilizzati dagli utenti con difficoltà visive.\\
-hidden; display:none;\\
-(LUCAAA completaaaa scrivendo + nel dettagli cosa abbiamo fatto!!)\\
+Sono stati inseriti suggerimenti per gli screen reader e nascosto parti, in modo tale da rendere più veloce la lettura da parte di questi dispositivi utilizzati dagli utenti con difficoltà visive, per esempio la possibilità di saltare le parti comuni ad ogni pagina.
 
 
-\n Le immagini sono state inserite con il tag \textbf{img} sono nel caso in cui queste siano state ritenite come parte integrante del contenuto.. per esempio....
-\red{(LUCAAA completaaaa!!)}\\
-Mentre le immagini che riguardano il solo layout, sono state inserite attraverso il foglio di stile con l'utilizzo del comando \textbf{backgoround}, come per esempio l'immagine dell'Header.\\
+\n Le immagini sono state inserite con il tag \textbf{img} visto che sono state ritenute come parte integrante del contenuto e corredate di \textbf{alt} significativo, in caso di mancato caricamento dell'immagine.
+
+Mentre le immagini che riguardano il solo layout, sono state inserite attraverso il foglio di stile con l'utilizzo del comando \textbf{background}, come per esempio l'immagine dell'Header.\\
 
 E' stato fatto ampio uso del comando \textbf{alt} per le immagini, attribuendo contenuto vuoto per le immagini di layout, e contenuto significativo per le immagini ritenute importanti per la comprensione della pagina.\\
 
@@ -493,7 +486,11 @@ Tutti i file sono stati validati con gli strumenti on-line dl w3c, sia per la pa
 Sono inoltre stati effettuati test per il daltonismo, con i seguenti risultati positivi: 
 \includegraphics[scale=0.55]{images/test}
 
+\section{Mancanze}
+Durante il caricamento nei computer del laboratorio, si è verificato uno spiacevole inconveniente sulle codifiche che abbiamo utilizzato all'interno dei file xml.\\
+In poche parole, mentre nei computer dove abbiamo sviluppato il contenuto era perfettamente validato, abbiamo riscontrato un problema con la conversione dei caratteri speciali come \&egrave;.\\
+Ad esempio, mentre inizialmente il titolo del film \textit{''Non è un paese per vecchi''} era presente come ''<title>Non \&egrave; un paese per vecchi</title>'', abbiamo successivamente dovuto sostituirlo con ''<title>Non è un paese per vecchi</title>''. Dopo numerosi tentativi di sostituizione di codifica ( da utf8 a iso-8859-1 ), di inserimenti e sostituzione caratteri, abbiamo dovuto rinunciare. Se non altro, all'interno della pagina generata dinamicamente, il carattere 'è' appare effettivamente come '\&egrave;'.
 
-
+ 
 
 \end{document}
