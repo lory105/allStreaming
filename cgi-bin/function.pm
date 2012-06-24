@@ -508,7 +508,7 @@ print <<FOOTER;
 	<br />
 		<div id="footer">
 			<span>
-					<a href="http://validator.w3.org/check?uri=referer" tabindex="8" ><img src="../images/html10.png" class="validation" alt="html validated&nbsp;-&nbsp;"/> </a>
+					<a href="http://validator.w3.org/check?uri=referer" tabindex="8" ><img src="../images/html10.png" class="validation" alt="html validated&nbsp;&nbsp;"/> </a>
 					<a href="http://jigsaw.w3.org/css-validator/check/referer" tabindex="8" ><img src="../images/css.gif" class="validation" alt="css validated"/> </a>
 					allStreaming.com 
 			</span>-
