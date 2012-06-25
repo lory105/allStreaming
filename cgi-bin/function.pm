@@ -354,7 +354,7 @@ sub left {
 						<fieldset style="border:0em; margin-top:1em;">
 						<label for="username"><b>Username:</b></label><input type="text" name="username" id="username" value="User" size="12" tabindex="1" />
 						<label for="password"><b>Password:</b></label><input type="password" name="password" id="password" value="Password" size="12" tabindex="2" />
-						<button type="submit" id="sending" tabindex="3" alt="Login">Login</button>
+						<button value="login" type="submit" id="sending" tabindex="3" alt="Login">Login</button>
 LEFT
 						
 						my $q = new CGI;

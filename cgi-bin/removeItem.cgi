@@ -31,13 +31,27 @@ switch ($type ) {
     case "film" {  
         my $id = $q->param('id');
 	    function::removeItem({ type=>$type, id=>$id });
-	    print $q->header(-location => q[index.cgi]);   
+	    
+        my $comments = function::findItem({ type=>"comment", query=>"//collection/comment[ idVideo=\"$id\" and typeVideo=\"$type\"]" });
+
+        foreach my $node ( $comments->get_nodelist){
+            my $idComment=$node->findvalue('@id');
+            function::removeItem({ type=>"comment", id=>$idComment});
+        }
+        print $q->header(-location => q[index.cgi]);
 	    last;
 	}
 	case "serie"  {
 	    my $id = $q->param('id');
 	    function::removeItem({ type=>$type, id=>$id });
-	    print $q->header(-location => q[index.cgi]); 
+	    
+        my $comments = function::findItem({ type=>"comment", query=>"//collection/comment[ idVideo=\"$id\" and typeVideo=\"$type\"]" });
+
+        foreach my $node ( $comments->get_nodelist){
+            my $idComment=$node->findvalue('@id');
+            function::removeItem({ type=>"comment", id=>$idComment});
+        }
+	    print $q->header(-location => q[index.cgi]);
 	    last;
 	}
 	case "comment"  {
